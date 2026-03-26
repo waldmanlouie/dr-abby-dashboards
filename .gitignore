@@ -1,0 +1,6 @@
+# Only track the 3 output HTML dashboards — everything else stays local
+*
+!.gitignore
+!1 Dr Abby Trending.html
+!2 Dr Abby Growth Dashboard.html
+!3 Dr Abby Projects.html
