@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Abby - Competitor Analysis Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f4f5f7;color:#1a1a2e;min-height:100vh}
+.header{background:#fff;padding:20px 32px;border-bottom:1px solid #e0e2e8;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.header h1{font-size:20px;font-weight:600;color:#1a1a2e}
+.header h1 span{color:#5b63d3;font-weight:700}
+.extract-date{font-size:13px;color:#888}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.toggle-group{display:flex;border-radius:8px;overflow:hidden;border:1px solid #d0d3dc}
+.toggle-btn{padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:#f7f8fa;color:#777;transition:all .2s}
+.toggle-btn:hover{background:#ebedf2;color:#444}
+.toggle-btn.active-tt{background:#e0faf9;color:#0a9e96;box-shadow:inset 0 -2px 0 #0a9e96}
+.toggle-btn.active-ig{background:#fce4ec;color:#c62858;box-shadow:inset 0 -2px 0 #c62858}
+.toggle-btn.active-yt{background:#fdecea;color:#d32f2f;box-shadow:inset 0 -2px 0 #d32f2f}
+.toggle-btn.active-all{background:#e8eaf6;color:#5b63d3;box-shadow:inset 0 -2px 0 #5b63d3}
+.stats{display:flex;gap:16px;padding:16px 32px;background:#f9fafb;align-items:stretch}
+.stat-card{background:#fff;border:1px solid #e0e2e8;border-radius:8px;padding:14px 20px;min-width:160px;flex:1;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.stat-card .label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:6px}
+.stat-card .value{font-size:22px;font-weight:700;color:#1a1a2e}
+.stat-card .sub{font-size:11px;color:#888;margin-top:4px}
+.stat-card .compare{font-size:11px;font-weight:600;margin-top:2px}
+.stat-card .compare.up{color:#16a34a}
+.stat-card .compare.down{color:#dc2626}
+.stat-card .compare.flat{color:#888}
+.reach-breakdown{margin-top:4px}
+.reach-plat{font-size:11px;color:#555;padding:1px 0}
+.reach-plat .up{color:#16a34a;font-weight:600}
+.reach-plat .down{color:#dc2626;font-weight:600}
+.reach-plat .flat{color:#888}
+.growth-breakdown{margin-top:4px}
+.growth-plat{font-size:11px;color:#555;padding:1px 0}
+.growth-plat .up{color:#16a34a;font-weight:600}
+.growth-plat .down{color:#dc2626;font-weight:600}
+.growth-plat .flat{color:#888}
+.tier-rows{margin-top:4px}
+.tier-row{display:flex;align-items:center;gap:8px;padding:3px 0}
+.tier-row .tier-label{font-size:11px;font-weight:700;width:36px;flex-shrink:0}
+.tier-row .tier-label.sv{color:#92400e}
+.tier-row .tier-label.viral{color:#14532d}
+.tier-row .tier-label.normal{color:#475569}
+.tier-row .tier-label.poor{color:#991b1b}
+.tier-row .tier-count{font-size:16px;font-weight:800;color:#1a1a2e;width:24px;text-align:right;flex-shrink:0}
+.tier-row .tier-plat{font-size:11px;color:#888;width:44px;text-align:center;flex-shrink:0}
+.tier-header{display:flex;align-items:center;gap:8px;padding:0 0 2px}
+.tier-header .th-spacer1{width:36px;flex-shrink:0}
+.tier-header .th-spacer2{width:24px;flex-shrink:0}
+.tier-header .th-plat{font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:.5px;width:44px;text-align:center;flex-shrink:0}
+.tier-row .tier-delta{font-size:10px;font-weight:600}
+.tier-row .tier-delta.up{color:#16a34a}
+.tier-row .tier-delta.down{color:#dc2626}
+.tier-row .tier-delta.flat{color:#aaa}
+.abby-header{font-size:12px;font-weight:700;color:#5b63d3;padding:12px 32px 0;background:#f9fafb;text-transform:uppercase;letter-spacing:1px}
+.no-abby{font-size:12px;color:#888;padding:4px 0}
+.rank-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rank-chip{display:flex;flex-direction:column;align-items:center;font-size:14px;font-weight:700;color:#1a1a2e}
+.rank-plat{font-size:8px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-top:-1px}
+.search-box{padding:8px 32px;background:#f9fafb;display:flex;align-items:center;gap:10px}
+.search-box input{flex:1;max-width:400px;padding:8px 14px;border-radius:6px;border:1px solid #d0d3dc;background:#fff;color:#1a1a2e;font-size:13px;outline:none}
+.author-toggle{display:flex;border-radius:6px;overflow:hidden;border:1px solid #d0d3dc;flex-shrink:0}
+.author-toggle button{padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:#f7f8fa;color:#777;transition:all .2s}
+.author-toggle button:hover{background:#ebedf2;color:#444}
+.author-toggle button.active{background:#e8eaf6;color:#5b63d3;box-shadow:inset 0 -2px 0 #5b63d3}
+.search-box input:focus{border-color:#5b63d3;box-shadow:0 0 0 2px rgba(91,99,211,.15)}
+.table-wrap{padding:0 32px 32px;overflow-x:auto;background:#f9fafb;min-height:60vh}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+thead{position:sticky;top:0;z-index:10}
+th{background:#f0f1f5;color:#555;font-weight:600;text-transform:uppercase;font-size:10.5px;letter-spacing:.8px;padding:10px 12px;text-align:left;border-bottom:2px solid #e0e2e8;cursor:pointer;white-space:nowrap;user-select:none}
+th:hover{color:#5b63d3}
+th.sorted-asc::after{content:" ▲";color:#5b63d3}
+th.sorted-desc::after{content:" ▼";color:#5b63d3}
+td{padding:8px 12px;border-bottom:1px solid #eef0f4;vertical-align:top}
+tr:hover td{background:#f7f8fc}
+.author-cell{font-weight:600;color:#2d2f6e;white-space:nowrap}
+.text-cell{color:#666;font-size:11.5px;line-height:1.4;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.text-cell:hover{white-space:normal;overflow:visible;background:#fff;position:relative;z-index:5;border-radius:4px;padding:8px;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.engagement-high{color:#16a34a;font-weight:600}
+.engagement-med{color:#ca8a04;font-weight:600}
+.engagement-low{color:#dc2626;font-weight:600}
+.views-hot{color:#d97706;font-weight:700}
+.url-link{color:#5b63d3;text-decoration:none;font-size:11px}
+.url-link:hover{text-decoration:underline}
+.platform-badge{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.5px}
+.badge-TT{background:#e0faf9;color:#0a9e96}
+.badge-IG{background:#fce4ec;color:#c62858}
+.badge-YT{background:#fdecea;color:#d32f2f}
+.music-cell{max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#777;font-size:11.5px}
+.rank-cell{text-align:center;font-weight:700;font-size:12px;color:#888;width:36px}
+tr.tier-super td{background:#fef9e7}
+tr.tier-super td:first-child{border-left:4px solid #f59e0b}
+tr.tier-super .rank-cell{color:#b45309}
+tr.tier-viral td{background:#ecfdf5}
+tr.tier-viral td:first-child{border-left:4px solid #22c55e}
+tr.tier-viral .rank-cell{color:#15803d}
+tr.tier-avg td{background:transparent}
+tr.tier-poor td{background:#fef2f2}
+tr.tier-poor td:first-child{border-left:4px solid #ef4444}
+tr.tier-poor .rank-cell{color:#dc2626}
+.tier-badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:700;letter-spacing:.5px;margin-left:4px;vertical-align:middle}
+.tier-badge.super{background:#fbbf24;color:#78350f}
+.tier-badge.viral{background:#86efac;color:#14532d}
+.tier-badge.poor{background:#fca5a5;color:#7f1d1d}
+.toast{position:fixed;top:20px;right:20px;padding:12px 20px;border-radius:8px;font-size:13px;font-weight:500;z-index:100;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.toast.success{background:#dcfce7;color:#166534;border:1px solid #86efac}
+.toast.error{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
+
+/* ── MOBILE CARD VIEW ── */
+.card-list{display:none;padding:8px 12px 24px;background:#f9fafb}
+.sort-row{display:none}
+
+@media(max-width:768px){
+  .header{padding:14px 16px}
+  .header h1{font-size:17px}
+  .controls{width:100%;justify-content:space-between}
+  .toggle-btn{padding:7px 14px;font-size:12px}
+  .abby-header{padding:10px 12px 0;font-size:11px}
+  .stats{padding:10px 12px;gap:8px;overflow-x:auto;flex-wrap:nowrap}
+  .stat-card{padding:10px 12px;min-width:140px;flex-shrink:0;flex:none}
+  .stat-card .label{font-size:9px}
+  .stat-card .value{font-size:17px}
+  .tier-row .tier-count{font-size:14px}
+  .tier-row .tier-label{font-size:10px}
+  .search-box{padding:6px 12px}
+  .search-box input{max-width:100%}
+  .table-wrap{display:none}
+  .card-list{display:block}
+  .sort-row{display:flex;padding:6px 12px;gap:6px;align-items:center;background:#f9fafb;overflow-x:auto;flex-wrap:nowrap}
+  .sort-chip{padding:5px 10px;font-size:11px;font-weight:600;border:1px solid #d0d3dc;border-radius:6px;background:#fff;color:#777;cursor:pointer;white-space:nowrap;flex-shrink:0}
+  .sort-chip.active{background:#e8eaf6;color:#5b63d3;border-color:#5b63d3}
+  .sort-chip.active.desc::after{content:" \25BC";font-size:9px}
+  .sort-chip.active.asc::after{content:" \25B2";font-size:9px}
+  .vcard{background:#fff;border-radius:10px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden;border-left:4px solid transparent}
+  .vcard.tier-super{border-left-color:#f59e0b;background:#fffdf5}
+  .vcard.tier-viral{border-left-color:#22c55e;background:#f7fdf9}
+  .vcard.tier-poor{border-left-color:#ef4444;background:#fefafa}
+  .vcard-top{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 12px 6px}
+  .vcard-rank{font-size:13px;font-weight:800;color:#bbb;min-width:28px}
+  .vcard.tier-super .vcard-rank{color:#b45309}
+  .vcard.tier-viral .vcard-rank{color:#15803d}
+  .vcard.tier-poor .vcard-rank{color:#dc2626}
+  .vcard-author{font-weight:700;font-size:14px;color:#2d2f6e;flex:1}
+  .vcard-watch{display:flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;color:#fff;background:#5b63d3;flex-shrink:0}
+  .vcard-watch.plat-TT{background:#0a9e96}
+  .vcard-watch.plat-IG{background:#c62858}
+  .vcard-watch.plat-YT{background:#d32f2f}
+  .vcard-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#eef0f4;margin:0}
+  .vcard-m{background:#fff;padding:7px 10px;text-align:center}
+  .vcard-m .ml{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:2px}
+  .vcard-m .mv{font-size:14px;font-weight:700;color:#1a1a2e}
+  .vcard-m .mv.hot{color:#d97706}
+  .vcard-meta{padding:6px 12px 8px;font-size:11px;color:#888;line-height:1.5}
+  .vcard-meta .vmdate{color:#555}
+  .vcard-text{padding:0 12px 10px;font-size:12px;color:#555;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .vcard-text.expanded{-webkit-line-clamp:unset;display:block}
+  .vcard-tier{display:inline-block;margin-left:6px}
+}
+</style>
+</head>
+<body>
+<!-- ── Dashboard Navigation ── -->
+<nav style="display:flex;align-items:center;gap:6px;padding:8px 32px;background:#1a1a2e;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-right:6px;letter-spacing:.5px;text-transform:uppercase;">Dashboards</span>
+  <a href="1 Dr Abby Trending.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(91,99,211,.25);color:#a5b4fc;border:1px solid rgba(91,99,211,.4);">Trending</a>
+  <a href="2 Dr Abby Growth Dashboard.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Growth</a>
+  <a href="3 Dr Abby Projects.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Projects</a>
+</nav>
+<div class="header" style="flex-direction:column;gap:8px">
+  <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <div>
+      <h1><span>Dr Abby</span> Trending Analysis</h1>
+      <div class="extract-date" id="extractDate"></div>
+    </div>
+    <div style="font-size:11px;color:#888;text-align:right;white-space:nowrap">Last refreshed<br><strong>__BUILD_TIMESTAMP__</strong></div>
+  </div>
+  <div class="controls" style="width:100%">
+    <div class="toggle-group">
+      <button class="toggle-btn active-all" data-plat="ALL" onclick="setFilter(this)">ALL</button>
+      <button class="toggle-btn" data-plat="TT" onclick="setFilter(this)">TT</button>
+      <button class="toggle-btn" data-plat="IG" onclick="setFilter(this)">IG</button>
+      <button class="toggle-btn" data-plat="YT" onclick="setFilter(this)">YT</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="abby-header" id="abbyHeader"></div>
+<div class="stats" id="statsBar"></div>
+<div class="search-box"><div class="author-toggle"><button class="active" onclick="setAuthorFilter('all')">All</button><button onclick="setAuthorFilter('abby')">Dr. Abby</button></div><input type="text" id="searchInput" placeholder="Search by author, text, music..." oninput="renderTable()"></div>
+<div class="sort-row" id="sortRow">
+  <span style="font-size:11px;color:#888;font-weight:600;flex-shrink:0">Sort:</span>
+  <span class="sort-chip active desc" data-sk="viewsHr" onclick="mobileSort(this)">Views/hr</span>
+  <span class="sort-chip" data-sk="views" onclick="mobileSort(this)">Views</span>
+  <span class="sort-chip" data-sk="engagement" onclick="mobileSort(this)">Eng%</span>
+  <span class="sort-chip" data-sk="likes" onclick="mobileSort(this)">Likes</span>
+  <span class="sort-chip" data-sk="postDate" onclick="mobileSort(this)">Date</span>
+</div>
+<div class="card-list" id="cardList"></div>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th style="width:36px;text-align:center">#</th>
+<th data-key="postDate">Post Date</th>
+<th data-key="platform" style="width:40px">Plat</th>
+<th data-key="author">Author</th>
+<th data-key="len" class="num">Len (s)</th>
+<th data-key="music">Music</th>
+<th data-key="viewsHr" class="num">Views/hr</th>
+<th data-key="views" class="num">Views</th>
+<th data-key="likes" class="num">Likes</th>
+<th data-key="shares" class="num">Shares</th>
+<th data-key="comments" class="num">Comments</th>
+<th data-key="engagement" class="num">Eng %</th>
+<th data-key="text">Text</th>
+</tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<script>
+let DATA = __DATA_PLACEHOLDER__;
+let currentPlatform = 'ALL';
+let abbyOnly = false;
+let sortKey = 'viewsHr';
+let sortDir = -1;
+
+document.getElementById('extractDate').textContent = 'Extract: ' + DATA.extractDate;
+
+// ═══════════════════════════════════════════════════════
+//  FORMATTING & UI
+// ═══════════════════════════════════════════════════════
+function fmt(n) {
+  if (n === null || n === undefined || isNaN(n)) return '-';
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'K';
+  return n.toLocaleString();
+}
+function esc(s) { return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+function engClass(e) { return e >= 5 ? 'engagement-high' : e >= 2 ? 'engagement-med' : 'engagement-low'; }
+function getTier(vhr) {
+  if (vhr >= 10000) return { cls:'tier-super', badge:'<span class="tier-badge super">SUPER VIRAL</span>' };
+  if (vhr >= 1000)  return { cls:'tier-viral', badge:'<span class="tier-badge viral">VIRAL</span>' };
+  if (vhr >= 100)   return { cls:'tier-avg',   badge:'' };
+  return { cls:'tier-poor', badge:'<span class="tier-badge poor">POOR</span>' };
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => t.className = 'toast', 3000);
+}
+
+// ═══════════════════════════════════════════════════════
+//  PLATFORM FILTER
+// ═══════════════════════════════════════════════════════
+function setFilter(btn) {
+  document.querySelectorAll('.toggle-btn').forEach(b => b.className = 'toggle-btn');
+  const p = btn.dataset.plat;
+  currentPlatform = p;
+  const cls = p === 'ALL' ? 'active-all' : p === 'TT' ? 'active-tt' : p === 'IG' ? 'active-ig' : 'active-yt';
+  btn.classList.add(cls);
+  renderTable();
+}
+
+// ═══════════════════════════════════════════════════════
+//  COLUMN SORTING
+// ═══════════════════════════════════════════════════════
+document.querySelectorAll('th[data-key]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (sortKey === key) sortDir *= -1;
+    else { sortKey = key; sortDir = -1; }
+    renderTable();
+  });
+});
+
+// ═══════════════════════════════════════════════════════
+//  TABLE RENDERING
+// ═══════════════════════════════════════════════════════
+function setAuthorFilter(mode) {
+  abbyOnly = (mode === 'abby');
+  document.querySelectorAll('.author-toggle button').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+  renderTable();
+}
+
+function getFiltered() {
+  // Base list: platform-filtered, sorted by views/hr desc — this defines the rank
+  let base = DATA.videos;
+  if (currentPlatform !== 'ALL') base = base.filter(v => v.platform === currentPlatform);
+  base.sort((a,b) => (b.viewsHr||0) - (a.viewsHr||0));
+  base.forEach((v,i) => { v._rank = i + 1; });
+
+  // Apply author and search filters (rank stays from base list)
+  let vids = base;
+  if (abbyOnly) vids = vids.filter(v => v.isAbby);
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  if (q) vids = vids.filter(v => (v.author+' '+v.text+' '+v.music).toLowerCase().includes(q));
+  vids.sort((a,b) => {
+    const sk = sortKey === 'postDate' ? 'postDateRaw' : sortKey;
+    let va = a[sk], vb = b[sk];
+    if (typeof va === 'string') return sortDir * va.localeCompare(vb);
+    return sortDir * ((va||0) - (vb||0));
+  });
+  return vids;
+}
+
+function tierDelta(currentPct, baselinePct) {
+  if (baselinePct === null || baselinePct === undefined) return '';
+  const diff = currentPct - baselinePct;
+  if (Math.abs(diff) < 0.5) return '<span class="tier-delta flat">~</span>';
+  const arrow = diff > 0 ? '\u25B2' : '\u25BC';
+  // For SV/Viral: higher is good. For Poor: lower is good.
+  return '<span class="tier-delta">' + arrow + Math.abs(diff).toFixed(0) + '%</span>';
+}
+
+function tierDeltaColored(currentPct, baselinePct, higherIsGood) {
+  if (baselinePct === null || baselinePct === undefined) return '';
+  const diff = currentPct - baselinePct;
+  if (Math.abs(diff) < 0.5) return '<span class="tier-delta flat">~</span>';
+  const arrow = diff > 0 ? '\u25B2' : '\u25BC';
+  let cls;
+  if (diff > 0) cls = higherIsGood ? 'up' : 'down';
+  else cls = higherIsGood ? 'down' : 'up';
+  return '<span class="tier-delta '+cls+'">' + arrow + ' ' + Math.abs(diff).toFixed(0) + '%</span>';
+}
+
+function fmtCompact(n) {
+  if (n >= 1000000) return '~' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '~' + (n/1000).toFixed(0) + 'K';
+  return n.toLocaleString();
+}
+function fmtFollowers(n) { return n.toLocaleString(); }
+
+function compareHtml(current, baseline, formatFn, higherIsGood) {
+  if (baseline === null || baseline === undefined) return '';
+  const diff = current - baseline;
+  const pctChange = Math.round(Math.abs(diff) / Math.max(Math.abs(baseline), 1) * 100);
+  let arrow, cls;
+  if (pctChange < 2) { arrow = '~'; cls = 'flat'; }
+  else if (diff > 0) { arrow = '\u25B2'; cls = higherIsGood ? 'up' : 'down'; }
+  else { arrow = '\u25BC'; cls = higherIsGood ? 'down' : 'up'; }
+  if (cls === 'flat') return '<div class="compare flat">~ vs 6mo avg</div>';
+  return '<div class="compare '+cls+'">'+arrow+' '+formatFn(Math.abs(diff))+' ('+pctChange+'%) vs 6mo avg</div>';
+}
+
+function renderStats() {
+  const platKey = currentPlatform === 'ALL' ? 'ALL' : currentPlatform;
+  const snap = DATA.abbySnapshot ? DATA.abbySnapshot[platKey] : null;
+  const base = DATA.abbyBaselines ? DATA.abbyBaselines[platKey] : null;
+  const hdr = document.getElementById('abbyHeader');
+  const bar = document.getElementById('statsBar');
+
+  if (!snap) {
+    hdr.textContent = '';
+    bar.innerHTML = '<div class="no-abby" style="padding:8px 0">No Dr. Abby videos' +
+      (platKey !== 'ALL' ? ' on ' + platKey : '') + ' in this snapshot</div>';
+    return;
+  }
+
+  const platLabel = platKey === 'ALL' ? 'All Platforms' : platKey;
+  hdr.textContent = 'Dr. Abby \u2014 ' + platLabel;
+
+  // Card 1: Tier Breakdown — Label  Count  (TT/IG/YT) or delta
+  function tierRow(label, cls, count, currentPct, baselinePct, higherIsGood, platArr) {
+    let middle = '';
+    if (platKey === 'ALL' && platArr) {
+      middle = '<span class="tier-plat">'+platArr[0]+'/'+platArr[1]+'/'+platArr[2]+'</span>';
+    }
+    let deltaStr = '';
+    if (baselinePct !== null && baselinePct !== undefined) {
+      const diff = Math.round(currentPct) - Math.round(baselinePct);
+      if (Math.abs(diff) < 1) { deltaStr = '<span class="tier-delta flat">(~)</span>'; }
+      else {
+        const arrow = diff > 0 ? '\u25B2' : '\u25BC';
+        const cls2 = (diff > 0) === higherIsGood ? 'up' : 'down';
+        const sign = diff > 0 ? '+' : '';
+        deltaStr = '<span class="tier-delta '+cls2+'">(' + arrow + ' ' + sign + diff + '%)</span>';
+      }
+    }
+    return '<div class="tier-row">' +
+      '<span class="tier-label '+cls+'">'+label+'</span>' +
+      '<span class="tier-count">'+count+'</span>' +
+      middle +
+      deltaStr +
+      '</div>';
+  }
+  let rows = '';
+  if (platKey === 'ALL') {
+    rows += '<div class="tier-header"><span class="th-spacer1"></span><span class="th-spacer2"></span><span class="th-plat">TT/IG/YT</span></div>';
+  }
+  rows += tierRow('SV', 'sv', snap.sv, snap.svPct, base ? base.avgSvPct : null, true, snap.svPlat);
+  rows += tierRow('Viral', 'viral', snap.viral, snap.viralPct, base ? base.avgViralPct : null, true, snap.viralPlat);
+  rows += tierRow('Avg', 'normal', snap.normal, snap.normalPct, base ? base.avgNormalPct : null, false, snap.normalPlat);
+  rows += tierRow('Poor', 'poor', snap.poor, snap.poorPct, base ? base.avgPoorPct : null, false, snap.poorPlat);
+  const card1 = '<div class="stat-card">' +
+    '<div class="label">Videos ('+snap.total+')</div>' +
+    '<div class="tier-rows">'+rows+'</div>' +
+    '</div>';
+
+  // Card 2: Total Reach — with platform breakdown when ALL
+  const reachCmp = compareHtml(snap.totalViews, base ? base.avgTotalViews : null, fmtCompact, true);
+  let reachBreakdown = '';
+  if (platKey === 'ALL' && DATA.abbySnapshot && DATA.abbyBaselines) {
+    const lines = [];
+    ['TT','IG','YT'].forEach(function(p) {
+      const ps = DATA.abbySnapshot[p];
+      const pb = DATA.abbyBaselines[p];
+      if (ps && ps.totalViews) {
+        let delta = '';
+        if (pb && pb.avgTotalViews) {
+          const diff = ps.totalViews - pb.avgTotalViews;
+          const pctChg = Math.round(Math.abs(diff) / pb.avgTotalViews * 100);
+          if (pctChg < 2) { delta = ' <span class="flat">~</span>'; }
+          else if (diff > 0) { delta = ' <span class="up">\u25B2 '+pctChg+'%</span>'; }
+          else { delta = ' <span class="down">\u25BC '+pctChg+'%</span>'; }
+        }
+        lines.push('<div class="reach-plat">'+p+' '+fmtCompact(ps.totalViews)+delta+'</div>');
+      }
+    });
+    if (lines.length) reachBreakdown = '<div class="reach-breakdown">' + lines.join('') + '</div>';
+  }
+  const card2 = '<div class="stat-card">' +
+    '<div class="label">Total Reach</div>' +
+    '<div class="value">'+fmtCompact(snap.totalViews)+'</div>' +
+    reachBreakdown +
+    reachCmp +
+    '</div>';
+
+  // Card 3: Videos in top 10%
+  const ranks = snap.ranks || [];
+  const total = snap.totalInRanking;
+  const cutoff = Math.ceil(total * 0.1);
+  const topRanks = ranks.filter(function(r) { return r.rank <= cutoff; });
+  let rankDisplay = '';
+  if (topRanks.length) {
+    const chips = topRanks.map(function(r) {
+      const platTag = platKey === 'ALL' ? '<span class="rank-plat">'+r.plat+'</span>' : '';
+      return '<span class="rank-chip">#'+r.rank+platTag+'</span>';
+    }).join(' ');
+    rankDisplay = '<div class="rank-chips">'+chips+'</div>' +
+      '<div class="sub">of '+total+' ranked videos</div>';
+  } else {
+    rankDisplay = '<div class="sub">None in top '+cutoff+'</div>';
+  }
+  const card3 = '<div class="stat-card">' +
+    '<div class="label">Videos in Top 10%</div>' +
+    '<div class="value">'+topRanks.length+'</div>' +
+    rankDisplay +
+    '</div>';
+
+  // Card 4: Follower Growth
+  let card4 = '';
+  const fg = DATA.followerGrowth;
+  if (fg) {
+    const gKey = platKey === 'ALL' ? 'ALL' : platKey;
+    const g = fg[gKey];
+    if (g && g.weekly2wk !== undefined) {
+      const weekly = g.weekly2wk;
+      const weeklyFmt = (weekly >= 0 ? '+' : '') + fmtFollowers(Math.abs(weekly));
+      // Compare 2wk rate to 6mo rate using raw (unrounded) values
+      let growthCmp = '';
+      const raw2 = g.weekly2wkRaw !== undefined ? g.weekly2wkRaw : weekly;
+      const raw6 = g.weekly6moRaw !== undefined ? g.weekly6moRaw : g.weekly6mo;
+      if (raw6 !== undefined && raw6 !== 0) {
+        const pctChg = Math.round((raw2 - raw6) / Math.abs(raw6) * 100);
+        if (Math.abs(pctChg) < 2) { growthCmp = '<div class="compare flat">~ vs 6mo avg</div>'; }
+        else {
+          const arrow = pctChg > 0 ? '\u25B2' : '\u25BC';
+          const cls = pctChg > 0 ? 'up' : 'down';
+          const sign = pctChg > 0 ? '+' : '';
+          growthCmp = '<div class="compare '+cls+'">'+arrow+' '+sign+pctChg+'% vs 6mo avg</div>';
+        }
+      }
+      // Platform breakdown when ALL
+      let growthBreak = '';
+      if (platKey === 'ALL') {
+        const lines = [];
+        ['TT','IG','YT'].forEach(function(p) {
+          const pg = fg[p];
+          if (pg && pg.weekly2wk !== undefined) {
+            const w = pg.weekly2wk;
+            const wFmt = (w >= 0 ? '+' : '') + fmtFollowers(Math.abs(w));
+            let delta = '';
+            const pr2 = pg.weekly2wkRaw !== undefined ? pg.weekly2wkRaw : w;
+            const pr6 = pg.weekly6moRaw !== undefined ? pg.weekly6moRaw : pg.weekly6mo;
+            if (pr6 !== undefined && pr6 !== 0) {
+              const pc = Math.round((pr2 - pr6) / Math.abs(pr6) * 100);
+              if (Math.abs(pc) < 2) { delta = ' <span class="flat">~</span>'; }
+              else if (pc > 0) { delta = ' <span class="up">\u25B2 +'+pc+'%</span>'; }
+              else { delta = ' <span class="down">\u25BC '+pc+'%</span>'; }
+            }
+            lines.push('<div class="growth-plat">'+p+' '+wFmt+'/wk'+delta+'</div>');
+          }
+        });
+        if (lines.length) growthBreak = '<div class="growth-breakdown">' + lines.join('') + '</div>';
+      }
+      card4 = '<div class="stat-card">' +
+        '<div class="label">Followers '+fmtFollowers(g.followers)+'</div>' +
+        '<div class="value">'+weeklyFmt+'/wk</div>' +
+        growthBreak +
+        growthCmp +
+        '</div>';
+    }
+  }
+
+  bar.innerHTML = card1 + card2 + card3 + card4;
+}
+
+function renderTable() {
+  const vids = getFiltered();
+  renderStats();
+  renderCards(vids);
+  document.querySelectorAll('th[data-key]').forEach(th => {
+    th.classList.remove('sorted-asc','sorted-desc');
+    if (th.dataset.key === sortKey) th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+  });
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = vids.map((v,i) => {
+    const tier = getTier(v.viewsHr);
+    const urlLink = v.url ? '<a class="url-link" href="'+esc(v.url)+'" target="_blank">link</a>' : '';
+    const sharesDisplay = v.sharesNull ? '-' : fmt(v.shares);
+    const textClean = esc(v.text).replace(/\n/g,' ');
+    return '<tr class="'+tier.cls+'">' +
+      '<td class="rank-cell">'+v._rank+'</td>' +
+      '<td style="white-space:nowrap">'+esc(v.postDate)+'</td>' +
+      '<td><span class="platform-badge badge-'+v.platform+'">'+v.platform+'</span></td>' +
+      '<td class="author-cell">'+esc(v.author)+' '+urlLink+'</td>' +
+      '<td class="num">'+(v.len||'-')+'</td>' +
+      '<td class="music-cell" title="'+esc(v.music)+'">'+esc(v.music)+'</td>' +
+      '<td class="num">'+fmt(v.viewsHr)+tier.badge+'</td>' +
+      '<td class="num">'+fmt(v.views)+'</td>' +
+      '<td class="num">'+fmt(v.likes)+'</td>' +
+      '<td class="num">'+sharesDisplay+'</td>' +
+      '<td class="num">'+fmt(v.comments)+'</td>' +
+      '<td class="num '+engClass(v.engagement)+'">'+v.engagement+'%</td>' +
+      '<td class="text-cell" title="'+textClean+'">'+textClean+'</td>' +
+    '</tr>';
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  MOBILE SORT + CARD RENDERING
+// ═══════════════════════════════════════════════════════
+function mobileSort(chip) {
+  const sk = chip.dataset.sk;
+  if (sortKey === sk) sortDir *= -1;
+  else { sortKey = sk; sortDir = -1; }
+  document.querySelectorAll('.sort-chip').forEach(c => c.className = 'sort-chip');
+  chip.classList.add('active', sortDir === -1 ? 'desc' : 'asc');
+  renderTable();
+}
+
+function renderCards(vids) {
+  const cl = document.getElementById('cardList');
+  if (!cl) return;
+  cl.innerHTML = vids.map((v,i) => {
+    const tier = getTier(v.viewsHr);
+    const sharesDisplay = v.sharesNull ? '-' : fmt(v.shares);
+    const platCls = 'plat-' + v.platform;
+    const watchLabel = v.platform === 'TT' ? 'TikTok' : v.platform === 'IG' ? 'Instagram' : 'YouTube';
+    const watchBtn = v.url ? '<a class="vcard-watch '+platCls+'" href="'+esc(v.url)+'" target="_blank">&#9654; '+watchLabel+'</a>' : '';
+    const textClean = esc(v.text).replace(/\n/g,' ');
+    return '<div class="vcard '+tier.cls+'">' +
+      '<div class="vcard-top">' +
+        '<span class="vcard-rank">#'+v._rank+'</span>' +
+        '<span class="vcard-author">'+esc(v.author)+'<span class="vcard-tier">'+tier.badge+'</span></span>' +
+        watchBtn +
+      '</div>' +
+      '<div class="vcard-metrics">' +
+        '<div class="vcard-m"><div class="ml">Views/hr</div><div class="mv'+(v.viewsHr>=1000?' hot':'')+'">'+fmt(v.viewsHr)+'</div></div>' +
+        '<div class="vcard-m"><div class="ml">Views</div><div class="mv">'+fmt(v.views)+'</div></div>' +
+        '<div class="vcard-m"><div class="ml">Eng%</div><div class="mv '+engClass(v.engagement)+'">'+v.engagement+'%</div></div>' +
+        '<div class="vcard-m"><div class="ml">Likes</div><div class="mv">'+fmt(v.likes)+'</div></div>' +
+        '<div class="vcard-m"><div class="ml">Comments</div><div class="mv">'+fmt(v.comments)+'</div></div>' +
+        '<div class="vcard-m"><div class="ml">Shares</div><div class="mv">'+sharesDisplay+'</div></div>' +
+      '</div>' +
+      '<div class="vcard-meta"><span class="vmdate">'+esc(v.postDate)+'</span> &middot; '+v.len+'s' + (v.music ? ' &middot; '+esc(v.music) : '') + '</div>' +
+      (textClean ? '<div class="vcard-text" onclick="this.classList.toggle(\x27expanded\x27)">'+textClean+'</div>' : '') +
+    '</div>';
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  INDEXEDDB — persist file handle across page loads
+// ═══════════════════════════════════════════════════════
+function openDB() {
+  return new Promise((res,rej) => {
+    const req = indexedDB.open('CompetitorDashboardDB', 1);
+    req.onupgradeneeded = e => e.target.result.createObjectStore('store');
+    req.onsuccess = e => res(e.target.result);
+    req.onerror = rej;
+  });
+}
+async function storeHandle(handle) {
+  try {
+    const db = await openDB();
+    await new Promise((res,rej) => {
+      const tx = db.transaction('store','readwrite');
+      tx.objectStore('store').put(handle, 'fileHandle');
+      tx.oncomplete = res; tx.onerror = rej;
+    });
+  } catch(e) {}
+}
+async function getStoredHandle() {
+  try {
+    const db = await openDB();
+    return await new Promise((res,rej) => {
+      const tx = db.transaction('store','readonly');
+      const req = tx.objectStore('store').get('fileHandle');
+      req.onsuccess = () => res(req.result || null);
+      req.onerror = rej;
+    });
+  } catch(e) { return null; }
+}
+
+// ═══════════════════════════════════════════════════════
+//  EXCEL PARSING (retained for reference/future use)
+// ═══════════════════════════════════════════════════════
+function normDur(v) {
+  if (v == null || v === '') return 0;
+  const s = String(v);
+  if (s.includes(':')) {
+    const p = s.split(':');
+    return parseInt(p[0])*3600 + parseInt(p[1])*60 + parseInt(p[2]);
+  }
+  const n = parseFloat(s);
+  return isNaN(n) ? 0 : Math.round(n);
+}
+
+function toDate(val) {
+  if (!val) return null;
+  if (val instanceof Date) return val;
+  if (typeof val === 'number') return new Date(Math.round((val - 25569) * 86400000));
+  const d = new Date(String(val));
+  return isNaN(d) ? null : d;
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  let h = d.getHours();
+  const ampm = h >= 12 ? 'pm' : 'am';
+  h = h % 12 || 12;
+  const min = String(d.getMinutes()).padStart(2, '0');
+  const yr = String(d.getFullYear()).slice(-2);
+  return (d.getMonth()+1) + '/' + d.getDate() + '/' + yr + ', ' + h + ':' + min + ampm;
+}
+
+function processRows(rows) {
+  const platMap = { TikTok:'TT', Instagram:'IG', YouTube:'YT' };
+  const get = (row, ...keys) => {
+    for (const k of keys) {
+      const found = Object.keys(row).find(rk => rk.trim().toLowerCase() === k.toLowerCase());
+      if (found !== undefined && row[found] !== '' && row[found] != null) return row[found];
+    }
+    return null;
+  };
+
+  // Parse all rows
+  const all = rows.map(row => {
+    const extractDate = toDate(get(row, 'Extract Date'));
+    const createTime  = toDate(get(row, 'CreateTime'));
+    return {
+      extractDate,
+      extractDateStr: extractDate ? extractDate.toISOString().slice(0,10) : '',
+      createTime,
+      platform: get(row, 'Platform') || '',
+      author:   get(row, 'Author') || '',
+      duration: normDur(get(row, 'Duration (s)')),
+      music:    get(row, 'Music') || '',
+      views:    Number(get(row, 'Views')) || 0,
+      likes:    Number(get(row, 'Likes')) || 0,
+      comments: Number(get(row, 'Comments')) || 0,
+      shares:   get(row, 'Shares'),
+      url:      get(row, 'URL') || '',
+      vidId:    get(row, 'VidID'),
+      title:    get(row, 'Title'),
+      text:     get(row, 'Text') || '',
+    };
+  });
+
+  // Filter: max extract date (date only)
+  const maxDate = all.reduce((m, r) => r.extractDateStr > m ? r.extractDateStr : m, '');
+  let filtered = all.filter(r => r.extractDateStr === maxDate && r.vidId != null);
+
+  // Dedup: for each VidID keep row with max Views
+  const byVid = {};
+  for (const r of filtered) {
+    const vid = String(r.vidId);
+    if (!byVid[vid] || r.views > byVid[vid].views) byVid[vid] = r;
+  }
+  filtered = Object.values(byVid);
+
+  // Build output records
+  const records = filtered.map(r => {
+    const postDate = r.createTime ? new Date(r.createTime.getTime() - 4*3600000) : null;
+    const hrsDiff  = (postDate && r.extractDate) ? (r.extractDate - postDate) / 3600000 : 0;
+    const viewsHr  = hrsDiff > 0 ? Math.round(r.views / hrsDiff * 10) / 10 : 0;
+
+    const sharesNull = r.shares == null || r.shares === '';
+    const sharesNum  = sharesNull ? 0 : Number(r.shares);
+    const l = r.likes || 0, c = r.comments || 0;
+    let eng = 0;
+    if (r.views > 0) {
+      eng = sharesNull ? (c + l) / r.views * 100 : (c + l + sharesNum) / r.views * 100;
+    }
+    eng = Math.round(eng * 100) / 100;
+
+    let displayText = r.text || '';
+    if (r.title != null && r.title !== '') {
+      displayText = displayText ? String(r.title) + '; ' + String(displayText) : String(r.title);
+    }
+    if (displayText.length > 300) displayText = displayText.slice(0, 300);
+
+    return {
+      postDate: fmtDate(postDate),
+      author: r.author,
+      len: r.duration,
+      music: r.music,
+      viewsHr, views: r.views,
+      likes: r.likes, shares: sharesNull ? -1 : sharesNum,
+      comments: r.comments, engagement: eng,
+      text: displayText,
+      platform: platMap[r.platform] || r.platform,
+      url: r.url,
+      sharesNull
+    };
+  });
+
+  records.sort((a,b) => b.viewsHr - a.viewsHr);
+  return { extractDate: maxDate, videos: records };
+}
+
+renderTable();
+</script>
+</body>
+</html>

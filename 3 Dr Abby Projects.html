@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dr Abby Projects</title>
+<!-- SheetJS: reads .xlsx files directly in the browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f6fa;
+    color: #2d2d2d;
+    padding: 28px 32px 48px;
+  }
+
+  /* ── Page header ── */
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+  }
+
+  .page-header-left h1  { font-size: 20px; font-weight: 600; color: #1a1a2e; margin-bottom: 3px; }
+  .page-header-left h1 span { color: #5b63d3; font-weight: 700; }
+  .page-header-left p   { font-size: 13px; color: #7a7a8c; }
+
+  /* ── Load button ── */
+  .load-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.35);
+  }
+  .load-btn:hover  { background: #4f51d8; box-shadow: 0 3px 12px rgba(99,102,241,0.45); }
+  .load-btn:active { background: #4244c0; }
+  .load-btn.loading { background: #9597e8; cursor: wait; }
+  .load-btn.ok      { background: #10b981; box-shadow: 0 2px 8px rgba(16,185,129,0.35); }
+  .load-btn.error   { background: #ef4444; box-shadow: 0 2px 8px rgba(239,68,68,0.35); }
+
+  .load-btn-sub {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.85;
+    display: block;
+    margin-top: 1px;
+  }
+
+  /* Hidden file input fallback */
+  #fileInput { display: none; }
+
+  /* ── Data source banner (shown when using fallback/built-in data) ── */
+  .data-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-size: 12px;
+    color: #92400e;
+    margin-bottom: 14px;
+  }
+  .data-banner.hidden { display: none; }
+  .data-banner-icon { font-size: 16px; flex-shrink: 0; }
+
+  /* ── Filter row (holds offer-range + toggle side by side) ── */
+  .filter-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Filter card ── */
+  .filter-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    padding: 14px 18px 15px;
+    width: 430px;
+  }
+
+  /* ── Deal toggle card ── */
+  .toggle-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    padding: 14px 16px 15px;
+    flex-shrink: 0;
+  }
+  .toggle-heading {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 9px;
+  }
+  .toggle-group {
+    display: flex;
+    background: #f0f1f8;
+    border-radius: 7px;
+    padding: 3px;
+    gap: 3px;
+  }
+  .toggle-btn {
+    padding: 5px 15px;
+    border: none; border-radius: 5px;
+    font-size: 12px; font-weight: 600;
+    color: #7a7a92; background: transparent;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .toggle-btn.on {
+    background: #fff;
+    color: #1a1a2e;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  }
+  .toggle-btn.on.active-mode { color: #10b981; }
+
+  /* ── Brand search card ── */
+  .search-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    padding: 14px 16px 15px;
+    flex-shrink: 0;
+    min-width: 172px;
+  }
+  .brand-search-wrap { position: relative; }
+  .brand-input {
+    width: 100%;
+    border: 1.5px solid #e4e5f0;
+    border-radius: 7px;
+    padding: 5px 26px 5px 9px;
+    font-size: 12px; font-weight: 500; color: #1a1a2e;
+    outline: none; background: #f7f7fc;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: inherit;
+  }
+  .brand-input:focus { border-color: #6366f1; background: #fff; }
+  .brand-input.has-value { border-color: #6366f1; background: #eeeffd; }
+  .brand-clear {
+    position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; cursor: pointer; color: #9090a8;
+    font-size: 15px; line-height: 1; padding: 0; display: none;
+  }
+  .brand-clear.visible { display: block; }
+  .brand-clear:hover { color: #ef4444; }
+  .brand-dropdown {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: #fff; border: 1.5px solid #e4e5f0; border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.11); z-index: 200;
+    max-height: 186px; overflow-y: auto; display: none;
+  }
+  .brand-dropdown.open { display: block; }
+  .brand-option {
+    padding: 7px 10px; font-size: 12px; cursor: pointer;
+    display: flex; align-items: center; gap: 7px;
+    color: #1a1a2e; transition: background 0.1s;
+  }
+  .brand-option:hover, .brand-option.hi { background: #f0f1f8; }
+  .brand-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .filter-heading {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 9px;
+  }
+  .range-labels { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; }
+  .range-badge {
+    background: #6366f1; color: #fff; border-radius: 5px;
+    padding: 3px 10px; font-size: 12px; font-weight: 700; min-width: 46px; text-align: center;
+  }
+  .range-arrow { color: #c0c0d8; font-size: 13px; }
+  .range-count { margin-left: auto; font-size: 10.5px; color: #9090a8; font-weight: 600; }
+
+  .slider-wrapper {
+    position: relative; height: 28px; display: flex;
+    align-items: center; margin: 0 1px;
+  }
+  .slider-track-bg {
+    position: absolute; left: 0; right: 0; height: 5px;
+    background: #e4e5f0; border-radius: 3px; pointer-events: none;
+  }
+  .slider-track-fill {
+    position: absolute; height: 5px; background: #6366f1;
+    border-radius: 3px; pointer-events: none;
+  }
+  .slider-wrapper input[type=range] {
+    position: absolute; width: 100%; height: 5px; background: transparent;
+    -webkit-appearance: none; appearance: none; pointer-events: none; outline: none;
+  }
+  .slider-wrapper input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+    background: #6366f1; border: 2.5px solid #fff;
+    box-shadow: 0 1px 5px rgba(99,102,241,0.4);
+    cursor: pointer; pointer-events: auto; transition: transform 0.1s;
+  }
+  .slider-wrapper input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+  .slider-wrapper input[type=range]::-moz-range-thumb {
+    width: 16px; height: 16px; border-radius: 50%; background: #6366f1;
+    border: 2.5px solid #fff; cursor: pointer; pointer-events: auto;
+  }
+  .slider-ticks { display: flex; justify-content: space-between; margin-top: 3px; padding: 0 1px; }
+  .slider-tick {
+    font-size: 9px; color: #c0c0d8; text-align: center; flex: 1;
+    user-select: none; transition: color 0.1s, font-weight 0.1s;
+  }
+  .slider-tick.active-tick { color: #6366f1; font-weight: 700; }
+
+  /* ── Summary strip ── */
+  .summary {
+    display: flex; background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 14px;
+  }
+  .summary-item {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 12px 8px; border-right: 1px solid #f0f1f8;
+    font-size: 10.5px; color: #7a7a92; text-align: center; line-height: 1.3;
+  }
+  .summary-item:last-child { border-right: none; }
+  .summary-item strong { font-size: 15px; font-weight: 700; color: #1a1a2e; display: block; margin-bottom: 2px; }
+  .summary-item.active-stat strong { color: #10b981; }
+
+  /* ── Fee chart card ── */
+  .fee-chart-card {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    padding: 16px 20px 14px; margin-bottom: 14px;
+  }
+  .fee-chart-heading {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 10px;
+  }
+  #feeChartSvg { display: block; overflow: visible; max-width: 100%; }
+
+  /* ── Gantt card ── */
+  .chart-wrapper {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    padding: 20px 22px 22px;
+  }
+  .gantt-container { width: 100%; }
+  .gantt-header {
+    display: flex; align-items: flex-end;
+    margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #e8e9f0;
+  }
+  .label-col {
+    width: 205px; flex-shrink: 0; font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.07em; padding-right: 12px;
+  }
+  .timeline-col { flex: 1; position: relative; }
+  .month-label { font-size: 10px; font-weight: 600; color: #8a8aa0; text-transform: uppercase; position: absolute; }
+  .gantt-grid { position: absolute; top: 0; bottom: 0; border-left: 1px dashed #ebebf5; z-index: 0; }
+  .gantt-row { display: flex; align-items: center; min-height: 33px; margin-bottom: 3px; }
+  .gantt-row:hover .row-company { color: #6366f1; }
+  .row-label { width: 205px; flex-shrink: 0; padding-right: 12px; }
+  .row-company {
+    font-size: 12px; font-weight: 600; color: #1a1a2e; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; transition: color 0.12s;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .active-dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: #10b981; flex-shrink: 0; box-shadow: 0 0 0 2px rgba(16,185,129,0.22);
+  }
+  .row-product { font-size: 10px; color: #9090a8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+  .row-timeline { flex: 1; position: relative; height: 33px; }
+  .gantt-bar {
+    position: absolute; height: 20px; top: 50%; transform: translateY(-50%);
+    border-radius: 4px; display: flex; align-items: center; padding: 0 6px;
+    font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.95);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    cursor: pointer; transition: filter 0.13s, transform 0.13s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.11); z-index: 5;
+  }
+  .gantt-bar:hover { filter: brightness(1.1); transform: translateY(-50%) scaleY(1.14); z-index: 20; box-shadow: 0 3px 10px rgba(0,0,0,0.18); }
+  .gantt-dot {
+    position: absolute; width: 10px; height: 10px; border-radius: 50%;
+    top: 50%; transform: translate(-50%,-50%); cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18); z-index: 5;
+  }
+  .today-line { position: absolute; top: 0; bottom: 0; width: 2px; background: #ff4d6d; z-index: 15; pointer-events: none; }
+  .today-label {
+    position: absolute; top: -17px; transform: translateX(-50%);
+    font-size: 9px; font-weight: 700; color: #ff4d6d; background: #fff; padding: 0 3px;
+  }
+  .gantt-divider { height: 1px; background: #f2f3fa; margin: 1px 0 1px 205px; }
+  #no-results { display: none; padding: 34px; text-align: center; color: #9090a8; font-size: 14px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; padding-top: 13px; border-top: 1px solid #f0f1f8; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: #5a5a72; }
+  .legend-swatch { width: 13px; height: 7px; border-radius: 2px; }
+
+  /* ── Live-date chart card ── */
+  .live-chart-card {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    padding: 16px 20px 14px; margin-bottom: 14px;
+  }
+  .live-chart-heading {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em;
+  }
+  .live-chart-header {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+  }
+  #liveChartSvg { display: block; overflow: visible; max-width: 100%; }
+
+  /* ── Period toggle (Week / Month / Quarter) ── */
+  .period-toggle-group {
+    display: flex; background: #f0f1f8; border-radius: 7px; padding: 2px; gap: 2px;
+  }
+  .period-btn {
+    padding: 3px 11px; border: none; border-radius: 5px;
+    font-size: 11px; font-weight: 600; color: #7a7a92; background: transparent;
+    cursor: pointer; transition: all 0.15s; font-family: inherit;
+  }
+  .period-btn.on { background: #fff; color: #6366f1; box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+
+  /* ── Gantt highlight (triggered by live-date chart hover) ── */
+  .gantt-row { transition: opacity 0.14s; }
+  #gantt.dim-mode .gantt-row         { opacity: 0.15; }
+  #gantt.dim-mode .gantt-row.lit     { opacity: 1; }
+
+  /* ── Gantt chart card header (title + Active/All toggle) ── */
+  .gantt-chart-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #f0f1f8;
+  }
+  .gantt-chart-title {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     MOBILE  (≤ 640 px / iPhone)
+     ═══════════════════════════════════════════════════════ */
+  @media (max-width: 640px) {
+
+    body { padding: 14px 12px 40px; }
+
+    /* ── Header ── */
+    .page-header { flex-direction: column; align-items: stretch; gap: 10px; }
+    .page-header-left h1 { font-size: 18px; }
+    .page-header-left p  { font-size: 12px; }
+    .load-btn { width: 100%; justify-content: center; padding: 10px 16px; }
+
+    /* ── Filter row: filter-card full width, search-card below ── */
+    .filter-row   { flex-direction: row; flex-wrap: wrap; gap: 10px; }
+    .filter-card  { width: 100%; flex-basis: 100%; }
+    .search-card  { flex: 1; min-width: 0; }
+
+    /* ── Bigger touch thumbs on slider ── */
+    .slider-wrapper input[type=range]::-webkit-slider-thumb {
+      width: 24px; height: 24px;
+    }
+    .slider-wrapper input[type=range]::-moz-range-thumb {
+      width: 24px; height: 24px;
+    }
+    .slider-wrapper { height: 34px; }
+
+    /* ── Gantt header toggle: stays compact on mobile ── */
+    .gantt-chart-header { flex-wrap: wrap; gap: 8px; }
+    .toggle-btn { padding: 5px 10px; font-size: 11px; }
+
+    /* ── iOS: font ≥ 16px prevents viewport zoom on input focus ── */
+    .brand-input  { font-size: 16px; padding: 6px 28px 6px 9px; }
+    .brand-option { font-size: 13px; padding: 9px 10px; }
+
+    /* ── Summary: 3 across → then 2 centred ── */
+    .summary { flex-wrap: wrap; }
+    .summary-item {
+      flex: 1 1 33%;
+      border-bottom: 1px solid #f0f1f8;
+      padding: 10px 6px;
+      font-size: 9px;
+    }
+    .summary-item strong        { font-size: 13px; }
+    .summary-item:nth-child(4),
+    .summary-item:nth-child(5)  { border-bottom: none; }
+    /* last two items centre-align when they're alone on row 2 */
+    .summary-item:nth-child(4)  { flex: 1 1 50%; border-right: 1px solid #f0f1f8; }
+    .summary-item:nth-child(5)  { flex: 1 1 50%; border-right: none; }
+
+    /* ── Fee chart card ── */
+    .fee-chart-card { padding: 12px 12px 10px; }
+
+    /* ── Gantt card: allow horizontal swipe on mobile ── */
+    .chart-wrapper  { padding: 14px 12px 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .gantt-container { min-width: 560px; }
+
+    /* ── Gantt label column: narrower on mobile ── */
+    .label-col      { width: 110px; font-size: 9px; }
+    .row-label      { width: 110px; }
+    .gantt-divider  { margin-left: 110px; }
+    .row-company    { font-size: 11px; }
+    .row-product    { font-size: 9px; max-width: 107px; }
+
+    /* ── Month labels ── */
+    .month-label { font-size: 8.5px; }
+
+    /* ── Bars: taller for tap, hide fee text (too cramped) ── */
+    .gantt-bar  { height: 22px; font-size: 0; }
+    .gantt-dot  { width: 12px; height: 12px; }
+    .today-label { font-size: 8px; }
+
+    /* ── Legend ── */
+    .legend      { gap: 7px; margin-top: 12px; }
+    .legend-item { font-size: 10px; }
+    .legend-swatch { width: 11px; height: 6px; }
+  }
+
+  /* ── Brand summary table ── */
+  .brand-table-card {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    padding: 16px 20px 10px; margin-top: 14px;
+  }
+  .brand-table-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #f0f1f8;
+  }
+  .brand-table-title {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em;
+  }
+  .brand-table-cols {
+    display: flex; gap: 0;
+    font-size: 9px; font-weight: 700; color: #c0c0d0; text-transform: uppercase; letter-spacing: 0.07em;
+  }
+  .brand-table-col-deals { min-width: 58px; text-align: right; }
+  .brand-table-col-fees  { min-width: 78px; text-align: right; }
+  .brand-row {
+    display: flex; align-items: center; gap: 9px;
+    padding: 6px 8px; border-radius: 7px; cursor: pointer;
+    transition: background 0.12s; user-select: none;
+  }
+  .brand-row:hover  { background: #f5f6fa; }
+  .brand-row.active { background: #eef0fd; }
+  .brand-row-swatch { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  .brand-row-name   { flex: 1; font-size: 12px; font-weight: 600; color: #1a1a2e;
+                      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-row.active .brand-row-name { color: #6366f1; }
+  .brand-row-count  { min-width: 58px; text-align: right; font-size: 11px; color: #7a7a92; }
+  .brand-row-fee    { min-width: 78px; text-align: right; font-size: 11px; font-weight: 700; color: #1a1a2e; }
+  .brand-row.active .brand-row-fee { color: #6366f1; }
+
+  @media (max-width: 640px) {
+    .brand-table-card { padding: 14px 14px 8px; }
+    .brand-row-name  { font-size: 11px; }
+    .brand-row-count { min-width: 44px; font-size: 10px; }
+    .brand-row-fee   { min-width: 62px; font-size: 10px; }
+  }
+
+  /* ── Add Deal button ── */
+  .add-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 16px; background: #10b981; color: #fff;
+    border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.35); font-family: inherit;
+  }
+  .add-btn:hover  { background: #059669; box-shadow: 0 3px 12px rgba(16,185,129,0.45); }
+  .add-btn:active { background: #047857; }
+
+  /* ── Modal overlay ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+    z-index: 10000; align-items: center; justify-content: center; padding: 16px;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-card {
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+    width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+    padding: 24px 26px 22px;
+  }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #f0f1f8;
+  }
+  .modal-title { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .modal-close {
+    background: none; border: none; font-size: 20px; cursor: pointer;
+    color: #9090a8; line-height: 1; padding: 2px 6px; border-radius: 5px;
+    transition: background 0.12s, color 0.12s;
+  }
+  .modal-close:hover { background: #f0f1f8; color: #1a1a2e; }
+
+  .modal-section { margin-bottom: 14px; }
+  .modal-label {
+    font-size: 10px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 6px; display: block;
+  }
+  .modal-textarea {
+    width: 100%; min-height: 110px; border: 1.5px solid #e4e5f0; border-radius: 8px;
+    padding: 9px 11px; font-size: 12px; color: #1a1a2e; font-family: inherit;
+    resize: vertical; outline: none; background: #f7f7fc; transition: border-color 0.15s;
+    line-height: 1.5;
+  }
+  .modal-textarea:focus { border-color: #6366f1; background: #fff; }
+
+  .apikey-row { display: flex; align-items: center; gap: 8px; }
+  .modal-input {
+    flex: 1; border: 1.5px solid #e4e5f0; border-radius: 8px;
+    padding: 7px 10px; font-size: 12px; color: #1a1a2e; font-family: inherit;
+    outline: none; background: #f7f7fc; transition: border-color 0.15s;
+  }
+  .modal-input:focus { border-color: #6366f1; background: #fff; }
+
+  .apikey-toggle {
+    background: none; border: 1.5px solid #e4e5f0; border-radius: 7px;
+    padding: 6px 9px; cursor: pointer; font-size: 13px; color: #7a7a92;
+    transition: border-color 0.12s;
+  }
+  .apikey-toggle:hover { border-color: #6366f1; }
+
+  .modal-hint {
+    font-size: 10.5px; color: #9090a8; margin-top: 5px; line-height: 1.4;
+  }
+  .modal-hint a { color: #6366f1; text-decoration: none; }
+  .modal-hint a:hover { text-decoration: underline; }
+
+  .extract-btn {
+    width: 100%; padding: 9px; background: #6366f1; color: #fff; border: none;
+    border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;
+    font-family: inherit; transition: background 0.15s; margin-top: 4px;
+  }
+  .extract-btn:hover    { background: #4f51d8; }
+  .extract-btn:disabled { background: #9597e8; cursor: wait; }
+
+  .extract-status {
+    font-size: 11px; margin-top: 7px; min-height: 16px; font-weight: 600;
+  }
+
+  /* Extracted fields grid */
+  .extracted-fields {
+    display: none; border: 1.5px solid #e4e5f0; border-radius: 10px;
+    padding: 14px 14px 10px; background: #f9f9fd; margin-top: 12px;
+  }
+  .extracted-fields.visible { display: block; }
+  .ef-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px;
+  }
+  .ef-field { display: flex; flex-direction: column; gap: 4px; }
+  .ef-field.wide { grid-column: 1 / -1; }
+  .ef-label {
+    font-size: 9.5px; font-weight: 700; color: #8a8aa0;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .ef-input {
+    border: 1.5px solid #e4e5f0; border-radius: 7px; padding: 6px 9px;
+    font-size: 12px; color: #1a1a2e; font-family: inherit; background: #fff;
+    outline: none; transition: border-color 0.15s;
+  }
+  .ef-input:focus { border-color: #6366f1; }
+
+  .save-deal-btn {
+    width: 100%; padding: 10px; background: #10b981; color: #fff; border: none;
+    border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;
+    font-family: inherit; transition: background 0.15s; margin-top: 12px;
+  }
+  .save-deal-btn:hover { background: #059669; }
+
+  .save-status {
+    font-size: 11px; margin-top: 7px; min-height: 16px; font-weight: 600;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .modal-card  { padding: 18px 16px 18px; }
+    .ef-grid     { grid-template-columns: 1fr; }
+    .ef-field.wide { grid-column: 1; }
+    .add-btn { width: 100%; justify-content: center; }
+  }
+
+  /* Shared tooltip */
+  #tooltip {
+    position: fixed; background: #1a1a2e; color: #fff; border-radius: 9px;
+    padding: 10px 13px; font-size: 11.5px; pointer-events: none; z-index: 9999;
+    opacity: 0; transition: opacity 0.12s; max-width: 300px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.24); line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+<!-- ── Dashboard Navigation ── -->
+<nav style="display:flex;align-items:center;gap:6px;padding:8px 32px;background:#1a1a2e;margin:-28px -32px 20px;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-right:6px;letter-spacing:.5px;text-transform:uppercase;">Dashboards</span>
+  <a href="1 Dr Abby Trending.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Trending</a>
+  <a href="2 Dr Abby Growth Dashboard.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Growth</a>
+  <a href="3 Dr Abby Projects.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(91,99,211,.25);color:#a5b4fc;border:1px solid rgba(91,99,211,.4);">Projects</a>
+</nav>
+
+<!-- Page header with reload button -->
+<div class="page-header">
+  <div class="page-header-left">
+    <h1><span>Dr Abby</span> Projects</h1>
+    <p>Most recent live dates first &nbsp;·&nbsp; Offer date → Live date &nbsp;·&nbsp; Hover for details</p>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;align-items:center">
+    <div style="font-size:11px;color:#888;text-align:right;white-space:nowrap">Last refreshed<br><strong>Mar 26, 2026 07:39 PM</strong></div>
+    <button class="add-btn" onclick="openAddDealModal()">＋ Add Deal</button>
+    <button class="load-btn" id="loadBtn" onclick="handleLoadClick()">
+      <span id="loadBtnIcon">📂</span>
+      <span>
+        <span id="loadBtnLabel">Load from Excel</span>
+        <span class="load-btn-sub" id="loadBtnSub">Gersh Deals.xlsx</span>
+      </span>
+    </button>
+  </div>
+</div>
+
+
+<!-- Hidden file input (fallback for browsers without File System Access API) -->
+<input type="file" id="fileInput" accept=".xlsx" onchange="handleFileInput(this)">
+
+<!-- Filter row: offer-month range + active/all toggle -->
+<div class="filter-row">
+
+  <div class="filter-card">
+    <div class="filter-heading">Offer Month Range</div>
+    <div class="range-labels">
+      <div class="range-badge" id="labelStart">—</div>
+      <span class="range-arrow">→</span>
+      <div class="range-badge" id="labelEnd">—</div>
+      <span class="range-count" id="rangeCount"></span>
+    </div>
+    <div class="slider-wrapper">
+      <div class="slider-track-bg"></div>
+      <div class="slider-track-fill" id="trackFill"></div>
+      <input type="range" id="sliderStart" min="0" step="1">
+      <input type="range" id="sliderEnd"   min="0" step="1">
+    </div>
+    <div class="slider-ticks" id="sliderTicks"></div>
+  </div>
+
+  <div class="search-card">
+    <div class="toggle-heading">Search Brand</div>
+    <div class="brand-search-wrap">
+      <input type="text" class="brand-input" id="brandInput"
+             placeholder="Type brand…" autocomplete="off"
+             oninput="onBrandInput(this.value)"
+             onkeydown="onBrandKey(event)"
+             onfocus="openBrandDropdown()">
+      <button class="brand-clear" id="brandClear" onclick="clearBrandFilter()">×</button>
+      <div class="brand-dropdown" id="brandDropdown"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Summary stats -->
+<div class="summary" id="summary"></div>
+
+<!-- Deals by Live Date chart -->
+<div class="live-chart-card">
+  <div class="live-chart-header">
+    <div class="live-chart-heading">Deals by Live Date</div>
+    <div class="period-toggle-group">
+      <button class="period-btn on" id="periodWeek"  onclick="setLivePeriod('week')">Week</button>
+      <button class="period-btn"    id="periodMonth" onclick="setLivePeriod('month')">Month</button>
+      <button class="period-btn"    id="periodQtr"   onclick="setLivePeriod('quarter')">Quarter</button>
+    </div>
+  </div>
+  <svg id="liveChartSvg"></svg>
+</div>
+
+<!-- Gantt -->
+<div class="chart-wrapper">
+  <div class="gantt-chart-header">
+    <div class="gantt-chart-title">Deal Timeline</div>
+    <div class="toggle-group">
+      <button class="toggle-btn on active-mode" id="toggleActive" onclick="setDealFilter('active')">● Active</button>
+      <button class="toggle-btn"                id="toggleAll"    onclick="setDealFilter('all')">All</button>
+    </div>
+  </div>
+  <div class="gantt-container" id="gantt"></div>
+  <div id="no-results">No deals match this date range.</div>
+  <div class="legend" id="legend"></div>
+</div>
+
+<!-- Fee bar chart -->
+<div class="fee-chart-card" style="margin-top:14px;">
+  <div class="fee-chart-heading">Total Fees by Offer Month</div>
+  <svg id="feeChartSvg"></svg>
+</div>
+
+<!-- Brand summary table -->
+<div class="brand-table-card">
+  <div class="brand-table-header">
+    <div class="brand-table-title">Brands</div>
+    <div class="brand-table-cols">
+      <span class="brand-table-col-deals">Deals</span>
+      <span class="brand-table-col-fees">Fees</span>
+    </div>
+  </div>
+  <div id="brandTable"></div>
+</div>
+
+<div id="tooltip"></div>
+
+<!-- ══════════════════════════════════════════════
+     ADD DEAL MODAL
+     ══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="addDealModal" onclick="modalOverlayClick(event)">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <div class="modal-title">➕ Add New Deal</div>
+      <button class="modal-close" onclick="closeAddDealModal()">✕</button>
+    </div>
+
+    <!-- API Key -->
+    <div class="modal-section">
+      <label class="modal-label" for="claudeApiKey">Anthropic API Key</label>
+      <div class="apikey-row">
+        <input type="password" class="modal-input" id="claudeApiKey"
+               placeholder="sk-ant-…" autocomplete="off">
+        <button class="apikey-toggle" id="apikeyToggle" onclick="toggleApiKeyVisibility()"
+                title="Show / hide key">👁</button>
+      </div>
+      <div class="modal-hint">
+        Used only locally in your browser.
+        Get a key at <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com</a>.
+        Saved across sessions.
+      </div>
+    </div>
+
+    <!-- Paste deal text -->
+    <div class="modal-section">
+      <label class="modal-label" for="dealTextarea">Paste Deal Text</label>
+      <textarea class="modal-textarea" id="dealTextarea"
+                placeholder="Paste the email, contract snippet, or any text describing the deal — Claude will extract the key details…"></textarea>
+    </div>
+
+    <button class="extract-btn" id="extractBtn" onclick="extractWithClaude()">
+      Extract with Claude
+    </button>
+    <div class="extract-status" id="extractStatus"></div>
+
+    <!-- Extracted / editable fields -->
+    <div class="extracted-fields" id="extractedFields">
+      <div style="font-size:10.5px;color:#7a7a92;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #ebebf5;">
+        Review and edit the extracted fields, then confirm to upload.
+      </div>
+      <div class="ef-grid">
+        <div class="ef-field wide">
+          <span class="ef-label">Brand
+            <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:9px;"> — pick existing or type new</span>
+          </span>
+          <div class="brand-search-wrap" style="position:relative;">
+            <input class="ef-input" id="fieldBrand" type="text"
+                   placeholder="e.g. EltaMD"
+                   autocomplete="off"
+                   oninput="onBrandPickerInput(this.value)"
+                   onkeydown="onBrandPickerKey(event)"
+                   onfocus="openBrandPicker()">
+            <div class="brand-dropdown" id="brandPickerDropdown" style="z-index:20000;"></div>
+          </div>
+        </div>
+        <div class="ef-field wide">
+          <span class="ef-label">Product</span>
+          <input class="ef-input" id="fieldProduct" type="text" placeholder="e.g. UV Daily Hydration+ SPF 50">
+        </div>
+        <div class="ef-field">
+          <span class="ef-label">Offer Date
+            <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:9px;">(earliest timeline date)</span>
+          </span>
+          <input class="ef-input" id="fieldOffer" type="date">
+        </div>
+        <div class="ef-field">
+          <span class="ef-label">Live Date
+            <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:9px;">(Live by:)</span>
+          </span>
+          <input class="ef-input" id="fieldLive" type="date">
+        </div>
+        <div class="ef-field">
+          <span class="ef-label">Fee ($)</span>
+          <input class="ef-input" id="fieldFee" type="number" min="0" step="500" placeholder="0">
+        </div>
+        <div class="ef-field wide">
+          <span class="ef-label">Deliverables</span>
+          <input class="ef-input" id="fieldDeliverables" type="text" placeholder="e.g. 1x TikTok syndicated to IG, YT Shorts, Pinterest">
+        </div>
+        <div class="ef-field wide">
+          <span class="ef-label">Usage</span>
+          <input class="ef-input" id="fieldUsage" type="text" placeholder="e.g. 60d organic, 60d paid whitelisting">
+        </div>
+        <div class="ef-field wide">
+          <span class="ef-label">Exclusivity</span>
+          <input class="ef-input" id="fieldExclusivity" type="text" placeholder="e.g. 5 days before/after live">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <button class="save-deal-btn" onclick="addDealToExcel()" style="flex:1;">
+          ✓ Confirm Upload
+        </button>
+        <button onclick="closeAddDealModal()"
+                style="flex:0 0 auto;padding:10px 18px;background:#f0f1f8;color:#4a4a6a;
+                       border:none;border-radius:8px;font-size:13px;font-weight:600;
+                       cursor:pointer;font-family:inherit;transition:background 0.15s;">
+          Cancel
+        </button>
+      </div>
+      <div class="save-status" id="saveStatus"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  BUILT-IN SNAPSHOT DATA (fallback if Excel not loaded)
+// ═══════════════════════════════════════════════════════
+const SNAPSHOT = [{"company": "COSRX", "product": "The Ceramide Skin Barrier Moisturizing mist", "offer": "2025-08-29", "live": "2025-09-05", "fee": 6000.0, "deliverables": "1x TikTok", "usage": "Usage x30d, SparkAds x30d", "exclusivity": ""}, {"company": "CurrentBody", "product": "LED Hair Regrowth Device & Series 2 LED Face Mask", "offer": "2025-09-16", "live": "2025-11-21", "fee": 5000.0, "deliverables": "1x IG Reel", "usage": "30d on brand socials", "exclusivity": ""}, {"company": "CurrentBody", "product": "CurrentBody LED Mask Series 2", "offer": "2025-09-19", "live": "2025-10-15", "fee": 3500.0, "deliverables": "1x IG Story", "usage": "", "exclusivity": ""}, {"company": "Sarna", "product": "Eczema Relief Lotion & Sensitive Lotion", "offer": "2025-10-10", "live": "2025-11-17", "fee": 6000.0, "deliverables": "1x IG Reel", "usage": "", "exclusivity": ""}, {"company": "dAlba", "product": "Rosacea B&A with the Althera Device", "offer": "2025-10-13", "live": "2025-11-13", "fee": 12000.0, "deliverables": "1x IG Reel", "usage": "30d on brand socials", "exclusivity": ""}, {"company": "Goodal", "product": "Goodal Green Tangerine Vita C Toner Pad & Eye Patch", "offer": "2025-10-20", "live": "2025-11-21", "fee": 16000.0, "deliverables": "1x TikTok", "usage": "Usage x30d, Organic on brand's site", "exclusivity": ""}, {"company": "Medik8", "product": "Peptide Products", "offer": "2025-10-21", "live": "2025-11-03", "fee": 17000.0, "deliverables": "1x TikTok syn to Reels", "usage": "30d on brand socials", "exclusivity": ""}, {"company": "Beauty of Joseon", "product": "Revive Under Eye Patches, Sephora Eye Serum", "offer": "2025-12-03", "live": "2026-01-05", "fee": 9000.0, "deliverables": "1x TikTok", "usage": "7 days", "exclusivity": ""}, {"company": "RoC", "product": "\u2014", "offer": "2025-12-16", "live": "2025-12-16", "fee": 3000.0, "deliverables": "", "usage": "Boost 2024 video x2 weeks", "exclusivity": ""}, {"company": "L'Oreal Paris", "product": "Midnight Cream Fagrance Free", "offer": "2026-01-03", "live": "2026-01-12", "fee": 23000.0, "deliverables": "2x TikTok, syndicated to IG Reels", "usage": "30 whitelisting, 30d on brand socials", "exclusivity": ""}, {"company": "L'Oreal Paris", "product": "Part 2 of deal", "offer": "2026-01-03", "live": "2026-04-20", "fee": 0.0, "deliverables": "2x TikTok, syndicated to IG Reels", "usage": "30 whitelisting, 30d on brand socials", "exclusivity": ""}, {"company": "EltaMD", "product": "UV Daily Hydration+ SPF 50", "offer": "2026-01-03", "live": "2026-01-16", "fee": 25000.0, "deliverables": "1x TikTok, 1x IG Story repost", "usage": "30d paid, 60d organic", "exclusivity": ""}, {"company": "Anua", "product": "Azelaic Acid Serum", "offer": "2026-01-12", "live": "2026-01-31", "fee": 15000.0, "deliverables": "1x YT Long, 1x YT Short", "usage": "", "exclusivity": ""}, {"company": "Goodal", "product": "\u2014", "offer": "2026-01-25", "live": "2026-02-23", "fee": 12000.0, "deliverables": "1x TikTok", "usage": "15d on brand socials", "exclusivity": ""}, {"company": "La Roche-Posay", "product": "Hyalu B5 Cream/Serum", "offer": "2026-01-30", "live": "2026-02-14", "fee": 15000.0, "deliverables": "1x TikTok, syndicated to IG Reels, YT Shorts", "usage": "30d on brand socials", "exclusivity": ""}, {"company": "Anua", "product": "Anua SPF", "offer": "2026-02-04", "live": "2026-02-04", "fee": 2500.0, "deliverables": "AAD Compilation", "usage": "", "exclusivity": ""}, {"company": "CurrentBody", "product": "LED Hair Growth Helmet", "offer": "2026-02-05", "live": "2026-02-09", "fee": 5000.0, "deliverables": "1x IG Reel", "usage": "30d on brand socials", "exclusivity": ""}, {"company": "Dermstore", "product": "Welcome Offer", "offer": "2026-02-09", "live": "2026-02-28", "fee": 15000.0, "deliverables": "1x IG Reel, synd to TikTok, 1x IG Story", "usage": "", "exclusivity": ""}, {"company": "CeraVe", "product": "Hair Gentle Hydrating Shampoo & Conditioner", "offer": "2026-02-12", "live": "2026-02-23", "fee": 35000.0, "deliverables": "1x Tiktok, syn to YT Shorts, IG, Pinterest", "usage": "60d on brand socials, 60d whitelisting", "exclusivity": ""}, {"company": "Celimax", "product": "Retinal Shot", "offer": "2026-02-20", "live": "2026-03-25", "fee": 14000.0, "deliverables": "1x IG Reel, synd to TikTok", "usage": "", "exclusivity": ""}, {"company": "Rogaine", "product": "AAD", "offer": "2026-03-17", "live": "2026-04-07", "fee": 20000.0, "deliverables": "1hr at Rogaine AAD, 1x IG Reel, 1x IG Story Set", "usage": "90 days", "exclusivity": ""}, {"company": "La Roche-Posay", "product": "Effaciar Benzoyl Peroxide", "offer": "2026-03-19", "live": "2026-04-14", "fee": 18000.0, "deliverables": "1x TT, 1x YT Long-Form", "usage": "90 days", "exclusivity": ""}];
+// ═══════════════════════════════════════════════════════
+//  MUTABLE STATE — replaced when Excel is loaded
+// ═══════════════════════════════════════════════════════
+let allDeals       = [];
+let companyColors  = {};
+let offerMonths    = [];
+let N              = 0;
+let currentWorkbook = null;  // stored for Add-Deal write-back
+
+const palette = [
+  "#6366f1","#0ea5e9","#10b981","#f59e0b","#ef4444",
+  "#8b5cf6","#ec4899","#14b8a6","#f97316","#06b6d4",
+  "#84cc16","#a855f7","#e11d48","#0891b2","#059669"
+];
+
+// ═══════════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════════
+function monthKey(ds)  { return ds.slice(0,7); }
+function shortFmt(key) { const [y,m]=key.split('-'); return `${parseInt(m)}/${y.slice(2)}`; }
+
+function fmtDate(ds) {
+  return new Date(ds+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function fmtFee(fee) { return fee>0?'$'+fee.toLocaleString():'—'; }
+
+// Convert an Excel date value (JS Date or serial number string) → "YYYY-MM-DD"
+function excelDateToISO(val) {
+  if (!val) return null;
+  let d;
+  if (val instanceof Date) {
+    d = val;
+  } else if (typeof val === 'number') {
+    // SheetJS serial number (shouldn't happen with cellDates:true, but just in case)
+    d = new Date(Math.round((val - 25569) * 86400 * 1000));
+  } else {
+    d = new Date(String(val));
+  }
+  if (isNaN(d)) return null;
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function getAxisMonths(start,end) {
+  const arr=[],cur=new Date(start);
+  while(cur<=end){arr.push(new Date(cur));cur.setMonth(cur.getMonth()+1);}
+  return arr;
+}
+
+// ═══════════════════════════════════════════════════════
+//  INDEXEDDB — persist file handle across page loads
+// ═══════════════════════════════════════════════════════
+function openDB() {
+  return new Promise((res,rej)=>{
+    const req=indexedDB.open('GershGanttDB',1);
+    req.onupgradeneeded=e=>e.target.result.createObjectStore('store');
+    req.onsuccess=e=>res(e.target.result);
+    req.onerror=rej;
+  });
+}
+async function storeHandle(handle) {
+  try {
+    const db=await openDB();
+    await new Promise((res,rej)=>{
+      const tx=db.transaction('store','readwrite');
+      tx.objectStore('store').put(handle,'fileHandle');
+      tx.oncomplete=res; tx.onerror=rej;
+    });
+  } catch(e) { /* IndexedDB not available (e.g. private mode) */ }
+}
+async function getStoredHandle() {
+  try {
+    const db=await openDB();
+    return await new Promise((res,rej)=>{
+      const tx=db.transaction('store','readonly');
+      const req=tx.objectStore('store').get('fileHandle');
+      req.onsuccess=()=>res(req.result||null);
+      req.onerror=rej;
+    });
+  } catch(e) { return null; }
+}
+
+// ═══════════════════════════════════════════════════════
+//  EXCEL PARSING
+// ═══════════════════════════════════════════════════════
+async function loadFromFile(file) {
+  setBtnState('loading', '⏳', 'Reading…', file.name);
+  try {
+    const ab  = await file.arrayBuffer();
+    const wb  = XLSX.read(ab, { cellDates: true, dateNF: 'yyyy-mm-dd' });
+    currentWorkbook = wb;                        // keep for write-back
+    const ws  = wb.Sheets[wb.SheetNames[0]];
+    const rows= XLSX.utils.sheet_to_json(ws, { defval: '' });
+
+    const parsed = rows.map(row => {
+      // Flexible column matching (case-insensitive, trims spaces)
+      const get = (...keys) => {
+        for (const k of keys) {
+          const found = Object.keys(row).find(rk => rk.trim().toLowerCase() === k.toLowerCase());
+          if (found !== undefined && row[found] !== '') return row[found];
+        }
+        return '';
+      };
+
+      const offer = excelDateToISO(get('Offer Date','OfferDate','offer date','offer'));
+      const live  = excelDateToISO(get('Live Date','LiveDate','live date','live'));
+      const company = String(get('Brand','brand','Company','company')).trim();
+      if (!company || !offer || !live) return null;
+
+      return {
+        company,
+        product:      String(get('Product','product') || '').trim() || '—',
+        offer,
+        live,
+        fee:          Number(get('Fee','Fees','fee','fees')) || 0,
+        deliverables: String(get('Deliverables','Deliverable','deliverables') || '').trim(),
+        usage:        String(get('Suage','Usage','usage','suage') || '').trim(),
+        exclusivity:  String(get('Exclusivity','exclusivity') || '').trim(),
+      };
+    }).filter(Boolean);
+
+    if (parsed.length === 0) throw new Error('No valid rows found — check column names.');
+
+    allDeals = parsed;
+    initDeals();
+
+    setBtnState('ok', '✓', file.name, `${parsed.length} deals loaded`);
+    localStorage.setItem('gershLastFile', file.name);
+    const banner = document.getElementById('dataBanner'); if (banner) banner.classList.add('hidden');
+
+  } catch(err) {
+    setBtnState('error', '✗', 'Load failed', err.message);
+    console.error('Excel load error:', err);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+//  BUTTON STATE
+// ═══════════════════════════════════════════════════════
+const loadBtn     = document.getElementById('loadBtn');
+const loadBtnIcon = document.getElementById('loadBtnIcon');
+const loadBtnLabel= document.getElementById('loadBtnLabel');
+const loadBtnSub  = document.getElementById('loadBtnSub');
+
+function setBtnState(state, icon, label, sub) {
+  loadBtn.className = 'load-btn ' + state;
+  loadBtnIcon.textContent  = icon;
+  loadBtnLabel.textContent = label;
+  loadBtnSub.textContent   = sub || '';
+}
+
+// ═══════════════════════════════════════════════════════
+//  FILE PICKER — File System Access API (Chrome) with
+//  fallback to <input type=file>
+// ═══════════════════════════════════════════════════════
+async function handleLoadClick() {
+  if (!window.showOpenFilePicker) {
+    // Older browser — use hidden file input
+    document.getElementById('fileInput').click();
+    return;
+  }
+
+  // Try to reuse a previously stored handle (no picker needed)
+  try {
+    const stored = await getStoredHandle();
+    if (stored) {
+      // queryPermission is silent; requestPermission needs a user gesture (we have one)
+      let perm = await stored.queryPermission({ mode:'read' });
+      if (perm !== 'granted') perm = await stored.requestPermission({ mode:'read' });
+      if (perm === 'granted') {
+        const file = await stored.getFile();
+        await loadFromFile(file);
+        return;
+      }
+    }
+  } catch(e) { /* handle stale — fall through to picker */ }
+
+  // Open file picker
+  try {
+    const [handle] = await window.showOpenFilePicker({
+      id: 'gersh-deals',           // browser remembers this location
+      startIn: 'documents',
+      types: [{
+        description: 'Excel Workbook',
+        accept: { 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'] }
+      }],
+      multiple: false
+    });
+    await storeHandle(handle);    // save for next time
+    const file = await handle.getFile();
+    await loadFromFile(file);
+  } catch(e) {
+    if (e.name !== 'AbortError') { // AbortError = user cancelled picker
+      setBtnState('error','✗','Load failed', e.message);
+      console.error(e);
+    }
+  }
+}
+
+// Fallback: regular <input type=file>
+async function handleFileInput(input) {
+  if (input.files && input.files[0]) await loadFromFile(input.files[0]);
+}
+
+// ═══════════════════════════════════════════════════════
+//  AUTO-LOAD on page open (silent — only if permission
+//  was previously granted and handle is stored)
+// ═══════════════════════════════════════════════════════
+async function tryAutoLoad() {
+  if (!window.showOpenFilePicker) return;
+  try {
+    const stored = await getStoredHandle();
+    if (!stored) return;
+    const perm = await stored.queryPermission({ mode:'read' });
+    if (perm === 'granted') {
+      const file = await stored.getFile();
+      await loadFromFile(file);   // silent, no picker
+    } else {
+      // Permission lapsed — update button to show last filename and invite re-click
+      const last = localStorage.getItem('gershLastFile');
+      if (last) setBtnState('', '🔄', 'Reload Excel', last);
+    }
+  } catch(e) { /* stale handle — leave button in default state */ }
+}
+
+// ═══════════════════════════════════════════════════════
+//  SLIDER
+// ═══════════════════════════════════════════════════════
+const sliderStart = document.getElementById('sliderStart');
+const sliderEnd   = document.getElementById('sliderEnd');
+const trackFill   = document.getElementById('trackFill');
+const labelStart  = document.getElementById('labelStart');
+const labelEnd    = document.getElementById('labelEnd');
+const rangeCount  = document.getElementById('rangeCount');
+const ticksEl     = document.getElementById('sliderTicks');
+
+function rebuildSlider() {
+  [sliderStart,sliderEnd].forEach(s=>{ s.max=N-1; });
+  sliderStart.value=0; sliderEnd.value=N-1;
+  ticksEl.innerHTML='';
+  offerMonths.forEach((key,i)=>{
+    const t=document.createElement('div');
+    t.className='slider-tick'; t.textContent=shortFmt(key); t.dataset.idx=i;
+    ticksEl.appendChild(t);
+  });
+}
+
+function updateSliderUI() {
+  let s=parseInt(sliderStart.value), e=parseInt(sliderEnd.value);
+  if(s>e){
+    if(document.activeElement===sliderStart){sliderStart.value=e;s=e;}
+    else{sliderEnd.value=s;e=s;}
+  }
+  labelStart.textContent=shortFmt(offerMonths[s]||'');
+  labelEnd.textContent  =shortFmt(offerMonths[e]||'');
+  const lp=N>1?(s/(N-1))*100:0, rp=N>1?(e/(N-1))*100:100;
+  trackFill.style.left=lp+'%'; trackFill.style.width=(rp-lp)+'%';
+  document.querySelectorAll('.slider-tick').forEach(t=>{
+    t.classList.toggle('active-tick',parseInt(t.dataset.idx)>=s&&parseInt(t.dataset.idx)<=e);
+  });
+}
+
+sliderStart.addEventListener('input',()=>{ updateSliderUI(); render(); });
+sliderEnd  .addEventListener('input',()=>{ updateSliderUI(); render(); });
+
+// ── Active / All toggle ──────────────────────────────────────────────────────
+// "Active" = live date >= today (deal not yet past its live date)
+let showActive = true;
+
+function setDealFilter(mode) {
+  showActive = (mode === 'active');
+  document.getElementById('toggleActive').classList.toggle('on',  showActive);
+  document.getElementById('toggleActive').classList.toggle('active-mode', showActive);
+  document.getElementById('toggleAll')   .classList.toggle('on', !showActive);
+  render();
+}
+
+// ── Brand search ─────────────────────────────────────────────────────────────
+let brandFilter   = '';
+let _ddHighlight  = -1;
+
+function _brandOptions(query) {
+  const q = query.trim().toLowerCase();
+  return Object.keys(companyColors).filter(co => !q || co.toLowerCase().includes(q));
+}
+
+function _renderDropdown(query) {
+  const dd   = document.getElementById('brandDropdown');
+  const opts = _brandOptions(query);
+  _ddHighlight = -1;
+  if (!opts.length) { dd.classList.remove('open'); dd.innerHTML=''; return; }
+  dd.innerHTML = opts.map(co =>
+    `<div class="brand-option" data-brand="${co.replace(/"/g,'&quot;')}"
+          onmousedown="applyBrandFilter(this.dataset.brand)">
+       <span class="brand-dot" style="background:${companyColors[co]}"></span>${co}
+     </div>`
+  ).join('');
+  dd.classList.add('open');
+}
+
+function openBrandDropdown() {
+  if (!brandFilter) _renderDropdown(document.getElementById('brandInput').value);
+}
+
+function onBrandInput(val) {
+  document.getElementById('brandClear').classList.toggle('visible', val.length > 0);
+  if (!val.trim()) { brandFilter=''; document.getElementById('brandInput').classList.remove('has-value'); render(); }
+  _renderDropdown(val);
+}
+
+function onBrandKey(ev) {
+  const dd   = document.getElementById('brandDropdown');
+  const opts = dd.querySelectorAll('.brand-option');
+  if (ev.key === 'ArrowDown') {
+    ev.preventDefault();
+    _ddHighlight = Math.min(_ddHighlight+1, opts.length-1);
+    opts.forEach((o,i) => o.classList.toggle('hi', i===_ddHighlight));
+  } else if (ev.key === 'ArrowUp') {
+    ev.preventDefault();
+    _ddHighlight = Math.max(_ddHighlight-1, 0);
+    opts.forEach((o,i) => o.classList.toggle('hi', i===_ddHighlight));
+  } else if (ev.key === 'Enter') {
+    if (_ddHighlight >= 0 && opts[_ddHighlight]) {
+      applyBrandFilter(opts[_ddHighlight].dataset.brand);
+    } else {
+      const exact = _brandOptions(document.getElementById('brandInput').value);
+      if (exact.length === 1) applyBrandFilter(exact[0]);
+    }
+  } else if (ev.key === 'Escape') {
+    clearBrandFilter();
+  }
+}
+
+function applyBrandFilter(brand) {
+  brandFilter = brand;
+  // Explode month range to full span
+  sliderStart.value = 0; sliderEnd.value = N-1;
+  updateSliderUI();
+  // Force "All" in Gantt toggle
+  showActive = false;
+  document.getElementById('toggleActive').classList.remove('on','active-mode');
+  document.getElementById('toggleAll').classList.add('on');
+  // Update search input UI
+  const inp = document.getElementById('brandInput');
+  inp.value = brand; inp.classList.add('has-value');
+  document.getElementById('brandClear').classList.add('visible');
+  document.getElementById('brandDropdown').classList.remove('open');
+  render();
+}
+
+function clearBrandFilter() {
+  brandFilter = '';
+  const inp = document.getElementById('brandInput');
+  inp.value = ''; inp.classList.remove('has-value');
+  document.getElementById('brandClear').classList.remove('visible');
+  document.getElementById('brandDropdown').classList.remove('open');
+  render();
+}
+
+// Close dropdown when clicking outside the search card
+document.addEventListener('click', ev => {
+  if (!ev.target.closest('.search-card'))
+    document.getElementById('brandDropdown').classList.remove('open');
+});
+
+// ── Live-date chart period ────────────────────────────────────────────────────
+let liveChartPeriod = 'week';
+
+function setLivePeriod(p) {
+  liveChartPeriod = p;
+  document.getElementById('periodWeek') .classList.toggle('on', p==='week');
+  document.getElementById('periodMonth').classList.toggle('on', p==='month');
+  document.getElementById('periodQtr')  .classList.toggle('on', p==='quarter');
+  render();
+}
+
+// Bucket helpers
+function _weekMonday(d) {
+  const dt = new Date(d); const day = dt.getDay();
+  dt.setDate(dt.getDate() + (day===0 ? -6 : 1-day)); dt.setHours(0,0,0,0); return dt;
+}
+function liveBucketKey(ds) {
+  const d = new Date(ds+'T00:00:00');
+  if (liveChartPeriod==='week')    return _weekMonday(d).toISOString().slice(0,10);
+  if (liveChartPeriod==='month')   return ds.slice(0,7);
+  const y=d.getFullYear(), q=Math.ceil((d.getMonth()+1)/3); return `${y}-Q${q}`;
+}
+function bucketStart(key) {
+  if (liveChartPeriod==='week')  return new Date(key+'T00:00:00');
+  if (liveChartPeriod==='month') return new Date(key+'-01T00:00:00');
+  const [y,q]=key.split('-Q');
+  return new Date(`${y}-${String((+q-1)*3+1).padStart(2,'0')}-01T00:00:00`);
+}
+function bucketEnd(key) {
+  const s=new Date(bucketStart(key));
+  if (liveChartPeriod==='week')    s.setDate(s.getDate()+7);
+  else if (liveChartPeriod==='month') s.setMonth(s.getMonth()+1);
+  else s.setMonth(s.getMonth()+3);
+  return s;
+}
+function fmtBucket(key) {
+  if (liveChartPeriod==='week') {
+    const d=bucketStart(key); return `${d.getMonth()+1}/${d.getDate()}`;
+  }
+  if (liveChartPeriod==='month') return shortFmt(key);
+  const [y,q]=key.split('-Q'); return `Q${q}'${y.slice(2)}`;
+}
+
+// Gantt highlight (called from live-date chart hover)
+function highlightGanttRows(liveDates) {
+  const ganttEl = document.getElementById('gantt');
+  const liveSet = new Set(liveDates);
+  ganttEl.classList.add('dim-mode');
+  ganttEl.querySelectorAll('.gantt-row').forEach(r =>
+    r.classList.toggle('lit', liveSet.has(r.dataset.live))
+  );
+}
+function clearGanttHighlight() {
+  const ganttEl = document.getElementById('gantt');
+  ganttEl.classList.remove('dim-mode');
+  ganttEl.querySelectorAll('.gantt-row').forEach(r => r.classList.remove('lit'));
+}
+
+// ═══════════════════════════════════════════════════════
+//  INIT FROM DEALS — call after allDeals changes
+// ═══════════════════════════════════════════════════════
+function initDeals() {
+  // Reset brand filter when data changes (brands may differ)
+  brandFilter = '';
+  const inp = document.getElementById('brandInput');
+  if (inp) { inp.value=''; inp.classList.remove('has-value'); }
+  const bc = document.getElementById('brandClear');
+  if (bc) bc.classList.remove('visible');
+
+  // Sort: most recent live date first
+  allDeals.sort((a,b)=>new Date(b.live)-new Date(a.live));
+
+  // Assign company colors (in chronological offer order for stability)
+  companyColors={};
+  let ci=0;
+  [...allDeals].sort((a,b)=>new Date(a.offer)-new Date(b.offer)).forEach(d=>{
+    if(!companyColors[d.company]) companyColors[d.company]=palette[ci++%palette.length];
+  });
+
+  // Offer months (chronological)
+  offerMonths=[...new Set(
+    [...allDeals].sort((a,b)=>new Date(a.offer)-new Date(b.offer)).map(d=>monthKey(d.offer))
+  )];
+  N=offerMonths.length;
+
+  rebuildSlider();
+  updateSliderUI();
+  render();
+}
+
+// ═══════════════════════════════════════════════════════
+//  SHARED TOOLTIP
+// ═══════════════════════════════════════════════════════
+const tooltip=document.getElementById('tooltip');
+function showTip(html,ev){ tooltip.innerHTML=html; tooltip.style.opacity='1'; moveTip(ev); }
+function moveTip(ev){
+  let x=ev.clientX+14, y=ev.clientY-10;
+  if(x+310>window.innerWidth) x=ev.clientX-314;
+  if(y+tooltip.offsetHeight>window.innerHeight) y=ev.clientY-tooltip.offsetHeight-6;
+  tooltip.style.left=x+'px'; tooltip.style.top=y+'px';
+}
+function hideTip(){ tooltip.style.opacity='0'; }
+
+// ═══════════════════════════════════════════════════════
+//  LIVE-DATE BAR CHART  (deals by live date bucket)
+// ═══════════════════════════════════════════════════════
+let _liveBucketMap = {};
+
+function renderLiveDateChart(deals) {
+  const svg = document.getElementById('liveChartSvg');
+  if (!svg) return;
+  _liveBucketMap = {};
+  const today   = new Date(); today.setHours(0,0,0,0);
+  const in2w    = new Date(today); in2w.setDate(in2w.getDate()+14);
+
+  deals.forEach(d => {
+    const k = liveBucketKey(d.live);
+    if (!_liveBucketMap[k]) _liveBucketMap[k] = [];
+    _liveBucketMap[k].push(d);
+  });
+
+  // Build complete bucket list (no gaps) from earliest to latest live date
+  const allLiveSorted = deals.map(d=>d.live).sort();
+  if (!allLiveSorted.length) { svg.setAttribute('height','0'); svg.innerHTML=''; return; }
+  const buckets = [];
+  let cur = new Date(bucketStart(liveBucketKey(allLiveSorted[0])));
+  const endBound = bucketEnd(liveBucketKey(allLiveSorted[allLiveSorted.length-1]));
+  while (cur < endBound) {
+    const key = liveBucketKey(cur.toISOString().slice(0,10));
+    if (!buckets.length || buckets[buckets.length-1] !== key) buckets.push(key);
+    if (liveChartPeriod==='week')  cur.setDate(cur.getDate()+7);
+    else if (liveChartPeriod==='month') cur.setMonth(cur.getMonth()+1);
+    else cur.setMonth(cur.getMonth()+3);
+  }
+
+  const maxCount = Math.max(...buckets.map(k => (_liveBucketMap[k]||[]).length), 1);
+  const padL=34, padR=16, padT=26, padB=30, chartH=84;
+  const cardW = (document.querySelector('.live-chart-card')?.clientWidth||600) - 40;
+  // Narrow bars more aggressively when many buckets
+  const colGap  = buckets.length > 20 ? 2 : buckets.length > 10 ? 4 : Math.max(5, Math.round(cardW*0.12/Math.max(buckets.length,1)));
+  const minBarW = buckets.length > 26 ? 5 : buckets.length > 16 ? 8 : 14;
+  const rawBarW = (cardW - padL - padR - colGap*(buckets.length-1)) / Math.max(buckets.length,1);
+  const barW = Math.min(Math.max(rawBarW, minBarW), 54);
+  const chartW = buckets.length*(barW+colGap)-colGap;
+  const W = padL+chartW+padR, H = padT+chartH+padB;
+
+  // Y-axis grid
+  let grid='';
+  const tickStep = maxCount<=4 ? 1 : Math.ceil(maxCount/4);
+  for (let ti=0; ti<=maxCount; ti+=tickStep) {
+    const y = (padT + chartH - (ti/maxCount)*chartH).toFixed(1);
+    grid += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#ebebf5" stroke-width="1"/>
+             <text x="${padL-4}" y="${(+y+3.5).toFixed(1)}" text-anchor="end" font-size="8.5" fill="#b0b0c8">${ti}</text>`;
+  }
+
+  // Time span for Today-line interpolation
+  const firstStart = bucketStart(buckets[0]);
+  const lastEnd    = bucketEnd(buckets[buckets.length-1]);
+  const spanMs     = lastEnd - firstStart;
+
+  // Bars + hover rects + x labels
+  let bars='', hovers='', xlbls='';
+  buckets.forEach((key,i) => {
+    const bDeals = _liveBucketMap[key] || [];
+    const count  = bDeals.length;
+    const barH   = Math.max((count/maxCount)*chartH, count>0?2:0);
+    const x      = padL + i*(barW+colGap);
+    const y      = (padT+chartH-barH).toFixed(1);
+    const midX   = (x+barW/2).toFixed(1);
+
+    // Color by bucket's end date vs today (entire bucket must be past → gray)
+    const bEnd  = bucketEnd(key);
+    const bMid  = new Date((bucketStart(key).getTime()+bEnd.getTime())/2);
+    const isPast= bEnd < today;
+    const isSoon= !isPast && bMid <= in2w;
+    const color = isPast ? '#b0b0c4' : isSoon ? '#f59e0b' : '#6366f1';
+
+    bars  += `<rect class="live-bar" data-key="${key}" x="${x}" y="${y}"
+                    width="${barW}" height="${barH.toFixed(1)}" rx="3"
+                    fill="${color}" opacity="0.85"/>
+              ${count>0?`<text x="${midX}" y="${(+y-4).toFixed(1)}" text-anchor="middle"
+                               font-size="8" font-weight="700" fill="${color}">${count}</text>`:''}`;
+    xlbls += `<text x="${midX}" y="${(padT+chartH+16).toFixed(1)}" text-anchor="middle"
+                    font-size="8.5" fill="#9090a8">${fmtBucket(key)}</text>`;
+    hovers+= `<rect class="live-hover" data-key="${key}" x="${x}" y="${padT}"
+                    width="${barW}" height="${chartH+8}" fill="transparent" cursor="pointer"/>`;
+  });
+
+  // Today line (interpolated across continuous time span)
+  let todayLine='';
+  if (today>=firstStart && today<=lastEnd) {
+    const tx = (padL + ((today-firstStart)/spanMs)*chartW).toFixed(1);
+    todayLine = `<line x1="${tx}" y1="${padT-8}" x2="${tx}" y2="${padT+chartH}"
+                       stroke="#ff4d6d" stroke-width="1.5" stroke-dasharray="3,3"/>
+                 <text x="${tx}" y="${(padT-11).toFixed(1)}" text-anchor="middle"
+                       font-size="8" font-weight="700" fill="#ff4d6d">Today</text>`;
+  }
+
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('width',W); svg.setAttribute('height',H);
+  svg.innerHTML = grid+bars+xlbls+todayLine+hovers;
+
+  // Hover interactions
+  svg.querySelectorAll('.live-hover').forEach(rect => {
+    rect.addEventListener('mouseenter', ev => {
+      const key    = rect.dataset.key;
+      const bDeals = _liveBucketMap[key]||[];
+
+      // Dim other bars
+      svg.querySelectorAll('.live-bar').forEach(r =>
+        r.setAttribute('opacity', r.dataset.key===key ? '1' : '0.18')
+      );
+
+      // Highlight matching Gantt rows
+      highlightGanttRows(bDeals.map(d=>d.live));
+
+      // Tooltip: one line per deal
+      const lines = bDeals.map(d => {
+        const lD=new Date(d.live+'T00:00:00');
+        const p=lD<today, s=!p&&lD<=in2w;
+        const dc=p?'#b0b0c4':s?'#f59e0b':'#6366f1';
+        const dot=`<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${dc};margin-right:5px;flex-shrink:0;vertical-align:middle;"></span>`;
+        return `<div style="display:flex;align-items:center;margin-bottom:2px;">
+                  ${dot}<span style="color:#c0c0d8;">${d.company}</span>
+                  <span style="color:#7070a0;margin-left:6px;font-size:10px;">${fmtDate(d.live)}</span>
+                </div>`;
+      }).join('');
+      showTip(`
+        <div style="font-weight:700;font-size:12px;color:#e0e0ff;margin-bottom:6px;
+                    padding-bottom:5px;border-bottom:1px solid #2a2a4e;">
+          ${fmtBucket(key)} &nbsp;·&nbsp; ${bDeals.length} deal${bDeals.length!==1?'s':''}
+        </div>${lines}`,ev);
+    });
+    rect.addEventListener('mousemove', moveTip);
+    rect.addEventListener('mouseleave', () => {
+      hideTip();
+      clearGanttHighlight();
+      svg.querySelectorAll('.live-bar').forEach(r=>r.setAttribute('opacity','0.85'));
+    });
+    // Touch support
+    rect.addEventListener('touchstart', ev => {
+      ev.stopPropagation();
+      const t=ev.touches[0];
+      rect.dispatchEvent(new MouseEvent('mouseenter',{clientX:t.clientX,clientY:t.clientY}));
+    },{passive:true});
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  FEE BAR CHART
+// ═══════════════════════════════════════════════════════
+let dealsByMonth={};
+
+function renderFeeChart(deals) {
+  const svg=document.getElementById('feeChartSvg');
+  dealsByMonth={};
+  offerMonths.forEach(k=>{dealsByMonth[k]=[];});
+  deals.forEach(d=>{ const k=monthKey(d.offer); if(!dealsByMonth[k]) dealsByMonth[k]=[]; dealsByMonth[k].push(d); });
+
+  const s=parseInt(sliderStart.value), e=parseInt(sliderEnd.value);
+  const visMonths=offerMonths.slice(s,e+1);
+  const fees=visMonths.map(k=>dealsByMonth[k].reduce((t,d)=>t+d.fee,0));
+  const maxFee=Math.max(...fees,1);
+
+  const padL=46,padR=14,padT=20,padB=26;
+  const chartH=88;
+  // Scale bar width to fit container, capped at 56px per bar
+  const feeCardW = (document.querySelector('.fee-chart-card')?.clientWidth||600) - 40; // 40 = card padding
+  const colGap=Math.max(8, Math.round(feeCardW * 0.2 / visMonths.length));
+  const rawBarW = (feeCardW - padL - padR - colGap*(visMonths.length-1)) / visMonths.length;
+  const barW = Math.min(Math.max(rawBarW, 20), 56);
+  const chartW=visMonths.length*(barW+colGap)-colGap;
+  const W=padL+chartW+padR, H=padT+chartH+padB;
+
+  const nTicks=3;
+  let gridLines='';
+  for(let ti=0;ti<=nTicks;ti++){
+    const v=(maxFee/nTicks)*ti;
+    const y=padT+chartH-(v/maxFee)*chartH;
+    const lbl=v===0?'$0':v>=1000?`$${Math.round(v/1000)}k`:`$${v}`;
+    gridLines+=`<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W-padR}" y2="${y.toFixed(1)}" stroke="#ebebf5" stroke-width="1"/>
+                <text x="${padL-5}" y="${(y+3.5).toFixed(1)}" text-anchor="end" font-size="8.5" fill="#b0b0c8">${lbl}</text>`;
+  }
+
+  let bars='',hovers='';
+  visMonths.forEach((key,i)=>{
+    const fee=fees[i];
+    const barH=Math.max(fee>0?(fee/maxFee)*chartH:0,fee>0?2:0);
+    const x=padL+i*(barW+colGap);
+    const y=padT+chartH-barH;
+    const midX=(x+barW/2).toFixed(1);
+    const feeLabel=fee>0?(fee>=1000?`$${(fee/1000).toFixed(fee%1000===0?0:1)}k`:`$${fee}`):'';
+
+    bars+=`<rect x="${x}" y="${y.toFixed(1)}" width="${barW}" height="${barH.toFixed(1)}" rx="3" fill="#6366f1" opacity="0.82"/>
+           ${fee>0?`<text x="${midX}" y="${(y-5).toFixed(1)}" text-anchor="middle" font-size="8" font-weight="700" fill="#6366f1">${feeLabel}</text>`:''}
+           <text x="${midX}" y="${(padT+chartH+16).toFixed(1)}" text-anchor="middle" font-size="8.5" fill="#9090a8">${shortFmt(key)}</text>`;
+    hovers+=`<rect class="bar-hover" data-month="${key}" x="${x}" y="${padT}" width="${barW}" height="${chartH}" fill="transparent" cursor="pointer"/>`;
+  });
+
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('width',W); svg.setAttribute('height',H);
+  svg.innerHTML=gridLines+bars+hovers;
+
+  svg.querySelectorAll('.bar-hover').forEach(rect=>{
+    rect.addEventListener('mouseenter',ev=>{
+      const key=rect.dataset.month;
+      const mDeals=dealsByMonth[key]||[];
+      const total=mDeals.reduce((t,d)=>t+d.fee,0);
+      const lines=mDeals.map(d=>{
+        const dot=`<span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${companyColors[d.company]};margin-right:5px;vertical-align:middle;flex-shrink:0;"></span>`;
+        const fee=d.fee>0?`<span style="color:#fff;font-weight:700;margin-left:4px;">${fmtFee(d.fee)}</span>`:`<span style="color:#6060a0;margin-left:4px;">—</span>`;
+        return `<div style="display:flex;align-items:center;margin-bottom:2px;">${dot}<span style="color:#c0c0d8;">${d.company}</span>${fee}</div>`;
+      }).join('');
+      showTip(`
+        <div style="font-weight:700;font-size:12px;color:#e0e0ff;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid #2a2a4e;">${shortFmt(key)} &nbsp;·&nbsp; ${mDeals.length} deal${mDeals.length!==1?'s':''}</div>
+        ${lines}
+        ${mDeals.length>1?`<div style="margin-top:5px;padding-top:4px;border-top:1px solid #2a2a4e;font-weight:700;color:#a0a0ff;">Total <span style="color:#fff;">${fmtFee(total)}</span></div>`:''}
+      `,ev);
+      svg.querySelectorAll('rect[fill="#6366f1"]').forEach(r=>{
+        r.setAttribute('opacity', Math.abs(parseFloat(r.getAttribute('x'))-parseFloat(rect.getAttribute('x')))<1 ? '1' : '0.3');
+      });
+    });
+    rect.addEventListener('mousemove',moveTip);
+    rect.addEventListener('mouseleave',()=>{
+      hideTip();
+      svg.querySelectorAll('rect[fill="#6366f1"]').forEach(r=>r.setAttribute('opacity','0.82'));
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  BRAND SUMMARY TABLE
+// ═══════════════════════════════════════════════════════
+function toggleBrandFilter(brand) {
+  if (brandFilter === brand) clearBrandFilter();
+  else applyBrandFilter(brand);
+}
+
+function renderBrandTable(deals) {
+  const el = document.getElementById('brandTable');
+  if (!el) return;
+
+  // Aggregate by company: count + total fees
+  const map = {};
+  deals.forEach(d => {
+    if (!map[d.company]) map[d.company] = { count:0, fees:0 };
+    map[d.company].count++;
+    map[d.company].fees += d.fee;
+  });
+
+  // Sort: fees desc → count desc → name asc
+  const rows = Object.entries(map)
+    .sort((a,b) => b[1].fees - a[1].fees || b[1].count - a[1].count || a[0].localeCompare(b[0]));
+
+  if (!rows.length) { el.innerHTML=''; return; }
+
+  el.innerHTML = rows.map(([name, {count, fees}]) => {
+    const isActive = brandFilter === name;
+    const swatch   = companyColors[name] || '#9090b8';
+    return `<div class="brand-row${isActive?' active':''}" data-brand="${name.replace(/"/g,'&quot;')}"
+                 onclick="toggleBrandFilter(this.dataset.brand)">
+              <span class="brand-row-swatch" style="background:${swatch}"></span>
+              <span class="brand-row-name">${name}</span>
+              <span class="brand-row-count">${count} deal${count!==1?'s':''}</span>
+              <span class="brand-row-fee">${fees>0?fmtFee(fees):'—'}</span>
+            </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  MAIN RENDER
+// ═══════════════════════════════════════════════════════
+function render() {
+  if (!N) return;
+  const s=parseInt(sliderStart.value), e=parseInt(sliderEnd.value);
+  const fromKey=offerMonths[s], toKey=offerMonths[e];
+  const deals=allDeals.filter(d=>{ const k=monthKey(d.offer); return k>=fromKey&&k<=toKey; });
+
+  const today=new Date(); today.setHours(0,0,0,0);
+
+  // monthDeals → fee chart (never filtered by active toggle)
+  const monthDeals = deals;
+
+  // ganttDeals → Gantt rows (filtered by active toggle + optional brand)
+  const ganttDeals = (showActive
+    ? deals.filter(d => new Date(d.live+'T00:00:00') >= today)
+    : deals
+  ).filter(d => !brandFilter || d.company === brandFilter);
+
+  // "Active Today" = strictly today between offer and live (green-dot definition)
+  const activeToday = ganttDeals.filter(d =>
+    new Date(d.offer+'T00:00:00') <= today && today <= new Date(d.live+'T00:00:00')
+  );
+
+  const showingAll = s===0 && e===N-1 && !showActive;
+  const latestLive = [...allDeals].sort((a,b)=>new Date(b.live)-new Date(a.live))[0].live;
+
+  rangeCount.textContent = showActive
+    ? `${ganttDeals.length} active · ${e-s+1} mo`
+    : `${ganttDeals.length} deal${ganttDeals.length!==1?'s':''} · ${e-s+1} mo`;
+
+  document.getElementById('summary').innerHTML=`
+    <div class="summary-item">
+      <strong>${ganttDeals.length}${showingAll?'':' / '+allDeals.length}</strong>
+      ${showActive ? 'Active' : showingAll ? 'Total' : 'Shown'} Deals
+    </div>
+    <div class="summary-item active-stat" title="Today falls between offer and live date" style="cursor:help;">
+      <strong>${activeToday.length}</strong>Live Today
+    </div>
+    <div class="summary-item">
+      <strong>$${ganttDeals.reduce((t,d)=>t+d.fee,0).toLocaleString()}</strong>
+      ${showActive ? 'Active' : showingAll ? 'Total' : 'Filtered'} Fees
+    </div>
+    <div class="summary-item">
+      <strong>${Object.keys(companyColors).length}</strong>Brands
+    </div>
+    <div class="summary-item">
+      <strong>${fmtDate(latestLive)}</strong>Latest Live
+    </div>`;
+
+  // Fee chart always uses full month range (unaffected by active toggle)
+  renderFeeChart(monthDeals);
+
+  const gantt=document.getElementById('gantt');
+  const noResults=document.getElementById('no-results');
+  if(ganttDeals.length===0){
+    gantt.innerHTML=''; document.getElementById('legend').innerHTML='';
+    noResults.textContent = brandFilter
+      ? `No deals found for "${brandFilter}".`
+      : showActive
+        ? 'No active deals in this range — switch to "All" to see completed deals.'
+        : 'No deals match this date range.';
+    noResults.style.display='block'; return;
+  }
+  noResults.style.display='none';
+
+  const axisDts=ganttDeals.flatMap(d=>[new Date(d.offer+'T00:00:00'),new Date(d.live+'T00:00:00')]);
+  const axisMin=new Date(Math.min(...axisDts)); axisMin.setDate(1);
+  const axisMax=new Date(Math.max(...axisDts)); axisMax.setDate(1); axisMax.setMonth(axisMax.getMonth()+1);
+  const totalDays=(axisMax-axisMin)/86400000;
+
+  function toPct(ds){ return Math.max(0,Math.min(100,((new Date(ds+'T00:00:00')-axisMin)/86400000)/totalDays*100)); }
+
+  const axisMonths=getAxisMonths(axisMin,axisMax);
+  const todayPct=toPct(new Date().toISOString().slice(0,10));
+
+  gantt.innerHTML='';
+  const header=document.createElement('div');
+  header.className='gantt-header';
+  header.innerHTML=`
+    <div class="label-col">Deal</div>
+    <div class="timeline-col" style="position:relative;height:24px;">
+      ${axisMonths.map(m=>`<span class="month-label" style="left:${toPct(m.toISOString().slice(0,10))}%">${shortFmt(m.toISOString().slice(0,7))}</span>`).join('')}
+    </div>`;
+  gantt.appendChild(header);
+
+  ganttDeals.forEach((deal,i)=>{
+    const offerPct=toPct(deal.offer), livePct=toPct(deal.live);
+    const widthPct=Math.max(livePct-offerPct,0);
+    const dur=Math.round((new Date(deal.live+'T00:00:00')-new Date(deal.offer+'T00:00:00'))/86400000);
+    const liveD    = new Date(deal.live+'T00:00:00');
+    const in2weeks = new Date(today); in2weeks.setDate(in2weeks.getDate()+14);
+    const isPast   = liveD < today;
+    const isSoon   = !isPast && liveD <= in2weeks;   // live date within 14 days
+    const color    = isPast ? '#b0b0c4' : isSoon ? '#f59e0b' : '#6366f1';
+    const isActive = new Date(deal.offer+'T00:00:00')<=today && today<=liveD;
+    const isSameDay=deal.offer===deal.live;
+    const barLabel=widthPct>4?fmtFee(deal.fee):'';
+    const attrs=`data-company="${deal.company}" data-product="${deal.product}" data-offer="${deal.offer}" data-live="${deal.live}" data-fee="${deal.fee}" data-dur="${dur}"`;
+
+    const row=document.createElement('div');
+    row.className='gantt-row'; row.dataset.live=deal.live;
+    row.innerHTML=`
+      <div class="row-label">
+        <div class="row-company">${isActive?'<span class="active-dot"></span>':''} ${deal.company}</div>
+        <div class="row-product">${deal.product}</div>
+      </div>
+      <div class="row-timeline">
+        ${axisMonths.map(m=>`<div class="gantt-grid" style="left:${toPct(m.toISOString().slice(0,10))}%;top:0;bottom:0;"></div>`).join('')}
+        <div class="today-line" style="left:${todayPct}%;">${i===0?'<span class="today-label">Today</span>':''}</div>
+        ${isSameDay?`<div class="gantt-dot" style="left:${offerPct}%;background:${color};" ${attrs}></div>`:`<div class="gantt-bar" style="left:${offerPct}%;width:${widthPct}%;background:${color};" ${attrs}>${barLabel}</div>`}
+      </div>`;
+    gantt.appendChild(row);
+    if(i<ganttDeals.length-1){ const dv=document.createElement('div'); dv.className='gantt-divider'; gantt.appendChild(dv); }
+  });
+
+  document.querySelectorAll('.gantt-bar,.gantt-dot').forEach(el=>{
+    function buildTipHTML() {
+      const dur=parseInt(el.dataset.dur);
+      return `
+        <div style="font-weight:700;font-size:12.5px;margin-bottom:5px;color:#e0e0ff;">${el.dataset.company}</div>
+        <div style="display:flex;gap:8px;margin-bottom:2px;"><span style="font-weight:600;min-width:54px;">Product</span><span style="color:#c0c0d8;">${el.dataset.product}</span></div>
+        <div style="display:flex;gap:8px;margin-bottom:2px;"><span style="font-weight:600;min-width:54px;">Offer</span><span style="color:#c0c0d8;">${fmtDate(el.dataset.offer)}</span></div>
+        <div style="display:flex;gap:8px;margin-bottom:2px;"><span style="font-weight:600;min-width:54px;">Live</span><span style="color:#c0c0d8;">${fmtDate(el.dataset.live)}</span></div>
+        <div style="display:flex;gap:8px;margin-bottom:2px;"><span style="font-weight:600;min-width:54px;">Duration</span><span style="color:#c0c0d8;">${dur===0?'Same day':dur+' days'}</span></div>
+        <div style="display:flex;gap:8px;"><span style="font-weight:600;min-width:54px;">Fee</span><span style="color:#c0c0d8;">${fmtFee(parseInt(el.dataset.fee))}</span></div>`;
+    }
+    el.addEventListener('mouseenter',ev=>showTip(buildTipHTML(),ev));
+    el.addEventListener('mousemove',moveTip);
+    el.addEventListener('mouseleave',hideTip);
+    // Touch: tap to show tip, tap anywhere else to hide
+    el.addEventListener('touchstart',ev=>{
+      ev.stopPropagation();
+      const t=ev.touches[0];
+      // create a synthetic event-like object for positioning
+      showTip(buildTipHTML(),{clientX:t.clientX,clientY:t.clientY});
+    },{passive:true});
+  });
+
+  // Live-date chart uses full month range (same as fee chart — not filtered by Active/All or brand)
+  renderLiveDateChart(monthDeals);
+
+  // Brand summary table — uses same month-filtered set, click to filter Gantt
+  renderBrandTable(monthDeals);
+
+  document.getElementById('legend').innerHTML=`
+    <div class="legend-item"><div class="legend-swatch" style="background:#6366f1"></div>Live in 2+ weeks</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#f59e0b"></div>Live within 2 weeks</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#b0b0c4"></div>Past</div>`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  BRAND PICKER (combo-box for the Add Deal modal)
+// ═══════════════════════════════════════════════════════
+let _bpHighlight = -1;
+
+function _bpOptions(query) {
+  const q = query.trim().toLowerCase();
+  const brands = Object.keys(companyColors).sort((a,b) => a.localeCompare(b));
+  // Exact-prefix matches first, then any substring matches
+  const prefix = brands.filter(b => b.toLowerCase().startsWith(q));
+  const others = brands.filter(b => !b.toLowerCase().startsWith(q) && b.toLowerCase().includes(q));
+  return q ? [...prefix, ...others] : brands;
+}
+
+function _bpRender(query) {
+  const dd   = document.getElementById('brandPickerDropdown');
+  const opts = _bpOptions(query);
+  _bpHighlight = -1;
+  if (!opts.length) { dd.classList.remove('open'); dd.innerHTML = ''; return; }
+  dd.innerHTML = opts.map(co => `
+    <div class="brand-option" data-brand="${co.replace(/"/g,'&quot;')}"
+         onmousedown="selectBrandFromPicker('${co.replace(/'/g,"\\'")}')">
+      <span class="brand-dot" style="background:${companyColors[co]}"></span>${co}
+    </div>`).join('');
+  dd.classList.add('open');
+}
+
+function openBrandPicker() {
+  const inp = document.getElementById('fieldBrand');
+  _bpRender(inp.value);
+}
+
+function onBrandPickerInput(val) {
+  _bpRender(val);
+}
+
+function onBrandPickerKey(ev) {
+  const dd   = document.getElementById('brandPickerDropdown');
+  const opts = dd.querySelectorAll('.brand-option');
+  if (ev.key === 'ArrowDown') {
+    ev.preventDefault();
+    _bpHighlight = Math.min(_bpHighlight + 1, opts.length - 1);
+    opts.forEach((o,i) => o.classList.toggle('hi', i === _bpHighlight));
+    if (opts[_bpHighlight]) opts[_bpHighlight].scrollIntoView({ block:'nearest' });
+  } else if (ev.key === 'ArrowUp') {
+    ev.preventDefault();
+    _bpHighlight = Math.max(_bpHighlight - 1, 0);
+    opts.forEach((o,i) => o.classList.toggle('hi', i === _bpHighlight));
+  } else if (ev.key === 'Enter') {
+    ev.preventDefault();
+    if (_bpHighlight >= 0 && opts[_bpHighlight]) {
+      selectBrandFromPicker(opts[_bpHighlight].dataset.brand);
+    } else {
+      // Accept whatever is typed as a new brand
+      dd.classList.remove('open');
+    }
+  } else if (ev.key === 'Escape') {
+    dd.classList.remove('open');
+  }
+}
+
+function selectBrandFromPicker(brand) {
+  document.getElementById('fieldBrand').value = brand;
+  document.getElementById('brandPickerDropdown').classList.remove('open');
+  _bpHighlight = -1;
+}
+
+// Close picker when clicking outside the modal brand field
+document.addEventListener('click', ev => {
+  if (!ev.target.closest('#fieldBrand') && !ev.target.closest('#brandPickerDropdown'))
+    document.getElementById('brandPickerDropdown')?.classList.remove('open');
+});
+
+// ═══════════════════════════════════════════════════════
+//  ADD DEAL MODAL
+// ═══════════════════════════════════════════════════════
+function openAddDealModal() {
+  const modal = document.getElementById('addDealModal');
+  modal.classList.add('open');
+  // Restore saved API key
+  const savedKey = localStorage.getItem('gershClaudeKey') || '';
+  document.getElementById('claudeApiKey').value = savedKey;
+  // Clear prior state
+  document.getElementById('dealTextarea').value = '';
+  document.getElementById('extractStatus').textContent = '';
+  document.getElementById('saveStatus').textContent = '';
+  document.getElementById('extractedFields').classList.remove('visible');
+}
+
+function closeAddDealModal() {
+  document.getElementById('addDealModal').classList.remove('open');
+}
+
+function modalOverlayClick(ev) {
+  // Close if clicked on the dark backdrop (not the card itself)
+  if (ev.target === document.getElementById('addDealModal')) closeAddDealModal();
+}
+
+function toggleApiKeyVisibility() {
+  const inp = document.getElementById('claudeApiKey');
+  const btn = document.getElementById('apikeyToggle');
+  if (inp.type === 'password') { inp.type = 'text';     btn.textContent = '🙈'; }
+  else                         { inp.type = 'password'; btn.textContent = '👁';  }
+}
+
+async function extractWithClaude() {
+  const text   = document.getElementById('dealTextarea').value.trim();
+  const apiKey = document.getElementById('claudeApiKey').value.trim();
+  const statusEl = document.getElementById('extractStatus');
+
+  if (!text)   { statusEl.textContent = '⚠ Please paste some deal text first.'; statusEl.style.color='#f59e0b'; return; }
+  if (!apiKey) { statusEl.textContent = '⚠ Please enter your Anthropic API key.'; statusEl.style.color='#f59e0b'; return; }
+
+  // Persist key for next time
+  localStorage.setItem('gershClaudeKey', apiKey);
+
+  const btn = document.getElementById('extractBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Extracting…';
+  statusEl.textContent = '';
+
+  const today = new Date().toISOString().slice(0,10);
+  const currentYear = today.slice(0,4);
+  const prompt = `You are extracting structured data from an influencer deal / brand partnership email.
+Return ONLY a valid JSON object — no markdown, no explanation, no code fences.
+
+JSON fields (all strings unless noted):
+{
+  "brand":        "value from BRAND: field, or the company/brand name",
+  "product":      "value from PRODUCT: field — the specific product(s) being promoted",
+  "offerDate":    "YYYY-MM-DD — the EARLIEST date listed under TIMELINE (e.g. Creative Concept date, first deliverable date). If no timeline dates exist, use today's date.",
+  "liveDate":     "YYYY-MM-DD — the date labeled 'Live by:' or 'Go live' in TIMELINE. This is the most important date.",
+  "fee":          0,
+  "deliverables": "concise summary of DELIVERABLES section (platform, format, count)",
+  "usage":        "concise summary of USAGE section (duration, type)",
+  "exclusivity":  "concise summary of EXCLUSIVITY section"
+}
+
+Date rules:
+- All dates must be ISO format YYYY-MM-DD.
+- If only month/day given (e.g. "2/23"), assume year ${currentYear} unless context clearly indicates otherwise.
+- If only a month is given, use the 1st of that month.
+- fee must be a plain number (strip $, USD, commas). Use 0 if not stated.
+- For missing optional fields (deliverables, usage, exclusivity), use empty string "".
+
+Today's date is ${today}.
+
+Deal email text:
+${text}`;
+
+  // Route through the local proxy server (avoids browser CORS restrictions).
+  // Start the server by double-clicking "Launch Dashboard.command" in Finder.
+  const PROXY = 'http://127.0.0.1:8765/api/extract';
+
+  try {
+    const resp = await fetch(PROXY, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        apiKey,
+        payload: {
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 512,
+          messages: [{ role: 'user', content: prompt }]
+        }
+      })
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json().catch(()=>({}));
+      // Surface a helpful message if the proxy server isn't running
+      if (!resp.status) throw new Error(
+        'Cannot reach the local server. Double-click "Launch Dashboard.command" in the Dr Abby folder first, then try again.'
+      );
+      throw new Error(err.error?.message || `API error ${resp.status}`);
+    }
+
+    const data      = await resp.json();
+    const rawText   = data.content?.[0]?.text?.trim() || '';
+    // Strip markdown code fences if model added them anyway
+    const jsonStr   = rawText.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
+    const extracted = JSON.parse(jsonStr);
+
+    // Populate editable fields
+    // For brand: fuzzy-match against existing brands and prefer the canonical spelling
+    const rawBrand = (extracted.brand || '').trim();
+    const canonBrand = _bpOptions(rawBrand)[0]; // top fuzzy match, if any
+    const useBrand = (canonBrand && canonBrand.toLowerCase() === rawBrand.toLowerCase())
+      ? canonBrand   // exact case-insensitive match → use canonical spelling from Excel
+      : rawBrand;    // no match → keep Claude's extraction as a new brand
+    document.getElementById('fieldBrand').value        = useBrand;
+    document.getElementById('fieldProduct').value      = extracted.product      || '';
+    document.getElementById('fieldOffer').value        = extracted.offerDate    || '';
+    document.getElementById('fieldLive').value         = extracted.liveDate     || '';
+    document.getElementById('fieldFee').value          = (extracted.fee != null && extracted.fee !== '') ? extracted.fee : '';
+    document.getElementById('fieldDeliverables').value = extracted.deliverables || '';
+    document.getElementById('fieldUsage').value        = extracted.usage        || '';
+    document.getElementById('fieldExclusivity').value  = extracted.exclusivity  || '';
+
+    document.getElementById('extractedFields').classList.add('visible');
+    statusEl.textContent = '✓ Fields extracted — review and edit if needed.';
+    statusEl.style.color = '#10b981';
+
+  } catch(err) {
+    const isNetworkErr = err instanceof TypeError && err.message.toLowerCase().includes('fetch');
+    statusEl.innerHTML = isNetworkErr
+      ? '✗ Server not running — double-click <strong>Launch Dashboard.command</strong> in the Dr Abby folder, then try again.'
+      : '✗ ' + err.message;
+    statusEl.style.color = '#ef4444';
+    console.error('Claude extraction error:', err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Extract with Claude';
+  }
+}
+
+async function addDealToExcel() {
+  const brand        = document.getElementById('fieldBrand').value.trim();
+  const product      = document.getElementById('fieldProduct').value.trim();
+  const offer        = document.getElementById('fieldOffer').value.trim();
+  const live         = document.getElementById('fieldLive').value.trim();
+  const fee          = parseFloat(document.getElementById('fieldFee').value) || 0;
+  const deliverables = document.getElementById('fieldDeliverables').value.trim();
+  const usage        = document.getElementById('fieldUsage').value.trim();
+  const exclusivity  = document.getElementById('fieldExclusivity').value.trim();
+  const saveEl       = document.getElementById('saveStatus');
+
+  if (!brand) { saveEl.textContent='⚠ Brand name is required.'; saveEl.style.color='#f59e0b'; return; }
+  if (!offer || !live) { saveEl.textContent='⚠ Offer Date and Live Date are required.'; saveEl.style.color='#f59e0b'; return; }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(offer)||!/^\d{4}-\d{2}-\d{2}$/.test(live)) {
+    saveEl.textContent='⚠ Dates must be YYYY-MM-DD (use the date picker).'; saveEl.style.color='#f59e0b'; return;
+  }
+
+  // Add to live in-memory dataset and re-render the Gantt immediately
+  // (Chart uses: company, product, offer, live, fee)
+  allDeals.push({ company: brand, product: product||'—', offer, live, fee });
+  initDeals();
+
+  // Write back to Excel — append directly so formatting is preserved
+  if (currentWorkbook) {
+    try {
+      const ws = currentWorkbook.Sheets[currentWorkbook.SheetNames[0]];
+      _appendDealRow(ws, { brand, product, offer, live, fee, deliverables, usage, exclusivity });
+
+      // Try direct write via File System Access API (readwrite permission)
+      const savedDirectly = await _tryWriteFileHandle();
+      if (savedDirectly) {
+        saveEl.textContent = '✓ Deal saved directly to Gersh Deals.xlsx and chart updated!';
+      } else {
+        _downloadWorkbook();
+        saveEl.textContent = '✓ Chart updated! Downloading updated Excel — replace your original file.';
+      }
+      saveEl.style.color = '#10b981';
+
+    } catch(err) {
+      saveEl.textContent = '✗ Excel error: ' + err.message;
+      saveEl.style.color = '#ef4444';
+      console.error('Excel write error:', err);
+      return;
+    }
+  } else {
+    saveEl.textContent = '✓ Deal added to chart. (Load Excel first to also persist to file.)';
+    saveEl.style.color = '#f59e0b';
+  }
+
+  // Close modal after a moment so user can read the status
+  setTimeout(closeAddDealModal, 2400);
+}
+
+// ── Append one deal row to an existing SheetJS worksheet ─────────────────
+// Preserves all existing cell formatting; new cells inherit the format code
+// from the first data row in the same column (dates, currency, etc.).
+function _appendDealRow(ws, { brand, product, offer, live, fee, deliverables, usage, exclusivity }) {
+  const range = XLSX.utils.decode_range(ws['!ref'] || 'A1');
+  const newR  = range.e.r + 1;
+
+  // ── Find column index by matching header text ─────────────────────
+  function colIdx(...names) {
+    for (let c = range.s.c; c <= range.e.c; c++) {
+      const cell = ws[XLSX.utils.encode_cell({ r: 0, c })];
+      if (!cell) continue;
+      const v = String(cell.v).trim().toLowerCase();
+      if (names.some(n => v === n.toLowerCase())) return c;
+    }
+    return -1;
+  }
+
+  const cBrand = colIdx('Brand','Company');
+  const cOffer = colIdx('Offer Date','OfferDate');
+  const cLive  = colIdx('Live Date','LiveDate');
+  const cFee   = colIdx('Fee','Fees');
+  const cDeliv = colIdx('Deliverables','Deliverable');
+  const cUsage = colIdx('Suage','Usage');
+  const cProd  = colIdx('Product');
+  const cExcl  = colIdx('Exclusivity');
+
+  // ── Borrow the format code from the first data cell in a column ───
+  function inheritFmt(c, fallback) {
+    for (let r = 1; r <= range.e.r; r++) {
+      const cell = ws[XLSX.utils.encode_cell({ r, c })];
+      if (cell && cell.z) return cell.z;
+    }
+    return fallback;
+  }
+
+  // ── Convert YYYY-MM-DD → Excel date serial number ─────────────────
+  function isoToSerial(ds) {
+    const d = new Date(ds + 'T00:00:00');
+    // Excel epoch: Dec 30 1899
+    return (Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) -
+            Date.UTC(1899, 11, 30)) / 86400000;
+  }
+
+  // ── Write a single cell ───────────────────────────────────────────
+  function setCell(c, val, type, fmt) {
+    if (c < 0 || val === undefined || val === null || val === '') return;
+    const ref  = XLSX.utils.encode_cell({ r: newR, c });
+    const cell = { t: type, v: val };
+    if (fmt) cell.z = fmt;
+    ws[ref] = cell;
+  }
+
+  const dateFmt = inheritFmt(cOffer, 'M/D/YY');
+  const feeFmt  = inheritFmt(cFee,   '"$"#,##0');
+
+  setCell(cBrand, brand,             's');
+  setCell(cProd,  product || '—',    's');
+  setCell(cDeliv, deliverables,      's');
+  setCell(cUsage, usage,             's');
+  setCell(cExcl,  exclusivity,       's');
+  setCell(cOffer, isoToSerial(offer),'n', dateFmt);
+  setCell(cLive,  isoToSerial(live), 'n', dateFmt);
+  setCell(cFee,   fee,               'n', feeFmt);
+
+  // ── Extend the sheet range ────────────────────────────────────────
+  range.e.r = newR;
+  ws['!ref'] = XLSX.utils.encode_range(range);
+
+  // ── Extend any Excel Table so the new row is inside it ───────────
+  const tables = ws['!tables'];
+  if (Array.isArray(tables)) {
+    tables.forEach(tbl => {
+      try {
+        const tr = XLSX.utils.decode_range(tbl.ref);
+        tr.e.r   = newR;
+        tbl.ref  = XLSX.utils.encode_range(tr);
+      } catch(_) {}
+    });
+  }
+}
+
+async function _tryWriteFileHandle() {
+  if (!window.showOpenFilePicker) return false;
+  try {
+    const stored = await getStoredHandle();
+    if (!stored) return false;
+    let perm = await stored.queryPermission({ mode:'readwrite' });
+    if (perm !== 'granted') perm = await stored.requestPermission({ mode:'readwrite' });
+    if (perm !== 'granted') return false;
+    const wbout   = XLSX.write(currentWorkbook, { bookType:'xlsx', type:'array' });
+    const blob    = new Blob([wbout], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const writable = await stored.createWritable();
+    await writable.write(blob);
+    await writable.close();
+    return true;
+  } catch(e) {
+    console.warn('Direct file write failed:', e);
+    return false;
+  }
+}
+
+function _downloadWorkbook() {
+  const wbout = XLSX.write(currentWorkbook, { bookType:'xlsx', type:'array' });
+  const blob  = new Blob([wbout], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const url   = URL.createObjectURL(blob);
+  const a     = document.createElement('a');
+  a.href = url; a.download = 'Gersh Deals.xlsx'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', ev => {
+  if (ev.key === 'Escape') closeAddDealModal();
+});
+
+let _resizeTimer;
+window.addEventListener('resize',()=>{
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(render, 80);
+});
+
+// ═══════════════════════════════════════════════════════
+//  BOOT
+// ═══════════════════════════════════════════════════════
+// Hide tooltip on any tap outside a bar (registered once)
+document.addEventListener('touchstart',()=>hideTip(),{passive:true});
+
+// 1. Load snapshot immediately so chart is never blank
+allDeals = SNAPSHOT.map(d=>({...d}));
+initDeals();
+
+// 2. Try to silently reload from Excel if permission is already granted
+tryAutoLoad();
+</script>
+</body>
+</html>
