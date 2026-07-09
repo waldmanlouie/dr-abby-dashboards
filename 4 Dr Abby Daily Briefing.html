@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Abby — Daily Briefing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f4f5f7;color:#1a1a2e;min-height:100vh}
+.header{background:#fff;padding:16px 20px;border-bottom:1px solid #e0e2e8;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.header h1{font-size:19px;font-weight:600;color:#1a1a2e}
+.header h1 span{color:#5b63d3;font-weight:700}
+.hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px}
+.badge.fresh{background:#dcfce7;color:#15803d}
+.badge.stale{background:#fef3c7;color:#92400e}
+.build-ts{font-size:12px;color:#888}
+.notes{margin:12px 16px 0;padding:10px 14px;background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;font-size:13px;color:#92400e}
+.wrap{max-width:1080px;margin:0 auto;padding:8px 12px 40px}
+.sec{margin-top:22px}
+.sec-title{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:#888;font-weight:700;padding:0 6px 8px}
+.wins{display:flex;flex-direction:column;gap:8px}
+.win{background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:10px 14px;font-size:13.5px;color:#3730a3}
+.win a{color:#5b63d3;font-weight:700;text-decoration:none}
+.win .lane{display:block;margin-top:3px;font-size:12.5px;color:#6d28d9}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid #e0e2e8;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);overflow:hidden}
+.card-head{display:flex;align-items:flex-start;gap:10px;padding:14px;cursor:pointer;min-height:44px;-webkit-tap-highlight-color:transparent}
+.card-head:active{background:#f7f8fa}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dot.green{background:#16a34a}.dot.yellow{background:#f59e0b}.dot.red{background:#dc2626}
+.card-t{flex:1}
+.card-name{font-size:15px;font-weight:700}
+.card-sub{font-size:12.5px;color:#666;margin-top:3px;line-height:1.45}
+.heat{font-size:13px;flex-shrink:0}
+.chev{color:#bbb;font-size:12px;flex-shrink:0;margin-top:4px;transition:transform .15s}
+.card.open .chev{transform:rotate(90deg)}
+.card-body{display:none;padding:0 14px 14px;border-top:1px solid #f0f1f4}
+.card.open .card-body{display:block}
+.blk{margin-top:12px}
+.blk-label{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:#999;font-weight:700;margin-bottom:5px}
+.vid{font-size:13px;padding:6px 0;border-bottom:1px dashed #eee;line-height:1.5}
+.vid:last-child{border-bottom:none}
+.vid .who{font-weight:600}
+.vid .nums{color:#666}
+.tier-sv{color:#92400e;font-weight:700}.tier-v{color:#14532d;font-weight:700}
+a.watch{color:#5b63d3;font-weight:700;text-decoration:none;white-space:nowrap}
+.fit{font-size:13px;line-height:1.55;color:#333}
+.fit .pos{display:block;margin-top:6px;padding:8px 10px;background:#f8f7ff;border-left:3px solid #5b63d3;border-radius:0 6px 6px 0;font-style:italic;color:#4338ca}
+.fit .cov-links{margin-top:5px;font-size:12.5px}
+.angle{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed #eee;font-size:13.5px}
+.angle:last-child{border-bottom:none}
+.angle .g{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;flex-shrink:0}
+.g.yes{background:#dcfce7;color:#15803d}.g.take{background:#fef3c7;color:#92400e}.g.verify{background:#fee2e2;color:#b91c1c}
+.len{font-size:13px;color:#333}
+.len b{color:#5b63d3}
+.draftbtn{display:inline-block;margin-left:auto;padding:6px 12px;border-radius:8px;border:1px solid #c7d2fe;background:#eef2ff;color:#4338ca;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0;min-height:32px}
+.draftbtn:active{background:#c7d2fe}
+.draftbtn.big{display:block;width:100%;margin-top:14px;padding:12px;text-align:center;font-size:14px;background:#5b63d3;color:#fff;border:none;border-radius:10px;min-height:44px}
+.draftbtn.big:active{background:#4338ca}
+.rubric{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:12.5px}
+.rub{color:#444}.rub .ck{font-weight:700}
+.rub .ck.y{color:#16a34a}.rub .ck.n{color:#dc2626}
+.pitchblk{font-size:13px;line-height:1.55;color:#333}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid #e0e2e8;border-radius:999px;padding:7px 14px;font-size:12.5px;color:#444}
+.chip a{color:#5b63d3;font-weight:700;text-decoration:none}
+.stitch-meta{font-size:12.5px;color:#666}
+.src-tag{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;background:#f1f5f9;color:#64748b;vertical-align:1px}
+.footer{margin-top:34px;text-align:center;font-size:11.5px;color:#999;line-height:1.7}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;z-index:99}
+.toast.show{opacity:1}
+.empty{padding:20px;text-align:center;color:#999;font-size:13.5px}
+</style>
+</head>
+<body>
+<nav style="display:flex;align-items:center;gap:6px;padding:8px 16px;background:#1a1a2e;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:auto;">
+  <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-right:6px;letter-spacing:.5px;text-transform:uppercase;">Dashboards</span>
+  <a href="4 Dr Abby Daily Briefing.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(91,99,211,.25);color:#a5b4fc;border:1px solid rgba(91,99,211,.4);white-space:nowrap;">Briefing</a>
+  <a href="1 Dr Abby Trending.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;white-space:nowrap;">Trending</a>
+  <a href="2 Dr Abby Growth Dashboard.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;white-space:nowrap;">Growth</a>
+  <a href="3 Dr Abby Projects.html" style="padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:transparent;color:rgba(255,255,255,.6);border:1px solid transparent;white-space:nowrap;">Projects</a>
+</nav>
+
+<div class="header">
+  <h1>Dr Abby <span>Daily Briefing</span></h1>
+  <div class="hdr-right">
+    <span class="badge" id="fresh-badge"></span>
+    <span class="build-ts">Built Jul 09, 2026 08:05 AM ET</span>
+  </div>
+</div>
+
+<div id="notes-slot"></div>
+
+<div class="wrap">
+  <div class="sec" id="wins-sec" style="display:none">
+    <div class="sec-title">You this week</div>
+    <div class="wins" id="wins"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Trending themes — tap a card</div>
+    <div class="grid" id="themes"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Stitch / react targets</div>
+    <div class="grid" id="stitches"></div>
+  </div>
+
+  <div class="sec" id="more-sec" style="display:none">
+    <div class="sec-title">More topics</div>
+    <div class="chips" id="more"></div>
+  </div>
+
+  <div class="footer" id="foot"></div>
+</div>
+<div class="toast" id="toast">Copied — paste into Claude ✓</div>
+
+<script>
+const DATA = {"schema": 1, "date": "2026-07-09", "generated_at": "2026-07-09T07:56:21-04:00", "generated_by": "dr-abby-script-writer v2.0.0 briefing-build (first run, in-session)", "signals_generated_at": "2026-07-09T10:30:55Z", "stitch_generated_at": "2026-07-09T10:31:09Z", "source_extract": "2026-07-08T09:15:03Z", "meta_notes": "", "menu_lines": ["skin cancer or not? 5-second quizzes (147× baseline, 6 breakouts) [watch](https://www.tiktok.com/@dr.derm.love/video/7659156362072542494)", "diaper-cream-as-sunscreen myths (15.9M source video, 2 derm reacts) [watch](https://www.tiktok.com/@rob.lea1/video/7659140702172892429)", "glass skin routines (YOURS — superviral on BOTH platforms today) [watch](https://www.instagram.com/p/DagZEHNP3nk/)", "petroleum jelly: friend or foe (1075× baseline monster) [watch](https://www.youtube.com/shorts/RUizJwm0UeA)", "melasma & dark-spot hygiene (474× baseline, 1M) [watch](https://www.tiktok.com/@dermdocmalik/video/7657359644507065631)"], "themes": [{"name": "Skin cancer 'or not?' 5-second quizzes", "heat": 3, "receipt": "6 breakouts, one creator's format · up to 428× baseline · 5–6s quizzes", "videos": [{"author": "dr.derm.love", "platform": "TT", "views": 2200000, "views_hr": 13901, "tier": "superviral", "x_baseline": 428.2, "age_days": 9.6, "duration_s": 5, "caption": "Skin cancer or not? Bcc, dermatofibroma, melanoma #skincancer #melanoma #bcc #fyp", "url": "https://www.tiktok.com/@dr.derm.love/video/7656566753484393759", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 757400, "views_hr": 12066, "tier": "superviral", "x_baseline": 147.4, "age_days": 2.7, "duration_s": 5, "caption": "Is it skin cancer or not? Melanoma, skin tag, melanoma #melanoma #skincancer #melanomaawareness", "url": "https://www.tiktok.com/@dr.derm.love/video/7659156362072542494", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 581200, "views_hr": 13831, "tier": "superviral", "x_baseline": 113.1, "age_days": 1.8, "duration_s": 5, "caption": "Skin cancer or not? Skin tag, melanoma, seborrheic keratosis #melanoma #seborrheickeratosis #fyp", "url": "https://www.tiktok.com/@dr.derm.love/video/7659477254749031710", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 688800, "views_hr": 5881, "tier": "viral", "x_baseline": 134.1, "age_days": 4.9, "duration_s": 5, "caption": "Skin cancer or not? Melanoma, Tinea versicolor, bcc #melanoma #skincancer #bcc #skincancerawareness", "url": "https://www.tiktok.com/@dr.derm.love/video/7658316064693980446", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Deep corpus: BCC ultimate guide (493K views), melanoma-diagnosis reply, and an 'age spots can be early melanoma' post 10 days ago (183K).", "links": [{"label": "her BCC guide · 493K", "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"}, {"label": "her age-spots/melanoma post · 183K", "url": "https://www.instagram.com/p/DaIZdpvAHpS/"}]}, "corpus_position": "Melanoma is a really scary word. Here are the three things you should ask your doctor if you or a loved one gets a diagnosis of melanoma.", "winning_length": "5–8s quiz", "angles": [{"angle": "Steal the 5s quiz — Mohs surgeon edition, real lesion pairs", "grounded": "yes", "source": "feed", "verify": false}, {"angle": "'Age spots' that are actually melanoma — quiz your feed", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Quiz, then the 3 questions to ask after a melanoma diagnosis", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": []}, {"name": "Sun-protection myths & fear-mongering", "heat": 3, "receipt": "Diaper-cream trend (15.9M source + 2 derm reacts) · 'habits > products' 120× · hormone scare 865-comment fight", "videos": [{"author": "beautydermmd", "platform": "IG", "views": 2313204, "views_hr": 24675, "tier": "superviral", "x_baseline": 119.8, "age_days": 3.9, "duration_s": 6, "caption": "Not her serum. Not her skincare. HER HABITS. 👀 Sun protection is elite behavior. UPF clothing. Wide-brim hat. Sunglasses. Shade. This is what dermatologists notice first. You should too. ☀️ #dermatolo", "url": "https://www.instagram.com/p/DaX_HEcOs-5/", "is_abby": false}, {"author": "drdrayzday", "platform": "IG", "views": 357757, "views_hr": 14739, "tier": "superviral", "x_baseline": 3.5, "age_days": 1.0, "duration_s": 76, "caption": "Diaper Cream as Sunscreen⁉️😳 #dermreacts #sunscreen #spfprotection", "url": "https://www.instagram.com/p/DafdzxPR3v8/", "is_abby": false}, {"author": "drdrayzday", "platform": "TT", "views": 135800, "views_hr": 3654, "tier": "viral", "x_baseline": 6.6, "age_days": 1.6, "duration_s": 75, "caption": "Diaper rash cream doesn’t not work as sunscreen. #sunscreen #diaperrashcream #sunprotection @rob.lea", "url": "https://www.tiktok.com/@drdrayzday/video/7659538193007660301", "is_abby": false}, {"author": "drspf", "platform": "TT", "views": 183900, "views_hr": 1939, "tier": "viral", "x_baseline": 16.4, "age_days": 4.0, "duration_s": 89, "caption": "UV index is not the stock market 📈📉 I am all for getting outside, being active, playing sports, and enjoying the sun safely…but intentionally sitting out to tan is not it. A tan is your skin’s respons", "url": "https://www.tiktok.com/@drspf/video/7658663111561415966", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Bemotrizinol/European-filters post 6 days ago (307K), UV-index reminder 9 days ago (169K), plus two long-form sunscreen guides in corpus.", "links": [{"label": "her bemotrizinol post · 307K", "url": "https://www.instagram.com/p/DaTxWSpvBUk/"}, {"label": "her UV-index post · 169K", "url": "https://www.instagram.com/p/DaK_bSCgaUX/"}]}, "corpus_position": "I think the reason that dermatologists take sun protection so seriously is we see the damage that it can do.", "winning_length": "6s punch or 60–90s explainer", "angles": [{"angle": "Debunk diaper-cream SPF — what zinc oxide actually does", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "'Sunscreens harm hormones' — the European-filters answer", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Habits ladder: shade, UPF, hat — THEN sunscreen", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": [0, 1, 2]}, {"name": "Glass skin routines (SHE is the breakout)", "heat": 2, "receipt": "YOURS superviral on both platforms in <1 day (473K IG · 195K TT) · teawithmd 146× · K-beauty mist 12×", "videos": [{"author": "abby.waldmanmd", "platform": "IG", "views": 473126, "views_hr": 30735, "tier": "superviral", "x_baseline": 5.0, "age_days": 0.7, "duration_s": 8, "caption": "And don’t forget to exfoliate 1-2 times a week! Don’t use retinoids when pregnant. other retinoids like retinol or adapalene can be used instead of tretinoin Azelaic acid can be used at night instead ", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "is_abby": true}, {"author": "drabby6", "platform": "TT", "views": 195200, "views_hr": 12862, "tier": "superviral", "x_baseline": 8.2, "age_days": 0.7, "duration_s": 7, "caption": "And don’t forget to exfoliate 1-2 times a week! Don’t use a retinoid when pregnant. What's your glass skin care routine? #glassskin #skincare #skincareroutine", "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599", "is_abby": true}, {"author": "teawithmd", "platform": "TT", "views": 483200, "views_hr": 3107, "tier": "viral", "x_baseline": 145.7, "age_days": 8.5, "duration_s": 13, "caption": "If ✨ glass skin✨ is what you want, why aren’t you using this combo yet!? And no it’s not just genetics - I suffer from hormonal acne and rosacea! #azelaicacid #tretinoin #glassskin", "url": "https://www.tiktok.com/@teawithmd/video/7656983974643879199", "is_abby": false}, {"author": "yurileeeee", "platform": "TT", "views": 351800, "views_hr": 5747, "tier": "viral", "x_baseline": 12.1, "age_days": 2.6, "duration_s": 26, "caption": "Complements in Korea🇰🇷 hits different✨🥹 #glowyskin #glassskin #facemist #summermist", "url": "https://www.tiktok.com/@yurileeeee/video/7659185564792409357", "is_abby": false}], "her_coverage": {"status": "green", "summary": "She IS this trend today — superviral on IG and TikTok simultaneously with the exfoliate-1-2x + no-retinoids-in-pregnancy routine post.", "links": [{"label": "her IG glass-skin post · 473K · superviral", "url": "https://www.instagram.com/p/DagZEHNP3nk/"}, {"label": "her TT glass-skin post · 195K · superviral", "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599"}]}, "corpus_position": "Don't forget to exfoliate 1-2 times a week! Don't use a retinoid when pregnant. (her own breakout post, July 8)", "winning_length": "7–30s", "angles": [{"angle": "Part 2: the exact AM/PM glass-skin routine", "grounded": "needs her take", "source": "feed", "verify": false}, {"angle": "Glass skin while pregnant — the safe swaps", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "5s quiz: which routine actually gets glass skin?", "grounded": "yes", "source": "feed", "verify": false}], "stitch_refs": [4]}, {"name": "Petroleum jelly & barrier-damage ratings", "heat": 3, "receipt": "Friend-or-foe monster at 1075× baseline (3.6M) · dry-brushing 2/10 rated on both platforms (3M IG)", "videos": [{"author": "Dr. Scott Walter MD", "platform": "YT", "views": 3646504, "views_hr": 26009, "tier": "superviral", "x_baseline": 1074.9, "age_days": 8.8, "duration_s": 88, "caption": "Petroleum Jelly: Friend or Foe? Video: numnumasmr11 on TT", "url": "https://www.youtube.com/shorts/RUizJwm0UeA", "is_abby": false}, {"author": "dermatologysurgeon", "platform": "IG", "views": 3023689, "views_hr": 32296, "tier": "superviral", "x_baseline": 4.2, "age_days": 3.9, "duration_s": 28, "caption": "dermatologist rates viral skincare trends 👀 dry brushing (2/10): damages the skin barrier and can cause irritation and tears. use a gentle chemical exfoliant instead putting diaper cream on your face ", "url": "https://www.instagram.com/p/DaYAbHaRaAr/", "is_abby": false}, {"author": "dermatologysurgeon", "platform": "TT", "views": 813700, "views_hr": 8728, "tier": "viral", "x_baseline": 17.1, "age_days": 3.9, "duration_s": 28, "caption": "dermatologist rates viral skincare trends 👀 #drybrushing #sunburn #fyp dry brushing (2/10): damages the skin barrier and can cause irritation and tears. use a gentle chemical exfoliant instead putting", "url": "https://www.tiktok.com/@dermatologysurgeon/video/7658685360381103390", "is_abby": false}], "her_coverage": {"status": "yellow", "summary": "Solid but older position: pea-size slugging duet (157K, Sep 2023) + winter-skin petroleum-jelly guidance. Nothing recent — open lane.", "links": [{"label": "her slugging duet · 157K", "url": "https://www.tiktok.com/@drabby6/video/7282436439525100842"}]}, "corpus_position": "If you're slugging with this much Vaseline, you're doing it wrong. You just need a pea-sized amount of Vaseline petroleum jelly.", "winning_length": "30–90s explainer", "angles": [{"angle": "Pea-size rule — react to the 1075× friend-or-foe monster", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Dry brushing 2/10 — what to exfoliate with instead", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Petroleum jelly friend-or-foe: her winter-skin rules, summer edition", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": []}], "more_topics": [{"topic": "earlobe repair (stitch format working)", "receipt": "14× · @denverskindoc both platforms · 460K", "url": "https://www.instagram.com/p/DaeBcRbhz6E/"}, {"topic": "cold sores / HSV destigmatized", "receipt": "304× · @drspf · 3.4M", "url": "https://www.tiktok.com/@drspf/video/7656502031967980830"}, {"topic": "perioral dermatitis ≠ acne", "receipt": "23× · @dr.derm.love · 117K", "url": "https://www.tiktok.com/@dr.derm.love/video/7659620936122944799"}, {"topic": "crepey skin: retinol + exfoliation", "receipt": "67× · @dermdocmalik · 503K", "url": "https://www.instagram.com/p/DaWUzSGlcwo/"}, {"topic": "hypochlorous acid spray", "receipt": "74× · @kelswansondermpa · 260K", "url": "https://www.tiktok.com/@kelswansondermpa/video/7658384302731775262"}], "her_wins": [{"summary": "Glass-skin routine superviral on BOTH platforms in under a day — 473K IG (5× baseline) + 195K TT (8× baseline)", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "open_lane": "part 2 with the exact routine, or steal the 5s quiz format on it"}, {"summary": "'Things your dermatologist thinks about too much' (xanthelasma) — 343K, 4× baseline", "url": "https://www.instagram.com/p/DaX2tgTiZwQ/", "open_lane": "make it a series — earlobes next (repair content is breaking out)"}, {"summary": "Bikini-area hyperpigmentation favorites — 317K, 3× baseline", "url": "https://www.instagram.com/p/DaacbiSE7bD/", "open_lane": "melasma follow-up while dermdocmalik's 474× dark-spots wave is live"}], "stitch_shortlist": [{"author": "rob.lea1", "platform": "TT", "claim": "diaper cream + Zinka + Bag Balm survived an 11-hour ocean swim", "views": 15933222, "age_days": 3.6, "comments": 4101, "comment_heat": false, "url": "https://www.tiktok.com/@rob.lea1/video/7659140702172892429", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "An open-ocean marathon swimmer credits diaper rash cream, Zinka, and Bag Balm for surviving 11+ hours of sun exposure.", "why_it_stitches": "15.9M views at 3.6 days and the wave is carrying derm reacts already (Dr. Dray rode it on both platforms). Half-right is the best trigger: zinc oxide IS the real active — the packaging isn't the point.", "your_fit": "Her mineral-sunscreen corpus (zinc oxide guidance in both long-form sunscreen guides) + occlusives expertise from the slugging duet. Dr. Dray took the 'it works' lane — Abby's NEW angle: the zinc-percentage math and what Bag Balm actually does.", "angles": ["empathy-first: why it DID work for 11 hours", "zinc math: diaper cream % vs your SPF 50", "Bag Balm is occlusion, not protection — know the difference"], "length": "original eats ~5–10s; 45–60s total"}}, {"author": "robertwblove", "platform": "TT", "claim": "avoid these sunscreens — they harm your hormones (aimed at parents)", "views": 529606, "age_days": 2.4, "comments": 865, "comment_heat": true, "url": "https://www.tiktok.com/@robertwblove/video/7659597715856280863", "seed_topic": "spf", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "wrong", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Chemical sunscreens 'harm your hormones' and parents should avoid them on children.", "why_it_stitches": "Classic filter fear-mongering in her exact lane with an 865-comment fight at 2.4 days — controversy fuel, correctable without punching down (worried parents deserve empathy, the claim doesn't).", "your_fit": "She posted the bemotrizinol/European-filters explainer 6 days ago (307K) — the perfect 'here's the actual fix if filters worry you' receipt, plus two long-form sunscreen guides in corpus.", "angles": ["'you want me to skip SPF over WHAT?'", "filter-anxious? the European-filter answer", "what the hormone studies actually measured — dose matters"], "length": "original eats ~5–10s; 60–90s total"}}, {"author": "meganmaceyy", "platform": "TT", "claim": "your scalp burns fast, especially along your parting — sprays and powders exist", "views": 385518, "age_days": 2.0, "comments": 40, "comment_heat": false, "url": "https://www.tiktok.com/@meganmaceyy/video/7659726426446368022", "seed_topic": "sun protection", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "The scalp (especially the part line) is the most-forgotten, fastest-burning sun spot; scalp sprays and powders solve it.", "why_it_stitches": "385K in 2 days on a 7-second clip — and it's HER underexploited high-ceiling lane (scalp/hair). Mostly right, so this is a 'yes, and —' extension, not a correction.", "your_fit": "Strong sunscreen corpus; as a Mohs surgeon she operates on scalp skin cancers — the authority extension the original can't make. Product-specific picks need her take.", "angles": ["yes, and — part-line skin cancer is real (Mohs cases)", "powder vs spray vs hat: derm ranking", "the spots everyone forgets: part, ears, lips"], "length": "original eats ~5–7s; 30–45s total"}}, {"author": "shougmansour30", "platform": "TT", "claim": "retinal serum on hands at night, sunscreen every next morning", "views": 623387, "age_days": 2.1, "comments": 127, "comment_heat": false, "url": "https://www.tiktok.com/@shougmansour30/video/7659692914884283669", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Nightly retinal serum on the backs of the hands (plus morning SPF) as an anti-aging hack.", "why_it_stitches": "623K at 2.1 days, a genuinely good habit going viral — 'yes, and' it with derm precision (strength, frequency, the non-negotiable SPF pairing).", "your_fit": "Her retinoid-frequency position is corpus-verbatim ('Tretinoin can be used daily as tolerated; AHA/BHAs 1–3 times/week') from her own 545K post. Hand-specific strengths need her take.", "angles": ["yes, and — hand anti-aging the derm way", "which retinoid strength for hands vs face", "why the morning-SPF rule is non-negotiable with retinoids"], "length": "original eats ~5–10s; 45–60s total"}}, {"author": "dbeauty_glow", "platform": "TT", "claim": "creators oil their skin to fake results before advertising products", "views": 567554, "age_days": 2.1, "comments": 1264, "comment_heat": true, "url": "https://www.tiktok.com/@dbeauty_glow/video/7659693330099440898", "seed_topic": "skincare", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Skincare advertisers rub oil on their skin to fake 'results' before filming product promos.", "why_it_stitches": "568K with a 1,264-comment pile-on at 2.1 days. Punches at an industry practice, not a person — safe and satisfying to extend.", "your_fit": "Her bad-better-best ratings content (116K this week) is exactly this skepticism lane, and today's glass-skin superviral gives her the 'what real glow requires' receipt.", "angles": ["how to spot faked 'results' in 5 seconds", "shine isn't skin health — bad-better-best", "what glass skin ACTUALLY requires (my routine)"], "length": "original eats ~5–10s; 45–60s total"}}]};
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = v => v >= 1e6 ? (v/1e6).toFixed(1).replace(/\.0$/,'')+'M' : v >= 1e3 ? Math.round(v/1e3)+'K' : String(v);
+
+// Freshness badge — computed client-side against the viewer's clock
+(function(){
+  const b = document.getElementById('fresh-badge');
+  const today = new Date(); const iso = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  if (DATA.date === iso) { b.className = 'badge fresh'; b.textContent = 'Built this morning'; }
+  else { b.className = 'badge stale'; b.textContent = 'Briefing from ' + DATA.date; }
+  if (DATA.meta_notes) document.getElementById('notes-slot').innerHTML = '<div class="notes">⚠️ ' + esc(DATA.meta_notes) + '</div>';
+})();
+
+function copyPrompt(text, btn){
+  const done = () => { const t = document.getElementById('toast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 1800); };
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done)); }
+  else fallbackCopy(text, done);
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ prompt('Copy this prompt:', text); } document.body.removeChild(ta);
+}
+function toggle(el){ el.closest('.card').classList.toggle('open'); }
+
+// ---- Her wins ----
+(function(){
+  const wins = DATA.her_wins || [];
+  if (!wins.length) return;
+  document.getElementById('wins-sec').style.display = '';
+  document.getElementById('wins').innerHTML = wins.map(w =>
+    `<div class="win">🏆 ${esc(w.summary)} · <a href="${esc(w.url)}" target="_blank" rel="noopener">watch</a>` +
+    (w.open_lane ? `<span class="lane">→ open lane: ${esc(w.open_lane)}</span>` : '') + `</div>`
+  ).join('');
+})();
+
+// ---- Themes ----
+(function(){
+  const host = document.getElementById('themes');
+  const themes = DATA.themes || [];
+  if (!themes.length) { host.innerHTML = '<div class="empty">No themes in today\'s briefing.</div>'; return; }
+  host.innerHTML = themes.map((t, i) => {
+    const fires = '🔥'.repeat(Math.max(1, Math.min(3, t.heat || 1)));
+    const cov = (t.her_coverage && t.her_coverage.status) || 'red';
+    const vids = (t.videos || []).map(v =>
+      `<div class="vid"><span class="who">@${esc(v.author)}</span> <span class="nums">(${esc(v.platform)}) · ${num(v.views)} views · ${v.x_baseline ? Math.round(v.x_baseline)+'× baseline · ' : ''}<span class="tier-${v.tier==='superviral'?'sv':'v'}">${esc(v.tier||'')}</span> · ${v.age_days}d · ${v.duration_s||'?'}s</span> · <a class="watch" href="${esc(v.url)}" target="_blank" rel="noopener">watch</a></div>`
+    ).join('');
+    const angles = (t.angles || []).map((a, j) => {
+      const tag = a.verify ? '<span class="g verify">verify</span>' : (a.grounded === 'yes' ? '<span class="g yes">grounded</span>' : '<span class="g take">her take</span>');
+      const prompt = `Script on ${t.name} — angle: ${a.angle}, ${t.winning_length || '60s'}, from today's briefing.`;
+      return `<div class="angle">${tag}<span style="flex:1">${esc(a.angle)}</span><button class="draftbtn" onclick='copyPrompt(${JSON.stringify(prompt)}, this)'>Draft →</button></div>`;
+    }).join('');
+    const fit = t.her_coverage ?
+      `<div class="fit">${esc(t.her_coverage.summary || '')}` +
+      (t.corpus_position ? `<span class="pos">"${esc(t.corpus_position)}"</span>` : '') +
+      ((t.her_coverage.links || []).length ? `<div class="cov-links">${t.her_coverage.links.map(l=>`<a class="watch" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</div>` : '') + `</div>` : '';
+    const mainPrompt = `Script on ${t.name} — ${t.winning_length || '60s'}, from today's briefing. Angles: ${(t.angles||[]).map(a=>a.angle).join(' / ')}`;
+    return `<div class="card">
+      <div class="card-head" onclick="toggle(this)">
+        <span class="dot ${cov}"></span>
+        <div class="card-t"><div class="card-name">${esc(t.name)}</div><div class="card-sub">${esc(t.receipt || '')}</div></div>
+        <span class="heat">${fires}</span><span class="chev">▶</span>
+      </div>
+      <div class="card-body">
+        <div class="blk"><div class="blk-label">Receipts</div>${vids}</div>
+        <div class="blk"><div class="blk-label">Your fit</div>${fit}</div>
+        <div class="blk"><div class="blk-label">Winning length</div><div class="len"><b>${esc(t.winning_length || '—')}</b></div></div>
+        <div class="blk"><div class="blk-label">Angles — she can own</div>${angles}</div>
+        <button class="draftbtn big" onclick='copyPrompt(${JSON.stringify(mainPrompt)}, this)'>Draft this → (copies prompt for Claude)</button>
+      </div>
+    </div>`;
+  }).join('');
+})();
+
+// ---- Stitch targets ----
+(function(){
+  const host = document.getElementById('stitches');
+  const list = DATA.stitch_shortlist || [];
+  if (!list.length) { host.innerHTML = '<div class="empty">No stitch targets today' + (DATA.stitch_generated_at ? '' : ' (feed unavailable)') + '.</div>'; return; }
+  const RUB = [['specific_claim','specific claim'],['her_lane','her lane'],['trigger','trigger'],['rising','still rising'],['big_enough','big enough'],['punches_ok','punches fair']];
+  host.innerHTML = list.map(s => {
+    const r = s.rubric || {};
+    const rub = RUB.map(([k, lbl]) => {
+      const v = r[k];
+      const ok = (k === 'trigger') ? Boolean(v) : v === true;
+      const txt = (k === 'trigger' && typeof v === 'string') ? `${lbl}: ${v}` : lbl;
+      return `<div class="rub"><span class="ck ${ok?'y':'n'}">${ok?'✓':'✗'}</span> ${esc(txt)}</div>`;
+    }).join('');
+    const p = s.pitch || {};
+    const angles = (p.angles || []).map(a => {
+      const prompt = `Stitch react to @${s.author}: "${s.claim}" — ${s.url} — angle: ${a}, from today's briefing.`;
+      return `<div class="angle"><span style="flex:1">${esc(a)}</span><button class="draftbtn" onclick='copyPrompt(${JSON.stringify(prompt)}, this)'>Draft →</button></div>`;
+    }).join('');
+    const mainPrompt = `Stitch react to @${s.author}: "${s.claim}" — ${s.url} — from today's briefing.`;
+    return `<div class="card">
+      <div class="card-head" onclick="toggle(this)">
+        <div class="card-t">
+          <div class="card-name">@${esc(s.author)} <span class="src-tag">${esc(s.source || 'feed')}${s.verify ? ' · verify' : ''}</span></div>
+          <div class="card-sub">"${esc(s.claim)}"</div>
+          <div class="card-sub stitch-meta">${s.verify ? '~' : ''}${num(s.views)} views · ${s.age_days}d${s.comment_heat ? ' · ' + num(s.comments) + ' comments 🔥' : ''} · <a class="watch" href="${esc(s.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">watch</a></div>
+        </div>
+        <span class="chev">▶</span>
+      </div>
+      <div class="card-body">
+        <div class="blk"><div class="blk-label">The claim</div><div class="pitchblk">${esc(p.the_claim || s.claim)}</div></div>
+        <div class="blk"><div class="blk-label">Why it stitches</div><div class="pitchblk">${esc(p.why_it_stitches || '')}</div></div>
+        <div class="blk"><div class="blk-label">Stitch rubric</div><div class="rubric">${rub}</div></div>
+        <div class="blk"><div class="blk-label">Your fit</div><div class="pitchblk">${esc(p.your_fit || '')}</div></div>
+        <div class="blk"><div class="blk-label">Length</div><div class="len">${esc(p.length || '')}</div></div>
+        <div class="blk"><div class="blk-label">React angles</div>${angles}</div>
+        <button class="draftbtn big" onclick='copyPrompt(${JSON.stringify(mainPrompt)}, this)'>Draft stitch → (copies prompt for Claude)</button>
+      </div>
+    </div>`;
+  }).join('');
+})();
+
+// ---- More topics ----
+(function(){
+  const more = DATA.more_topics || [];
+  if (!more.length) return;
+  document.getElementById('more-sec').style.display = '';
+  document.getElementById('more').innerHTML = more.map(m =>
+    `<span class="chip">${esc(m.topic)} <span style="color:#999">(${esc(m.receipt)})</span> · <a href="${esc(m.url)}" target="_blank" rel="noopener">watch</a></span>`
+  ).join('');
+})();
+
+// ---- Footer ----
+(function(){
+  const age = DATA.source_extract ? Math.round((Date.now() - new Date(DATA.source_extract).getTime())/36e5) : null;
+  document.getElementById('foot').innerHTML =
+    `Interpreted ${esc(DATA.generated_at || '')} by ${esc(DATA.generated_by || 'briefing-build')}<br>` +
+    `Source extract: ${esc(DATA.source_extract || '—')}${age !== null ? ' (' + age + 'h old)' : ''} · schema v${DATA.schema || 1}`;
+})();
+</script>
+</body>
+</html>
