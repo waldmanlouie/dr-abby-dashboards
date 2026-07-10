@@ -23,20 +23,25 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f4f5f
 .win{background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:10px 14px;font-size:13.5px;color:#3730a3}
 .win a{color:#5b63d3;font-weight:700;text-decoration:none}
 .win .lane{display:block;margin-top:3px;font-size:12.5px;color:#6d28d9}
+.plat{font-weight:700;color:#64748b;font-size:.92em}
 .grid{display:grid;grid-template-columns:1fr;gap:12px}
 @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
 .card{background:#fff;border:1px solid #e0e2e8;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);overflow:hidden}
 .card-head{display:flex;align-items:flex-start;gap:10px;padding:14px;cursor:pointer;min-height:44px;-webkit-tap-highlight-color:transparent}
 .card-head:active{background:#f7f8fa}
+.card.mini .card-head{padding:10px 12px;min-height:40px;align-items:center}
+.card.mini .card-name{font-size:13.5px}
 .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px}
 .dot.green{background:#16a34a}.dot.yellow{background:#f59e0b}.dot.red{background:#dc2626}
-.card-t{flex:1}
+.card-t{flex:1;min-width:0}
 .card-name{font-size:15px;font-weight:700}
 .card-sub{font-size:12.5px;color:#666;margin-top:3px;line-height:1.45}
 .heat{font-size:13px;flex-shrink:0}
 .chev{color:#bbb;font-size:12px;flex-shrink:0;margin-top:4px;transition:transform .15s}
+.card.mini .chev{margin-top:0}
 .card.open .chev{transform:rotate(90deg)}
 .card-body{display:none;padding:0 14px 14px;border-top:1px solid #f0f1f4}
+.card.mini .card-body{padding:0 12px 12px}
 .card.open .card-body{display:block}
 .blk{margin-top:12px}
 .blk-label{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:#999;font-weight:700;margin-bottom:5px}
@@ -59,19 +64,32 @@ a.watch{color:#5b63d3;font-weight:700;text-decoration:none;white-space:nowrap}
 .draftbtn:active{background:#c7d2fe}
 .draftbtn.big{display:block;width:100%;margin-top:14px;padding:12px;text-align:center;font-size:14px;background:#5b63d3;color:#fff;border:none;border-radius:10px;min-height:44px}
 .draftbtn.big:active{background:#4338ca}
-.rubric{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:12.5px}
-.rub{color:#444}.rub .ck{font-weight:700}
-.rub .ck.y{color:#16a34a}.rub .ck.n{color:#dc2626}
+.rubline{font-size:12.5px;color:#444}
+.rubline b{color:#15803d}
+.rubline .miss{color:#b91c1c;font-weight:600}
 .pitchblk{font-size:13px;line-height:1.55;color:#333}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#fff;border:1px solid #e0e2e8;border-radius:999px;padding:7px 14px;font-size:12.5px;color:#444}
-.chip a{color:#5b63d3;font-weight:700;text-decoration:none}
 .stitch-meta{font-size:12.5px;color:#666}
 .src-tag{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;background:#f1f5f9;color:#64748b;vertical-align:1px}
+.viral-tag{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;background:#fee2e2;color:#b91c1c;vertical-align:1px}
 .footer{margin-top:34px;text-align:center;font-size:11.5px;color:#999;line-height:1.7}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:999px;font-size:13.5px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;z-index:99}
 .toast.show{opacity:1}
 .empty{padding:20px;text-align:center;color:#999;font-size:13.5px}
+.newsitem{background:#fff;border:1px solid #e0e2e8;border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.5}
+.newsitem .hl{font-weight:700}
+.newsitem .src{color:#888;font-size:12px}
+.newsitem .ang{display:block;margin-top:3px;color:#4338ca;font-size:12.5px}
+.news{display:flex;flex-direction:column;gap:8px}
+.agechip{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;background:#f1f5f9;color:#64748b;vertical-align:1px}
+.agechip.breaking{background:#fee2e2;color:#b91c1c}
+.agechip.upcoming{background:#fef3c7;color:#92400e}
+.pill{display:inline-block;font-size:10px;font-weight:800;padding:1px 7px;border-radius:999px;vertical-align:1px;letter-spacing:.3px}
+.b-sv{background:#fef3c7;color:#92400e}
+.b-v{background:#dcfce7;color:#14532d}
+.bo-gold{background:#fbbf24;color:#78350f}
+.bo-silver{background:#e2e8f0;color:#475569}
+.bo-bronze{background:#fed7aa;color:#9a3412}
+.foot-notes{margin-top:8px;color:#b45309;font-size:11.5px}
 </style>
 </head>
 <body>
@@ -87,7 +105,7 @@ a.watch{color:#5b63d3;font-weight:700;text-decoration:none;white-space:nowrap}
   <h1>Dr Abby <span>Daily Briefing</span></h1>
   <div class="hdr-right">
     <span class="badge" id="fresh-badge"></span>
-    <span class="build-ts">Built Jul 09, 2026 08:05 AM ET</span>
+    <span class="build-ts">Built Jul 09, 2026 10:17 PM ET</span>
   </div>
 </div>
 
@@ -99,19 +117,29 @@ a.watch{color:#5b63d3;font-weight:700;text-decoration:none;white-space:nowrap}
     <div class="wins" id="wins"></div>
   </div>
 
+  <div class="sec" id="news-sec" style="display:none">
+    <div class="sec-title">Derm news — why now</div>
+    <div class="news" id="news"></div>
+  </div>
+
   <div class="sec">
     <div class="sec-title">Trending themes — tap a card</div>
     <div class="grid" id="themes"></div>
   </div>
 
   <div class="sec">
-    <div class="sec-title">Stitch / react targets</div>
+    <div class="sec-title">Stitch / react targets — ranked by heat</div>
     <div class="grid" id="stitches"></div>
   </div>
 
+  <div class="sec" id="more-stitch-sec" style="display:none">
+    <div class="sec-title">Virality watch — big waves, weaker stitch fit</div>
+    <div class="grid" id="more-stitches"></div>
+  </div>
+
   <div class="sec" id="more-sec" style="display:none">
-    <div class="sec-title">More topics</div>
-    <div class="chips" id="more"></div>
+    <div class="sec-title">More trending topics</div>
+    <div class="grid" id="more"></div>
   </div>
 
   <div class="footer" id="foot"></div>
@@ -119,10 +147,15 @@ a.watch{color:#5b63d3;font-weight:700;text-decoration:none;white-space:nowrap}
 <div class="toast" id="toast">Copied — paste into Claude ✓</div>
 
 <script>
-const DATA = {"schema": 1, "date": "2026-07-09", "generated_at": "2026-07-09T07:56:21-04:00", "generated_by": "dr-abby-script-writer v2.0.0 briefing-build (first run, in-session)", "signals_generated_at": "2026-07-09T10:30:55Z", "stitch_generated_at": "2026-07-09T10:31:09Z", "source_extract": "2026-07-08T09:15:03Z", "meta_notes": "", "menu_lines": ["skin cancer or not? 5-second quizzes (147× baseline, 6 breakouts) [watch](https://www.tiktok.com/@dr.derm.love/video/7659156362072542494)", "diaper-cream-as-sunscreen myths (15.9M source video, 2 derm reacts) [watch](https://www.tiktok.com/@rob.lea1/video/7659140702172892429)", "glass skin routines (YOURS — superviral on BOTH platforms today) [watch](https://www.instagram.com/p/DagZEHNP3nk/)", "petroleum jelly: friend or foe (1075× baseline monster) [watch](https://www.youtube.com/shorts/RUizJwm0UeA)", "melasma & dark-spot hygiene (474× baseline, 1M) [watch](https://www.tiktok.com/@dermdocmalik/video/7657359644507065631)"], "themes": [{"name": "Skin cancer 'or not?' 5-second quizzes", "heat": 3, "receipt": "6 breakouts, one creator's format · up to 428× baseline · 5–6s quizzes", "videos": [{"author": "dr.derm.love", "platform": "TT", "views": 2200000, "views_hr": 13901, "tier": "superviral", "x_baseline": 428.2, "age_days": 9.6, "duration_s": 5, "caption": "Skin cancer or not? Bcc, dermatofibroma, melanoma #skincancer #melanoma #bcc #fyp", "url": "https://www.tiktok.com/@dr.derm.love/video/7656566753484393759", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 757400, "views_hr": 12066, "tier": "superviral", "x_baseline": 147.4, "age_days": 2.7, "duration_s": 5, "caption": "Is it skin cancer or not? Melanoma, skin tag, melanoma #melanoma #skincancer #melanomaawareness", "url": "https://www.tiktok.com/@dr.derm.love/video/7659156362072542494", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 581200, "views_hr": 13831, "tier": "superviral", "x_baseline": 113.1, "age_days": 1.8, "duration_s": 5, "caption": "Skin cancer or not? Skin tag, melanoma, seborrheic keratosis #melanoma #seborrheickeratosis #fyp", "url": "https://www.tiktok.com/@dr.derm.love/video/7659477254749031710", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 688800, "views_hr": 5881, "tier": "viral", "x_baseline": 134.1, "age_days": 4.9, "duration_s": 5, "caption": "Skin cancer or not? Melanoma, Tinea versicolor, bcc #melanoma #skincancer #bcc #skincancerawareness", "url": "https://www.tiktok.com/@dr.derm.love/video/7658316064693980446", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Deep corpus: BCC ultimate guide (493K views), melanoma-diagnosis reply, and an 'age spots can be early melanoma' post 10 days ago (183K).", "links": [{"label": "her BCC guide · 493K", "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"}, {"label": "her age-spots/melanoma post · 183K", "url": "https://www.instagram.com/p/DaIZdpvAHpS/"}]}, "corpus_position": "Melanoma is a really scary word. Here are the three things you should ask your doctor if you or a loved one gets a diagnosis of melanoma.", "winning_length": "5–8s quiz", "angles": [{"angle": "Steal the 5s quiz — Mohs surgeon edition, real lesion pairs", "grounded": "yes", "source": "feed", "verify": false}, {"angle": "'Age spots' that are actually melanoma — quiz your feed", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Quiz, then the 3 questions to ask after a melanoma diagnosis", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": []}, {"name": "Sun-protection myths & fear-mongering", "heat": 3, "receipt": "Diaper-cream trend (15.9M source + 2 derm reacts) · 'habits > products' 120× · hormone scare 865-comment fight", "videos": [{"author": "beautydermmd", "platform": "IG", "views": 2313204, "views_hr": 24675, "tier": "superviral", "x_baseline": 119.8, "age_days": 3.9, "duration_s": 6, "caption": "Not her serum. Not her skincare. HER HABITS. 👀 Sun protection is elite behavior. UPF clothing. Wide-brim hat. Sunglasses. Shade. This is what dermatologists notice first. You should too. ☀️ #dermatolo", "url": "https://www.instagram.com/p/DaX_HEcOs-5/", "is_abby": false}, {"author": "drdrayzday", "platform": "IG", "views": 357757, "views_hr": 14739, "tier": "superviral", "x_baseline": 3.5, "age_days": 1.0, "duration_s": 76, "caption": "Diaper Cream as Sunscreen⁉️😳 #dermreacts #sunscreen #spfprotection", "url": "https://www.instagram.com/p/DafdzxPR3v8/", "is_abby": false}, {"author": "drdrayzday", "platform": "TT", "views": 135800, "views_hr": 3654, "tier": "viral", "x_baseline": 6.6, "age_days": 1.6, "duration_s": 75, "caption": "Diaper rash cream doesn’t not work as sunscreen. #sunscreen #diaperrashcream #sunprotection @rob.lea", "url": "https://www.tiktok.com/@drdrayzday/video/7659538193007660301", "is_abby": false}, {"author": "drspf", "platform": "TT", "views": 183900, "views_hr": 1939, "tier": "viral", "x_baseline": 16.4, "age_days": 4.0, "duration_s": 89, "caption": "UV index is not the stock market 📈📉 I am all for getting outside, being active, playing sports, and enjoying the sun safely…but intentionally sitting out to tan is not it. A tan is your skin’s respons", "url": "https://www.tiktok.com/@drspf/video/7658663111561415966", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Bemotrizinol/European-filters post 6 days ago (307K), UV-index reminder 9 days ago (169K), plus two long-form sunscreen guides in corpus.", "links": [{"label": "her bemotrizinol post · 307K", "url": "https://www.instagram.com/p/DaTxWSpvBUk/"}, {"label": "her UV-index post · 169K", "url": "https://www.instagram.com/p/DaK_bSCgaUX/"}]}, "corpus_position": "I think the reason that dermatologists take sun protection so seriously is we see the damage that it can do.", "winning_length": "6s punch or 60–90s explainer", "angles": [{"angle": "Debunk diaper-cream SPF — what zinc oxide actually does", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "'Sunscreens harm hormones' — the European-filters answer", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Habits ladder: shade, UPF, hat — THEN sunscreen", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": [0, 1, 2]}, {"name": "Glass skin routines (SHE is the breakout)", "heat": 2, "receipt": "YOURS superviral on both platforms in <1 day (473K IG · 195K TT) · teawithmd 146× · K-beauty mist 12×", "videos": [{"author": "abby.waldmanmd", "platform": "IG", "views": 473126, "views_hr": 30735, "tier": "superviral", "x_baseline": 5.0, "age_days": 0.7, "duration_s": 8, "caption": "And don’t forget to exfoliate 1-2 times a week! Don’t use retinoids when pregnant. other retinoids like retinol or adapalene can be used instead of tretinoin Azelaic acid can be used at night instead ", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "is_abby": true}, {"author": "drabby6", "platform": "TT", "views": 195200, "views_hr": 12862, "tier": "superviral", "x_baseline": 8.2, "age_days": 0.7, "duration_s": 7, "caption": "And don’t forget to exfoliate 1-2 times a week! Don’t use a retinoid when pregnant. What's your glass skin care routine? #glassskin #skincare #skincareroutine", "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599", "is_abby": true}, {"author": "teawithmd", "platform": "TT", "views": 483200, "views_hr": 3107, "tier": "viral", "x_baseline": 145.7, "age_days": 8.5, "duration_s": 13, "caption": "If ✨ glass skin✨ is what you want, why aren’t you using this combo yet!? And no it’s not just genetics - I suffer from hormonal acne and rosacea! #azelaicacid #tretinoin #glassskin", "url": "https://www.tiktok.com/@teawithmd/video/7656983974643879199", "is_abby": false}, {"author": "yurileeeee", "platform": "TT", "views": 351800, "views_hr": 5747, "tier": "viral", "x_baseline": 12.1, "age_days": 2.6, "duration_s": 26, "caption": "Complements in Korea🇰🇷 hits different✨🥹 #glowyskin #glassskin #facemist #summermist", "url": "https://www.tiktok.com/@yurileeeee/video/7659185564792409357", "is_abby": false}], "her_coverage": {"status": "green", "summary": "She IS this trend today — superviral on IG and TikTok simultaneously with the exfoliate-1-2x + no-retinoids-in-pregnancy routine post.", "links": [{"label": "her IG glass-skin post · 473K · superviral", "url": "https://www.instagram.com/p/DagZEHNP3nk/"}, {"label": "her TT glass-skin post · 195K · superviral", "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599"}]}, "corpus_position": "Don't forget to exfoliate 1-2 times a week! Don't use a retinoid when pregnant. (her own breakout post, July 8)", "winning_length": "7–30s", "angles": [{"angle": "Part 2: the exact AM/PM glass-skin routine", "grounded": "needs her take", "source": "feed", "verify": false}, {"angle": "Glass skin while pregnant — the safe swaps", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "5s quiz: which routine actually gets glass skin?", "grounded": "yes", "source": "feed", "verify": false}], "stitch_refs": [4]}, {"name": "Petroleum jelly & barrier-damage ratings", "heat": 3, "receipt": "Friend-or-foe monster at 1075× baseline (3.6M) · dry-brushing 2/10 rated on both platforms (3M IG)", "videos": [{"author": "Dr. Scott Walter MD", "platform": "YT", "views": 3646504, "views_hr": 26009, "tier": "superviral", "x_baseline": 1074.9, "age_days": 8.8, "duration_s": 88, "caption": "Petroleum Jelly: Friend or Foe? Video: numnumasmr11 on TT", "url": "https://www.youtube.com/shorts/RUizJwm0UeA", "is_abby": false}, {"author": "dermatologysurgeon", "platform": "IG", "views": 3023689, "views_hr": 32296, "tier": "superviral", "x_baseline": 4.2, "age_days": 3.9, "duration_s": 28, "caption": "dermatologist rates viral skincare trends 👀 dry brushing (2/10): damages the skin barrier and can cause irritation and tears. use a gentle chemical exfoliant instead putting diaper cream on your face ", "url": "https://www.instagram.com/p/DaYAbHaRaAr/", "is_abby": false}, {"author": "dermatologysurgeon", "platform": "TT", "views": 813700, "views_hr": 8728, "tier": "viral", "x_baseline": 17.1, "age_days": 3.9, "duration_s": 28, "caption": "dermatologist rates viral skincare trends 👀 #drybrushing #sunburn #fyp dry brushing (2/10): damages the skin barrier and can cause irritation and tears. use a gentle chemical exfoliant instead putting", "url": "https://www.tiktok.com/@dermatologysurgeon/video/7658685360381103390", "is_abby": false}], "her_coverage": {"status": "yellow", "summary": "Solid but older position: pea-size slugging duet (157K, Sep 2023) + winter-skin petroleum-jelly guidance. Nothing recent — open lane.", "links": [{"label": "her slugging duet · 157K", "url": "https://www.tiktok.com/@drabby6/video/7282436439525100842"}]}, "corpus_position": "If you're slugging with this much Vaseline, you're doing it wrong. You just need a pea-sized amount of Vaseline petroleum jelly.", "winning_length": "30–90s explainer", "angles": [{"angle": "Pea-size rule — react to the 1075× friend-or-foe monster", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Dry brushing 2/10 — what to exfoliate with instead", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Petroleum jelly friend-or-foe: her winter-skin rules, summer edition", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": []}], "more_topics": [{"topic": "earlobe repair (stitch format working)", "receipt": "14× · @denverskindoc both platforms · 460K", "url": "https://www.instagram.com/p/DaeBcRbhz6E/"}, {"topic": "cold sores / HSV destigmatized", "receipt": "304× · @drspf · 3.4M", "url": "https://www.tiktok.com/@drspf/video/7656502031967980830"}, {"topic": "perioral dermatitis ≠ acne", "receipt": "23× · @dr.derm.love · 117K", "url": "https://www.tiktok.com/@dr.derm.love/video/7659620936122944799"}, {"topic": "crepey skin: retinol + exfoliation", "receipt": "67× · @dermdocmalik · 503K", "url": "https://www.instagram.com/p/DaWUzSGlcwo/"}, {"topic": "hypochlorous acid spray", "receipt": "74× · @kelswansondermpa · 260K", "url": "https://www.tiktok.com/@kelswansondermpa/video/7658384302731775262"}], "her_wins": [{"summary": "Glass-skin routine superviral on BOTH platforms in under a day — 473K IG (5× baseline) + 195K TT (8× baseline)", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "open_lane": "part 2 with the exact routine, or steal the 5s quiz format on it"}, {"summary": "'Things your dermatologist thinks about too much' (xanthelasma) — 343K, 4× baseline", "url": "https://www.instagram.com/p/DaX2tgTiZwQ/", "open_lane": "make it a series — earlobes next (repair content is breaking out)"}, {"summary": "Bikini-area hyperpigmentation favorites — 317K, 3× baseline", "url": "https://www.instagram.com/p/DaacbiSE7bD/", "open_lane": "melasma follow-up while dermdocmalik's 474× dark-spots wave is live"}], "stitch_shortlist": [{"author": "rob.lea1", "platform": "TT", "claim": "diaper cream + Zinka + Bag Balm survived an 11-hour ocean swim", "views": 15933222, "age_days": 3.6, "comments": 4101, "comment_heat": false, "url": "https://www.tiktok.com/@rob.lea1/video/7659140702172892429", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "An open-ocean marathon swimmer credits diaper rash cream, Zinka, and Bag Balm for surviving 11+ hours of sun exposure.", "why_it_stitches": "15.9M views at 3.6 days and the wave is carrying derm reacts already (Dr. Dray rode it on both platforms). Half-right is the best trigger: zinc oxide IS the real active — the packaging isn't the point.", "your_fit": "Her mineral-sunscreen corpus (zinc oxide guidance in both long-form sunscreen guides) + occlusives expertise from the slugging duet. Dr. Dray took the 'it works' lane — Abby's NEW angle: the zinc-percentage math and what Bag Balm actually does.", "angles": ["empathy-first: why it DID work for 11 hours", "zinc math: diaper cream % vs your SPF 50", "Bag Balm is occlusion, not protection — know the difference"], "length": "original eats ~5–10s; 45–60s total"}}, {"author": "robertwblove", "platform": "TT", "claim": "avoid these sunscreens — they harm your hormones (aimed at parents)", "views": 529606, "age_days": 2.4, "comments": 865, "comment_heat": true, "url": "https://www.tiktok.com/@robertwblove/video/7659597715856280863", "seed_topic": "spf", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "wrong", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Chemical sunscreens 'harm your hormones' and parents should avoid them on children.", "why_it_stitches": "Classic filter fear-mongering in her exact lane with an 865-comment fight at 2.4 days — controversy fuel, correctable without punching down (worried parents deserve empathy, the claim doesn't).", "your_fit": "She posted the bemotrizinol/European-filters explainer 6 days ago (307K) — the perfect 'here's the actual fix if filters worry you' receipt, plus two long-form sunscreen guides in corpus.", "angles": ["'you want me to skip SPF over WHAT?'", "filter-anxious? the European-filter answer", "what the hormone studies actually measured — dose matters"], "length": "original eats ~5–10s; 60–90s total"}}, {"author": "meganmaceyy", "platform": "TT", "claim": "your scalp burns fast, especially along your parting — sprays and powders exist", "views": 385518, "age_days": 2.0, "comments": 40, "comment_heat": false, "url": "https://www.tiktok.com/@meganmaceyy/video/7659726426446368022", "seed_topic": "sun protection", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "The scalp (especially the part line) is the most-forgotten, fastest-burning sun spot; scalp sprays and powders solve it.", "why_it_stitches": "385K in 2 days on a 7-second clip — and it's HER underexploited high-ceiling lane (scalp/hair). Mostly right, so this is a 'yes, and —' extension, not a correction.", "your_fit": "Strong sunscreen corpus; as a Mohs surgeon she operates on scalp skin cancers — the authority extension the original can't make. Product-specific picks need her take.", "angles": ["yes, and — part-line skin cancer is real (Mohs cases)", "powder vs spray vs hat: derm ranking", "the spots everyone forgets: part, ears, lips"], "length": "original eats ~5–7s; 30–45s total"}}, {"author": "shougmansour30", "platform": "TT", "claim": "retinal serum on hands at night, sunscreen every next morning", "views": 623387, "age_days": 2.1, "comments": 127, "comment_heat": false, "url": "https://www.tiktok.com/@shougmansour30/video/7659692914884283669", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Nightly retinal serum on the backs of the hands (plus morning SPF) as an anti-aging hack.", "why_it_stitches": "623K at 2.1 days, a genuinely good habit going viral — 'yes, and' it with derm precision (strength, frequency, the non-negotiable SPF pairing).", "your_fit": "Her retinoid-frequency position is corpus-verbatim ('Tretinoin can be used daily as tolerated; AHA/BHAs 1–3 times/week') from her own 545K post. Hand-specific strengths need her take.", "angles": ["yes, and — hand anti-aging the derm way", "which retinoid strength for hands vs face", "why the morning-SPF rule is non-negotiable with retinoids"], "length": "original eats ~5–10s; 45–60s total"}}, {"author": "dbeauty_glow", "platform": "TT", "claim": "creators oil their skin to fake results before advertising products", "views": 567554, "age_days": 2.1, "comments": 1264, "comment_heat": true, "url": "https://www.tiktok.com/@dbeauty_glow/video/7659693330099440898", "seed_topic": "skincare", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Skincare advertisers rub oil on their skin to fake 'results' before filming product promos.", "why_it_stitches": "568K with a 1,264-comment pile-on at 2.1 days. Punches at an industry practice, not a person — safe and satisfying to extend.", "your_fit": "Her bad-better-best ratings content (116K this week) is exactly this skepticism lane, and today's glass-skin superviral gives her the 'what real glow requires' receipt.", "angles": ["how to spot faked 'results' in 5 seconds", "shine isn't skin health — bad-better-best", "what glass skin ACTUALLY requires (my routine)"], "length": "original eats ~5–10s; 45–60s total"}}]};
+const DATA = {"schema": 1, "date": "2026-07-09", "generated_at": "2026-07-09T22:15:00-04:00", "generated_by": "dr-abby-script-writer v2.3.0 briefing-build (scheduled)", "signals_generated_at": "2026-07-10T02:00:15Z", "stitch_generated_at": "2026-07-10T02:00:21Z", "source_extract": "2026-07-08T09:15:03Z", "meta_notes": "Stitch feed passed 5 non-English rows despite english_only filter (4 Vietnamese OLAY-event clips, 1 Italian court story) - excluded here. News scan: nothing verifiably <=7d - bemotrizinol (story Jun 9) and Kabana recall coverage (dateline Jul 2025) both stale by dateline check.", "menu_lines": ["Skin cancer or not? 5-second quizzes (428x baseline, 1% breakout, TT) [watch](https://www.tiktok.com/@dr.derm.love/video/7656566753484393759)", "Anne Hathaway's sun-protection habits (119.8x, 1%, 2.3M in 3.9d IG) [watch](https://www.instagram.com/p/DaX_HEcOs-5/)", "Petroleum jelly: friend or foe (1074.9x baseline, 1%, YT) [watch](https://www.youtube.com/shorts/RUizJwm0UeA)", "Glass skin routines (YOURS - superviral IG+TT, 473K in <1d) [watch](https://www.instagram.com/p/DagZEHNP3nk/)", "Torn-earlobe repair (superviral, 14.4x, 3%, IG) [watch](https://www.instagram.com/p/DaeBcRbhz6E/)"], "themes": [{"name": "'Skin cancer or not?' 5-second quizzes", "heat": 3, "receipt": "6 breakouts, 1 tracked creator + 2 untracked PAs copying the format, 5.5M+ views across the window, 5-6s winning", "videos": [{"author": "dr.derm.love", "platform": "TT", "views": 581200, "views_hr": 13831, "tier": "superviral", "x_baseline": 113.1, "breakout": "1%", "age_days": 1.8, "duration_s": 5, "caption": "Skin cancer or not? Skin tag, melanoma, seborrheic keratosis", "url": "https://www.tiktok.com/@dr.derm.love/video/7659477254749031710", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 2200000, "views_hr": 13901, "tier": "superviral", "x_baseline": 428.2, "breakout": "1%", "age_days": 9.6, "duration_s": 5, "caption": "Skin cancer or not? Bcc, dermatofibroma, melanoma", "url": "https://www.tiktok.com/@dr.derm.love/video/7656566753484393759", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 757400, "views_hr": 12066, "tier": "superviral", "x_baseline": 147.4, "breakout": "3%", "age_days": 2.7, "duration_s": 5, "caption": "Is it skin cancer or not? Melanoma, skin tag, melanoma", "url": "https://www.tiktok.com/@dr.derm.love/video/7659156362072542494", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 786300, "views_hr": 7272, "tier": "viral", "x_baseline": 153.0, "breakout": null, "age_days": 4.6, "duration_s": 5, "caption": "Is it skin cancer? Melanoma, myxoid cyst, melanoma", "url": "https://www.tiktok.com/@dr.derm.love/video/7658455032672668959", "is_abby": false}], "her_coverage": {"status": "yellow", "summary": "Deep library, old format: BCC ultimate guide (493K YT), 10 warning signs (Feb 2026), 3 skin-cancer facts (185K TT); age-spots-vs-melanoma IG post 10d ago (184K) - but she has never done the 5-second quiz format", "links": [{"label": "her BCC ultimate guide (YT) - 493K", "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"}, {"label": "her 3 skin-cancer facts (TT) - 185K", "url": "https://www.tiktok.com/@drabby6/video/7394248352923143467"}]}, "corpus_position": "'Age spots' that are slowly growing or darkening can actually represent early melanoma. Pimples that don't go away after months, grow or bleed can be non melanoma skin cancer.", "winning_length": "5-6s quiz", "angles": [{"angle": "Film a 3-spot 'would I biopsy this?' quiz", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Mohs edition: real cases - cancer or not", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Myth-bust: growing 'age spot' vs early melanoma", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": []}, {"name": "Anne Hathaway sun-protection wave", "heat": 3, "receipt": "2 tracked breakouts (2.3M in 3.9d IG + 484K in 1.8d TT) riding a 6.7M-view celebrity moment; adjacent UV-behavior breakouts same window", "videos": [{"author": "beautydermmd", "platform": "IG", "views": 2313204, "views_hr": 24675, "tier": "superviral", "x_baseline": 119.8, "breakout": "1%", "age_days": 3.9, "duration_s": 6, "caption": "Not her serum. Not her skincare. HER HABITS. Sun protection is elite behavior. UPF clothing. Wide-brim hat. Sunglasses. Shade.", "url": "https://www.instagram.com/p/DaX_HEcOs-5/", "is_abby": false}, {"author": "dr.derm.love", "platform": "TT", "views": 483800, "views_hr": 11475, "tier": "superviral", "x_baseline": 94.2, "breakout": "3%", "age_days": 1.8, "duration_s": 6, "caption": "Anne Hathaway knows the way! #annehathaway #sunprotection #spf", "url": "https://www.tiktok.com/@dr.derm.love/video/7659475062952594719", "is_abby": false}, {"author": "drspf", "platform": "TT", "views": 183900, "views_hr": 1939, "tier": "viral", "x_baseline": 16.4, "breakout": "5%", "age_days": 4.0, "duration_s": 89, "caption": "UV index is not the stock market - intentionally sitting out to tan is not it.", "url": "https://www.tiktok.com/@drspf/video/7658663111561415966", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Sun protection is a pillar: UV-index tanning reminder 9d ago (169K IG), bemotrizinol explainer 6d ago (308K IG) - the celebrity-habits format is untouched", "links": [{"label": "her UV-index reminder (IG) - 169K", "url": "https://www.instagram.com/p/DaK_bSCgaUX/"}, {"label": "her bemotrizinol explainer (IG) - 308K", "url": "https://www.instagram.com/p/DaTxWSpvBUk/"}]}, "corpus_position": "Play this video whenever you need a reminder NOT to go out and tan when the UV index is high.", "winning_length": "6-11s reacts; 76-89s explainers also landing", "angles": [{"angle": "React to Hathaway's hat-UPF-shade look: what derms notice", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Stitch the burkini clip: sun protection is elite, not extra", "grounded": "yes", "source": "feed", "verify": false}, {"angle": "Celebrity skin habits I'd prescribe - mini-series", "grounded": "yes", "source": "corpus", "verify": false}], "stitch_refs": [1]}, {"name": "Petroleum jelly & barrier-cream mania", "heat": 3, "receipt": "1074x monster (3.6M YT), 4 Vaseline hacks 1% breakout (744K TT in 5.8d), diaper-cream-as-sunscreen reacts breaking out twice in 2 days - all barrier-cream claims", "videos": [{"author": "Dr. Scott Walter MD", "platform": "YT", "views": 3646504, "views_hr": 26009, "tier": "superviral", "x_baseline": 1074.9, "breakout": "1%", "age_days": 8.8, "duration_s": 88, "caption": "Petroleum Jelly: Friend or Foe? Video: numnumasmr11 on TT", "url": "https://www.youtube.com/shorts/RUizJwm0UeA", "is_abby": false}, {"author": "drdrayzday", "platform": "IG", "views": 357757, "views_hr": 14739, "tier": "superviral", "x_baseline": 3.5, "breakout": "1%", "age_days": 1.0, "duration_s": 76, "caption": "Diaper Cream as Sunscreen!?", "url": "https://www.instagram.com/p/DafdzxPR3v8/", "is_abby": false}, {"author": "dermarkologist", "platform": "TT", "views": 743600, "views_hr": 8146, "tier": "viral", "x_baseline": 42.4, "breakout": "1%", "age_days": 5.8, "duration_s": 73, "caption": "4 Vaseline hacks that I swear by as your favorite dermatologist!", "url": "https://www.tiktok.com/@dermarkologist/video/7657979930973637919", "is_abby": false}, {"author": "drdrayzday", "platform": "TT", "views": 135800, "views_hr": 3654, "tier": "viral", "x_baseline": 6.6, "breakout": "3%", "age_days": 1.6, "duration_s": 75, "caption": "Diaper rash cream doesn't work as sunscreen. @rob.lea", "url": "https://www.tiktok.com/@drdrayzday/video/7659538193007660301", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Her franchise: Rachel Kwon zinc-oxide stitch (2.4M TT), 'diaper cream is a must-have' (1.8M TT), diaper cream for perioral dermatitis (875K YT, Jan 2026), glass-skin trifecta with diaper cream 8d ago (126K IG)", "links": [{"label": "her Rachel Kwon zinc-oxide stitch (TT) - 2.4M", "url": "https://www.tiktok.com/@drabby6/video/7445070738178034975"}, {"label": "her zinc-oxide must-have (TT) - 1.8M", "url": "https://www.tiktok.com/@drabby6/video/7484633582787382558"}]}, "corpus_position": "A zinc oxide-based diaper cream or barrier cream is the best for repairing a damaged skin barrier, improving redness, improving itching, improving that tight feeling. On slugging: if you're slugging with this much Vaseline, you're doing it wrong - and don't slug over an active like a retinoid.", "winning_length": "73-88s myth-busts", "angles": [{"angle": "Stitch rob.lea's 11-hour ocean-swim zinc ritual", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Rate the 4 viral Vaseline hacks - approved or not", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Diaper cream vs real SPF: where barrier zinc ends", "grounded": "needs her take", "source": "feed", "verify": false}], "stitch_refs": [0]}, {"name": "Glass skin (K-beauty wave) - YOURS", "heat": 3, "receipt": "HER win leads: superviral both platforms in <1d (473K IG + 195K TT); teawithmd 145.7x 1% monster (483K TT), Korea-compliments mist videos viral same window", "videos": [{"author": "abby.waldmanmd", "platform": "IG", "views": 473126, "views_hr": 30735, "tier": "superviral", "x_baseline": 5.0, "breakout": "1%", "age_days": 0.7, "duration_s": 8, "caption": "Glass skin routine - don't forget to exfoliate 1-2x/week; no retinoids when pregnant, azelaic at night instead", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "is_abby": true}, {"author": "drabby6", "platform": "TT", "views": 195200, "views_hr": 12862, "tier": "superviral", "x_baseline": 8.2, "breakout": "5%", "age_days": 0.7, "duration_s": 7, "caption": "What's your glass skin care routine? #glassskin", "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599", "is_abby": true}, {"author": "teawithmd", "platform": "TT", "views": 483200, "views_hr": 3107, "tier": "viral", "x_baseline": 145.7, "breakout": "1%", "age_days": 8.5, "duration_s": 13, "caption": "If glass skin is what you want, why aren't you using this combo yet!? #azelaicacid #tretinoin", "url": "https://www.tiktok.com/@teawithmd/video/7656983974643879199", "is_abby": false}, {"author": "yurileeeee", "platform": "TT", "views": 351800, "views_hr": 5747, "tier": "viral", "x_baseline": 12.1, "breakout": "3%", "age_days": 2.6, "duration_s": 26, "caption": "Complements in Korea hits different #glowyskin #glassskin #facemist", "url": "https://www.tiktok.com/@yurileeeee/video/7659185564792409357", "is_abby": false}], "her_coverage": {"status": "green", "summary": "Superviral on it RIGHT NOW (both platforms, <1d); trifecta video 8d ago (126K IG + 75K TT); 'glass skin in one day' hacks (485K TT, 2023)", "links": [{"label": "her glass-skin post (IG) - 473K in <1d", "url": "https://www.instagram.com/p/DagZEHNP3nk/"}, {"label": "her glass-skin-in-one-day hacks (TT) - 485K", "url": "https://www.tiktok.com/@drabby6/video/7273551960127704351"}]}, "corpus_position": "The trifecta skincare for glass skin: azelaic acid, tretinoin, zinc oxide diaper cream. Don't use a retinoid when pregnant - azelaic acid can be used at night instead.", "winning_length": "7-13s routine flashes", "angles": [{"angle": "Part 2 now: ingredient-by-ingredient trifecta breakdown", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Glass skin while pregnant: the exact retinoid swaps", "grounded": "yes", "source": "corpus", "verify": false}, {"angle": "Stitch the Korea-compliments mist videos with your 3 steps", "grounded": "yes", "source": "feed", "verify": false}], "stitch_refs": [5]}], "more_topics": [{"topic": "Melasma & dark spots one-liner ('the more ya know')", "receipt": "473.5x, 1%, 1M in 7.5d (TT) + 117.6x, 1%, 883K (IG)", "url": "https://www.tiktok.com/@dermdocmalik/video/7657359644507065631", "heat": 2, "platform": "TT/IG", "note": "cross-platform 1% breakout but caption-thin - watch before drafting"}, {"topic": "Glycolic acid misconceptions", "receipt": "503.7x, 1%, 1.3M in 11.6d (TT)", "url": "https://www.tiktok.com/@draleksandrabrown/video/7655646958014582029", "heat": 2, "platform": "TT", "note": "her glycolic body-skin reel is 2d old and climbing - extend it"}, {"topic": "Hypochlorous acid spray", "receipt": "74x, 1%, 260K in 4.7d (TT)", "url": "https://www.tiktok.com/@kelswansondermpa/video/7658384302731775262", "heat": 1, "platform": "TT", "note": "her 2024 hygiene-hack corpus (48K) ready for a refresh"}, {"topic": "Perioral dermatitis vs acne", "receipt": "22.8x, early, 117K in 1.4d (TT)", "url": "https://www.tiktok.com/@dr.derm.love/video/7659620936122944799", "heat": 1, "platform": "TT", "note": "she has the diaper-cream-for-POD video (875K YT) to build on"}, {"topic": "Spironolactone: the secret pill", "receipt": "6.6x, 3%, 77K in 2.6d (TT)", "url": "https://www.tiktok.com/@dr.tomassian/video/7659181418601352461", "heat": 1, "platform": "TT", "note": "two dr.tomassian breakouts same window - acne+hair-loss crossover"}], "her_wins": [{"summary": "(IG/TT) Glass-skin routine - superviral BOTH platforms: 473K in 17h (IG, 1% breakout) + 195K (TT, 5%)", "url": "https://www.instagram.com/p/DagZEHNP3nk/", "platform": "IG/TT", "age_days": 0.7, "open_lane": "Part 2 while it runs: trifecta ingredient breakdown, or the pregnancy-safe glass-skin swap video"}, {"summary": "(IG) Glycolic-acid body-skin mistake reel - 251K in 2d, still climbing", "url": "https://www.instagram.com/p/Dad3vx1PAfq/", "platform": "IG", "age_days": 1.7, "open_lane": "The 3-mistakes format is working - do the KP/bumpy-skin follow-up"}], "stitch_shortlist": [{"author": "@rob.lea1", "platform": "TT", "claim": "Diaper cream + Zinka survived an 11-hour ocean swim", "views": 15933222, "age_days": 4.2, "comments": 4101, "comment_heat": false, "heat": 3, "url": "https://www.tiktok.com/@rob.lea1/video/7659140702172892429", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "A marathon swimmer sun-proofed with diaper rash cream, Zinka and Bag Balm for 11+ hours crossing the Tsugaru Strait", "why_it_stitches": "15.9M views in 4.2d (3.8M/day) - an extreme demo of HER signature ingredient; comments asking whether it actually works; derms (drdrayzday x2 breakouts) already reacting means the wave is real and she owns the deepest position", "your_fit": "Your zinc-oxide franchise: Rachel Kwon stitch (2.4M), 'zinc oxide diaper cream is the best for repairing a damaged skin barrier' (1.8M). This time it's sun armor, not barrier repair - a NEW angle for you", "angles": ["'You want me to WHAT?' - 11 hours, no reapply, does the math work?", "Why thick zinc paste beats spray SPF for extreme exposure", "Empathy-first: what his skin endured and the barrier repair after"], "length": "original eats ~10s; 45-60s total"}}, {"author": "@silent.tears0344", "platform": "TT", "claim": "Anne Hathaway covered head-to-toe at the beach", "views": 6674462, "age_days": 6.5, "comments": 2307, "comment_heat": false, "heat": 3, "url": "https://www.tiktok.com/@silent.tears0344/video/7658295072982600993", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": false, "big_enough": true, "punches_ok": true, "score": 5}, "pitch": {"the_claim": "Anne Hathaway at the beach in full burkini-style sun coverage - the clip behind this week's derm wave", "why_it_stitches": "6.7M views; 2.3K comments split between 'iconic' and 'paranoid'; the theme receipts show tracked derms breaking out on exactly this moment. Miss recorded honestly: 6.5d old, past peak velocity", "your_fit": "Sun protection is your pillar (UV-index reminder 9d ago, 169K IG) - but you have never done the celebrity-habits react format", "angles": ["'What derms notice first' - break down every choice she made", "Empathy-first: sun protection without the 'that's extra' shame"], "length": "original eats ~5-8s; 30-45s total"}}, {"author": "@dannyguo.md", "platform": "TT", "claim": "How to fix greasy hair", "views": 2862441, "age_days": 6.6, "comments": 376, "comment_heat": false, "heat": 2, "url": "https://www.tiktok.com/@dannyguo.md/video/7658279177438776597", "seed_topic": "dermatologist", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": false, "big_enough": true, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "A derm's fix for greasy hair", "why_it_stitches": "2.9M views on a scalp topic - her underexploited high-ceiling lane. Misses recorded: 6.6d old, and he's a fellow derm being broadly correct, so 'yes, and' only", "your_fit": "Her greasy-flakes video (119K, Nov 2025): 'greasy flakes on your scalp aren't dry skin - you're making these 3 mistakes.' She can add the seb-derm layer his fix skips", "angles": ["'Yes, and' - the 3 mistakes his fix doesn't cover", "Switch-don't-quit: the right shampoo rotation for an oily scalp"], "length": "original eats ~8s; 45-60s total"}}, {"author": "@robertwblove", "platform": "TT", "claim": "Avoid these sunscreens - they harm your hormones", "views": 529606, "age_days": 3.0, "comments": 865, "comment_heat": true, "heat": 1, "url": "https://www.tiktok.com/@robertwblove/video/7659597715856280863", "seed_topic": "spf", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": true, "big_enough": true, "punches_ok": true, "score": 6}, "pitch": {"the_claim": "Chemical sunscreens are endocrine disruptors that 'harm your hormones' - avoid them, especially for children", "why_it_stitches": "865 comments on 530K views in 3 days - scared parents in the comments; the classic half-truth that needs a derm who concedes the grain of truth instead of dismissing it", "your_fit": "You've said the nuanced version on camera: 'chemical sunscreens like avobenzone, oxybenzone and homosalate can be potential hormone mimickers, essentially endocrine disruptors' - AND your bemotrizinol explainer 6d ago (308K) covers the new-generation fix", "angles": ["Half-right: name the filters in question, then the mineral + bemotrizinol answer", "Empathy-first for parents: what I actually put on MY kids"], "length": "original eats ~8s; 60s total"}}, {"author": "@heyitsmans", "platform": "TT", "claim": "'I'd rather get cancer the natural way than the chemical way'", "views": 377618, "age_days": 4.3, "comments": 2715, "comment_heat": true, "heat": 1, "url": "https://www.tiktok.com/@heyitsmans/video/7659111246272220446", "seed_topic": "skin cancer", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "dangerous", "rising": false, "big_enough": false, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "Viral discourse: 'I'd rather get cancer the natural way than the chemical way' (sunscreen-phobia) - the creator is already pushing back", "why_it_stitches": "2,715 comments on 378K views - enormous comment heat; the quoted claim is dangerous and everywhere this summer. Misses recorded: modest absolute views, 4.3d", "your_fit": "Skin-cancer authority is her deepest lane (BCC guide 493K; 'age spots can be early melanoma'). React to the QUOTED claim with empathy - the creator already handled the debunk, she adds the Mohs-surgeon receipts", "angles": ["Empathy-first: why 'natural' feels safer and what I cut out of skin weekly", "Yes, and - amplify his take with what a Mohs surgeon sees"], "length": "original eats ~8-10s; 60s total"}}, {"author": "@skinecologic", "platform": "TT", "claim": "'10% azelaic acid' products aren't 10% azelaic acid", "views": 254692, "age_days": 2.5, "comments": 1202, "comment_heat": true, "heat": 1, "url": "https://www.tiktok.com/@skinecologic/video/7659801949339979030", "seed_topic": "azelaic acid", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": false, "punches_ok": true, "score": 5}, "pitch": {"the_claim": "Products marketed as '10% azelaic acid' often use derivatives that are not equivalent to true 10% azelaic acid", "why_it_stitches": "1.2K comments of label confusion on 255K views in 2.5d and rising - a transparency drama inside HER signature ingredient. Miss recorded: modest absolute views", "your_fit": "Azelaic is a pillar of her superviral-this-week trifecta; corpus: azelaic for redness and pigmentation, pregnancy-safe alternative to retinoids", "angles": ["'Yes, and' - which strengths and formulations actually matter, derm picks", "Decode the label: derivative vs the real thing in 45 seconds"], "length": "original eats ~8s; 45-60s total"}}], "more_stitches": [{"author": "@millylivin", "platform": "TT", "claim": "Viral blowout hack 'actually worked'", "views": 17620974, "age_days": 6.5, "comments": 2302, "comment_heat": false, "heat": 3, "viral": true, "url": "https://www.tiktok.com/@millylivin/video/7658298570356968712", "seed_topic": "kbeauty", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": false, "trigger": "surprising", "rising": false, "big_enough": true, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "A Dyson-style blowout hack that 'genuinely worked'", "why_it_stitches": "17.6M hair-tok wave. Lane doubt stated: styling content, not scalp/hair health - stitch only if she wants the heat-damage angle", "your_fit": "Hair is her lane but corpus is scalp-health, not styling", "angles": ["Heat-damage reality check on viral blowout hacks"], "length": "30-45s"}}, {"author": "@dralicedermatologist", "platform": "TT", "claim": "Your #1 anti-aging product is SPF", "views": 7196714, "age_days": 4.8, "comments": 1134, "comment_heat": false, "heat": 3, "viral": true, "url": "https://www.tiktok.com/@dralicedermatologist/video/7658930316223991041", "seed_topic": "spf", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": false, "big_enough": true, "punches_ok": false, "score": 4}, "pitch": {"the_claim": "SPF is your number one anti-aging product (on the Hathaway wave)", "why_it_stitches": "7.2M views. Rubric miss: a fellow derm being correct - 'yes, and' only", "your_fit": "Her sun-protection pillar; she'd add the habits layer beyond SPF", "angles": ["Yes, and: SPF is step one - habits are the cheat code"], "length": "30-45s"}}, {"author": "@vidaromero", "platform": "TT", "claim": "You burn on vacation even if you never burn at home", "views": 4105596, "age_days": 5.4, "comments": 1022, "comment_heat": false, "heat": 2, "viral": true, "url": "https://www.tiktok.com/@vidaromero/video/7658720408501259534", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": false, "big_enough": true, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "Vacation sunburn PSA - reapply, UV differs by location", "why_it_stitches": "4.1M empathy moment", "your_fit": "Her UV-index corpus maps directly", "angles": ["UV-index geography: why Mexico burns you when home doesn't"], "length": "30-45s"}}, {"author": "@ambie.gail", "platform": "TT", "claim": "Sunburn relief hack ('I swear I wear sunscreen')", "views": 3385565, "age_days": 6.1, "comments": 322, "comment_heat": false, "heat": 2, "viral": true, "url": "https://www.tiktok.com/@ambie.gail/video/7658434873056595231", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": false, "big_enough": true, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "A sunburn-relief 'hack' going around", "why_it_stitches": "3.4M; summer burn season", "your_fit": "React with what actually helps a burn (and what doesn't)", "angles": ["Derm-approved burn care vs the hack"], "length": "30-45s"}}, {"author": "@baldiechi", "platform": "TT", "claim": "'Natural look' GRWM built on skincare-first products", "views": 2274077, "age_days": 2.2, "comments": 323, "comment_heat": false, "heat": 2, "viral": true, "url": "https://www.tiktok.com/@baldiechi/video/7659888228769549581", "seed_topic": "spf", "source": "feed", "verify": false, "rubric": {"specific_claim": false, "her_lane": false, "trigger": "surprising", "rising": true, "big_enough": true, "punches_ok": true, "score": 3}, "pitch": {"the_claim": "Skincare-heavy 'no makeup' routine (milky SPF, eye patches)", "why_it_stitches": "2.3M and fresh (2.2d). Lane doubt stated: lifestyle content with product plugs - surface per guarantee, weak stitch", "your_fit": "Only if she wants the 'skincare as makeup' teach", "angles": ["What in this routine is doing anything - derm edit"], "length": "30-45s"}}, {"author": "@mo.naciri", "platform": "TT", "claim": "'I had better skin before my routine'", "views": 1834407, "age_days": 4.3, "comments": 1258, "comment_heat": true, "heat": 2, "viral": true, "url": "https://www.tiktok.com/@mo.naciri/video/7659129288452476174", "seed_topic": "skincare", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "half-right", "rising": false, "big_enough": true, "punches_ok": true, "score": 5}, "pitch": {"the_claim": "Skin got worse after starting a routine", "why_it_stitches": "1.8M + 88K shares - massive relatability; over-exfoliation confession wave", "your_fit": "Her corpus line: 'you are likely using too many exfoliating acids' - direct hit", "angles": ["Empathy-first: your routine is the rash", "Switch-don't-quit: strip it to 3 steps"], "length": "45-60s"}}, {"author": "@danie1lek", "platform": "TT", "claim": "Skin prep + SPF for a seamless makeup base", "views": 1408102, "age_days": 6.6, "comments": 5961, "comment_heat": true, "heat": 2, "viral": true, "url": "https://www.tiktok.com/@danie1lek/video/7658247131211500818", "seed_topic": "sun protection", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": false, "big_enough": true, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "SPF-under-makeup prep routine", "why_it_stitches": "1.4M + 6K comments (heat); SPF-under-makeup questions fill her comments too", "your_fit": "Adjacent corpus: tinted sunscreen for melasma/hyperpigmentation", "angles": ["Does makeup kill your SPF? The layering answer"], "length": "30-45s"}}, {"author": "@shougmansour30", "platform": "TT", "claim": "Retinol on hands nightly + morning SPF", "views": 623387, "age_days": 2.7, "comments": 127, "comment_heat": false, "heat": 1, "viral": true, "url": "https://www.tiktok.com/@shougmansour30/video/7659692914884283669", "seed_topic": "sunscreen", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": false, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "Nightly retinol on hands, SPF every morning (231K/day pace)", "why_it_stitches": "Pacing over 200K/day. Doubt stated: reads as a brand/affiliate plug (Amazon link) - discounted accordingly", "your_fit": "Hand-aging is real corpus territory (retinoid rules apply)", "angles": ["Hand anti-aging that works: retinoid + SPF, the derm version"], "length": "30-45s"}}, {"author": "@dbeauty_glow", "platform": "TT", "claim": "Creators oil their skin to fake before/afters", "views": 567554, "age_days": 2.7, "comments": 1264, "comment_heat": true, "heat": 1, "viral": true, "url": "https://www.tiktok.com/@dbeauty_glow/video/7659693330099440898", "seed_topic": "skincare", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "wrong", "rising": true, "big_enough": false, "punches_ok": true, "score": 5}, "pitch": {"the_claim": "Skinfluencers rub oil on before filming to fake product results", "why_it_stitches": "1.3K comments on 568K in 2.7d (210K/day pace) - scam-literacy wave", "your_fit": "Fits her honesty brand; corpus on what actually changes skin", "angles": ["How to spot a faked before/after in 3 seconds"], "length": "30-45s"}}, {"author": "@theonlymimi__", "platform": "TT", "claim": "Sunstick gives SPF + glass skin under makeup", "views": 347622, "age_days": 1.6, "comments": 48, "comment_heat": false, "heat": 1, "viral": true, "url": "https://www.tiktok.com/@theonlymimi__/video/7660110715004521735", "seed_topic": "sun protection", "source": "feed", "verify": false, "rubric": {"specific_claim": true, "her_lane": true, "trigger": "surprising", "rising": true, "big_enough": false, "punches_ok": true, "score": 4}, "pitch": {"the_claim": "A K-beauty sunstick as SPF + glass-skin base (217K/day pace)", "why_it_stitches": "Fresh (1.6d) and pacing over 200K/day. Doubt stated: brand-tagged (@Abib) - discounted", "your_fit": "Ties her glass-skin win; sunstick reapplication is a corpus-adjacent teach", "angles": ["Do sunsticks apply enough SPF? The amount problem"], "length": "30-45s"}}, {"author": "@edvainer1", "platform": "TT", "claim": "content unidentifiable from feed (no caption) - watch in-app first", "views": 6002731, "age_days": 6.7, "comments": 1227, "comment_heat": false, "heat": 3, "url": "https://www.tiktok.com/@edvainer1/video/7658226540483857667", "seed_topic": "sunscreen", "source": "feed", "verify": false, "viral": true, "unidentified": true, "rubric": null, "pitch": null}, {"author": "@aclyvsss", "platform": "TT", "claim": "content unidentifiable from feed (no caption) - watch in-app first", "views": 5439489, "age_days": 4.3, "comments": 1, "comment_heat": false, "heat": 3, "url": "https://www.tiktok.com/@aclyvsss/video/7659124891450461462", "seed_topic": "skincare", "source": "feed", "verify": false, "viral": true, "unidentified": true, "rubric": null, "pitch": null}, {"author": "@funny.more44", "platform": "TT", "claim": "content unidentifiable from feed (no caption) - watch in-app first", "views": 1597742, "age_days": 4.4, "comments": 75, "comment_heat": false, "heat": 2, "url": "https://www.tiktok.com/@funny.more44/video/7659089846970879263", "seed_topic": "sunscreen", "source": "feed", "verify": false, "viral": true, "unidentified": true, "rubric": null, "pitch": null}, {"author": "@seanschutt69", "platform": "TT", "claim": "content unidentifiable from feed (no caption) - watch in-app first", "views": 548422, "age_days": 2.2, "comments": 701, "comment_heat": false, "heat": 1, "url": "https://www.tiktok.com/@seanschutt69/video/7659894642233675022", "seed_topic": "sunscreen", "source": "feed", "verify": false, "viral": true, "unidentified": true, "rubric": null, "pitch": null}], "news": []};
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => v >= 1e6 ? (v/1e6).toFixed(1).replace(/\.0$/,'')+'M' : v >= 1e3 ? Math.round(v/1e3)+'K' : String(v);
+const fmtAge = d => d == null ? '' : (d < 1 ? '<1d' : Math.round(d) + 'd');
+const plat = p => p ? `<span class="plat">(${esc(p)})</span>` : '';
+const fires = h => '🔥'.repeat(Math.max(1, Math.min(3, h || 1)));
+const tierPill = t => t === 'superviral' ? '<span class="pill b-sv">SV</span>' : t === 'viral' ? '<span class="pill b-v">V</span>' : '';
+const boPill = b => !b ? '' : `<span class="pill bo-${b === '1%' ? 'gold' : b === '3%' ? 'silver' : 'bronze'}">${b}</span>`;
 
 // Freshness badge — computed client-side against the viewer's clock
 (function(){
@@ -130,19 +163,52 @@ const num = v => v >= 1e6 ? (v/1e6).toFixed(1).replace(/\.0$/,'')+'M' : v >= 1e3
   const today = new Date(); const iso = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
   if (DATA.date === iso) { b.className = 'badge fresh'; b.textContent = 'Built this morning'; }
   else { b.className = 'badge stale'; b.textContent = 'Briefing from ' + DATA.date; }
-  if (DATA.meta_notes) document.getElementById('notes-slot').innerHTML = '<div class="notes">⚠️ ' + esc(DATA.meta_notes) + '</div>';
+  // meta_notes renders in the footer (data-quality note, not an alert banner)
 })();
 
-function copyPrompt(text, btn){
+// ---- Clipboard: prompts are built at CLICK TIME from DATA by index.
+// Never embed prompt text in onclick attributes (apostrophes break them).
+function doCopy(text){
   const done = () => { const t = document.getElementById('toast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 1800); };
   if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done)); }
   else fallbackCopy(text, done);
 }
 function fallbackCopy(text, done){
   const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
-  document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ prompt('Copy this prompt:', text); } document.body.removeChild(ta);
+  document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy') ? done() : prompt('Copy this prompt:', text); }catch(e){ prompt('Copy this prompt:', text); } document.body.removeChild(ta);
+}
+function copyTheme(ti, ai){
+  const t = (DATA.themes || [])[ti]; if (!t) return;
+  const len = t.winning_length || '60s';
+  const text = ai >= 0
+    ? `Script on ${t.name} — angle: ${t.angles[ai].angle}, ${len}, from today's briefing.`
+    : `Script on ${t.name} — ${len}, from today's briefing. Angles: ${(t.angles||[]).map(a=>a.angle).join(' / ')}`;
+  doCopy(text);
+}
+function copyStitch(listName, si, ai){
+  const s = (DATA[listName] || [])[si]; if (!s) return;
+  const base = `Stitch react to @${s.author}: "${s.claim}" — ${s.url}`;
+  const text = ai >= 0 && s.pitch && s.pitch.angles && s.pitch.angles[ai]
+    ? `${base} — angle: ${s.pitch.angles[ai]}, from today's briefing.`
+    : `${base} — from today's briefing.`;
+  doCopy(text);
+}
+function copyMoreTopic(mi){
+  const m = (DATA.more_topics || [])[mi]; if (!m) return;
+  doCopy(`Script on ${m.topic} — from today's briefing.`);
 }
 function toggle(el){ el.closest('.card').classList.toggle('open'); }
+
+// ---- Rubric: compact line; misses spelled out only when short of 6/6 ----
+const RUB_LABELS = {specific_claim:'specific claim', her_lane:'her lane', trigger:'trigger', rising:'still rising', big_enough:'big enough', punches_ok:'punches fair'};
+function rubLine(r){
+  if (!r) return '';
+  const misses = Object.keys(RUB_LABELS).filter(k => k === 'trigger' ? !r[k] : r[k] !== true);
+  const score = r.score != null ? r.score : 6 - misses.length;
+  let html = `<div class="rubline"><b>Rubric ${score}/6</b>${r.trigger ? ' · trigger: ' + esc(r.trigger) : ''}`;
+  if (misses.length) html += ` · <span class="miss">misses: ${misses.map(k=>RUB_LABELS[k]).join(', ')}</span>`;
+  return html + '</div>';
+}
 
 // ---- Her wins ----
 (function(){
@@ -150,7 +216,7 @@ function toggle(el){ el.closest('.card').classList.toggle('open'); }
   if (!wins.length) return;
   document.getElementById('wins-sec').style.display = '';
   document.getElementById('wins').innerHTML = wins.map(w =>
-    `<div class="win">🏆 ${esc(w.summary)} · <a href="${esc(w.url)}" target="_blank" rel="noopener">watch</a>` +
+    `<div class="win">🏆 ${plat(w.platform)} ${esc(w.summary)}${w.age_days != null ? ' · ' + fmtAge(w.age_days) + ' ago' : ''} · <a href="${esc(w.url)}" target="_blank" rel="noopener">watch</a>` +
     (w.open_lane ? `<span class="lane">→ open lane: ${esc(w.open_lane)}</span>` : '') + `</div>`
   ).join('');
 })();
@@ -160,88 +226,126 @@ function toggle(el){ el.closest('.card').classList.toggle('open'); }
   const host = document.getElementById('themes');
   const themes = DATA.themes || [];
   if (!themes.length) { host.innerHTML = '<div class="empty">No themes in today\'s briefing.</div>'; return; }
-  host.innerHTML = themes.map((t, i) => {
-    const fires = '🔥'.repeat(Math.max(1, Math.min(3, t.heat || 1)));
+  host.innerHTML = themes.map((t, ti) => {
     const cov = (t.her_coverage && t.her_coverage.status) || 'red';
     const vids = (t.videos || []).map(v =>
-      `<div class="vid"><span class="who">@${esc(v.author)}</span> <span class="nums">(${esc(v.platform)}) · ${num(v.views)} views · ${v.x_baseline ? Math.round(v.x_baseline)+'× baseline · ' : ''}<span class="tier-${v.tier==='superviral'?'sv':'v'}">${esc(v.tier||'')}</span> · ${v.age_days}d · ${v.duration_s||'?'}s</span> · <a class="watch" href="${esc(v.url)}" target="_blank" rel="noopener">watch</a></div>`
+      `<div class="vid">${plat(v.platform)} <span class="who">@${esc(v.author)}</span> ${tierPill(v.tier)}${boPill(v.breakout)} <span class="nums">· ${num(v.views)} views in ${fmtAge(v.age_days)} · ${v.x_baseline ? Math.round(v.x_baseline)+'× baseline · ' : ''}${v.duration_s||'?'}s</span> · <a class="watch" href="${esc(v.url)}" target="_blank" rel="noopener">watch</a></div>`
     ).join('');
-    const angles = (t.angles || []).map((a, j) => {
+    const angles = (t.angles || []).map((a, ai) => {
       const tag = a.verify ? '<span class="g verify">verify</span>' : (a.grounded === 'yes' ? '<span class="g yes">grounded</span>' : '<span class="g take">her take</span>');
-      const prompt = `Script on ${t.name} — angle: ${a.angle}, ${t.winning_length || '60s'}, from today's briefing.`;
-      return `<div class="angle">${tag}<span style="flex:1">${esc(a.angle)}</span><button class="draftbtn" onclick='copyPrompt(${JSON.stringify(prompt)}, this)'>Draft →</button></div>`;
+      return `<div class="angle">${tag}<span style="flex:1">${esc(a.angle)}</span><button class="draftbtn" onclick="copyTheme(${ti},${ai})">Draft →</button></div>`;
     }).join('');
     const fit = t.her_coverage ?
       `<div class="fit">${esc(t.her_coverage.summary || '')}` +
       (t.corpus_position ? `<span class="pos">"${esc(t.corpus_position)}"</span>` : '') +
       ((t.her_coverage.links || []).length ? `<div class="cov-links">${t.her_coverage.links.map(l=>`<a class="watch" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}</div>` : '') + `</div>` : '';
-    const mainPrompt = `Script on ${t.name} — ${t.winning_length || '60s'}, from today's briefing. Angles: ${(t.angles||[]).map(a=>a.angle).join(' / ')}`;
     return `<div class="card">
       <div class="card-head" onclick="toggle(this)">
         <span class="dot ${cov}"></span>
         <div class="card-t"><div class="card-name">${esc(t.name)}</div><div class="card-sub">${esc(t.receipt || '')}</div></div>
-        <span class="heat">${fires}</span><span class="chev">▶</span>
+        <span class="heat">${fires(t.heat)}</span><span class="chev">▶</span>
       </div>
       <div class="card-body">
         <div class="blk"><div class="blk-label">Receipts</div>${vids}</div>
         <div class="blk"><div class="blk-label">Your fit</div>${fit}</div>
         <div class="blk"><div class="blk-label">Winning length</div><div class="len"><b>${esc(t.winning_length || '—')}</b></div></div>
         <div class="blk"><div class="blk-label">Angles — she can own</div>${angles}</div>
-        <button class="draftbtn big" onclick='copyPrompt(${JSON.stringify(mainPrompt)}, this)'>Draft this → (copies prompt for Claude)</button>
+        <button class="draftbtn big" onclick="copyTheme(${ti},-1)">Draft this → (copies prompt for Claude)</button>
       </div>
     </div>`;
   }).join('');
 })();
 
-// ---- Stitch targets ----
+// ---- Stitch card builder (shared by shortlist + virality watch) ----
+function stitchCard(s, si, listName, mini){
+  const p = s.pitch || {};
+  const angles = (p.angles || []).map((a, ai) =>
+    `<div class="angle"><span style="flex:1">${esc(a)}</span><button class="draftbtn" onclick="copyStitch('${listName}',${si},${ai})">Draft →</button></div>`
+  ).join('');
+  const viral = s.viral ? ' <span class="viral-tag">🚀 viral</span>' : '';
+  const meta = `${s.verify ? '~' : ''}${num(s.views)} views in ${fmtAge(s.age_days)}${s.comment_heat ? ' · ' + num(s.comments) + ' comments 🔥' : ''} · <a class="watch" href="${esc(s.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">watch</a>`;
+  return `<div class="card${mini ? ' mini' : ''}">
+    <div class="card-head" onclick="toggle(this)">
+      <div class="card-t">
+        <div class="card-name">${plat(s.platform)} @${esc(s.author)} <span class="src-tag">${esc(s.source || 'feed')}${s.verify ? ' · verify' : ''}</span>${viral}</div>
+        <div class="card-sub">"${esc(s.claim)}"</div>
+        <div class="card-sub stitch-meta">${meta} ${s.rubric ? '· rubric ' + (s.rubric.score != null ? s.rubric.score : '?') + '/6' : ''}</div>
+      </div>
+      <span class="heat">${s.heat ? fires(s.heat) : ''}</span><span class="chev">▶</span>
+    </div>
+    <div class="card-body">
+      ${p.the_claim ? `<div class="blk"><div class="blk-label">The claim</div><div class="pitchblk">${esc(p.the_claim)}</div></div>` : ''}
+      ${p.why_it_stitches ? `<div class="blk"><div class="blk-label">Why it stitches</div><div class="pitchblk">${esc(p.why_it_stitches)}</div></div>` : ''}
+      <div class="blk"><div class="blk-label">Stitch rubric</div>${rubLine(s.rubric)}</div>
+      ${p.your_fit ? `<div class="blk"><div class="blk-label">Your fit</div><div class="pitchblk">${esc(p.your_fit)}</div></div>` : ''}
+      ${p.length ? `<div class="blk"><div class="blk-label">Length</div><div class="len">${esc(p.length)}</div></div>` : ''}
+      ${angles ? `<div class="blk"><div class="blk-label">React angles</div>${angles}</div>` : ''}
+      ${s.unidentified
+        ? `<a class="draftbtn big" style="text-decoration:none" href="${esc(s.url)}" target="_blank" rel="noopener">Watch in-app first → (content unidentifiable from feed)</a>`
+        : `<button class="draftbtn big" onclick="copyStitch('${listName}',${si},-1)">Draft stitch → (copies prompt for Claude)</button>`}
+    </div>
+  </div>`;
+}
+
+// ---- Stitch shortlist (ranked by heat, then views) ----
 (function(){
   const host = document.getElementById('stitches');
   const list = DATA.stitch_shortlist || [];
   if (!list.length) { host.innerHTML = '<div class="empty">No stitch targets today' + (DATA.stitch_generated_at ? '' : ' (feed unavailable)') + '.</div>'; return; }
-  const RUB = [['specific_claim','specific claim'],['her_lane','her lane'],['trigger','trigger'],['rising','still rising'],['big_enough','big enough'],['punches_ok','punches fair']];
-  host.innerHTML = list.map(s => {
-    const r = s.rubric || {};
-    const rub = RUB.map(([k, lbl]) => {
-      const v = r[k];
-      const ok = (k === 'trigger') ? Boolean(v) : v === true;
-      const txt = (k === 'trigger' && typeof v === 'string') ? `${lbl}: ${v}` : lbl;
-      return `<div class="rub"><span class="ck ${ok?'y':'n'}">${ok?'✓':'✗'}</span> ${esc(txt)}</div>`;
-    }).join('');
-    const p = s.pitch || {};
-    const angles = (p.angles || []).map(a => {
-      const prompt = `Stitch react to @${s.author}: "${s.claim}" — ${s.url} — angle: ${a}, from today's briefing.`;
-      return `<div class="angle"><span style="flex:1">${esc(a)}</span><button class="draftbtn" onclick='copyPrompt(${JSON.stringify(prompt)}, this)'>Draft →</button></div>`;
-    }).join('');
-    const mainPrompt = `Stitch react to @${s.author}: "${s.claim}" — ${s.url} — from today's briefing.`;
-    return `<div class="card">
-      <div class="card-head" onclick="toggle(this)">
-        <div class="card-t">
-          <div class="card-name">@${esc(s.author)} <span class="src-tag">${esc(s.source || 'feed')}${s.verify ? ' · verify' : ''}</span></div>
-          <div class="card-sub">"${esc(s.claim)}"</div>
-          <div class="card-sub stitch-meta">${s.verify ? '~' : ''}${num(s.views)} views · ${s.age_days}d${s.comment_heat ? ' · ' + num(s.comments) + ' comments 🔥' : ''} · <a class="watch" href="${esc(s.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">watch</a></div>
-        </div>
-        <span class="chev">▶</span>
-      </div>
-      <div class="card-body">
-        <div class="blk"><div class="blk-label">The claim</div><div class="pitchblk">${esc(p.the_claim || s.claim)}</div></div>
-        <div class="blk"><div class="blk-label">Why it stitches</div><div class="pitchblk">${esc(p.why_it_stitches || '')}</div></div>
-        <div class="blk"><div class="blk-label">Stitch rubric</div><div class="rubric">${rub}</div></div>
-        <div class="blk"><div class="blk-label">Your fit</div><div class="pitchblk">${esc(p.your_fit || '')}</div></div>
-        <div class="blk"><div class="blk-label">Length</div><div class="len">${esc(p.length || '')}</div></div>
-        <div class="blk"><div class="blk-label">React angles</div>${angles}</div>
-        <button class="draftbtn big" onclick='copyPrompt(${JSON.stringify(mainPrompt)}, this)'>Draft stitch → (copies prompt for Claude)</button>
-      </div>
-    </div>`;
-  }).join('');
+  const order = list.map((s, i) => i).sort((a, b) => ((list[b].heat||0) - (list[a].heat||0)) || (list[b].views - list[a].views));
+  host.innerHTML = order.map(i => stitchCard(list[i], i, 'stitch_shortlist', false)).join('');
 })();
 
-// ---- More topics ----
+// ---- Virality watch: huge waves that missed the rubric bar ----
+(function(){
+  const list = DATA.more_stitches || [];
+  if (!list.length) return;
+  document.getElementById('more-stitch-sec').style.display = '';
+  const order = list.map((s, i) => i).sort((a, b) => list[b].views - list[a].views);
+  document.getElementById('more-stitches').innerHTML = order.map(i => stitchCard(list[i], i, 'more_stitches', true)).join('');
+})();
+
+// ---- More trending topics (one-line expandable) ----
 (function(){
   const more = DATA.more_topics || [];
   if (!more.length) return;
   document.getElementById('more-sec').style.display = '';
-  document.getElementById('more').innerHTML = more.map(m =>
-    `<span class="chip">${esc(m.topic)} <span style="color:#999">(${esc(m.receipt)})</span> · <a href="${esc(m.url)}" target="_blank" rel="noopener">watch</a></span>`
+  document.getElementById('more').innerHTML = more.map((m, mi) =>
+    `<div class="card mini">
+      <div class="card-head" onclick="toggle(this)">
+        <div class="card-t"><div class="card-name">${m.heat ? fires(m.heat) + ' ' : ''}${plat(m.platform)} ${esc(m.topic)}</div>
+        <div class="card-sub">${esc(m.receipt || '')} · <a class="watch" href="${esc(m.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">watch</a></div></div>
+        <span class="chev">▶</span>
+      </div>
+      <div class="card-body">
+        ${m.note ? `<div class="blk"><div class="pitchblk">${esc(m.note)}</div></div>` : ''}
+        <button class="draftbtn big" onclick="copyMoreTopic(${mi})">Draft this → (copies prompt for Claude)</button>
+      </div>
+    </div>`
+  ).join('');
+})();
+
+// ---- News (why-now shelf) ----
+function copyNews(ni){
+  const n = (DATA.news || [])[ni]; if (!n || !n.her_angle) return;
+  doCopy(`Script pegged to the news: ${n.headline} — angle: ${n.her_angle}, from today's briefing.`);
+}
+(function(){
+  const news = DATA.news || [];
+  if (!news.length) return;
+  document.getElementById('news-sec').style.display = '';
+  const ageTag = n => {
+    let out = '';
+    if (n.age_days != null) {
+      const d = Math.round(n.age_days);
+      out = d < 2 ? `<span class="agechip breaking">🔴 BREAKING · ${d === 0 ? 'today' : d + 'd ago'}</span>` : `<span class="agechip">${d}d ago</span>`;
+    }
+    if (n.event_date) out += ` <span class="agechip upcoming">event · ${esc(n.event_date)}</span>`;
+    return out;
+  };
+  document.getElementById('news').innerHTML = news.map((n, ni) =>
+    `<div class="newsitem">📰 <span class="hl">${esc(n.headline)}</span> ${ageTag(n)} <span class="src">· ${esc(n.source)} · <a class="watch" href="${esc(n.url)}" target="_blank" rel="noopener">read</a> · verify</span><br>${esc(n.summary)}` +
+    (n.her_angle ? `<span class="ang">→ her angle: ${esc(n.her_angle)} <button class="draftbtn" onclick="copyNews(${ni})" style="margin-left:8px">Draft →</button></span>` : '') + `</div>`
   ).join('');
 })();
 
@@ -250,7 +354,8 @@ function toggle(el){ el.closest('.card').classList.toggle('open'); }
   const age = DATA.source_extract ? Math.round((Date.now() - new Date(DATA.source_extract).getTime())/36e5) : null;
   document.getElementById('foot').innerHTML =
     `Interpreted ${esc(DATA.generated_at || '')} by ${esc(DATA.generated_by || 'briefing-build')}<br>` +
-    `Source extract: ${esc(DATA.source_extract || '—')}${age !== null ? ' (' + age + 'h old)' : ''} · schema v${DATA.schema || 1}`;
+    `Source extract: ${esc(DATA.source_extract || '—')}${age !== null ? ' (' + age + 'h old)' : ''} · schema v${DATA.schema || 1}` +
+    (DATA.meta_notes ? `<div class="foot-notes">⚠️ ${esc(DATA.meta_notes)}</div>` : '');
 })();
 </script>
 </body>
