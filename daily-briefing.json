@@ -1,336 +1,24 @@
 {
   "schema": 1,
-  "date": "2026-07-21",
-  "generated_at": "2026-07-21T06:52:00-04:00",
+  "date": "2026-07-22",
+  "generated_at": "2026-07-22T06:20:12-04:00",
   "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
-  "signals_generated_at": "2026-07-21T10:07:38Z",
-  "stitch_generated_at": "2026-07-21T10:07:48Z",
+  "signals_generated_at": "2026-07-22T10:07:40Z",
+  "stitch_generated_at": "2026-07-22T10:07:46Z",
   "source_extract": "2026-07-20T09:15:03Z",
-  "meta_notes": "Both feeds rebuilt clean (250 signal videos, 40 stitch candidates of 187 rows). Underlying Apify extract is 2026-07-20T09:15Z — ~25h old, so every age skews ~1d conservative; no fallback needed. Virality sweep: 14 in-lane candidates cleared ≥1M views or ≥200K/day — 6 in the shortlist, 8 in more_stitches (cap extended from 4 per the guarantee), 1 of those an unidentified stub (@aqeelaaz_, 2.86M, 23.6K comments, caption 'our fav plushie' carries no claim). @kd_namjun (1.02M, K-drama) was the only ≥1M candidate excluded as out-of-lane noise. News shelf holds ONE verified item: the ITV story's date was confirmed from its visible dateline ('Friday 17 July 2026 at 6:41pm') and matches its meta timestamp. Three candidates were checked and dropped on story date: the J&J/Neutrogena benzene sunscreen recall is July 14 2021 (a search summary mis-stated it as 2026), the Connecticut AG–Sephora warning-label agreement is April 20 2026 (~92d), and the DermaRite recall expansion is an ICYMI of a July 2025 event. Bemotrizinol remains the June 9 story and stays out. Nothing padded. Tracked derm accounts above 1M (@dr.derm.love, @dermguru, @drspf, @drdrayzday) are excluded from stitching by the builder and surface as theme receipts instead. Run started 06:07, finished after the 6:30 cron at full quality — no time-budget degradation was applied.",
+  "meta_notes": "News shelf empty by design: the only major dermatology story (bemotrizinol FDA approval) broke in June with an Aug 9 effective date - the playbook's own >7d recap-trap, excluded. Fresher candidates (TikTok sunscreen-misinformation study, 'tanmaxxing' warnings) had no verifiable <=7d dateline (client-rendered shells), so none included rather than guessing. Kids-anti-aging news is already saturated in the feed - folded into the top stitch, not news. Feeds fresh (extract 2026-07-20).",
   "menu_lines": [
-    "diaper cream as barrier repair — and the corrective (3% · 3.61M in 7.0d · ♥) [watch](https://www.instagram.com/p/Dau85xguOVN/)",
-    "skin-cancer “is it cancer?” 5s quiz cards (656× · 1% · 3.50M in 7.7d) [watch](https://www.tiktok.com/@dr.derm.love/video/7661722671809400094)",
-    "sun protection without the sunscreen — UPF, parasols, Hathaway (115× · 3% · 1.30M in 7.1d · ♥) [watch](https://www.tiktok.com/@drspf/video/7661946669780454686)",
-    "“worth every penny” derm splurge lists (32× · 5% · 1.00M in 6.7d · ♥) [watch](https://www.tiktok.com/@dermguru/video/7662126905818123551)",
-    "tinea versicolor — peak season, still zero from you (98× · 5% · 935K in 6.9d) [watch](https://www.tiktok.com/@denverskindoc/video/7662036839506660622)"
+    "skin-cancer \"is it cancer?\" quiz (655x - superviral) [watch](https://www.tiktok.com/@dr.derm.love/video/7661722671809400094)",
+    "derm splurges worth the money (YOURS - 733K - ♥) [watch](https://www.tiktok.com/@drabby6/video/7662515848006946079)",
+    "cheap barrier-repair creams (superviral 3.6M - ♥) [watch](https://www.instagram.com/p/Dau85xguOVN/)",
+    "sun protection for summer (114x - ♥) [watch](https://www.tiktok.com/@drspf/video/7661946669780454686)",
+    "tinea versicolor season (98x - viral) [watch](https://www.tiktok.com/@denverskindoc/video/7662036839506660622)"
   ],
   "themes": [
     {
-      "name": "Diaper cream is the new barrier cream — and it already has a corrective",
+      "name": "Skin-cancer \"is it cancer?\" quiz",
       "heat": 3,
-      "receipt": "3 breakouts · 3 creators · 4.2M views · 6–75s winning · you posted into it yesterday",
-      "videos": [
-        {
-          "author": "dermguru",
-          "platform": "IG",
-          "views": 3609918,
-          "views_hr": 21507,
-          "tier": "superviral",
-          "x_baseline": 15.0,
-          "breakout": "3%",
-          "growth": "gold",
-          "eng_top": 11,
-          "age_days": 7.0,
-          "duration_s": 73,
-          "caption": "Comment BARRIER CREAM and I'll send you a few skincare options to heal your barrier! If diaper paste is intimidating and you're not ready to fully commit to the trend…",
-          "url": "https://www.instagram.com/p/Dau85xguOVN/",
-          "is_abby": false
-        },
-        {
-          "author": "drdrayzday",
-          "platform": "TT",
-          "views": 411300,
-          "views_hr": 2616,
-          "tier": "viral",
-          "x_baseline": 19.9,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 17,
-          "age_days": 11.6,
-          "duration_s": 160,
-          "caption": "Diaper rash cream is not sunscreen. Always look for sunscreens that are labeled broad spectrum and with a stated SPF",
-          "url": "https://www.tiktok.com/@drdrayzday/video/7660294422763998478",
-          "is_abby": false
-        },
-        {
-          "author": "abby.waldmanmd",
-          "platform": "IG",
-          "views": 171000,
-          "views_hr": 11565,
-          "tier": "superviral",
-          "x_baseline": 1.8,
-          "breakout": "5%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 0.6,
-          "duration_s": 6,
-          "caption": "Zinc oxide diaper cream has been my secret barrier repair cream for the last 10 years. It quickly repairs red, irritated and painful skin…",
-          "url": "https://www.instagram.com/p/Da_W16uP3wo/",
-          "is_abby": true
-        }
-      ],
-      "her_coverage": {
-        "status": "green",
-        "summary": "Yours went up 14h ago and is already a 5% breakout at 11.6K views/hr (IG) — and the corpus has backed this for years: barrier-repair guides (63.5K TT), the microneedling aftercare rec, and the tretinoin 'nights off' protocol all name a zinc/diaper barrier cream.",
-        "links": [
-          {
-            "label": "her barrier-repair guide · 63.5K",
-            "url": "https://www.tiktok.com/@drabby6/video/7296285272889658667"
-          },
-          {
-            "label": "her zinc diaper cream post · 171K in 0.6d",
-            "url": "https://www.instagram.com/p/Da_W16uP3wo/"
-          }
-        ]
-      },
-      "corpus_position": "\"If you have very sensitive skin it is okay to do home micro needling, but after you may just really want to stick to something simple like a barrier cream — you can use just everyday diaper cream.\"",
-      "winning_length": "6s (yours) or 60–75s (dermguru's explainer) — the middle is dead",
-      "angles": [
-        {
-          "angle": "name the dose: which zinc %, how thick, how long",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "split it: barrier repair YES, sunscreen NO",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "the 10-year receipt — why you got here before the trend",
-          "grounded": "yes",
-          "source": "feed",
-          "verify": false
-        }
-      ],
-      "stitch_refs": [
-        1
-      ]
-    },
-    {
-      "name": "\"Worth every penny\" derm splurge lists — the follower-magnet format of the week",
-      "heat": 3,
-      "receipt": "6 breakouts · 5 creators · 2.4M views · 5 of 6 are ♥ magnets · 6–26s winning · yours is a silver",
-      "videos": [
-        {
-          "author": "dermguru",
-          "platform": "TT",
-          "views": 1000000,
-          "views_hr": 6303,
-          "tier": "viral",
-          "x_baseline": 31.8,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 4,
-          "age_days": 6.7,
-          "duration_s": 9,
-          "caption": "worth EVERY penny 💵 #dermtok #dermatologist",
-          "url": "https://www.tiktok.com/@dermguru/video/7662126905818123551",
-          "is_abby": false
-        },
-        {
-          "author": "drgeria",
-          "platform": "TT",
-          "views": 226200,
-          "views_hr": 2030,
-          "tier": "viral",
-          "x_baseline": 136.5,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 8,
-          "age_days": 9.7,
-          "duration_s": 6,
-          "caption": "If you're gonna spend it, make it worth it! 🌟 #dermatology #dermatologist #spending",
-          "url": "https://www.tiktok.com/@drgeria/video/7661002683062439181",
-          "is_abby": false
-        },
-        {
-          "author": "dr.tomassian",
-          "platform": "TT",
-          "views": 194800,
-          "views_hr": 4900,
-          "tier": "viral",
-          "x_baseline": 16.8,
-          "breakout": "1%",
-          "growth": "gold",
-          "eng_top": 1,
-          "age_days": 1.7,
-          "duration_s": 26,
-          "caption": "Procedures that are worth it from a dermatologist #dermatologist #5things #fyp",
-          "url": "https://www.tiktok.com/@dr.tomassian/video/7663966444304076045",
-          "is_abby": false
-        },
-        {
-          "author": "toralvaidyamd",
-          "platform": "TT",
-          "views": 84500,
-          "views_hr": 511,
-          "tier": "normal",
-          "x_baseline": 51.3,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 6,
-          "age_days": 6.9,
-          "duration_s": 8,
-          "caption": "worth every penny #skincare #skincaretips #skincaretiktok #learnontiktok #dermatologist",
-          "url": "https://www.tiktok.com/@toralvaidyamd/video/7662027697723428127",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "green",
-        "summary": "You are inside this one: 'Pricey items for skin and hair worth the money' is 734K in 5.6d on TT (♥ silver, top-8% engagement) plus 336K on IG. The corpus also holds the opposite side — a full 'saving money on skin care' guide.",
-        "links": [
-          {
-            "label": "her pricey-picks video · 734K in 5.6d",
-            "url": "https://www.tiktok.com/@drabby6/video/7662515848006946079"
-          },
-          {
-            "label": "her saving-money guide · YouTube",
-            "url": "https://www.youtube.com/watch?v=z383kbOJ9a0"
-          }
-        ]
-      },
-      "corpus_position": "\"As a dermatologist I just want to let you know that skincare really doesn't have to be so confusing and so expensive.\"",
-      "winning_length": "6–9s list cards; 26s only when it's procedures, not products",
-      "angles": [
-        {
-          "angle": "do the hair-and-scalp version — nobody owns it yet",
-          "grounded": "yes",
-          "source": "feed",
-          "verify": false
-        },
-        {
-          "angle": "pair each splurge with the drugstore dupe you'd accept",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "the honest inverse: what you'd never buy again",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        }
-      ],
-      "stitch_refs": []
-    },
-    {
-      "name": "Sun protection without the sunscreen — UPF, parasols, Anne Hathaway",
-      "heat": 3,
-      "receipt": "4 breakouts · 4 creators · 2.3M views · 6–106s winning · the wave moved from SPF to shade",
-      "videos": [
-        {
-          "author": "drspf",
-          "platform": "TT",
-          "views": 1300000,
-          "views_hr": 7626,
-          "tier": "viral",
-          "x_baseline": 114.5,
-          "breakout": "3%",
-          "growth": "gold",
-          "eng_top": 6,
-          "age_days": 7.1,
-          "duration_s": 106,
-          "caption": "The sun shirt kids were right all along. 🤙 Sun protection is smart, evidence-based, and anti-aging — let's not go backwards in our thinking since WE KNOW BETTER NOW.",
-          "url": "https://www.tiktok.com/@drspf/video/7661946669780454686",
-          "is_abby": false
-        },
-        {
-          "author": "dr.derm.love",
-          "platform": "TT",
-          "views": 497900,
-          "views_hr": 3070,
-          "tier": "viral",
-          "x_baseline": 93.3,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 13.8,
-          "duration_s": 6,
-          "caption": "Anne Hathaway knows the way! #annehathaway #sunprotection #spf",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7659475062952594719",
-          "is_abby": false
-        },
-        {
-          "author": "dermatologist_adel",
-          "platform": "IG",
-          "views": 333930,
-          "views_hr": 2866,
-          "tier": "viral",
-          "x_baseline": 2.6,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 4.9,
-          "duration_s": 46,
-          "caption": "when being extra actually pays off 👒☂️☀️ #dermatologist #annehathway #sunprotection #spf #reactionvideo",
-          "url": "https://www.instagram.com/p/Da0dFMPxT7b/",
-          "is_abby": false
-        },
-        {
-          "author": "dr.zionko",
-          "platform": "IG",
-          "views": 209657,
-          "views_hr": 8982,
-          "tier": "viral",
-          "x_baseline": 1.0,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 1.0,
-          "duration_s": 13,
-          "caption": "Princess of Ginovia 👸🏻 mom still prefers parasols & upf clothing >>> slathering on full body sunscreens",
-          "url": "https://www.instagram.com/p/Da-dyF4BTLw/",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "yellow",
-        "summary": "Deep sunscreen corpus (multiple full guides, plus 'sunscreen doesn't cause cancer' at 184K last week and two sun-habit posts climbing right now) — but no dedicated UPF-clothing/shade video. The wave has moved to the thing you haven't filmed.",
-        "links": [
-          {
-            "label": "her sunscreen-myths video · 184K in 7.8d",
-            "url": "https://www.tiktok.com/@drabby6/video/7661714505289829663"
-          },
-          {
-            "label": "her sun-habits post · 279K in 1.6d",
-            "url": "https://www.instagram.com/p/Da9BXgxPeIN/"
-          }
-        ]
-      },
-      "corpus_position": "\"I think the reason that dermatologists take sun protection so seriously is we see the damage that it can do.\" — the corpus argues it almost entirely through sunscreen selection, not clothing.",
-      "winning_length": "6–13s for the celebrity peg; 106s when you're making the evidence case",
-      "angles": [
-        {
-          "angle": "rank UPF shirt vs parasol vs SPF 50 by real-world adherence",
-          "grounded": "needs her take",
-          "source": "feed",
-          "verify": false
-        },
-        {
-          "angle": "as a Mohs surgeon: which sun habit you'd pick if only one",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "why 'sun shirt kid' beats reapplying every two hours",
-          "grounded": "needs her take",
-          "source": "feed",
-          "verify": false
-        }
-      ],
-      "stitch_refs": [
-        2
-      ]
-    },
-    {
-      "name": "Skin-cancer \"is it cancer?\" 5s quiz cards — enormous reach, zero follower signal",
-      "heat": 3,
-      "receipt": "4 monsters from ONE account · 9.4M views · 5s flat · not one ♥ in the whole cluster",
+      "receipt": "8+ breakouts, dr.derm.love + drspf, 3.5M top, 5s guess-the-diagnosis format winning",
       "videos": [
         {
           "author": "dr.derm.love",
@@ -344,7 +32,7 @@
           "eng_top": null,
           "age_days": 7.7,
           "duration_s": 5,
-          "caption": "Is it cancer? Bcc, Acanthosis Nigricans, melanoma #skincancer #fyp #melanoma",
+          "caption": "Is it cancer? BCC, acanthosis nigricans, melanoma — 5s guess quiz",
           "url": "https://www.tiktok.com/@dr.derm.love/video/7661722671809400094",
           "is_abby": false
         },
@@ -360,165 +48,496 @@
           "eng_top": null,
           "age_days": 11.4,
           "duration_s": 5,
-          "caption": "Skin cancer or not? Melanoma, sk, keloid #melanoma #skincancer #keloid",
+          "caption": "Skin cancer or not? Melanoma, SK, keloid — 5s quiz",
           "url": "https://www.tiktok.com/@dr.derm.love/video/7660376990884711710",
           "is_abby": false
         },
         {
           "author": "dr.derm.love",
           "platform": "TT",
-          "views": 1500000,
-          "views_hr": 9258,
-          "tier": "viral",
-          "x_baseline": 281.1,
-          "breakout": "5%",
+          "views": 842700,
+          "views_hr": 12826,
+          "tier": "superviral",
+          "x_baseline": 157.9,
+          "breakout": "3%",
           "growth": null,
           "eng_top": null,
-          "age_days": 13.8,
+          "age_days": 2.8,
           "duration_s": 5,
-          "caption": "Skin cancer or not? Skin tag, melanoma, seborrheic keratosis #melanoma #seborrheickeratosis #fyp",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7659477254749031710",
+          "caption": "Skin cancer? BCC, granuloma annulare, melanoma — 5s quiz",
+          "url": "https://www.tiktok.com/@dr.derm.love/video/7663564095928536351",
           "is_abby": false
         },
         {
-          "author": "dr.derm.love",
+          "author": "drspf",
           "platform": "TT",
-          "views": 1100000,
-          "views_hr": 6882,
+          "views": 634700,
+          "views_hr": 7141,
           "tier": "viral",
-          "x_baseline": 206.1,
-          "breakout": null,
+          "x_baseline": 55.9,
+          "breakout": "3%",
           "growth": null,
           "eng_top": null,
-          "age_days": 9.7,
-          "duration_s": 5,
-          "caption": "Skin cancer or not? Melanoma, molluscum, skin tag #melanoma #skincancer #melanomaawareness",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7660995134883925278",
+          "age_days": 3.7,
+          "duration_s": 61,
+          "caption": "The pathology confirmed my suspicion — 61s real-biopsy reveal variant",
+          "url": "https://www.tiktok.com/@drspf/video/7663208295691291935",
           "is_abby": false
         }
       ],
       "her_coverage": {
-        "status": "green",
-        "summary": "Strongest lane you own: the 493K BCC deep-dive on YouTube, a melanoma Q&A, 'skin cancer on the lip' at 201K four days ago, and the diagnose-your-own-skin-cancer community prompt.",
+        "status": "yellow",
+        "summary": "3+ skin-cancer videos incl. a 493K BCC deep-dive, but newest is ~13 months old — the quiz format is a gap",
         "links": [
           {
             "label": "her BCC ultimate guide · 493K",
             "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"
           },
           {
-            "label": "her skin-cancer-on-the-lip post · 201K in 4.0d",
-            "url": "https://www.instagram.com/p/Da2yFhMjeiC/"
+            "label": "her melanoma explainer · 53K",
+            "url": "https://www.tiktok.com/@drabby6/video/7321087404486528298"
           }
         ]
       },
-      "corpus_position": "\"Melanoma is a really scary word. Here are the three things you should ask your doctor if you or a loved one gets a diagnosis of melanoma.\" — her instinct is to de-escalate fear, not farm it.",
-      "winning_length": "5s, no exceptions — every card in this cluster is exactly 5s",
+      "corpus_position": "In honor of May being Skin Cancer Awareness Month, we're going to discuss every single thing you need to know if you or your family member has been diagnosed with basal cell carcinoma.",
+      "winning_length": "5s (guess quiz); 60s for the real-biopsy reveal variant",
       "angles": [
         {
-          "angle": "quiz card, then the 30s answer nobody else posts",
+          "angle": "steal the format: 5s 'is it cancer?' ABCDE quiz",
+          "grounded": "yes",
+          "source": "feed",
+          "verify": false
+        },
+        {
+          "angle": "the mole people ignore isn't the scary-looking one",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Mohs receipts: what the biopsy actually showed",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "the one you'd have missed — surgeon humility beats trivia",
+          "angle": "reveal variant: real biopsy, real path result",
           "grounded": "needs her take",
           "source": "feed",
           "verify": false
         }
       ],
       "stitch_refs": [
-        4
+        5
+      ]
+    },
+    {
+      "name": "\"Worth the money\" derm splurges",
+      "heat": 3,
+      "receipt": "5 follower magnets, YOURS 733K (♥) leads + dermguru 1M (♥) + tomassian + geria, list format",
+      "videos": [
+        {
+          "author": "drabby6",
+          "platform": "TT",
+          "views": 733800,
+          "views_hr": 5493,
+          "tier": "viral",
+          "x_baseline": 31.2,
+          "breakout": null,
+          "growth": "silver",
+          "eng_top": 8,
+          "age_days": 5.6,
+          "duration_s": 19,
+          "caption": "Pricey skin + hair items that ARE worth the money — dermatologist picks",
+          "url": "https://www.tiktok.com/@drabby6/video/7662515848006946079",
+          "is_abby": true
+        },
+        {
+          "author": "dermguru",
+          "platform": "TT",
+          "views": 1000000,
+          "views_hr": 6303,
+          "tier": "viral",
+          "x_baseline": 31.8,
+          "breakout": "5%",
+          "growth": "gold",
+          "eng_top": 4,
+          "age_days": 6.7,
+          "duration_s": 9,
+          "caption": "Worth EVERY penny — derm splurge list",
+          "url": "https://www.tiktok.com/@dermguru/video/7662126905818123551",
+          "is_abby": false
+        },
+        {
+          "author": "dr.tomassian",
+          "platform": "TT",
+          "views": 194800,
+          "views_hr": 4900,
+          "tier": "viral",
+          "x_baseline": 16.8,
+          "breakout": "1%",
+          "growth": "gold",
+          "eng_top": 1,
+          "age_days": 1.7,
+          "duration_s": 26,
+          "caption": "Procedures that are worth it, from a dermatologist",
+          "url": "https://www.tiktok.com/@dr.tomassian/video/7663966444304076045",
+          "is_abby": false
+        },
+        {
+          "author": "drgeria",
+          "platform": "TT",
+          "views": 226200,
+          "views_hr": 2030,
+          "tier": "viral",
+          "x_baseline": 136.5,
+          "breakout": "5%",
+          "growth": "gold",
+          "eng_top": 8,
+          "age_days": 9.7,
+          "duration_s": 6,
+          "caption": "If you're gonna spend it, make it worth it",
+          "url": "https://www.tiktok.com/@drgeria/video/7661002683062439181",
+          "is_abby": false
+        }
+      ],
+      "her_coverage": {
+        "status": "green",
+        "summary": "Her worth-the-money faves are breaking out THIS week (733K, ♥ magnet); backed by her saving-money and budget anti-aging guides",
+        "links": [
+          {
+            "label": "her worth-the-money faves · 733K ♥ (this week)",
+            "url": "https://www.tiktok.com/@drabby6/video/7662515848006946079"
+          },
+          {
+            "label": "her budget anti-aging routine",
+            "url": "https://www.youtube.com/watch?v=-dVEzbTKmII"
+          }
+        ]
+      },
+      "corpus_position": "It makes you feel like you really have to spend a ton of money and it's very confusing on what to pick. So where are the areas that you can save money on some of these products?",
+      "winning_length": "6-26s",
+      "angles": [
+        {
+          "angle": "part 2: the ONE splurge vs the ONE dupe",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "flip it: what's NOT worth the money",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "keep it a list — magnet-profile format grows follows",
+          "grounded": "yes",
+          "source": "feed",
+          "verify": false
+        }
+      ],
+      "stitch_refs": []
+    },
+    {
+      "name": "Barrier repair & zinc-oxide hacks",
+      "heat": 2,
+      "receipt": "dermguru 3.6M barrier-cream magnet + YOUR zinc-oxide breakout (this week) + a 2.9M zinc-mask stitch riding it",
+      "videos": [
+        {
+          "author": "dermguru",
+          "platform": "IG",
+          "views": 3609918,
+          "views_hr": 21507,
+          "tier": "superviral",
+          "x_baseline": 15.0,
+          "breakout": "3%",
+          "growth": "gold",
+          "eng_top": 11,
+          "age_days": 7.0,
+          "duration_s": 73,
+          "caption": "Comment BARRIER CREAM and I'll send options to heal your barrier — comment-bait magnet",
+          "url": "https://www.instagram.com/p/Dau85xguOVN/",
+          "is_abby": false
+        },
+        {
+          "author": "abby.waldmanmd",
+          "platform": "IG",
+          "views": 170854,
+          "views_hr": 11565,
+          "tier": "superviral",
+          "x_baseline": 1.8,
+          "breakout": "5%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 0.6,
+          "duration_s": 6,
+          "caption": "Zinc-oxide diaper cream as my secret barrier-repair cream",
+          "url": "https://www.instagram.com/p/Da_W16uP3wo/",
+          "is_abby": true
+        },
+        {
+          "author": "drdrayzday",
+          "platform": "TT",
+          "views": 231500,
+          "views_hr": 6229,
+          "tier": "viral",
+          "x_baseline": 11.2,
+          "breakout": "1%",
+          "growth": "gold",
+          "eng_top": 8,
+          "age_days": 1.6,
+          "duration_s": 61,
+          "caption": "Viral Amlactin lotion for smooth skin — barrier/moisture adjacent",
+          "url": "https://www.tiktok.com/@drdrayzday/video/7663992882059070734",
+          "is_abby": false
+        }
+      ],
+      "her_coverage": {
+        "status": "green",
+        "summary": "Her zinc-oxide barrier hack is a 5% breakout THIS week (171K); backed by her repair-your-barrier-fast guide",
+        "links": [
+          {
+            "label": "her zinc-oxide barrier hack · 171K ♥ (this week)",
+            "url": "https://www.instagram.com/p/Da_W16uP3wo/"
+          },
+          {
+            "label": "her repair-your-barrier-fast guide · 64K",
+            "url": "https://www.tiktok.com/@drabby6/video/7296285272889658667"
+          }
+        ]
+      },
+      "corpus_position": "I am going to show you how to repair your damaged skin barrier. This is your skin barrier and this is what happens when you damage it.",
+      "winning_length": "6s (your hack) to 73s (comment-bait explainer)",
+      "angles": [
+        {
+          "angle": "extend the win: WHY zinc-oxide diaper cream repairs the barrier",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "clear up 'diaper-rash-gate': it's barrier repair, NOT sunscreen",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "cheap barrier dupes that actually work",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        }
+      ],
+      "stitch_refs": [
+        1
+      ]
+    },
+    {
+      "name": "Sun protection & anti-tan summer",
+      "heat": 2,
+      "receipt": "drspf sun-shirt 1.3M (♥) + tanning satire 1.7M superviral + YOUR habits list + an Anne Hathaway sun-safe moment",
+      "videos": [
+        {
+          "author": "drspf",
+          "platform": "TT",
+          "views": 1300000,
+          "views_hr": 7626,
+          "tier": "viral",
+          "x_baseline": 114.5,
+          "breakout": "3%",
+          "growth": "gold",
+          "eng_top": 6,
+          "age_days": 7.1,
+          "duration_s": 106,
+          "caption": "The sun-shirt kids were right all along — UPF clothing is smart",
+          "url": "https://www.tiktok.com/@drspf/video/7661946669780454686",
+          "is_abby": false
+        },
+        {
+          "author": "jillian.gottlieb",
+          "platform": "IG",
+          "views": 1722493,
+          "views_hr": 10484,
+          "tier": "superviral",
+          "x_baseline": 17.1,
+          "breakout": null,
+          "growth": "silver",
+          "eng_top": 16,
+          "age_days": 7.9,
+          "duration_s": 12,
+          "caption": "THIS tan — anti-tan satire (comedy)",
+          "url": "https://www.instagram.com/p/DasxjVfx08j/",
+          "is_abby": false
+        },
+        {
+          "author": "drabby6",
+          "platform": "TT",
+          "views": 81800,
+          "views_hr": 2257,
+          "tier": "viral",
+          "x_baseline": 3.5,
+          "breakout": null,
+          "growth": null,
+          "eng_top": null,
+          "age_days": 1.6,
+          "duration_s": 6,
+          "caption": "Do you already do all of these sun-protection habits?",
+          "url": "https://www.tiktok.com/@drabby6/video/7664020826903137566",
+          "is_abby": true
+        },
+        {
+          "author": "jillian.gottlieb",
+          "platform": "IG",
+          "views": 608603,
+          "views_hr": 30033,
+          "tier": "superviral",
+          "x_baseline": 6.0,
+          "breakout": "3%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 0.9,
+          "duration_s": 9,
+          "caption": "Actual footage of me tanning — satire (comedy)",
+          "url": "https://www.instagram.com/p/Da-zcViRnkG/",
+          "is_abby": false
+        }
+      ],
+      "her_coverage": {
+        "status": "green",
+        "summary": "Sun protection is her deepest evergreen lane; her habits list posted this week, backed by multiple sunscreen guides",
+        "links": [
+          {
+            "label": "her sunscreen Q&A",
+            "url": "https://www.tiktok.com/@drabby6/video/7248694167864479018"
+          },
+          {
+            "label": "her sun-protection habits (this week)",
+            "url": "https://www.tiktok.com/@drabby6/video/7664020826903137566"
+          }
+        ]
+      },
+      "corpus_position": "We take our sun protection very seriously. The reason dermatologists take sun protection so seriously is we see the damage that it can do.",
+      "winning_length": "6-12s (habit lists / satire); 106s for the essay",
+      "angles": [
+        {
+          "angle": "react to the anti-tan / tanmaxxing satire — yes, and here's the data",
+          "grounded": "yes",
+          "source": "feed",
+          "verify": false
+        },
+        {
+          "angle": "the sun-shirt truth: UPF clothing beats reapplying on your back",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "celebrity moment: Anne Hathaway's full-coverage swimsuit",
+          "grounded": "needs her take",
+          "source": "feed",
+          "verify": false
+        }
+      ],
+      "stitch_refs": [
+        3
       ]
     }
   ],
   "more_topics": [
     {
-      "topic": "where tattoo pigment really goes",
-      "receipt": "22× · 3% · @denverskindoc · 206K in 0.9d",
-      "url": "https://www.tiktok.com/@denverskindoc/video/7664281717741604126",
-      "heat": 2,
+      "topic": "tinea versicolor (summer fungal)",
+      "receipt": "98x - @denverskindoc - 935K - 5% breakout",
+      "url": "https://www.tiktok.com/@denverskindoc/video/7662036839506660622",
       "platform": "TT",
-      "note": "Freshest breakout in the feed and cross-posted to IG — laser mechanism explainers are wide open for you."
+      "heat": 2,
+      "growth": null,
+      "eng_top": null,
+      "note": "peak-summer timely; corpus gap (she covers nail fungus, not tinea versicolor)"
     },
     {
-      "topic": "de-influencing / \"I will stand on this hill\"",
-      "receipt": "@dermatologist_adel · 160K in 0.9d",
-      "url": "https://www.instagram.com/p/Da-wQ1tR2wY/",
-      "heat": 1,
-      "platform": "IG",
-      "note": "The backlash format to the splurge lists. Note the inverse underperforms: @toralvaidyamd's 'NOT worth your money' did 12.2K vs her 84.5K 'worth every penny'."
+      "topic": "shaving hacks from a derm",
+      "receipt": "1.9M - @Dr. Neera Nathan (YT) - ♥ silver",
+      "url": "https://www.youtube.com/shorts/mIVrouGb7Zo",
+      "platform": "YT",
+      "heat": 2,
+      "growth": "silver",
+      "eng_top": 5,
+      "note": "1.9M magnet on Shorts"
+    },
+    {
+      "topic": "tattoo removal: where the pigment goes",
+      "receipt": "superviral - @denverskindoc - 206K - 3% breakout",
+      "url": "https://www.tiktok.com/@denverskindoc/video/7664281717741604126",
+      "platform": "TT",
+      "heat": 2,
+      "growth": null,
+      "eng_top": null,
+      "note": ""
     },
     {
       "topic": "hidradenitis suppurativa spotlight",
-      "receipt": "69× · 3% · @dr.heatherderm · 335K in 4.3d",
+      "receipt": "69x - @dr.heatherderm - 335K - 3% breakout",
       "url": "https://www.tiktok.com/@dr.heatherderm/video/7663016459001531661",
-      "heat": 2,
       "platform": "TT",
-      "note": "You have a 35-minute HS expert guide (20.1K) — the short-form cut has never been made."
+      "heat": 1,
+      "growth": null,
+      "eng_top": null,
+      "note": ""
     },
     {
-      "topic": "phytophotodermatitis — the lime burn",
-      "receipt": "11× · @denverskindoc · 344K in 5.6d",
-      "url": "https://www.instagram.com/p/DaynaGtxJ3y/",
+      "topic": "viral Amlactin for smooth skin (KP)",
+      "receipt": "@drdrayzday - 232K - ♥ gold",
+      "url": "https://www.tiktok.com/@drdrayzday/video/7663992882059070734",
+      "platform": "TT",
       "heat": 1,
+      "growth": "gold",
+      "eng_top": 8,
+      "note": ""
+    },
+    {
+      "topic": "'4 derms skincare routines' comedy",
+      "receipt": "2.5M - @jillian.gottlieb (IG) - ♥ silver",
+      "url": "https://www.instagram.com/p/DavWYrqRnAh/",
       "platform": "IG",
-      "note": "Peak margarita season; pairs naturally with the tinea versicolor summer-rash gap."
+      "heat": 2,
+      "growth": "silver",
+      "eng_top": 31,
+      "note": "civilian comedy about derm routines - stitch bait"
     }
   ],
   "her_wins": [
     {
-      "summary": "(IG/TT) syphilis explainer — 889K across platforms in 2.6d, viral on both, 18× your TT baseline",
+      "summary": "Syphilis explainer - ~888K across TT+IG in <3d (428K TT + 460K IG), painless-chancre hook landing",
       "url": "https://www.tiktok.com/@drabby6/video/7663644684656348446",
       "platform": "IG/TT",
       "age_days": 2.6,
       "growth": null,
       "eng_top": null,
-      "open_lane": "part 2: the rash that involves palms and soles — the photo people actually need"
+      "open_lane": "part 2: other 'more common than you think' STIs, same hook"
     },
     {
-      "summary": "(IG) zinc oxide diaper cream — superviral, 5% breakout, 171K in 0.6d at 11.6K views/hr and still climbing",
-      "url": "https://www.instagram.com/p/Da_W16uP3wo/",
-      "platform": "IG",
-      "age_days": 0.6,
-      "growth": null,
-      "eng_top": null,
-      "open_lane": "the dose video: which zinc %, how thick, how long — dermguru's 3.6M left that unanswered"
-    },
-    {
-      "summary": "(TT) pricey skin & hair picks — 734K in 5.6d, ♥ follower magnet (top-8% engagement for you)",
+      "summary": "Worth-the-money skin + hair faves - 733K, follower magnet (♥ silver)",
       "url": "https://www.tiktok.com/@drabby6/video/7662515848006946079",
       "platform": "TT",
       "age_days": 5.6,
       "growth": "silver",
       "eng_top": 8,
-      "open_lane": "the hair-and-scalp splurge list — the magnet format applied to your underexploited lane"
+      "open_lane": "part 2: the ONE splurge vs the ONE dupe (keep the list format)"
     },
     {
-      "summary": "(TT) glass-skin routine — 1.60M in 12.7d, superviral, 68× baseline, ♥ GOLD at top-1% engagement, still pulling 11.8K views/hr",
-      "url": "https://www.tiktok.com/@drabby6/video/7659893560606477599",
-      "platform": "TT",
-      "age_days": 12.7,
-      "growth": "gold",
-      "eng_top": 1,
-      "open_lane": "your strongest follower magnet on record — build the series, don't let it sit as a one-off"
+      "summary": "Zinc-oxide diaper-cream barrier hack - 171K in <1d, 5% breakout",
+      "url": "https://www.instagram.com/p/Da_W16uP3wo/",
+      "platform": "IG",
+      "age_days": 0.6,
+      "growth": null,
+      "eng_top": null,
+      "open_lane": "answer 'diaper-rash-gate': barrier repair vs sunscreen, don't confuse them"
     }
   ],
   "stitch_shortlist": [
     {
       "author": "@itvnews",
       "platform": "TT",
-      "claim": "kids as young as 4 are using adult anti-ageing products",
-      "views": 2100000,
-      "age_days": 3.8,
+      "claim": "Kids as young as 4 using adult anti-aging skincare",
+      "views": 2097621,
+      "age_days": 4.8,
       "comments": 5211,
-      "comment_heat": true,
+      "comment_heat": false,
       "url": "https://www.tiktok.com/@itvnews/video/7663519603380849942",
       "seed_topic": "dermatologist",
       "source": "feed",
@@ -534,23 +553,23 @@
         "score": 6
       },
       "pitch": {
-        "the_claim": "An ITV News investigation found four-year-olds using retinol and acid products built for adult skin; the British Association of Dermatologists is asking for warning labels. A 13-year-old in the piece got a swollen rash that took months to heal.",
-        "why_it_stitches": "2.10M in 3.8d with 5,211 comments — comment volume is 2.5× the usual for this size, which is the controversy signal. It is a news peg, so it stays alive for days, and stitching a broadcaster punches sideways at the marketing, not at a creator.",
-        "your_fit": "You have the teen-skincare guide (18.3K) and a full anti-aging guide, but nothing on the under-13 question — and you are the mother of an 8- and a 5-year-old. That is the credential nobody else stitching this has.",
+        "the_claim": "Children 4+ are using adult anti-aging actives; dermatologists want warning labels and tougher scrutiny.",
+        "why_it_stitches": "2.1M news clip (ITV) with derms already calling for regulation - a claim + a cause in one.",
+        "your_fit": "She's a mom-derm; corpus has an anti-aging series + skincare gifts but NO 'kids shouldn't use actives' video - open lane, needs her take on the pediatric-skin specifics.",
         "angles": [
-          "empathy-first: the mom bought it because the packaging looked child-safe",
-          "'you want me to WHAT?': retinol on a five-year-old",
-          "switch-don't-quit: the three-step routine a kid actually needs"
+          "empathy-first: parents just want to help their kids",
+          "'you want me to put acid on a 4-year-old?'",
+          "what young skin actually needs: sunscreen, gentle moisturizer, done"
         ],
-        "length": "original eats ~8s; 45–60s total"
+        "length": "original eats ~8s; 45-60s total"
       }
     },
     {
       "author": "@alim_kh0",
       "platform": "TT",
-      "claim": "zinc oxide as a full-face mask hack",
-      "views": 2900000,
-      "age_days": 5.7,
+      "claim": "DIY zinc-oxide mask 'tip'",
+      "views": 2904979,
+      "age_days": 6.7,
       "comments": 964,
       "comment_heat": false,
       "url": "https://www.tiktok.com/@alim_kh0/video/7662823203420638497",
@@ -568,57 +587,23 @@
         "score": 5
       },
       "pitch": {
-        "the_claim": "Slather zinc oxide paste on as a mask. 2.90M views and it is the civilian end of the same wave dermguru and you are both on this week.",
-        "why_it_stitches": "Misses only on rising (5.7d). Everything else is clean: an explicit demonstration, dead centre of your lane, and it lands the day after your own zinc post — the algorithm already knows you for this.",
-        "your_fit": "Directly corpus-grounded: you tell people to use everyday diaper cream as a barrier after microneedling and to take 'nights off' with a zinc-based barrier during tretinoin. You have the position; this gives you the demonstration to react to.",
+        "the_claim": "A DIY zinc-oxide mask, presented as a skincare tip.",
+        "why_it_stitches": "2.9M, and it rides the exact zinc-oxide moment she is already winning this week.",
+        "your_fit": "Her zinc-oxide diaper-cream barrier hack is a 5% breakout THIS week (171K) - a perfect duet; she owns the on-topic angle.",
         "angles": [
-          "empathy-first: right ingredient, wrong instructions",
-          "switch-don't-quit: keep the zinc, lose the occlusion time",
-          "the one skin type that should never do this"
+          "yes-and: zinc oxide IS great - here's the RIGHT way to use it",
+          "switch-don't-quit: skip the DIY mask, here's a tested one",
+          "barrier vs sunscreen: don't confuse the two"
         ],
-        "length": "original eats ~5s; 30–45s total"
-      }
-    },
-    {
-      "author": "@brookemonk_",
-      "platform": "TT",
-      "claim": "Korean sunscreen serum is the sun protection upgrade",
-      "views": 2830000,
-      "age_days": 1.5,
-      "comments": 1261,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@brookemonk_/video/7664347891951029535",
-      "seed_topic": "sun protection",
-      "source": "feed",
-      "verify": false,
-      "heat": 3,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": true,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "A sponsored post (#RoundLabPartner) selling a Korean sunscreen serum as real sun protection. 2.83M in 1.5d — the fastest-moving in-lane video in the feed.",
-        "why_it_stitches": "Scores 5/6 and the miss is worth stating out loud: it is an ad, so the rubric discounts it. But the underlying claim is a genuine derm question — serum-texture SPF and whether the K-filter advantage survives US shelves — and Brooke Monk is enormous, so this punches up at the marketing rather than at a person.",
-        "your_fit": "You posted 'Why are US sunscreens so bad compared to European, Australian and Asian sunscreens? The FDA has strictly controlled sunscreen filters…' two days ago. This is that argument with 2.83M views attached to it.",
-        "angles": [
-          "'you want me to WHAT?': serum texture vs the 2mg/cm² you actually need",
-          "empathy-first: the K-filters really are better — here's the catch",
-          "what changes when bemotrizinol hits US shelves"
-        ],
-        "length": "original eats ~6s; 45–60s total"
+        "length": "original ~27s; 45-60s total"
       }
     },
     {
       "author": "@sierrajarratt",
       "platform": "TT",
-      "claim": "\"I bathe in tret, I slather that shit everywhere\"",
-      "views": 1300000,
-      "age_days": 5.1,
+      "claim": "'I bathe in tret, slather it everywhere'",
+      "views": 1301877,
+      "age_days": 6.1,
       "comments": 871,
       "comment_heat": false,
       "url": "https://www.tiktok.com/@sierrajarratt/video/7663010816907545887",
@@ -636,57 +621,57 @@
         "score": 5
       },
       "pitch": {
-        "the_claim": "Full-body, everywhere, every night tretinoin. Stated as a personality trait rather than a routine.",
-        "why_it_stitches": "Misses only on rising. It is a specific dosing behaviour, it is genuinely risky for the barrier, and the comments are full of people asking whether they should copy it — which is the whole reason to answer.",
-        "your_fit": "Your tretinoin beginners' guide (166.7K on YouTube) makes exactly the counter-argument: 'this is about the long haul game… take some nights off, use a zinc-based barrier.' A repeat needs a new angle, so lead with the barrier, not the frequency.",
+        "the_claim": "Slathering tretinoin all over the body, daily, 'everywhere'.",
+        "why_it_stitches": "1.3M glorifying tret overuse - irritation, barrier damage, pregnancy-risk red flags.",
+        "your_fit": "She teaches retinoids as pea-sized, buffered, and NOT whole-body - a clean correction lane (needs her exact dosing take on camera).",
         "angles": [
-          "empathy-first: nobody told you the retinoid uglies end",
-          "switch-don't-quit: same tube, three nights a week, sandwich method",
-          "where on the body tret genuinely should not go"
+          "'you want me to WHAT?': tret is not body lotion",
+          "empathy-first: I get the glow chase - here's the safe dose",
+          "the buffering / sandwich method"
         ],
-        "length": "original eats ~6s; 45–60s total"
+        "length": "original ~15s; 30-45s total"
       }
     },
     {
-      "author": "@drjessicaburgy",
+      "author": "@selatakes",
       "platform": "TT",
-      "claim": "nail melanoma is a band, not a blotch",
-      "views": 1070000,
-      "age_days": 4.7,
-      "comments": 115,
+      "claim": "Anne Hathaway wore a full-coverage suit for sun protection",
+      "views": 490906,
+      "age_days": 3.6,
+      "comments": 700,
       "comment_heat": false,
-      "url": "https://www.tiktok.com/@drjessicaburgy/video/7663171741618883870",
-      "seed_topic": "melanoma",
+      "url": "https://www.tiktok.com/@selatakes/video/7663960389201300749",
+      "seed_topic": "skin cancer",
       "source": "feed",
       "verify": false,
-      "heat": 2,
+      "heat": 1,
       "rubric": {
         "specific_claim": true,
         "her_lane": true,
         "trigger": "surprising",
-        "rising": false,
+        "rising": true,
         "big_enough": true,
         "punches_ok": true,
-        "score": 5
+        "score": 6
       },
       "pitch": {
-        "the_claim": "Nail melanoma shows as a dark longitudinal band; a subungual hematoma is a red-purple bruise that grows out after trauma.",
-        "why_it_stitches": "A fellow derm being correct, so this is a 'yes, and —' only. It earns the slot because 1.07M people just learned a rule with real exceptions, and you are the one who takes the biopsy.",
-        "your_fit": "Your melanoma corpus is strong (the 'three things to ask your doctor' video, the 493K BCC guide) but nail-unit melanoma specifically is a gap — you have onychomycosis covered, not this.",
+        "the_claim": "Anne Hathaway modeled a full-coverage bathing suit specifically for sun protection.",
+        "why_it_stitches": "Fresh (3.6d) celebrity sun-safety moment - positive, shareable, on her deepest lane.",
+        "your_fit": "Sun protection is her most-covered topic; she can celebrate + add the UPF-fabric science.",
         "angles": [
-          "yes, and: Hutchinson's sign is the part that changes management",
-          "the band that's normal — skin of colour deserves its own rule",
-          "what the nail biopsy is actually like, from the surgeon"
+          "celebrate it: a celebrity normalizing UPF coverage",
+          "the swimsuit truth: fabric UPF beats reapplying on your back",
+          "who else quietly does this"
         ],
-        "length": "original eats ~8s; 45–60s total"
+        "length": "original ~short clip; 30-45s total"
       }
     },
     {
       "author": "@johnzademd",
       "platform": "TT",
-      "claim": "benzoyl peroxide wash for underarm odour",
-      "views": 1010000,
-      "age_days": 4.3,
+      "claim": "Benzoyl peroxide wash for underarm odor",
+      "views": 1012376,
+      "age_days": 5.3,
       "comments": 422,
       "comment_heat": false,
       "url": "https://www.tiktok.com/@johnzademd/video/7663334428340489502",
@@ -704,281 +689,193 @@
         "score": 5
       },
       "pitch": {
-        "the_claim": "Benzoyl peroxide wash a few times a week in the shower to cut odour-causing underarm bacteria.",
-        "why_it_stitches": "Another derm being right — 'yes, and' framing required. It clears the bar on size and on a concrete, testable protocol people will try this week.",
-        "your_fit": "You have the staph-colonisation tips post (83K) and deep acne corpus, so benzoyl peroxide dosing is second nature. Flag the bleached-shirt problem nobody warns about.",
+        "the_claim": "Use a benzoyl-peroxide wash a few times a week to cut odor-causing underarm bacteria.",
+        "why_it_stitches": "1.0M, useful and mostly right - a fellow MD, so the play is yes-and, not correction.",
+        "your_fit": "She covers body acne and BP washes; amplify + add the nuance he skipped.",
         "angles": [
-          "yes, and: it bleaches every dark shirt you own",
-          "when odour is actually erythrasma and BP won't fix it",
-          "the 60-second version for people who won't add a step"
+          "yes-and: he's right - here's WHY it works",
+          "add: antiperspirant vs deodorant, and bleached shirts warning",
+          "who should NOT (sensitive / broken skin)"
         ],
-        "length": "original eats ~10s; 30–45s total"
+        "length": "original ~6s; 30s total"
+      }
+    },
+    {
+      "author": "@drjessicaburgy",
+      "platform": "TT",
+      "claim": "Nail melanoma = dark band, not a blotch",
+      "views": 1070530,
+      "age_days": 5.7,
+      "comments": 115,
+      "comment_heat": false,
+      "url": "https://www.tiktok.com/@drjessicaburgy/video/7663171741618883870",
+      "seed_topic": "melanoma",
+      "source": "feed",
+      "verify": false,
+      "heat": 2,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "surprising",
+        "rising": false,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 5
+      },
+      "pitch": {
+        "the_claim": "Nail melanoma usually shows as a dark longitudinal band, not a blotch; a bruise (subungual hematoma) follows trauma and grows out.",
+        "why_it_stitches": "1.07M, correct and important - amplify a fellow derm and fold it into today's skin-cancer wave.",
+        "your_fit": "Her BCC/melanoma guides (493K) give her the authority; add the Hutchinson sign and when to biopsy.",
+        "angles": [
+          "yes-and: she's right - here's the Hutchinson sign to watch",
+          "the nail stripe to worry about vs the harmless ones",
+          "when a dark nail line needs a dermatologist NOW"
+        ],
+        "length": "original ~5s; 30-45s total"
       }
     }
   ],
   "more_stitches": [
     {
-      "author": "@nygiants",
+      "author": "@brookemonk_",
       "platform": "TT",
-      "claim": "NFL player guesses beauty products blind",
-      "views": 8920000,
-      "age_days": 3.7,
-      "comments": 4221,
-      "comment_heat": true,
-      "url": "https://www.tiktok.com/@nygiants/video/7663548845703384333",
-      "seed_topic": "kbeauty",
+      "claim": "'She doesn't love you if she's not protecting your skin' (sunscreen ad)",
+      "views": 2827576,
+      "age_days": 2.5,
+      "comments": 1261,
+      "url": "https://www.tiktok.com/@brookemonk_/video/7664347891951029535",
+      "seed_topic": "sun protection",
       "source": "feed",
       "verify": false,
-      "heat": 3,
       "viral": true,
+      "heat": 2,
       "rubric": {
-        "specific_claim": false,
-        "her_lane": false,
-        "trigger": "surprising",
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "half-right",
         "rising": true,
         "big_enough": true,
         "punches_ok": true,
         "score": 4
       },
       "pitch": {
-        "the_claim": "Braxton correctly names a table of beauty products. 8.92M views at 2.4M/day — the biggest thing anywhere near this lane.",
-        "why_it_stitches": "Lane call stated honestly: there is NO derm claim here, it is a locker-room bit. Surfaced because of size, not fit. If you want it, the play is the format (blind-guess the product) rather than a rebuttal.",
-        "your_fit": "Nothing in the corpus to ground a response — this would be a format steal, not a react.",
+        "the_claim": "Sunscreen framed as an act of love - a Round Lab sponsored post.",
+        "why_it_stitches": "2.8M in 2.5d but SPONSORED - react to the sentiment, never the brand.",
         "angles": [
-          "steal the format: blind-guess which product is the actual actives"
-        ],
-        "length": "original eats ~8s; 30s total"
-      }
-    },
-    {
-      "author": "@bbyambi",
-      "platform": "TT",
-      "claim": "expensive things that are actually worth the money",
-      "views": 2900000,
-      "age_days": 6.7,
-      "comments": 1280,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@bbyambi/video/7662416854979300628",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "heat": 2,
-      "viral": true,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": false,
-        "trigger": "half-right",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 4
+          "yes-and: protecting skin IS love - no brand required",
+          "any broad-spectrum SPF counts"
+        ]
       },
-      "pitch": {
-        "the_claim": "The civilian version of the derm splurge lists — 2.90M views, general 'expensive things worth it', only partly skincare.",
-        "why_it_stitches": "Lane doubt stated: the list runs broader than skin. It is here because it is the mass-market end of your theme-2 format and shows the appetite is not derm-specific.",
-        "your_fit": "Your pricey-picks video is the derm answer to exactly this, and your saving-money guide is the counterweight.",
-        "angles": [
-          "react to only the skincare picks and score them",
-          "the one on her list you'd return"
-        ],
-        "length": "original eats ~8s; 45s total"
-      }
-    },
-    {
-      "author": "@radiantskinclinics",
-      "platform": "TT",
-      "claim": "azelaic acid cream clears melasma",
-      "views": 2370000,
-      "age_days": 6.2,
-      "comments": 574,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@radiantskinclinics/video/7662630262399962389",
-      "seed_topic": "dermatologist",
-      "source": "feed",
-      "verify": false,
-      "heat": 2,
-      "viral": true,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": false,
-        "score": 4
-      },
-      "pitch": {
-        "the_claim": "A Nepali clinic marketing an azelaic acid / melasma ointment. 2.37M views.",
-        "why_it_stitches": "In-lane and enormous, so the guarantee surfaces it — but it fails 'punches sideways or up': stitching a small overseas clinic punches down. Recommend leaving it unless you take the ingredient, not the clinic.",
-        "your_fit": "You posted an azelaic acid community prompt yesterday (94K in 1.0d), so the ingredient is live for you right now.",
-        "angles": [
-          "take the ingredient, never the clinic: what azelaic actually does for melasma"
-        ],
-        "length": "skip the stitch; make it a standalone"
-      }
+      "sponsored": true
     },
     {
       "author": "@chxrry.glowy",
       "platform": "TT",
-      "claim": "glycolic acid on your heels",
-      "views": 1910000,
-      "age_days": 4.7,
+      "claim": "Glycolic acid on cracked heels / body",
+      "views": 1909020,
+      "age_days": 5.7,
       "comments": 752,
-      "comment_heat": false,
       "url": "https://www.tiktok.com/@chxrry.glowy/video/7663171433723530504",
       "seed_topic": "skincare",
       "source": "feed",
       "verify": false,
-      "heat": 2,
       "viral": true,
+      "heat": 2,
       "rubric": {
         "specific_claim": true,
         "her_lane": true,
-        "trigger": "half-right",
+        "trigger": "surprising",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
         "score": 5
       },
       "pitch": {
-        "the_claim": "Glycolic acid as a heel and body-care fix. 1.91M views.",
-        "why_it_stitches": "Clean in-lane demonstration at scale; misses only on rising. Body-care acids are a lane you already teach.",
-        "your_fit": "Your glycolic acid explainer (390K on IG) is explicit that AHAs belong 1–3×/week, which is the correction this needs.",
+        "the_claim": "Using glycolic acid on heels and rough body skin.",
+        "why_it_stitches": "1.9M body-care wave; she can green-light it safely and extend to KP.",
         "angles": [
-          "empathy-first: right acid, wrong frequency",
-          "urea beats glycolic on heels — here's why"
-        ],
-        "length": "original eats ~6s; 30–45s total"
+          "yes-and: works on heels AND keratosis pilaris",
+          "don't do it on broken / cracked-open skin"
+        ]
       }
     },
     {
       "author": "@febisola_iris",
       "platform": "TT",
-      "claim": "sun toner + cooling cream as sun protection",
-      "views": 1260000,
-      "age_days": 5.4,
+      "claim": "K-routine for 'hydrated, protected' skin (Sorbet Cream + Sun Water)",
+      "views": 1255145,
+      "age_days": 6.4,
       "comments": 219,
-      "comment_heat": false,
       "url": "https://www.tiktok.com/@febisola_iris/video/7662921005765070087",
       "seed_topic": "sun protection",
       "source": "feed",
       "verify": false,
-      "heat": 2,
       "viral": true,
+      "heat": 2,
       "rubric": {
         "specific_claim": true,
         "her_lane": true,
-        "trigger": "wrong",
+        "trigger": "half-right",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
-        "score": 5
+        "score": 4
       },
       "pitch": {
-        "the_claim": "A branded 'Sun Water' toner and sorbet cream framed as the hydrated-and-protected routine. 1.26M views.",
-        "why_it_stitches": "In-lane with a real error to correct — a sun toner is not an SPF step. Sponsored, which discounts it, and it is 5.4d old.",
-        "your_fit": "Straight from your sunscreen corpus on what does and does not count as protection.",
+        "the_claim": "A viral K-beauty routine sold as hydrating + sun-protective.",
+        "why_it_stitches": "1.25M, borderline aesthetic/product content - only worth a 'derm reviews a viral routine' take.",
         "angles": [
-          "'you want me to WHAT?': a toner is not a sunscreen",
-          "what 'sun water' actually is"
-        ],
-        "length": "original eats ~6s; 30–45s total"
+          "derm-reviews-a-routine format",
+          "does a 'sun toner' actually protect? (no - SPF does)"
+        ]
       }
     },
     {
       "author": "@koreababe1",
       "platform": "TT",
-      "claim": "K-beauty haul with discount code",
-      "views": 1120000,
-      "age_days": 4.8,
+      "claim": "K-beauty 'boundaries' routine (affiliate code)",
+      "views": 1117507,
+      "age_days": 5.8,
       "comments": 171,
-      "comment_heat": false,
       "url": "https://www.tiktok.com/@koreababe1/video/7663153693251898642",
       "seed_topic": "skincare",
       "source": "feed",
       "verify": false,
-      "heat": 2,
       "viral": true,
+      "heat": 2,
       "rubric": {
         "specific_claim": false,
-        "her_lane": false,
-        "trigger": "half-right",
+        "her_lane": true,
+        "trigger": "none",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
         "score": 3
       },
       "pitch": {
-        "the_claim": "Sibling comedy wrapped around a Yesstyle discount code. 1.12M views.",
-        "why_it_stitches": "Lane doubt stated plainly: no derm claim, it is a code drop. Surfaced only because it clears the size bar on a skincare seed.",
-        "your_fit": "Nothing to ground — recommend skipping.",
-        "angles": [],
-        "length": "recommend skip"
-      }
-    },
-    {
-      "author": "@layloolaaaaaa",
-      "platform": "TT",
-      "claim": "cleansing balm + pore pad stack",
-      "views": 578000,
-      "age_days": 2.7,
-      "comments": 276,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@layloolaaaaaa/video/7663928775167495438",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "heat": 1,
-      "viral": true,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": true,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "A named-product stack — Farmacy balm, La Roche-Posay milk cleanser, medicube zero-pore pads, mixsoon — as the pore routine. 578K at 216K/day.",
-        "why_it_stitches": "Pacing above the guarantee threshold and still climbing at 2.7d. Named products mean a specific, checkable claim.",
-        "your_fit": "Your sebaceous-filament and pore corpus covers why pore pads do not shrink pores.",
+        "the_claim": "A K-beauty routine push with a YesStyle affiliate code and a thin 'boundaries' hook.",
+        "why_it_stitches": "1.1M but affiliate-driven with no medical claim - low priority; listed to honor the virality sweep.",
         "angles": [
-          "empathy-first: those are filaments, not clogs",
-          "which two of the four are actually doing work"
-        ],
-        "length": "original eats ~8s; 30–45s total"
+          "skip unless a specific product claim emerges"
+        ]
       }
     },
     {
       "author": "@aqeelaaz_",
       "platform": "TT",
-      "claim": "content unidentifiable from feed (no caption) — watch in-app first",
-      "views": 2860000,
-      "age_days": 5.0,
-      "comments": 23620,
-      "comment_heat": true,
+      "claim": "content unidentifiable from feed (caption 'our fav plushie', no derm claim) - watch in-app first",
+      "views": 2860769,
+      "age_days": 6.0,
       "url": "https://www.tiktok.com/@aqeelaaz_/video/7663020518563450133",
       "seed_topic": "skincare",
       "source": "feed",
       "verify": false,
-      "heat": 2,
       "viral": true,
+      "heat": 2,
+      "unidentified": true,
       "rubric": null,
-      "pitch": null,
-      "unidentified": true
+      "pitch": null
     }
   ],
-  "news": [
-    {
-      "headline": "Children as young as four using adult anti-ageing skincare",
-      "summary": "ITV News investigation: the British Association of Dermatologists wants warning labels; CTPA data says 61% of 8–14s use skincare and one in ten of those use anti-ageing products. A 13-year-old's reaction took months to heal.",
-      "her_angle": "You have two daughters in exactly that age band — the under-13 routine video nobody credible has made.",
-      "source": "ITV News",
-      "url": "https://www.itv.com/news/2026-07-17/children-as-young-as-four-using-anti-ageing-skincare-products",
-      "published": "Friday 17 July 2026",
-      "age_days": 4,
-      "verify": true
-    }
-  ]
+  "news": []
 }
