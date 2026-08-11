@@ -1,36 +1,52 @@
 {
   "schema": 1,
-  "date": "2026-08-10",
-  "generated_at": "2026-08-10T06:26:54-04:00",
+  "date": "2026-08-11",
+  "generated_at": "2026-08-11T06:28:38-04:00",
   "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
-  "signals_generated_at": "2026-08-10T10:08:02Z",
-  "stitch_generated_at": "2026-08-10T10:08:14Z",
-  "source_extract": "2026-08-09T09:15:03Z",
-  "meta_notes": "Feeds fresh (extract 2026-08-09, ~1d old); no fallback taken. News shelf empty: scan surfaced only stale/CMS-re-stamped items (Supergoop mousse warning = Aug 2025 per hero-image date; Banana Boat benzene recall = 2022 event re-stamped today; bemotrizinol = June 2026) — none inside the 7-day window.",
+  "signals_generated_at": "2026-08-11T10:08:20Z",
+  "stitch_generated_at": "2026-08-11T10:08:26Z",
+  "source_extract": "2026-08-10T09:15:07Z",
+  "meta_notes": "Signals + stitch feeds both fresh (generated 2026-08-11T10:08Z; extract 2026-08-10T09:15Z). No fallbacks taken.",
   "menu_lines": [
-    "birthmarks & vitiligo — ‘do you have one?’ (superviral · ♥ · 1%) [watch](https://www.tiktok.com/@drsamanthaellis/video/7671822725379394830)",
-    "‘comment BEST’ product-list DM funnel (7.5M in ~2d · SV · 1%) [watch](https://www.instagram.com/p/Dbvn5BbxN36/)",
-    "acne tips that actually work (61× · ♥) [watch](https://www.tiktok.com/@leenaderm/video/7671068511824907551)",
-    "‘is it skin cancer?’ 5-sec spot quiz (97×) [watch](https://www.tiktok.com/@dr.derm.love/video/7669646531800075550)",
-    "which SPF actually protects you (124×) [watch](https://www.tiktok.com/@drdavidkim/video/7668775605495778590)"
+    "glow-up starter routine — comment-to-unlock (8.1M in 2.9d · 1%) [watch](https://www.instagram.com/p/Dbvn5BbxN36/)",
+    "\"is it skin cancer?\" pink-spot quiz (129× monster) [watch](https://www.tiktok.com/@dr.derm.love/video/7668526916722281759)",
+    "birthmark & vitiligo \"do you have one?\" (2.2M · 79× · ♥) [watch](https://www.tiktok.com/@drsamanthaellis/video/7671822725379394830)",
+    "oily-hair hacks, rated (2.2M in 9.9d) [watch](https://www.instagram.com/p/DbdjZCLRN1D/)",
+    "sebaceous filaments vs blackheads (20× · 3% · <2d) [watch](https://www.tiktok.com/@draleksandrabrown/video/7671621900816190733)"
   ],
   "themes": [
     {
-      "name": "“Is it skin cancer?” 5-second spot quiz",
+      "name": "\"Is it skin cancer?\" spot-the-diagnosis quiz",
       "heat": 3,
-      "receipt": "dr.derm.love’s 5-sec spot quiz keeps breaking out — up to 129× baseline, 743K views; your exact Mohs lane.",
+      "receipt": "7+ breakouts · @dr.derm.love + @draleksandrabrown · 129× monster · 5–6s guessing-game format winning",
       "videos": [
+        {
+          "author": "dr.derm.love",
+          "platform": "TT",
+          "views": 245100,
+          "views_hr": 7103,
+          "tier": "viral",
+          "x_baseline": 42.6,
+          "breakout": null,
+          "growth": null,
+          "eng_top": null,
+          "age_days": 1.5,
+          "duration_s": 5,
+          "caption": "Skin cancer or not? Not all pink spots are the same! Scc, psoriasis, bcc #scc #bcc #psoriasis",
+          "url": "https://www.tiktok.com/@dr.derm.love/video/7671839231123148062",
+          "is_abby": false
+        },
         {
           "author": "dr.derm.love",
           "platform": "TT",
           "views": 742500,
           "views_hr": 5768,
           "tier": "viral",
-          "x_baseline": 129.4,
+          "x_baseline": 129.1,
           "breakout": null,
           "growth": null,
           "eng_top": null,
-          "age_days": 9.4,
+          "age_days": 10.4,
           "duration_s": 5,
           "caption": "Skin cancer or not? Bcc, dermatofibroma, melanoma #skincancer #bcc #melanoma",
           "url": "https://www.tiktok.com/@dr.derm.love/video/7668526916722281759",
@@ -42,232 +58,198 @@
           "views": 558500,
           "views_hr": 3667,
           "tier": "viral",
-          "x_baseline": 97.4,
+          "x_baseline": 97.1,
           "breakout": null,
           "growth": null,
           "eng_top": null,
-          "age_days": 6.4,
+          "age_days": 7.4,
           "duration_s": 5,
           "caption": "Spoiler alert- they are all cancer, specifically basal cell carcinoma #bcc #skincancer #fyp",
           "url": "https://www.tiktok.com/@dr.derm.love/video/7669646531800075550",
           "is_abby": false
         },
         {
-          "author": "dr.derm.love",
+          "author": "draleksandrabrown",
           "platform": "TT",
-          "views": 170600,
-          "views_hr": 2631,
+          "views": 70500,
+          "views_hr": 4091,
           "tier": "viral",
-          "x_baseline": 29.7,
-          "breakout": null,
+          "x_baseline": 26.2,
+          "breakout": "1%",
           "growth": null,
           "eng_top": null,
-          "age_days": 2.7,
-          "duration_s": 5,
-          "caption": "Is it skin cancer? Bcc, Lyme disease, seborrheic keratosis #skincancer #bcc #seborrheickeratosis",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7670999286347287838",
-          "is_abby": false
-        },
-        {
-          "author": "dr.derm.love",
-          "platform": "TT",
-          "views": 89400,
-          "views_hr": 8509,
-          "tier": "viral",
-          "x_baseline": 15.6,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 0.5,
-          "duration_s": 5,
-          "caption": "Skin cancer or not? Not all pink spots are the same! Scc, psoriasis, bcc #scc #bcc #psoriasis",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7671839231123148062",
+          "age_days": 0.8,
+          "duration_s": 6,
+          "caption": "Sun damage is cumulative. When you start noticing precancers come up, that is sun damage from 20-30 years ago. Wear your sunscreen or sun protective clothing TODAY. This is my patient. Shared with pat",
+          "url": "https://www.tiktok.com/@draleksandrabrown/video/7672107535855373582",
           "is_abby": false
         }
       ],
       "her_coverage": {
         "status": "green",
-        "summary": "Deep + fresh: your 'Ultimate guide to Basal Cell Carcinoma' (493K) and melanoma '3 questions to ask' (53K), plus fresh ABCDE / ugly-duckling clips posted <4 days ago.",
+        "summary": "Her wheelhouse (Mohs): 24-min BCC guide (493K), skin-cancer-awareness series, plus her own BCC-signs post 3 days ago and melanoma-ABCDs post last week.",
         "links": [
           {
             "label": "her BCC ultimate guide · 493K",
             "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"
           },
           {
-            "label": "her melanoma '10 warning signs' · YT",
-            "url": "https://www.youtube.com/watch?v=4SfgtGSYWQU"
+            "label": "her BCC-signs post · 71K (3d)",
+            "url": "https://www.instagram.com/p/DbvbbXqiLZV/"
           }
         ]
       },
-      "corpus_position": "Use the ABCDEs plus the 'ugly duckling' sign; a basal cell often looks like 'dry skin' that no amount of moisturizer will fix — anything new, changing, or non-healing gets checked.",
-      "winning_length": "5 seconds (rapid spot quiz)",
+      "corpus_position": "This little spot is not a pimple and it's not a mole either. Most people think basal cell is dry skin, but no amount of moisturizer will make it better. Melanoma can be pink. When in doubt, get it checked out.",
+      "winning_length": "5–6s",
       "angles": [
         {
-          "angle": "Film your own 5-sec 'is it skin cancer?' spot quiz",
+          "angle": "run your own quiz with real Mohs cases",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Teach the 'ugly duckling' sign with 3 real photos",
+          "angle": "show why pink ≠ harmless (BCC & amelanotic melanoma)",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Bust it: a BCC is NOT dry skin — moisturizer won't fix it",
+          "angle": "the pink spot that's ALWAYS cancer: nodular BCC",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         }
       ],
       "stitch_refs": [
-        1,
-        2
+        3,
+        4
       ]
     },
     {
-      "name": "Acne: scars, treatments & rate-my-routine",
+      "name": "Birthmark & vitiligo \"do you have one?\" explainer",
       "heat": 2,
-      "receipt": "4 creators, several ♥ gold magnets — acne tips (61×), acne-scarring (129×), 'two derms rate acne treatments' (♥ gold). Rate-my-routine format is winning follows.",
-      "videos": [
-        {
-          "author": "leenaderm",
-          "platform": "TT",
-          "views": 103100,
-          "views_hr": 1701,
-          "tier": "viral",
-          "x_baseline": 61.3,
-          "breakout": "3%",
-          "growth": "gold",
-          "eng_top": 23,
-          "age_days": 2.6,
-          "duration_s": 7,
-          "caption": "Acne Tips Some studies suggest that people with acne-prone, oilier skin may develop wrinkles more slowly due to longer telomeres and increased sebum production. #acne #antiaging #wrinkles #skincare #d",
-          "url": "https://www.tiktok.com/@leenaderm/video/7671068511824907551",
-          "is_abby": false
-        },
-        {
-          "author": "dermdocmalik",
-          "platform": "TT",
-          "views": 255100,
-          "views_hr": 1616,
-          "tier": "viral",
-          "x_baseline": 129.1,
-          "breakout": "3%",
-          "growth": "silver",
-          "eng_top": 35,
-          "age_days": 8.6,
-          "duration_s": 6,
-          "caption": "The more ya know! #acnescarring #acnetips #skincaretips #manicure #tintedsunscreen",
-          "url": "https://www.tiktok.com/@dermdocmalik/video/7668818199235857694",
-          "is_abby": false
-        },
-        {
-          "author": "draleksandrabrown",
-          "platform": "TT",
-          "views": 122500,
-          "views_hr": 748,
-          "tier": "normal",
-          "x_baseline": 45.8,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 22,
-          "age_days": 6.9,
-          "duration_s": 74,
-          "caption": "Two dermatologists rate popular acne treatments, and a few of these aren’t even close. Adapalene (10/10): One of the best OTC acne treatments. This topical retinoid helps prevent clogged pores and tre",
-          "url": "https://www.tiktok.com/@draleksandrabrown/video/7669471633584721166",
-          "is_abby": false
-        },
-        {
-          "author": "drjennyliu",
-          "platform": "TT",
-          "views": 109900,
-          "views_hr": 1155,
-          "tier": "viral",
-          "x_baseline": 18.6,
-          "breakout": "3%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 4.0,
-          "duration_s": 14,
-          "caption": "#sebaceousfilament #cloggedpores #acneproneskin #dermatologist #oilyskin",
-          "url": "https://www.tiktok.com/@drjennyliu/video/7670369742896647438",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "green",
-        "summary": "Strong: 'The SHOCKING Truth About Acne Treatments' (28-min guide) and 'How to fade acne scars faster' guide — you have positions on actives and scars.",
-        "links": [
-          {
-            "label": "her acne-treatments guide · YT",
-            "url": "https://www.youtube.com/watch?v=tmbG3QJUZ7g"
-          },
-          {
-            "label": "her 'fade acne scars faster' · YT",
-            "url": "https://www.youtube.com/watch?v=m444D7d9Uwo"
-          }
-        ]
-      },
-      "corpus_position": "Match the actives to the acne type — retinoids and azelaic acid do the heavy lifting; treat scars early; newer options (narrow-spectrum orals, clascoterone) are worth knowing.",
-      "winning_length": "6–15s single tip, or 60–90s 'rate my routine'",
-      "angles": [
-        {
-          "angle": "Rate popular acne treatments good/bad/great — steal the format",
-          "grounded": "yes",
-          "source": "feed",
-          "verify": false
-        },
-        {
-          "angle": "Show what actually fades acne scars — and start early",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Sebaceous filaments aren't blackheads — stop squeezing",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        }
-      ],
-      "stitch_refs": [
-        3
-      ]
-    },
-    {
-      "name": "Birthmarks & benign spots (“do you have one?”)",
-      "heat": 2,
-      "receipt": "drsamanthaellis's birthmark/vitiligo 'do you have one?' is the day's #1 signal — ♥ gold, superviral, 681K in <1d; a benign-spot 3% breakout backs it.",
+      "receipt": "@drsamanthaellis 2.2M in 1.5d · 79× · 1% · ♥ gold magnet — 57s community-prompt explainer, cross-posted IG",
       "videos": [
         {
           "author": "drsamanthaellis",
           "platform": "TT",
-          "views": 681300,
-          "views_hr": 58046,
+          "views": 2200000,
+          "views_hr": 61559,
           "tier": "superviral",
-          "x_baseline": 24.0,
+          "x_baseline": 79.6,
           "breakout": "1%",
           "growth": "gold",
           "eng_top": 4,
-          "age_days": 0.5,
+          "age_days": 1.5,
           "duration_s": 57,
           "caption": "Do you have one? #birthmark #vitiligo #dermatologist #physicianassistant #nursepractitioner",
           "url": "https://www.tiktok.com/@drsamanthaellis/video/7671822725379394830",
           "is_abby": false
         },
         {
+          "author": "drsamanthaellis",
+          "platform": "IG",
+          "views": 244757,
+          "views_hr": 11880,
+          "tier": "superviral",
+          "x_baseline": 1.8,
+          "breakout": "3%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 0.9,
+          "duration_s": 58,
+          "caption": "Do you have one? #birthmark #vitiligo #dermatology #physicianassistant #nursepractitioner",
+          "url": "https://www.instagram.com/p/Db01IuYONl2/",
+          "is_abby": false
+        }
+      ],
+      "her_coverage": {
+        "status": "yellow",
+        "summary": "Strong mole/pigment content (freckles-&-moles Jan 2026 17.5K; '10 warning signs' Feb 2026) but no dedicated vitiligo or birthmark video — a gap in a magnet-format lane.",
+        "links": [
+          {
+            "label": "her freckles & moles · 17.5K",
+            "url": "https://www.tiktok.com/@drabby6/video/7597227550422748447"
+          },
+          {
+            "label": "her 10 skin warning signs",
+            "url": "https://www.youtube.com/watch?v=4SfgtGSYWQU"
+          }
+        ]
+      },
+      "corpus_position": "As long as your moles all look similar, that's actually reassuring to dermatologists — it's the new one, the changing one, the one that doesn't match the rest that I want to see.",
+      "winning_length": "45–60s",
+      "angles": [
+        {
+          "angle": "'do you have one?' — which birthmarks I actually watch",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        },
+        {
+          "angle": "vitiligo 101: what it is, what it isn't",
+          "grounded": "needs her take",
+          "source": "feed",
+          "verify": false
+        },
+        {
+          "angle": "steal the community-prompt hook for a follow series",
+          "grounded": "yes",
+          "source": "corpus",
+          "verify": false
+        }
+      ],
+      "stitch_refs": []
+    },
+    {
+      "name": "Sebaceous filaments ≠ blackheads",
+      "heat": 2,
+      "receipt": "3 breakouts (3–5%) · @draleksandrabrown + @drjennyliu · 'those dots aren't blackheads' · 14–90s",
+      "videos": [
+        {
+          "author": "draleksandrabrown",
+          "platform": "TT",
+          "views": 52800,
+          "views_hr": 1383,
+          "tier": "viral",
+          "x_baseline": 19.7,
+          "breakout": "3%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 1.6,
+          "duration_s": 90,
+          "caption": "Those tiny dots on your nose aren't always blackheads. More often than not, they're sebaceous filaments, completely normal collections of oil inside your pores. They can't be permanently removed becau",
+          "url": "https://www.tiktok.com/@draleksandrabrown/video/7671621900816190733",
+          "is_abby": false
+        },
+        {
+          "author": "drjennyliu",
+          "platform": "TT",
+          "views": 122500,
+          "views_hr": 1028,
+          "tier": "viral",
+          "x_baseline": 20.9,
+          "breakout": "5%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 5.0,
+          "duration_s": 14,
+          "caption": "#sebaceousfilament #cloggedpores #acneproneskin #dermatologist #oilyskin",
+          "url": "https://www.tiktok.com/@drjennyliu/video/7670369742896647438",
+          "is_abby": false
+        },
+        {
           "author": "draleksandrabrown",
           "platform": "IG",
-          "views": 92052,
-          "views_hr": 3731,
+          "views": 152646,
+          "views_hr": 3136,
           "tier": "viral",
-          "x_baseline": 3.3,
-          "breakout": "3%",
-          "growth": "silver",
-          "eng_top": 39,
-          "age_days": 1.0,
+          "x_baseline": 5.5,
+          "breakout": "5%",
+          "growth": null,
+          "eng_top": null,
+          "age_days": 2.0,
           "duration_s": 90,
           "caption": "Those tiny dots on your nose aren't always blackheads. More often than not, they're sebaceous filaments, completely normal collections of oil inside your pores. They can't be permanently removed becau",
           "url": "https://www.instagram.com/p/Dbx0Wv-Rusn/",
@@ -276,58 +258,60 @@
       ],
       "her_coverage": {
         "status": "yellow",
-        "summary": "Partial: port-wine-stain birthmark (75.8K, Nov 2025) and a sebaceous-filaments guide (2023) — but zero vitiligo coverage in 1,481 transcripts.",
+        "summary": "Dedicated sebaceous-filaments explainer (Sept 2024, 254K) + a pores/blackheads ingredients guide — strong but ~11 months old; ripe for a fresh cut.",
         "links": [
           {
-            "label": "her port-wine-stain birthmark · 75.8K",
-            "url": "https://www.tiktok.com/@drabby6/video/7576066704829091102"
+            "label": "her 'black dots on the nose' · 254K",
+            "url": "https://www.tiktok.com/@drabby6/video/7409461139559501099"
           },
           {
-            "label": "her sebaceous-filaments guide · TT",
+            "label": "her clear blackheads/pores guide",
             "url": "https://www.tiktok.com/@drabby6/video/7298868592962063659"
           }
         ]
       },
-      "corpus_position": "Port-wine stains are vascular birthmarks you're born with; sebaceous filaments are normal anatomy, not blackheads. (No stated vitiligo position — that angle needs her take.)",
-      "winning_length": "45–90s explainer with a community-prompt hook",
+      "corpus_position": "These are sebaceous filaments, not to be confused with blackheads — tiny sleeves that line the pore and transfer sebum to the skin. They can't be permanently removed, and that's completely normal.",
+      "winning_length": "15–90s (short reveal and full explainer both breaking)",
       "angles": [
         {
-          "angle": "'Do you have one?' — normalize a common birthmark",
+          "angle": "stop squeezing: why filaments always come back",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Those nose dots are sebaceous filaments, not blackheads",
+          "angle": "the 10-second tell: filament vs blackhead",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Explain vitiligo: what it is and today's options",
-          "grounded": "needs her take",
-          "source": "feed",
+          "angle": "what actually helps (BHA, retinoid) vs what won't",
+          "grounded": "yes",
+          "source": "corpus",
           "verify": false
         }
       ],
-      "stitch_refs": []
+      "stitch_refs": [
+        1
+      ]
     },
     {
-      "name": "The ‘comment BEST’ → DM product-list funnel",
+      "name": "Comment-to-unlock 'glow-up' product lists",
       "heat": 3,
-      "receipt": "Gated product lists are exploding — dr.david.kim 7.5M (1% breakout), dermguru 3.2M (♥ silver): 'comment BEST and I'll DM the list.' A follower/DM-growth format you underuse.",
+      "receipt": "@dr.david.kim 8.1M (1%) + @dermguru 4.5M (3% · ♥) — 'comment BEST, I'll DM the list' · 21s DM-funnel format",
       "videos": [
         {
           "author": "dr.david.kim",
           "platform": "IG",
-          "views": 7514829,
-          "views_hr": 166756,
+          "views": 8124668,
+          "views_hr": 117637,
           "tier": "superviral",
-          "x_baseline": 35.3,
+          "x_baseline": 38.1,
           "breakout": "1%",
           "growth": null,
           "eng_top": null,
-          "age_days": 1.9,
+          "age_days": 2.9,
           "duration_s": 21,
           "caption": "Comment BEST and I’ll send you a link with the best products to start your glow up journey! Here to help you find skincare products that actually work without breaking the bank. Let’s glow up together",
           "url": "https://www.instagram.com/p/Dbvn5BbxN36/",
@@ -336,14 +320,14 @@
         {
           "author": "dermguru",
           "platform": "IG",
-          "views": 3181901,
-          "views_hr": 33020,
+          "views": 4494877,
+          "views_hr": 37344,
           "tier": "superviral",
-          "x_baseline": 13.1,
+          "x_baseline": 18.5,
           "breakout": "3%",
           "growth": "silver",
-          "eng_top": 44,
-          "age_days": 4.0,
+          "eng_top": 37,
+          "age_days": 5.0,
           "duration_s": 21,
           "caption": "Comment BEST for the list of products that ACTUALLY work for your skin! Because the skincare aisle can be confusing. I get that. I’m here to help! Do you agree or disagree? LMK in the comments below 👇",
           "url": "https://www.instagram.com/p/DbqHqRPO2sU/",
@@ -352,14 +336,14 @@
         {
           "author": "dermguru",
           "platform": "IG",
-          "views": 908062,
-          "views_hr": 12547,
+          "views": 992507,
+          "views_hr": 10298,
           "tier": "superviral",
-          "x_baseline": 3.7,
+          "x_baseline": 4.1,
           "breakout": null,
-          "growth": "silver",
-          "eng_top": 47,
-          "age_days": 3.0,
+          "growth": null,
+          "eng_top": null,
+          "age_days": 4.0,
           "duration_s": 69,
           "caption": "Comment GLOWING and I’ll DM ya the list of skincare that will soften wrinkles and build collagen! Although nothing replaces Botox, I totally understand that it’s not right for everyone. Looking and fe",
           "url": "https://www.instagram.com/p/DbssXvcuZ6H/",
@@ -368,36 +352,36 @@
       ],
       "her_coverage": {
         "status": "green",
-        "summary": "Behavioral fit: you already invite comments ('list your favorite sunscreen in the comments') and give product picks — you just don't gate a DM list to farm follows.",
+        "summary": "Owns the substantive version — her glass-skin routine posted 2 days ago (412K, ♥ silver), plus a 'one-bottle morning routine' position and skin-type guide.",
         "links": [
           {
-            "label": "her 'list your sunscreen' prompt · IG",
-            "url": "https://www.instagram.com/p/DbwowEzRfUH/"
+            "label": "her glass-skin routine · 412K (2d, ♥)",
+            "url": "https://www.instagram.com/p/Dby-fhXvnkr/"
           },
           {
-            "label": "her best-OTC-treatments picks · IG",
-            "url": "https://www.instagram.com/p/Dbns9WwAhLU/"
+            "label": "her ultimate anti-aging guide",
+            "url": "https://www.youtube.com/watch?v=MiSYVPnWMUM"
           }
         ]
       },
-      "corpus_position": "",
-      "winning_length": "15–25s (hook + 'comment X and I'll DM you the list')",
+      "corpus_position": "Your entire morning routine can be one bottle — a moisturizer that's also a vitamin C and a broad-spectrum SPF 30. Wash twice a day with a gentle cleanser. Nothing complicated, no scrubs.",
+      "winning_length": "20–25s",
       "angles": [
         {
-          "angle": "Gate your derm sunscreen shortlist behind 'comment SPF'",
+          "angle": "post the real glow-up list openly — no comment gate",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "'Comment ACNE' → DM the 3 OTC actives that actually work",
+          "angle": "3 drugstore products that actually work",
           "grounded": "yes",
           "source": "corpus",
           "verify": false
         },
         {
-          "angle": "Turn any rec video into a follower→DM funnel",
-          "grounded": "yes",
+          "angle": "why 'comment BEST' funnels sell you more, not better",
+          "grounded": "needs her take",
           "source": "feed",
           "verify": false
         }
@@ -407,95 +391,131 @@
   ],
   "more_topics": [
     {
-      "topic": "Oily-hair hacks, rated",
-      "receipt": "3× · @dermatologysurgeon · 2218K in 8.9d",
-      "url": "https://www.instagram.com/p/DbdjZCLRN1D/",
-      "platform": "IG",
+      "topic": "SPF-skit format ('SPF Time')",
       "heat": 2,
-      "note": "HER underexploited hair lane — steal the 'rate the viral hacks' format",
-      "growth": null,
-      "eng_top": null
+      "platform": "TT",
+      "receipt": "124× · @drdavidkim · 555K · 3%",
+      "url": "https://www.tiktok.com/@drdavidkim/video/7668775605495778590",
+      "note": "sunscreen delivered as a comedy skit — a format to steal for her SPF corpus"
     },
     {
-      "topic": "Slugging / barrier repair",
-      "receipt": "56× · ♥ · @drjennyliu · 333K in 10.0d",
-      "url": "https://www.tiktok.com/@drjennyliu/video/7668137671583157517",
-      "platform": "TT",
+      "topic": "does oily/acne skin wrinkle slower?",
       "heat": 2,
-      "note": "♥ gold magnet — barrier-repair 'slugging' explainer",
+      "platform": "TT",
+      "receipt": "95× · @leenaderm · 160K · 3% · ♥ gold",
+      "url": "https://www.tiktok.com/@leenaderm/video/7671068511824907551",
       "growth": "gold",
-      "eng_top": 5
+      "eng_top": 4,
+      "note": "surprising claim (longer telomeres/sebum); ♥ gold magnet — a great myth-check"
     },
     {
-      "topic": "Hidradenitis suppurativa",
-      "receipt": "68× · @dr.heatherderm · 323K in 9.7d",
-      "url": "https://www.tiktok.com/@dr.heatherderm/video/7668434228454903054",
-      "platform": "TT",
+      "topic": "precancers = sun damage from 20 yrs ago",
       "heat": 1,
-      "note": "Underserved clinical topic patients search for",
-      "growth": null,
-      "eng_top": null
-    },
-    {
-      "topic": "Accutane journey",
-      "receipt": "17× · ♥ · @kelswansondermpa · 61K in 1.8d",
-      "url": "https://www.tiktok.com/@kelswansondermpa/video/7671359658912697631",
       "platform": "TT",
-      "heat": 1,
-      "note": "♥ gold magnet, fresh — the accutane-journey format",
-      "growth": "gold",
-      "eng_top": 4
+      "receipt": "26× · @draleksandrabrown · 71K · 1% · <1d",
+      "url": "https://www.tiktok.com/@draleksandrabrown/video/7672107535855373582",
+      "note": "fresh 1% breakout in her exact Mohs lane — sun-protection 'why now'"
     }
   ],
   "her_wins": [
     {
-      "author": "abby.waldmanmd",
+      "summary": "Glass-skin routine — superviral 412K in 1.6d, 5% breakout, ♥ silver follower magnet (still climbing)",
       "platform": "IG",
-      "views": 200643,
-      "views_hr": 14705,
-      "tier": "superviral",
-      "x_baseline": 2.1,
-      "breakout": "3%",
+      "age_days": 1.6,
       "growth": "silver",
-      "eng_top": 49,
-      "age_days": 0.6,
-      "duration_s": 8,
-      "caption": "And don’t forget to exfoliate 1-2 times a week! Don’t use retinoids when pregnant. What’s your glass skin care routine? Follow if you are finally ready to have clear, glowing skin #glassskin #skincare",
+      "eng_top": 43,
       "url": "https://www.instagram.com/p/Dby-fhXvnkr/",
-      "is_abby": true,
-      "summary": "♥ Follower magnet: your exfoliation tip went superviral — 200.6K views in <1 day, 3% breakout, top-49% engagement.",
-      "open_lane": "Part 2: the retinoid + exfoliation timing rule (why not the same night)"
+      "open_lane": "Part 2 while it's hot: the night routine / 'which retinoid when you're NOT pregnant' — extend the series, don't pivot"
     },
     {
-      "author": "abby.waldmanmd",
+      "summary": "'Check your SPF bottle' — 471K in 5.6d (viral, 7.5× baseline)",
       "platform": "IG",
-      "views": 435847,
-      "views_hr": 3987,
-      "tier": "viral",
-      "x_baseline": 4.6,
-      "breakout": null,
+      "age_days": 5.6,
       "growth": null,
       "eng_top": null,
-      "age_days": 4.6,
-      "duration_s": 46,
-      "caption": "What sunscreen SPF do you use? Check your bottle! Sources: American Academy of Dermatology (AAD) https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/how-to-select-sunscree",
       "url": "https://www.instagram.com/p/DbotjEHPPDo/",
-      "is_abby": true,
-      "summary": "Solid viral: 'What SPF do you use? Check your bottle' — 435.8K views, still climbing at 4.6 days.",
-      "open_lane": "Gate it: 'comment SPF' → DM your sunscreen shortlist (steal the funnel)"
+      "open_lane": "Follow-up: 'mineral vs chemical — which SPF actually protects you' comparison"
     }
   ],
   "stitch_shortlist": [
     {
-      "author": "@anitasskin",
+      "author": "@my.colorful.stu",
       "platform": "TT",
-      "claim": "“When my skin barrier broke, everything got into my skin.”",
-      "views": 1799297,
-      "age_days": 6.3,
-      "comments": 829,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@anitasskin/video/7670001444971465998",
+      "claim": "Lemon 'peeling' baths perfect your skin",
+      "views": 8303915,
+      "age_days": 4.8,
+      "comments": 14078,
+      "comment_heat": true,
+      "url": "https://www.tiktok.com/@my.colorful.studio/video/7670942624315968800",
       "seed_topic": "skincare",
+      "source": "feed",
+      "verify": false,
+      "heat": 3,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "dangerous",
+        "rising": true,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 6
+      },
+      "pitch": {
+        "the_claim": "Soaking in lemon juice 'peels' and perfects your skin.",
+        "why_it_stitches": "8.3M views and 14K comments on a genuinely dangerous DIY — citrus psoralens + UV = phytophotodermatitis (blistering chemical burns).",
+        "your_fit": "No dedicated lemon video in her corpus, but squarely her DIY-danger lane; ground the react in the derm fact that citrus + sun causes phytophotodermatitis (her on-camera take needed on the specifics).",
+        "angles": [
+          "empathy-first: I get the glow chase — here's why lemon burns you",
+          "'you want me to WHAT?': citrus + sun = phytophotodermatitis",
+          "switch-don't-quit: the safe way to exfoliate and brighten"
+        ],
+        "length": "original eats ~5–10s; 30–45s total"
+      }
+    },
+    {
+      "author": "@dermatologysurgeon",
+      "platform": "IG",
+      "claim": "Vaseline 'removes' blackheads",
+      "views": 1361311,
+      "age_days": 7.8,
+      "comments": 122,
+      "comment_heat": false,
+      "url": "https://www.instagram.com/p/DbjBF44RqbB/",
+      "seed_topic": "blackheads",
+      "source": "in-group",
+      "verify": false,
+      "heat": 2,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "half-right",
+        "rising": false,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 5
+      },
+      "pitch": {
+        "the_claim": "Slathering Vaseline pulls out / dissolves blackheads.",
+        "why_it_stitches": "1.36M-view hack riding again; Vaseline is an occlusive — it can trap heat/sebum but can't 'remove' blackheads. Half-right, high-reach.",
+        "your_fit": "Corpus-grounded: she tells people NOT to put Vaseline or any occlusive over active ingredients because it traps moisture and heat (rosacea videos). Prior angle: https://www.tiktok.com/@drabby6/video/7265142064126479646",
+        "angles": [
+          "myth-bust: Vaseline is occlusive — it can't 'pull out' blackheads",
+          "switch-don't-quit: what actually clears them (BHA / retinoid)",
+          "who should NOT slug (acne-prone skin)"
+        ],
+        "length": "45–60s"
+      }
+    },
+    {
+      "author": "@holly_lorne",
+      "platform": "TT",
+      "claim": "NAD+ serum fights aging 'at the cellular level'",
+      "views": 1836163,
+      "age_days": 6.4,
+      "comments": 449,
+      "comment_heat": false,
+      "url": "https://www.tiktok.com/@holly_lorne/video/7669620013833211156",
+      "seed_topic": "anti aging",
       "source": "feed",
       "verify": false,
       "heat": 2,
@@ -509,24 +529,24 @@
         "score": 5
       },
       "pitch": {
-        "the_claim": "A viral barrier-damage story: once her barrier broke, 'everything' irritated her skin.",
-        "why_it_stitches": "1.8M views, 274K likes — a scary, half-right barrier narrative people believe. Miss: 6.3d old, past peak.",
-        "your_fit": "You've covered barrier repair repeatedly (skin-type test, natural moisturizing factors) — reassure without the fear.",
+        "the_claim": "NAD+ topicals reverse aging 'at the cellular level.'",
+        "why_it_stitches": "1.8M views on a sponsored anti-aging post leaning on a buzzy 'cellular' claim with thin topical evidence — ripe for a calm evidence check (flag: sponsored).",
+        "your_fit": "Corpus-grounded via her niacinamide video (450K): niacinamide/B3 is the proven topical; contrast it with unproven NAD+ 'cellular' marketing.",
         "angles": [
-          "empathy-first: your barrier is tougher than TikTok says",
-          "switch-don't-quit: 3 barrier-repair steps that actually work",
-          "'you want me to WHAT?': the 10-step routine that broke it"
+          "'you want me to WHAT?': NAD+ serum isn't proven anti-aging",
+          "the B3 that IS proven: topical niacinamide",
+          "spot the sponsored 'cellular-level' buzzword"
         ],
-        "length": "original eats ~10s; 45–60s total"
+        "length": "60–90s"
       }
     },
     {
       "author": "@echucaskingroup",
       "platform": "TT",
-      "claim": "“It's just a little pink spot” — but the close-up is a basal cell.",
-      "views": 1049609,
-      "age_days": 3.5,
-      "comments": 258,
+      "claim": "'Just a little pink spot' — actually basal cell",
+      "views": 1460483,
+      "age_days": 4.5,
+      "comments": 336,
       "comment_heat": false,
       "url": "https://www.tiktok.com/@echucaskingroup/video/7671055264061164820",
       "seed_topic": "skin cancer",
@@ -540,297 +560,378 @@
         "rising": true,
         "big_enough": true,
         "punches_ok": true,
-        "score": 6
+        "score": 5
       },
       "pitch": {
-        "the_claim": "A skin clinic shows a 'harmless' pink spot that's actually a basal cell carcinoma up close.",
-        "why_it_stitches": "1.05M in 3.5d and still rising; a real BCC close-up in your exact Mohs lane. Rubric 6/6.",
-        "your_fit": "Your BCC ultimate guide (493K) and 'looks like dry skin' line make this yours to extend.",
+        "the_claim": "'It's just a little pink spot' — this close-up is a basal cell carcinoma.",
+        "why_it_stitches": "1.46M views on a correct BCC-awareness clip in her exact specialty — a yes-and, not a takedown.",
+        "your_fit": "Corpus-strong: her BCC ultimate guide (493K), 'not a pimple, not a mole,' 'people think it's dry skin,' Mohs on head/neck. She adds surgeon authority.",
         "angles": [
-          "yes-and: the 3-second tell for a pink pearly bump",
-          "'no moisturizer fixes this' — get it checked",
-          "what Mohs actually removes (reassure, don't scare)"
+          "yes-and: as the surgeon who removes these, here's the tell",
+          "pink ≠ harmless: BCC and amelanotic melanoma can be pink",
+          "3 signs a 'pimple' is actually skin cancer"
         ],
-        "length": "original eats ~6s; 30–45s total"
+        "length": "original ~5–10s; 30–45s total"
       }
     },
     {
-      "author": "@sadovskaya_doctor",
+      "author": "@sadovskaya_doct",
       "platform": "TT",
-      "claim": "“Skin cancer or safe — can you spot the difference?”",
-      "views": 839523,
-      "age_days": 4.5,
-      "comments": 66,
+      "claim": "Can you spot the skin cancer? (quiz)",
+      "views": 1091575,
+      "age_days": 5.5,
+      "comments": 84,
       "comment_heat": false,
       "url": "https://www.tiktok.com/@sadovskaya_doctor/video/7670678648118136078",
       "seed_topic": "skin cancer",
       "source": "feed",
       "verify": false,
-      "heat": 1,
+      "heat": 2,
       "rubric": {
         "specific_claim": true,
         "her_lane": true,
-        "trigger": "half-right",
-        "rising": true,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 6
-      },
-      "pitch": {
-        "the_claim": "A spot-the-difference skin-cancer quiz — two lesions, which one's dangerous?",
-        "why_it_stitches": "839K in 4.5d; a demo you can one-up with real dermoscopy and the feature a quiz can't show.",
-        "your_fit": "You teach ABCDE + ugly-duckling — add the nuance the quiz format skips.",
-        "angles": [
-          "yes-and: the ONE feature the quiz misses (ugly duckling)",
-          "quiz them back with 3 of your own photos",
-          "when 'safe' still deserves a derm visit"
-        ],
-        "length": "original eats ~5s; 30–45s total"
-      }
-    },
-    {
-      "author": "@gracemayofficial",
-      "platform": "TT",
-      "claim": "“Why is having acne so expensive?!”",
-      "views": 778205,
-      "age_days": 6.3,
-      "comments": 402,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@gracemayofficial/video/7670006056264682783",
-      "seed_topic": "dermatologist",
-      "source": "feed",
-      "verify": false,
-      "heat": 1,
-      "rubric": {
-        "specific_claim": false,
-        "her_lane": true,
-        "trigger": "relatable",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 4
-      },
-      "pitch": {
-        "the_claim": "A relatable skit lamenting how much money acne care costs.",
-        "why_it_stitches": "778K views, 86K likes — a feeling you can answer with cheap, effective picks. Miss: it's vibe not claim; 6.3d old.",
-        "your_fit": "You've ranked acne treatments and OTC picks — build a $20 acne routine.",
-        "angles": [
-          "empathy-first: yes, and here's the cheap version that works",
-          "3 drugstore actives that beat the $200 shelf",
-          "what to skip to save money"
-        ],
-        "length": "original eats ~10s; 45–60s total"
-      }
-    },
-    {
-      "author": "@dannyguo.md",
-      "platform": "TT",
-      "claim": "“Here's how to deal with hard water” (for your skin).",
-      "views": 539253,
-      "age_days": 6.8,
-      "comments": 167,
-      "comment_heat": false,
-      "url": "https://www.tiktok.com/@dannyguo.md/video/7669804319331552532",
-      "seed_topic": "dermatologist",
-      "source": "feed",
-      "verify": false,
-      "heat": 1,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
+        "trigger": "surprising",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
         "score": 5
       },
       "pitch": {
-        "the_claim": "A fellow derm's tips for managing hard water's effect on skin.",
-        "why_it_stitches": "539K views, 3.8K shares (save-worthy) — extend it, don't contradict. Miss: 6.8d, and it's a fellow derm being helpful (yes-and only).",
-        "your_fit": "You teach water loss + natural moisturizing factors — say what hard water does and doesn't do.",
+        "the_claim": "'Skin cancer or safe — can you spot the difference?' guessing game.",
+        "why_it_stitches": "1.09M views on the exact quiz format sweeping the feed (Theme 1) — she can run her own with real Mohs cases and own it.",
+        "your_fit": "Corpus-grounded: her skin-cancer-awareness '5 things to know' + BCC guide. Repeat needs a NEW angle: add the biopsy caveat these quizzes skip.",
         "angles": [
-          "yes-and: hard water is blamed for more than it causes",
-          "the 2 things that actually help: moisturize + barrier",
-          "is a shower filter worth it? your call"
+          "steal the format: your own 'spot the cancer' with real cases",
+          "why these quizzes help — and their limit (only a biopsy decides)",
+          "the one that's always cancer: nodular BCC"
         ],
-        "length": "original eats ~10s; 45–75s total"
+        "length": "5–15s quiz or 45s explainer"
+      }
+    },
+    {
+      "author": "@aamnaadel",
+      "platform": "TT",
+      "claim": "Diaper cream on your face as skincare",
+      "views": 374800,
+      "age_days": 4.8,
+      "comments": 117,
+      "comment_heat": false,
+      "url": "https://www.tiktok.com/@aamnaadel/video/7670614714774228246",
+      "seed_topic": "skincare",
+      "source": "in-group",
+      "verify": false,
+      "heat": 1,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "half-right",
+        "rising": true,
+        "big_enough": false,
+        "punches_ok": true,
+        "score": 5
+      },
+      "pitch": {
+        "the_claim": "Slather diaper cream (zinc oxide) on your face — 'right idea, wrong application.'",
+        "why_it_stitches": "Two derms already reacting (@aamnaadel 374K + @dermatologist_a 338K, fresh) — a classic switch-don't-quit: zinc is legit in sunscreen, diaper paste isn't formulated for the face.",
+        "your_fit": "Corpus-grounded via her mineral-sunscreen/zinc-oxide content — explain what zinc oxide does and why a thick diaper paste isn't a face product.",
+        "angles": [
+          "switch-don't-quit: right idea (zinc), wrong product — use a mineral SPF",
+          "why diaper paste ≠ face cream",
+          "what zinc oxide actually does for skin"
+        ],
+        "length": "30–45s"
       }
     }
   ],
   "more_stitches": [
     {
-      "author": "@hayas7788",
-      "platform": "TT",
-      "claim": "content unidentifiable from feed (no caption, #hairgrowth farm repost) — watch in-app first",
-      "views": 5590940,
-      "age_days": 5.0,
-      "url": "https://www.tiktok.com/@hayas7788/video/7670483320140074258",
-      "seed_topic": "hair growth",
-      "source": "feed",
+      "author": "@dr.david.kim",
+      "platform": "IG",
+      "claim": "'Comment BEST and I'll DM you the products'",
+      "views": 8124668,
+      "age_days": 2.9,
+      "comments": 4545,
+      "url": "https://www.instagram.com/p/Dbvn5BbxN36/",
+      "seed_topic": "skincare",
+      "source": "in-group",
       "verify": false,
       "viral": true,
       "heat": 3,
-      "rubric": null,
-      "pitch": null,
-      "unidentified": true
-    },
-    {
-      "author": "@blackcatsmattter",
-      "platform": "TT",
-      "claim": "content unidentifiable from feed (no caption; skincare-seed match) — watch in-app first",
-      "views": 2620894,
-      "age_days": 6.0,
-      "url": "https://www.tiktok.com/@blackcatsmattter/video/7670109467425508630",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "viral": true,
-      "heat": 3,
-      "rubric": null,
-      "pitch": null,
-      "unidentified": true
-    },
-    {
-      "author": "@getglamfam",
-      "platform": "TT",
-      "claim": "content unidentifiable from feed (no caption; hair-growth-seed match) — watch in-app first",
-      "views": 1616348,
-      "age_days": 6.4,
-      "url": "https://www.tiktok.com/@getglamfam/video/7669958686281862430",
-      "seed_topic": "hair growth",
-      "source": "feed",
-      "verify": false,
-      "viral": true,
-      "heat": 2,
-      "rubric": null,
-      "pitch": null,
-      "unidentified": true
-    },
-    {
-      "author": "@relatablewhtboi",
-      "platform": "TT",
-      "claim": "Acne + confidence relatability piece (#terribleskin) — rising, but no specific claim.",
-      "views": 1574386,
-      "age_days": 3.6,
-      "url": "https://www.tiktok.com/@relatablewhtboi/video/7671012056962780436",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "viral": true,
-      "heat": 2,
       "rubric": {
         "specific_claim": false,
         "her_lane": true,
-        "trigger": "relatable",
+        "trigger": "half-right",
         "rising": true,
         "big_enough": true,
         "punches_ok": true,
         "score": 4
       },
       "pitch": {
-        "the_claim": "A huge relatable acne/confidence clip.",
-        "why_it_stitches": "1.57M in 3.6d, rising, in-lane (acne).",
-        "your_fit": "Empathy-first: acne doesn't define you — plus one thing that helps.",
+        "the_claim": "Comment-to-unlock 'glow-up' product lists (also @dermguru 4.5M · 3% · ♥).",
+        "why_it_stitches": "The DM-funnel format is the day's biggest wave (8.1M + 4.5M) but sells a comment gate, not advice.",
+        "your_fit": "Her one-bottle routine is the honest counter — post the list openly.",
         "angles": [
-          "empathy-first reassurance",
-          "the one active worth starting"
+          "post the real list, no comment gate",
+          "call out the DM-funnel play"
+        ],
+        "length": "20–30s"
+      }
+    },
+    {
+      "author": "@drsamanthaellis",
+      "platform": "TT",
+      "claim": "'Do you have one?' birthmark/vitiligo explainer",
+      "views": 2200000,
+      "age_days": 1.5,
+      "comments": 3119,
+      "url": "https://www.tiktok.com/@drsamanthaellis/video/7671822725379394830",
+      "seed_topic": "birthmark",
+      "source": "in-group",
+      "verify": false,
+      "viral": true,
+      "heat": 3,
+      "growth": "gold",
+      "eng_top": 4,
+      "rubric": {
+        "specific_claim": false,
+        "her_lane": true,
+        "trigger": "yes-and",
+        "rising": true,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 4
+      },
+      "pitch": {
+        "the_claim": "Correct birthmark/vitiligo explainer, 2.2M in 1.5d, ♥ gold magnet (see Theme 2).",
+        "why_it_stitches": "Community-prompt format generating follows in a lane she under-serves.",
+        "your_fit": "Yes-and with her mole/pigment position — add the skin-cancer-surgeon lens.",
+        "angles": [
+          "yes-and: which birthmarks a Mohs surgeon actually watches"
         ],
         "length": "45–60s"
       }
     },
     {
-      "author": "@anthonydalocked",
-      "platform": "TT",
-      "claim": "K-beauty/glycolic routine (no explicit claim) — lane fit uncertain.",
-      "views": 1531388,
-      "age_days": 6.6,
-      "url": "https://www.tiktok.com/@anthonydalocked/video/7669907321253842189",
-      "seed_topic": "glycolicacid",
-      "source": "feed",
+      "author": "@jillian.gottlieb",
+      "platform": "IG",
+      "claim": "90 allergy patches down one back",
+      "views": 2131669,
+      "age_days": 6.7,
+      "comments": 112,
+      "url": "https://www.instagram.com/p/DblzCI3iA-6/",
+      "seed_topic": "patch test",
+      "source": "in-group",
       "verify": false,
       "viral": true,
-      "heat": 2,
+      "heat": 3,
       "rubric": {
-        "specific_claim": false,
+        "specific_claim": true,
         "her_lane": true,
-        "trigger": "none stated",
+        "trigger": "surprising",
+        "rising": false,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 5
+      },
+      "pitch": {
+        "the_claim": "Patch testing 90 allergens across one back (2.1M).",
+        "why_it_stitches": "Big contact-allergy moment — most viewers don't know what patch testing is or when to ask.",
+        "your_fit": "Contact-dermatitis lane; explain what it finds and who needs it.",
+        "angles": [
+          "what patch testing actually finds",
+          "empathy: living with a contact allergy"
+        ],
+        "length": "45–60s"
+      }
+    },
+    {
+      "author": "@dermatologysurgeon",
+      "platform": "IG",
+      "claim": "Big-account 'rating viral hacks' wave",
+      "views": 2218372,
+      "age_days": 9.9,
+      "comments": 312,
+      "url": "https://www.instagram.com/p/DbdjZCLRN1D/",
+      "seed_topic": "hair",
+      "source": "in-group",
+      "verify": false,
+      "viral": true,
+      "heat": 3,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "yes-and",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
         "score": 3
       },
       "pitch": {
-        "the_claim": "A viral K-beauty/glycolic-acid routine.",
-        "why_it_stitches": "1.53M views — surfaced by the virality guarantee; claim is thin.",
-        "your_fit": "Only if the routine shows something to correct — watch first.",
+        "the_claim": "One tracked big account cresting across topics: oily-hair hacks 2.2M, hair-growth products 1.87M (https://www.instagram.com/p/DbVwSswRM9n/), bumpy-texture routine 923K (https://www.instagram.com/p/DbtWKLfRE3c/), body-discoloration 806K (https://www.instagram.com/p/DbzDOrvRJ9-/), product ratings 716K (https://www.instagram.com/p/DbvgYFrxuKb/).",
+        "why_it_stitches": "Fellow derm, mostly correct — a yes-and/duet, not a takedown; big audience to inherit.",
+        "your_fit": "Duet the single worst hack with a Mohs lens; scalp-is-skin for the hair ones.",
         "angles": [
-          "is this routine over-exfoliating?"
+          "yes-and: duet the one worst hack"
+        ],
+        "length": "30–60s"
+      }
+    },
+    {
+      "author": "@drmadalyn",
+      "platform": "TT",
+      "claim": "Festival skin = Neutrogena kit (sponsored)",
+      "views": 2900000,
+      "age_days": 8.8,
+      "comments": 2,
+      "url": "https://www.tiktok.com/@drmadalyn/video/7669131309687524621",
+      "seed_topic": "sunscreen",
+      "source": "in-group",
+      "verify": false,
+      "viral": true,
+      "heat": 2,
+      "rubric": {
+        "specific_claim": true,
+        "her_lane": true,
+        "trigger": "sponsored",
+        "rising": false,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 3
+      },
+      "pitch": {
+        "the_claim": "Neutrogena 'festival-proof skin' partner post (2.9M) — discounted as sponsored.",
+        "why_it_stitches": "Big reach, but it's an ad; low stitch value beyond a free-version counter.",
+        "your_fit": "Her SPF/sun-protection corpus — the no-cost version of festival skin.",
+        "angles": [
+          "the free version of 'festival-proof' skin"
         ],
         "length": "30–45s"
       }
     },
     {
-      "author": "@alydoill",
+      "author": "@relatablewhtboi",
       "platform": "TT",
-      "claim": "SPF product post tagging @IUNIK — likely a brand plug, not a claim.",
-      "views": 1477313,
+      "claim": "'Terrible skin' acne-confidence post",
+      "views": 2081717,
+      "age_days": 4.6,
+      "comments": 465,
+      "url": "https://www.tiktok.com/@relatablewhtboi/video/7671012056962780436",
+      "seed_topic": "acne",
+      "source": "feed",
+      "verify": false,
+      "viral": true,
+      "heat": 3,
+      "rubric": {
+        "specific_claim": false,
+        "her_lane": true,
+        "trigger": "empathy",
+        "rising": true,
+        "big_enough": true,
+        "punches_ok": true,
+        "score": 4
+      },
+      "pitch": {
+        "the_claim": "Civilian acne-confidence video at 2.08M — react with care, punch UP only.",
+        "why_it_stitches": "Huge relatable acne moment; the wrong tone punches down, the right one helps.",
+        "your_fit": "Her acne corpus — acne isn't hygiene; here's what actually works.",
+        "angles": [
+          "empathy-first: acne isn't your fault — here's real help"
+        ],
+        "length": "30–45s"
+      }
+    },
+    {
+      "author": "@.lakoko",
+      "platform": "TT",
+      "claim": "'I thought skin needed more products — it was hydration'",
+      "views": 1153895,
       "age_days": 4.8,
-      "url": "https://www.tiktok.com/@alydoill/video/7670567567936834829",
-      "seed_topic": "spf",
+      "comments": 348,
+      "url": "https://www.tiktok.com/@.lakoko/video/7670938538824813831",
+      "seed_topic": "skincare",
       "source": "feed",
       "verify": false,
       "viral": true,
       "heat": 2,
       "rubric": {
-        "specific_claim": false,
+        "specific_claim": true,
         "her_lane": true,
-        "trigger": "none stated",
-        "rising": false,
+        "trigger": "half-right",
+        "rising": true,
         "big_enough": true,
         "punches_ok": true,
-        "score": 3
+        "score": 5
       },
       "pitch": {
-        "the_claim": "A sun-water/SPF product showcase (brand-tagged).",
-        "why_it_stitches": "1.48M views, SPF-seed — guaranteed by size; borderline lane (brand plug).",
-        "your_fit": "React only to the SPF-efficacy angle, not the product.",
+        "the_claim": "Skin-minimalism take (1.15M, Spanish-language): less is more, hydration over 10 steps.",
+        "why_it_stitches": "Reasonable 'yes-and' — she can validate and add the non-negotiables.",
+        "your_fit": "Her one-bottle-routine position maps exactly.",
         "angles": [
-          "does a 'sun water' actually protect you?"
+          "yes-and: less IS more — but keep these 3 (cleanser, moisturizer, SPF)"
         ],
         "length": "30–45s"
       }
     },
     {
-      "author": "@layo_de",
+      "author": "@zatolokina_",
       "platform": "TT",
-      "claim": "Mixsoon 'Bean' sun serum review — product review, borderline lane.",
-      "views": 1360685,
-      "age_days": 6.2,
-      "url": "https://www.tiktok.com/@layo_de/video/7670036378096323861",
-      "seed_topic": "spf",
+      "claim": "Civilian hair-health waves (routine + hair-loss journey)",
+      "views": 2965461,
+      "age_days": 5.7,
+      "comments": 2895,
+      "url": "https://www.tiktok.com/@zatolokina_/video/7670580452247325974",
+      "seed_topic": "hair",
       "source": "feed",
       "verify": false,
       "viral": true,
-      "heat": 2,
+      "heat": 3,
       "rubric": {
         "specific_claim": false,
         "her_lane": true,
-        "trigger": "none stated",
+        "trigger": "empathy",
         "rising": false,
         "big_enough": true,
         "punches_ok": true,
         "score": 3
       },
       "pitch": {
-        "the_claim": "A gentle 'sun serum' product review.",
-        "why_it_stitches": "1.36M views, SPF-seed — guaranteed by size; it's a review, not a claim.",
-        "your_fit": "Clarify: a 'sun serum' is not a substitute for broad-spectrum SPF.",
+        "the_claim": "'Save this if you want healthy hair' 2.96M, plus a hair-loss-progress journey 1.96M (@ruby_sb_, https://www.tiktok.com/@ruby_sb_/video/7670656958071967009).",
+        "why_it_stitches": "Big civilian hair content in her under-exploited scalp/hair lane.",
+        "your_fit": "'The scalp is skin' — the routine that actually supports growth; empathy for telogen effluvium.",
         "angles": [
-          "'sun serum' ≠ sunscreen — here's why"
+          "scalp-is-skin routine that actually helps hair grow"
         ],
-        "length": "30–45s"
+        "length": "30–60s"
       }
+    },
+    {
+      "author": "@paula.alain",
+      "platform": "TT",
+      "claim": "reaction to an unseen video — underlying claim not identifiable from feed; watch in-app first",
+      "views": 1218504,
+      "age_days": 6.4,
+      "comments": 1661,
+      "url": "https://www.tiktok.com/@paula.alain/video/7670329820135378190",
+      "seed_topic": "skincare",
+      "source": "feed",
+      "verify": false,
+      "viral": true,
+      "unidentified": true,
+      "heat": 2,
+      "rubric": null,
+      "pitch": null
     }
   ],
-  "news": []
+  "news": [
+    {
+      "headline": "Severe eczema more than doubles shingles risk (new UK study)",
+      "summary": "2.4M-patient UK cohort: atopic dermatitis raises shingles risk 28% — 2.3× in severe disease, and highest in adults 30–40; a shareable heads-up for her eczema audience.",
+      "her_angle": "If you have moderate-to-severe eczema, the shingles-vaccine talk may matter well before 50.",
+      "source": "AJMC / JDDG (J der Deutschen Dermatologischen Gesellschaft)",
+      "url": "https://www.ajmc.com/view/severe-eczema-more-than-doubles-shingles-risk",
+      "published": "Aug 10, 2026 (study published Aug 5)",
+      "age_days": 6,
+      "verify": true
+    }
+  ]
 }
