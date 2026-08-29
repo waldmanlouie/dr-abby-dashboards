@@ -1,763 +1,933 @@
 {
-  "schema": 1,
-  "date": "2026-08-28",
-  "generated_at": "2026-08-28T06:20:27-04:00",
-  "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
-  "signals_generated_at": "2026-08-28T10:07:55Z",
-  "stitch_generated_at": "2026-08-28T10:08:02Z",
-  "source_extract": "2026-08-26T09:15:08Z",
-  "meta_notes": "Signals extract is ~2 days old (Aug 26 scrape) — the overnight refresh didn't land, so themes are read from the freshest available data. News shelf empty: nothing derm-relevant verifiable within 7 days this week.",
-  "menu_lines": [
-    "Is it skin cancer? — rapid lesion quiz (240× · superviral) [watch](https://www.tiktok.com/@dr.derm.love/video/7673596479537155358)",
-    "Azelaic-acid active combos (56× · ♥) [watch](https://www.tiktok.com/@drjennyliu/video/7673272434207870222)",
-    "Rapid 'the more you know' derm quick-facts (158× · ♥) [watch](https://www.tiktok.com/@toralvaidyamd/video/7676824583827164447)",
-    "Slugging done right — Aquaphor/Vaseline uses (superviral · 1% breakout) [watch](https://www.instagram.com/p/Dce1_Vzh7A3/)",
-    "Layering 3 hair serums at once (1.57M · ♥) [watch](https://www.instagram.com/p/DcJXMX8RYeZ/)"
-  ],
-  "themes": [
+ "schema": 1,
+ "date": "2026-08-29",
+ "generated_at": "2026-08-29T06:25:09-04:00",
+ "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
+ "signals_generated_at": "2026-08-29T10:07:07Z",
+ "stitch_generated_at": "2026-08-29T10:07:15Z",
+ "source_extract": "2026-08-28T09:15:08Z",
+ "meta_notes": "",
+ "menu_lines": [
+  "Is it skin cancer? - rapid lesion quiz (57x - 1% - superviral) [watch](https://www.tiktok.com/@dr.derm.love/video/7678785373308308766)",
+  "Glass-skin routine - retinoid + exfoliation timing (YOURS - superviral, 979K) [watch](https://www.instagram.com/p/DchEHUCvRHK/)",
+  "Hair tips, 'the more you know' format (189x - ♥) [watch](https://www.tiktok.com/@toralvaidyamd/video/7676824583827164447)",
+  "Petroleum-jelly & pimple-patch hacks (671K - <1d - ♥) [watch](https://www.instagram.com/p/DcjQKawxpMU/)",
+  "Clogged pores on a budget (87x - 5%) [watch](https://www.tiktok.com/@dermdocmalik/video/7674006023220350221)"
+ ],
+ "themes": [
+  {
+   "name": "Is it skin cancer? — the rapid lesion-quiz format",
+   "heat": 3,
+   "receipt": "5 breakouts from one creator (@dr.derm.love) — a fresh 1% superviral (57x) plus a 156x monster at 908K — all 5-6s guess-the-diagnosis quizzes.",
+   "videos": [
     {
-      "name": "Is it skin cancer? — the rapid lesion-quiz format",
-      "heat": 3,
-      "receipt": "4 breakouts from one creator (@dr.derm.love) · 240× & 156× baseline · up to 1.4M · 5–6s guess-the-diagnosis quiz",
-      "videos": [
-        {
-          "author": "dr.derm.love",
-          "platform": "TT",
-          "views": 1400000,
-          "views_hr": 10230,
-          "tier": "superviral",
-          "x_baseline": 240.7,
-          "breakout": "5%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 12.8,
-          "duration_s": 5,
-          "caption": "Is it cancer or not? Scc, bcc, molluscum #skincancer #scc #bcc #fyp",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7673596479537155358",
-          "is_abby": false
-        },
-        {
-          "author": "dr.derm.love",
-          "platform": "TT",
-          "views": 907400,
-          "views_hr": 8778,
-          "tier": "viral",
-          "x_baseline": 156.0,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 4.4,
-          "duration_s": 5,
-          "caption": "Is it skin cancer or not? Scc, idiopathic guttate hypomelanosis , bcc #skincancer #bcc #scc",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7676711784807435550",
-          "is_abby": false
-        },
-        {
-          "author": "dr.derm.love",
-          "platform": "TT",
-          "views": 440900,
-          "views_hr": 10310,
-          "tier": "superviral",
-          "x_baseline": 75.8,
-          "breakout": "5%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 1.8,
-          "duration_s": 5,
-          "caption": "Is it skin cancer? Scc, wart, scc #skincancer #scc #wart",
-          "url": "https://www.tiktok.com/@dr.derm.love/video/7677648883991743774",
-          "is_abby": false
-        },
-        {
-          "author": "dr.derm.love",
-          "platform": "IG",
-          "views": 423221,
-          "views_hr": 4536,
-          "tier": "viral",
-          "x_baseline": 38.1,
-          "breakout": "3%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 3.9,
-          "duration_s": 6,
-          "caption": "Is it skin cancer? 1. Basal cell carcinoma- shiny, pink, pearly- yep it’s not jewelry, it’s skin cancer! So annoying how innocuous it can look, but it can take off your whole nose 2. Molluscum contagi",
-          "url": "https://www.instagram.com/p/DcWN6N4RAmu/",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "green",
-        "summary": "Deep skin-cancer library — BCC ultimate guide (493K) plus a fresh Aug 'advice I'd give' BCC clip (4d) — but she has never done the fast lesion-quiz format the whole niche is riding.",
-        "links": [
-          {
-            "label": "her Basal Cell Carcinoma guide · 493K",
-            "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"
-          },
-          {
-            "label": "her BCC 'advice I'd give' clip · 52K",
-            "url": "https://www.instagram.com/p/DcWDrmCgF1y/"
-          }
-        ]
-      },
-      "corpus_position": "Most people think that this is dry skin, but no amount of moisturizer is going to make it better. They're all basal cell carcinomas.",
-      "winning_length": "5–6s",
-      "angles": [
-        {
-          "angle": "Run a 3-lesion quiz: BCC vs SCC vs harmless",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Show the ONE feature that flags a melanoma fast",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Mohs-surgeon twist: 'I remove these every week'",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        }
-      ],
-      "stitch_refs": [
-        2,
-        4
-      ]
+     "author": "dr.derm.love",
+     "platform": "TT",
+     "views": 333800,
+     "views_hr": 19337,
+     "tier": "superviral",
+     "x_baseline": 57.3,
+     "breakout": "1%",
+     "growth": null,
+     "eng_top": null,
+     "age_days": 0.8,
+     "duration_s": 5,
+     "caption": "Is it skin cancer or not? From my real patients pigmented bcc, macular sk, amelanotic melanoma #skincancer #melanoma #bcc #fyp",
+     "url": "https://www.tiktok.com/@dr.derm.love/video/7678785373308308766",
+     "is_abby": false
     },
     {
-      "name": "Azelaic acid + active-ingredient combos",
-      "heat": 2,
-      "receipt": "3 breakouts, 2 gold follower-magnets · 56× / 46× / 14× baseline · azelaic stacked with tret + glycolic climbing",
-      "videos": [
-        {
-          "author": "drjennyliu",
-          "platform": "TT",
-          "views": 333700,
-          "views_hr": 2331,
-          "tier": "viral",
-          "x_baseline": 56.0,
-          "breakout": "3%",
-          "growth": "gold",
-          "eng_top": 3,
-          "age_days": 13.0,
-          "duration_s": 45,
-          "caption": "The elite combo!!! #tretinoin #azelaicacid #glycolicacid #dermatologist #skincarehacks",
-          "url": "https://www.tiktok.com/@drjennyliu/video/7673272434207870222",
-          "is_abby": false
-        },
-        {
-          "author": "arffaderm",
-          "platform": "TT",
-          "views": 193800,
-          "views_hr": 2263,
-          "tier": "viral",
-          "x_baseline": 46.2,
-          "breakout": "3%",
-          "growth": "silver",
-          "eng_top": 42,
-          "age_days": 3.6,
-          "duration_s": 14,
-          "caption": "3 ingredients. 3 very different timelines. 👇 . And timelines will vary depending on indication. This one’s for texture and anti-aging. Pigment and other issues will have different timelines. #skincare",
-          "url": "https://www.tiktok.com/@arffaderm/video/7676992461947849997",
-          "is_abby": false
-        },
-        {
-          "author": "dr.tomassian",
-          "platform": "TT",
-          "views": 168300,
-          "views_hr": 1239,
-          "tier": "viral",
-          "x_baseline": 14.5,
-          "breakout": "5%",
-          "growth": "gold",
-          "eng_top": 2,
-          "age_days": 12.7,
-          "duration_s": 23,
-          "caption": "Azelaic Acid is going crazy! #skincare #azelaicacid #dermatologist",
-          "url": "https://www.tiktok.com/@dr.tomassian/video/7673613138167663886",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "green",
-        "summary": "Azelaic 'for beginners' guide (Feb) + a fresh OTC-vs-Rx azelaic clip (5d, 65K). She uses it daily herself for rosacea — strong, current authority.",
-        "links": [
-          {
-            "label": "her Azelaic beginners guide · 10.5K",
-            "url": "https://www.youtube.com/watch?v=mRYMysEjhWs"
-          },
-          {
-            "label": "her OTC 10% azelaic clip · 65K",
-            "url": "https://www.instagram.com/p/DcTeGP3HePz/"
-          }
-        ]
-      },
-      "corpus_position": "I'm associate professor of dermatology, 10 years of experience, and I also use azelaic acid every single day for my redness and rosacea.",
-      "winning_length": "8–45s",
-      "angles": [
-        {
-          "angle": "Stack it right: azelaic + tretinoin without wrecking your barrier",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Timeline check: what each active fixes and by when",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "OTC 10% vs Rx 15–20% — who actually needs which",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        }
-      ],
-      "stitch_refs": []
+     "author": "dr.derm.love",
+     "platform": "TT",
+     "views": 908600,
+     "views_hr": 6002,
+     "tier": "viral",
+     "x_baseline": 155.9,
+     "breakout": null,
+     "growth": null,
+     "eng_top": null,
+     "age_days": 6.4,
+     "duration_s": 5,
+     "caption": "Is it skin cancer or not? Scc, idiopathic guttate hypomelanosis , bcc #skincancer #bcc #scc",
+     "url": "https://www.tiktok.com/@dr.derm.love/video/7676711784807435550",
+     "is_abby": false
     },
     {
-      "name": "Rapid 'the more you know' quick-fact format (hair-tilt)",
-      "heat": 2,
-      "receipt": "Same 8s single-fact format breaking out twice (one gold magnet) · 158× & 72× baseline · @toralvaidyamd — plus a 1.57M hair-serum magnet",
-      "videos": [
-        {
-          "author": "toralvaidyamd",
-          "platform": "TT",
-          "views": 241200,
-          "views_hr": 2502,
-          "tier": "viral",
-          "x_baseline": 158.1,
-          "breakout": "3%",
-          "growth": "gold",
-          "eng_top": 25,
-          "age_days": 4.1,
-          "duration_s": 8,
-          "caption": "the more you know ✔️ #skincare #skincaretips #dermatologist #learnontiktok #medicine",
-          "url": "https://www.tiktok.com/@toralvaidyamd/video/7676824583827164447",
-          "is_abby": false
-        },
-        {
-          "author": "toralvaidyamd",
-          "platform": "TT",
-          "views": 110400,
-          "views_hr": 3053,
-          "tier": "viral",
-          "x_baseline": 72.3,
-          "breakout": "3%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 1.5,
-          "duration_s": 8,
-          "caption": "the more you know! #hair #hairtips #learnontiktok #dermatologist #medicine",
-          "url": "https://www.tiktok.com/@toralvaidyamd/video/7677756094831283486",
-          "is_abby": false
-        },
-        {
-          "author": "dr.david.kim",
-          "platform": "IG",
-          "views": 1565574,
-          "views_hr": 9479,
-          "tier": "viral",
-          "x_baseline": 7.2,
-          "breakout": null,
-          "growth": "silver",
-          "eng_top": 7,
-          "age_days": 8.9,
-          "duration_s": 22,
-          "caption": "Why use one hair serum when you can use 3 with different ingredients to maximize results! Combine these 3 hair serums for a supercharged formula and use it consistently for maximum results! 😉 #hair #h",
-          "url": "https://www.instagram.com/p/DcJXMX8RYeZ/",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "yellow",
-        "summary": "She owns the derm knowledge and has a deep hair library (minoxidil, telogen effluvium) but posts long-form — the punchy sub-10s single-fact format is underused, especially on hair/scalp (her high-ceiling lane).",
-        "links": [
-          {
-            "label": "her 'minoxidil the right way' guide · 20K",
-            "url": "https://www.youtube.com/watch?v=yJ4_IUmdBlM"
-          },
-          {
-            "label": "her telogen effluvium explainer · 33K",
-            "url": "https://www.tiktok.com/@drabby6/video/7283982955536665902"
-          }
-        ]
-      },
-      "corpus_position": "If you're using minoxidil for male or female pattern hair loss and you're just not seeing the results that you want, it's probably not because it doesn't work.",
-      "winning_length": "8s",
-      "angles": [
-        {
-          "angle": "Steal the 8s format for one minoxidil myth",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Rapid hair fact: it's the technique, not the drug",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "'The more you know': scalp-health quick hit",
-          "grounded": "needs her take",
-          "source": "feed",
-          "verify": false
-        }
-      ],
-      "stitch_refs": []
+     "author": "dr.derm.love",
+     "platform": "TT",
+     "views": 459300,
+     "views_hr": 5060,
+     "tier": "viral",
+     "x_baseline": 78.8,
+     "breakout": null,
+     "growth": null,
+     "eng_top": null,
+     "age_days": 3.8,
+     "duration_s": 5,
+     "caption": "Is it skin cancer? Scc, wart, scc #skincancer #scc #wart",
+     "url": "https://www.tiktok.com/@dr.derm.love/video/7677648883991743774",
+     "is_abby": false
     },
     {
-      "name": "Slugging / petroleum-jelly uses done right",
-      "heat": 2,
-      "receipt": "1% breakout, superviral <1d (@danielsugaimd) + an Aquaphor/Vaseline seal tip — occlusion lane heating up",
-      "videos": [
-        {
-          "author": "danielsugaimd",
-          "platform": "IG",
-          "views": 161692,
-          "views_hr": 12585,
-          "tier": "superviral",
-          "x_baseline": 1.8,
-          "breakout": "1%",
-          "growth": null,
-          "eng_top": null,
-          "age_days": 0.6,
-          "duration_s": 77,
-          "caption": "If your mind is blown, here are other ways to apply aquaphor: 👉Healing Balm Stick➡️lips or for cheeks (slugging) 👉OG Advanced Therapy Ointment➡️lips, cheeks or other areas of body (skin folds if they’",
-          "url": "https://www.instagram.com/p/Dce1_Vzh7A3/",
-          "is_abby": false
-        },
-        {
-          "author": "draleksandrabrown",
-          "platform": "IG",
-          "views": 70787,
-          "views_hr": 1066,
-          "tier": "viral",
-          "x_baseline": 2.5,
-          "breakout": null,
-          "growth": null,
-          "eng_top": null,
-          "age_days": 2.8,
-          "duration_s": 38,
-          "caption": "Topical HA can plump your lips. Always apply Aquaphor or Vaseline on top to seal it in. #lipplumper #hyaluronicacidserum #plumplips #hydratedlips",
-          "url": "https://www.instagram.com/p/DcZHg80xnyh/",
-          "is_abby": false
-        }
-      ],
-      "her_coverage": {
-        "status": "yellow",
-        "summary": "Core slugging / petroleum-jelly videos are 2023, but she is actively posting barrier repair right now (zinc-oxide diaper cream, ~6–9d) — the occlusion lane is warm and on-brand.",
-        "links": [
-          {
-            "label": "her 'slugging done wrong' duet · 157K",
-            "url": "https://www.tiktok.com/@drabby6/video/7282436439525100842"
-          },
-          {
-            "label": "her winter-skin petroleum-jelly guide",
-            "url": "https://www.youtube.com/watch?v=Ne51lzjHK_o"
-          }
-        ]
-      },
-      "corpus_position": "You just need a pea-sized amount of Vaseline petroleum jelly. If you're slugging with this much Vaseline, you're doing it wrong.",
-      "winning_length": "30–80s",
-      "angles": [
-        {
-          "angle": "Slugging done right: pea-sized, over damp skin, not on acne",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "5 derm uses for Aquaphor beyond your face",
-          "grounded": "yes",
-          "source": "corpus",
-          "verify": false
-        },
-        {
-          "angle": "Occlusion myth: it doesn't 'suffocate' your skin",
-          "grounded": "needs her take",
-          "source": "feed",
-          "verify": false
-        }
-      ],
-      "stitch_refs": []
+     "author": "dr.derm.love",
+     "platform": "TT",
+     "views": 186900,
+     "views_hr": 5046,
+     "tier": "viral",
+     "x_baseline": 32.1,
+     "breakout": null,
+     "growth": null,
+     "eng_top": null,
+     "age_days": 1.6,
+     "duration_s": 5,
+     "caption": "Is it skin cancer? Bcc, molluscum, Scc #skincancer #bcc #molluscumcontagiosum",
+     "url": "https://www.tiktok.com/@dr.derm.love/video/7678479581229174047",
+     "is_abby": false
     }
-  ],
-  "more_topics": [
+   ],
+   "her_coverage": {
+    "status": "yellow",
+    "summary": "Deep skin-cancer library — BCC ultimate guide (493K) and skin-cancer-awareness clips — but nothing in the last 3 weeks and never the fast lesion-quiz format the whole niche is riding.",
+    "links": [
+     {
+      "label": "her Basal Cell Carcinoma guide - 493K",
+      "url": "https://www.youtube.com/watch?v=58XvGY2s6JQ"
+     },
+     {
+      "label": "her skin-cancer-awareness clip - 14K",
+      "url": "https://www.tiktok.com/@drabby6/video/7232342733451709742"
+     }
+    ]
+   },
+   "corpus_position": "Basal cell carcinoma is a very subtle form of skin cancer caused by sun exposure - these rarely spread inside the body, but they grow into the skin around them, even through cartilage and bone. When in doubt, get it checked out.",
+   "winning_length": "5-6s",
+   "angles": [
     {
-      "topic": "Body odor / deodorant science",
-      "receipt": "423K · 154× breakout · @draleksandrabrown",
-      "url": "https://www.tiktok.com/@draleksandrabrown/video/7673101120067095821",
-      "heat": 2,
-      "platform": "TT",
-      "note": "Big 3% breakout, but her corpus is thin here — would need her own take before drafting."
+     "angle": "Run a 3-lesion quiz: BCC vs SCC vs harmless mole",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
     },
     {
-      "topic": "Layering 3 hair serums at once",
-      "receipt": "1.57M · @dr.david.kim",
-      "url": "https://www.instagram.com/p/DcJXMX8RYeZ/",
-      "heat": 2,
-      "platform": "IG",
-      "note": "Hair = her high-ceiling lane; silver follower-magnet.",
-      "growth": "silver",
-      "eng_top": 7
+     "angle": "Mohs-surgeon hook: 'I cut these out weekly - spot one'",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
     },
     {
-      "topic": "Pimple-patch / hydrocolloid wins",
-      "receipt": "434K · @denverskindoc",
-      "url": "https://www.instagram.com/p/Db_4y1BRlFT/",
-      "heat": 2,
-      "platform": "IG",
-      "note": "1% breakout + silver magnet — 'another win for patches' keeps compounding.",
-      "growth": "silver",
-      "eng_top": 34
-    },
-    {
-      "topic": "Rate-and-correct viral trends format",
-      "receipt": "2.03M · @dermatologysurgeon",
-      "url": "https://www.instagram.com/p/DcEb4Mex5J0/",
-      "heat": 2,
-      "platform": "IG",
-      "note": "The react-and-rate format keeps racking up millions."
-    },
-    {
-      "topic": "Sulfur as a gentle all-rounder active",
-      "receipt": "542K · 33× · @dermarkologist",
-      "url": "https://www.tiktok.com/@dermarkologist/video/7674023758381845791",
-      "heat": 1,
-      "platform": "TT",
-      "note": "Silver magnet; underexposed ingredient she can own.",
-      "growth": "silver",
-      "eng_top": 2
+     "angle": "The melanoma that doesn't look like the textbook",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
     }
-  ],
-  "her_wins": [
+   ],
+   "stitch_refs": [
+    5
+   ]
+  },
+  {
+   "name": "Glass skin - retinoid + exfoliation timing (HER win leads)",
+   "heat": 2,
+   "receipt": "Her own glass-skin clip is the anchor - 979K on IG (superviral, 3% breakout) plus 276K on TikTok (silver magnet) - with arffaderm's '3 timelines' (55x - 3% - silver) and the moisture-sandwich debate riding alongside.",
+   "videos": [
     {
-      "summary": "(TT) Chlorhexidine / Hibiclens — her hospital-strength-antiseptic explainer went viral: 805K on TikTok (33× her baseline), plus 428K on IG. Silver follower magnet (top-2% engagement) — it's pulling FOLLOWERS, not just views.",
-      "url": "https://www.tiktok.com/@drabby6/video/7673649496001203486",
-      "platform": "TT",
-      "age_days": 12.6,
-      "growth": "silver",
-      "eng_top": 2,
-      "open_lane": "Part 2 of the 'secrets from the hospital/OR' series that's generating follows — another hospital-grade product patients don't know about (keep the format, don't pivot)."
+     "author": "abby.waldmanmd",
+     "platform": "IG",
+     "views": 978895,
+     "views_hr": 24423,
+     "tier": "superviral",
+     "x_baseline": 10.3,
+     "breakout": "3%",
+     "growth": null,
+     "eng_top": null,
+     "age_days": 1.7,
+     "duration_s": 5,
+     "caption": "And don’t forget do exfoliate 1-2 times a week! Don’t use a retinoid when pregnant. What’s your glass skin care routine? Follow if you are finally ready for clear skin this year #glassskin #skincare #",
+     "url": "https://www.instagram.com/p/DchEHUCvRHK/",
+     "is_abby": true
     },
     {
-      "summary": "(TT) Fordyce spots — the 'harmless bumps people panic about' explainer hit 461K on TikTok (19× her baseline).",
-      "url": "https://www.tiktok.com/@drabby6/video/7674404709930634527",
-      "platform": "TT",
-      "age_days": 10.6,
-      "open_lane": "Run the harmless-bumps series: sebaceous filaments, milia, DPNs — each its own 'is this normal?' hook."
+     "author": "drabby6",
+     "platform": "TT",
+     "views": 275600,
+     "views_hr": 6929,
+     "tier": "viral",
+     "x_baseline": 11.3,
+     "breakout": null,
+     "growth": "silver",
+     "eng_top": 15,
+     "age_days": 1.7,
+     "duration_s": 5,
+     "caption": "And don't forget do exfoliate 1-2 times a week! Don't use a retinoid when pregnant. What's your glass skin care routine? #glassskin #skincare #skincareroutine",
+     "url": "https://www.tiktok.com/@drabby6/video/7678438567894437150",
+     "is_abby": true
+    },
+    {
+     "author": "arffaderm",
+     "platform": "TT",
+     "views": 230500,
+     "views_hr": 1725,
+     "tier": "viral",
+     "x_baseline": 54.9,
+     "breakout": "3%",
+     "growth": "silver",
+     "eng_top": 42,
+     "age_days": 5.6,
+     "duration_s": 14,
+     "caption": "3 ingredients. 3 very different timelines. 👇 . And timelines will vary depending on indication. This one’s for texture and anti-aging. Pigment and other issues will have different timelines. #skincare",
+     "url": "https://www.tiktok.com/@arffaderm/video/7676992461947849997",
+     "is_abby": false
+    },
+    {
+     "author": "drdrayzday",
+     "platform": "TT",
+     "views": 35500,
+     "views_hr": 2696,
+     "tier": "viral",
+     "x_baseline": 1.7,
+     "breakout": "5%",
+     "growth": "silver",
+     "eng_top": 43,
+     "age_days": 0.6,
+     "duration_s": 210,
+     "caption": "The moisture sandwich method study needs to be published with clinical correlation, before we can confidently state it doesn’t work. This abstract alone isn’t particularly compelling. #retinolskincare",
+     "url": "https://www.tiktok.com/@drdrayzday/video/7678828705245842701",
+     "is_abby": false
     }
-  ],
-  "stitch_shortlist": [
+   ],
+   "her_coverage": {
+    "status": "green",
+    "summary": "She's already winning this lane - the anchor video is HERS, posted under 2 days ago - on top of a deep retinoid library (tretinoin-vs-retinol, retinoid selection, layering order). An extend-what's-working card, not a gap.",
+    "links": [
+     {
+      "label": "her tretinoin vs retinol guide - 24K",
+      "url": "https://www.youtube.com/watch?v=Ojam23k0t4g"
+     },
+     {
+      "label": "her layering / skin-type video - 18K",
+      "url": "https://www.tiktok.com/@drabby6/video/7331169369046912302"
+     }
+    ]
+   },
+   "corpus_position": "Exfoliate 1-2 times a week, don't use a retinoid when pregnant, and layer hydration first - put your retinol or retinoid on top of that moisture layer.",
+   "winning_length": "5-8s",
+   "angles": [
     {
-      "author": "@melak_a",
-      "platform": "TT",
-      "views": 1180620,
-      "age_days": 3.2,
-      "comments": 876,
-      "url": "https://www.tiktok.com/@melak_a/video/7677826556269513997",
-      "seed_topic": "glassskin",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": true,
-      "heat": 2,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right / harmful",
-        "rising": true,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 6
-      },
-      "pitch": {
-        "the_claim": "Dry-brush your face and you'll get glass skin.",
-        "why_it_stitches": "1.18M in 3 days with 876 comments arguing about it — a rising, controversial claim squarely in her exfoliation/barrier lane.",
-        "your_fit": "She teaches barrier repair and warns against aggressive exfoliation ('that dead top layer is protecting you'). Switch-don't-quit: dry-brush the body if you like, never the face.",
-        "angles": [
-          "empathy-first: 'I get the glass-skin dream — here's the safer route'",
-          "switch-don't-quit: body maybe, face no — do THIS instead",
-          "'you want me to WHAT?': dragging a stiff brush across your face"
-        ],
-        "length": "original eats ~10s; 30–45s total winning"
-      }
+     "angle": "Glass-skin part 2 - the exact layering order",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
     },
     {
-      "author": "@mandohq",
-      "platform": "TT",
-      "views": 2652544,
-      "age_days": 5.6,
-      "comments": 943,
-      "url": "https://www.tiktok.com/@mandohq/video/7676962000399863053",
-      "seed_topic": "dark circles",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": false,
-      "heat": 2,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "surprising",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "How you sleep is reshaping your face.",
-        "why_it_stitches": "2.65M views, 943 comments — a surprising aging claim people want a dermatologist to confirm or debunk.",
-        "your_fit": "Her anti-aging guide explains why skin stops bouncing back with age; sleep lines vs permanent wrinkles fits that story. Needs her precise take on whether side-sleeping causes lasting creases.",
-        "angles": [
-          "'true or hype?': what sleep actually does to your face",
-          "empathy-first: the fixes that matter far more than pillow position",
-          "myth-check: temporary sleep lines vs permanent wrinkles"
-        ],
-        "length": "original eats ~15s; 45–60s total"
-      }
+     "angle": "Retinoid + exfoliant: which nights, never together",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
     },
     {
-      "author": "@dermlyskin.store",
-      "platform": "TT",
-      "views": 1360971,
-      "age_days": 4.6,
-      "comments": 159,
-      "url": "https://www.tiktok.com/@dermlyskin.store/video/7677307536671886605",
-      "seed_topic": "dermatologist",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": false,
-      "heat": 2,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "dangerous",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "Remove your skin tags at home with this gadget.",
-        "why_it_stitches": "1.36M views for a store selling a DIY skin-tag remover — a dangerous claim she can correct with Mohs-surgeon authority.",
-        "your_fit": "Her 'Teaching you to be a dermatologist: skin tags' video (254K) already says there are right and wrong ways — and that some 'tags' are actually skin cancer. A repeat with a NEW react angle.",
-        "angles": [
-          "'you want me to WHAT?': cutting off your own skin at home",
-          "the danger: that 'tag' could be a skin cancer",
-          "switch-don't-quit: what a real derm removal actually involves"
-        ],
-        "length": "original eats ~10s; 30–45s total"
-      }
-    },
-    {
-      "author": "@soy.menaa",
-      "platform": "TT",
-      "views": 3891091,
-      "age_days": 4.8,
-      "comments": 660,
-      "url": "https://www.tiktok.com/@soy.menaa/video/7677243841732168990",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": false,
-      "heat": 2,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5,
-        "note": "Spanish-language personal story — stitch the myth, not the person"
-      },
-      "pitch": {
-        "the_claim": "Strawberry skin is just genetics — nothing will ever fix it. (Spanish-language personal story)",
-        "why_it_stitches": "3.89M views — the biggest wave in the feed. An emotional 'I was told it's permanent' story about strawberry skin (keratosis pilaris), a treatable derm condition. Stitch the MYTH, never mock the person.",
-        "your_fit": "KP / strawberry legs is her lane — she can validate the hurt and correct the 'it's permanent' myth. Needs her exact on-camera KP routine.",
-        "angles": [
-          "empathy-first: 'you were told wrong, and I'm sorry'",
-          "myth-bust: KP is manageable — here's the derm routine",
-          "'it's not dirt, it's not your fault': the biology in 20s"
-        ],
-        "length": "original eats ~10s; 30–45s total"
-      }
-    },
-    {
-      "author": "@7newsaustralia",
-      "platform": "TT",
-      "views": 611592,
-      "age_days": 6.2,
-      "comments": 2242,
-      "url": "https://www.tiktok.com/@7newsaustralia/video/7676712888177904914",
-      "seed_topic": "skin cancer",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": true,
-      "heat": 1,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "surprising",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "Half a million Australians diagnosed — the scale of skin cancer.",
-        "why_it_stitches": "611K views and 2,242 comments on a skin-cancer news clip — her single strongest authority lane as a Mohs surgeon, and it ties straight to today's #1 theme.",
-        "your_fit": "She removes these weekly and has a deep skin-cancer library (BCC guide, 493K). React with the US picture plus the ONE prevention habit that actually moves risk.",
-        "angles": [
-          "'as the surgeon who removes these': what that number means",
-          "the prevention habit that actually lowers your risk",
-          "spot-check demo: what to look for on yourself tonight"
-        ],
-        "length": "original eats ~20s; 45–60s total"
-      }
-    },
-    {
-      "author": "@skinwithreva",
-      "platform": "TT",
-      "views": 1097080,
-      "age_days": 4.1,
-      "comments": 111,
-      "url": "https://www.tiktok.com/@skinwithreva/video/7677491705586765078",
-      "seed_topic": "hyperpigmentation",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": false,
-      "heat": 2,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5,
-        "note": "product-forward (brand-tagged) — treat as a soft plug"
-      },
-      "pitch": {
-        "the_claim": "14 days of Numbuzin No.9 cleared my underarm hyperpigmentation.",
-        "why_it_stitches": "1.10M views on an underarm-hyperpigmentation before/after — in her lane, though it's product-forward (brand-tagged, treat as a soft plug).",
-        "your_fit": "Underarm hyperpigmentation is common and multifactorial — she can name the real drivers (friction, shaving, deodorant, PIH) and the actives that work (azelaic, retinoids), and set expectations against a 14-day miracle.",
-        "angles": [
-          "'why it's dark in the first place': the real causes",
-          "actives that actually work vs a single hero product",
-          "the shaving/friction fix almost nobody mentions"
-        ],
-        "length": "original eats ~24s; 45–60s total"
-      }
+     "angle": "Moisture-sandwich method - does it actually work?",
+     "grounded": "needs her take",
+     "source": "feed",
+     "verify": false
     }
-  ],
-  "more_stitches": [
+   ],
+   "stitch_refs": []
+  },
+  {
+   "name": "Hair loss & the 'more you know' hair-tip format",
+   "heat": 2,
+   "receipt": "@toralvaidyamd's hair tips are breaking out twice - a 189x gold follower-magnet and a 106x (both 3%) - while GLP-1-driven shedding (Ozempic hair loss) climbs on @denverskindoc.",
+   "videos": [
     {
-      "author": "@alba__garciis",
-      "platform": "TT",
-      "views": 2158152,
-      "age_days": 4.6,
-      "comments": 252,
-      "url": "https://www.tiktok.com/@alba__garciis/video/7677315576083057942",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "viral": true,
-      "unidentified": true,
-      "heat": 2,
-      "comment_heat": false,
-      "claim": "Aesthetic bodycare montage, no reactable derm claim in the caption — watch in-app first.",
-      "rubric": null,
-      "pitch": null
+     "author": "toralvaidyamd",
+     "platform": "TT",
+     "views": 287900,
+     "views_hr": 1994,
+     "tier": "viral",
+     "x_baseline": 188.7,
+     "breakout": "3%",
+     "growth": "gold",
+     "eng_top": 25,
+     "age_days": 6.1,
+     "duration_s": 8,
+     "caption": "the more you know ✔️ #skincare #skincaretips #dermatologist #learnontiktok #medicine",
+     "url": "https://www.tiktok.com/@toralvaidyamd/video/7676824583827164447",
+     "is_abby": false
     },
     {
-      "author": "@eiitakylie",
-      "platform": "TT",
-      "views": 1098374,
-      "age_days": 4.7,
-      "comments": 281,
-      "url": "https://www.tiktok.com/@eiitakylie/video/7677290757685808405",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "viral": true,
-      "unidentified": true,
-      "heat": 2,
-      "comment_heat": false,
-      "claim": "Kylie Jenner repost, no reactable claim in the caption — watch in-app first.",
-      "rubric": null,
-      "pitch": null
+     "author": "toralvaidyamd",
+     "platform": "TT",
+     "views": 162500,
+     "views_hr": 1931,
+     "tier": "viral",
+     "x_baseline": 106.5,
+     "breakout": "3%",
+     "growth": null,
+     "eng_top": null,
+     "age_days": 3.5,
+     "duration_s": 8,
+     "caption": "the more you know! #hair #hairtips #learnontiktok #dermatologist #medicine",
+     "url": "https://www.tiktok.com/@toralvaidyamd/video/7677756094831283486",
+     "is_abby": false
     },
     {
-      "author": "@ivan.dermato",
-      "platform": "TT",
-      "views": 736708,
-      "age_days": 4.4,
-      "comments": 1271,
-      "url": "https://www.tiktok.com/@ivan.dermato/video/7677382583998532872",
-      "seed_topic": "dermatologist",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": true,
-      "heat": 1,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "half-right",
-        "rising": false,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5,
-        "note": "Portuguese-language, fellow derm — 'yes, and' or translate the winners"
-      },
-      "pitch": {
-        "the_claim": "5 products in your home a dermatologist says throw out. (Portuguese)",
-        "why_it_stitches": "736K views and 1,271 comments (huge comment heat). A fellow derm making list claims — 'yes, and' territory, but the language barrier means translate the ones worth keeping.",
-        "your_fit": "She has clear positions on expired/irritating products; she can co-sign the good calls and push back on any overreach.",
-        "angles": [
-          "'yes, and': the ones I agree with — plus one I don't"
-        ],
-        "length": "original eats ~10s; 45–60s total"
-      },
-      "viral": false
-    },
-    {
-      "author": "@theeconomist",
-      "platform": "TT",
-      "views": 207482,
-      "age_days": 4.0,
-      "comments": 93,
-      "url": "https://www.tiktok.com/@theeconomist/video/7676492311525690646",
-      "seed_topic": "skincare",
-      "source": "feed",
-      "verify": false,
-      "comment_heat": false,
-      "heat": 1,
-      "rubric": {
-        "specific_claim": true,
-        "her_lane": true,
-        "trigger": "surprising",
-        "rising": true,
-        "big_enough": true,
-        "punches_ok": true,
-        "score": 5
-      },
-      "pitch": {
-        "the_claim": "Is $100+ skincare actually worth it?",
-        "why_it_stitches": "207K views from The Economist asking whether luxury skincare works — a credible setup for a derm 'here's what actually matters' react.",
-        "your_fit": "She routinely does bad-better-best and 'worth the money' takes — she can name where price does and doesn't buy results.",
-        "angles": [
-          "'what you're actually paying for' — actives vs packaging",
-          "the cheap products that beat the luxury ones"
-        ],
-        "length": "original eats ~15s; 45–60s total"
-      },
-      "viral": false
+     "author": "denverskindoc",
+     "platform": "TT",
+     "views": 119900,
+     "views_hr": 1895,
+     "tier": "viral",
+     "x_baseline": 12.1,
+     "breakout": null,
+     "growth": null,
+     "eng_top": null,
+     "age_days": 2.7,
+     "duration_s": 74,
+     "caption": "Can GLP-1 medications like Ozempic, Wegovy and Zepbound cause hair loss? 💉 As a dermatologist, here’s why rapid weight loss can trigger telogen effluvium and what you can do to reduce shedding and sup",
+     "url": "https://www.tiktok.com/@denverskindoc/video/7678080443123567902",
+     "is_abby": false
     }
-  ],
-  "news": []
+   ],
+   "her_coverage": {
+    "status": "yellow",
+    "summary": "Strong hair library - minoxidil technique (Mar '26), telogen-effluvium guide, stress shedding - but the last big post was ~5 months ago and the GLP-1/rapid-weight-loss shedding angle is an open gap.",
+    "links": [
+     {
+      "label": "her minoxidil technique video - 20K",
+      "url": "https://www.youtube.com/watch?v=yJ4_IUmdBlM"
+     },
+     {
+      "label": "her stress hair-loss video - 33K",
+      "url": "https://www.tiktok.com/@drabby6/video/7283982955536665902"
+     }
+    ]
+   },
+   "corpus_position": "Hair loss comes in two flavors - scarring and non-scarring. Telogen effluvium is shedding triggered by a stressor, and biotin doesn't help unless you're actually deficient.",
+   "winning_length": "8s tip or 60-75s explainer",
+   "angles": [
+    {
+     "angle": "GLP-1 shedding: why Ozempic triggers telogen effluvium",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
+    },
+    {
+     "angle": "Biotin myth: stop buying it unless you're deficient",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
+    },
+    {
+     "angle": "Steal the 'more you know' quick-tip hair format",
+     "grounded": "yes",
+     "source": "feed",
+     "verify": false
+    }
+   ],
+   "stitch_refs": [
+    4
+   ]
+  },
+  {
+   "name": "Petroleum-jelly & pimple-patch 'hacks'",
+   "heat": 2,
+   "receipt": "The mischel.archive pimple-patch hack is being stitched across the niche - @dermatologysurgeon at 671K (<1d, silver magnet) - plus Aquaphor-hack demos (danielsugaimd 429K) and Neera Nathan's fresh 'stop wasting money on pimple patches' (<1d, silver).",
+   "videos": [
+    {
+     "author": "dermatologysurgeon",
+     "platform": "IG",
+     "views": 671439,
+     "views_hr": 34032,
+     "tier": "superviral",
+     "x_baseline": 0.9,
+     "breakout": null,
+     "growth": "silver",
+     "eng_top": 20,
+     "age_days": 0.8,
+     "duration_s": 39,
+     "caption": "works for bug bites & blisters too 🎥mischel.archive #pimplepatch #diyskincare #bugbites #dermatologist",
+     "url": "https://www.instagram.com/p/DcjQKawxpMU/",
+     "is_abby": false
+    },
+    {
+     "author": "danielsugaimd",
+     "platform": "IG",
+     "views": 429429,
+     "views_hr": 7057,
+     "tier": "viral",
+     "x_baseline": 4.8,
+     "breakout": null,
+     "growth": null,
+     "eng_top": null,
+     "age_days": 2.6,
+     "duration_s": 77,
+     "caption": "If your mind is blown, here are other ways to apply aquaphor: 👉Healing Balm Stick➡️lips or for cheeks (slugging) 👉OG Advanced Therapy Ointment➡️lips, cheeks or other areas of body (skin folds if they’",
+     "url": "https://www.instagram.com/p/Dce1_Vzh7A3/",
+     "is_abby": false
+    },
+    {
+     "author": "Dr. Neera Nathan",
+     "platform": "YT",
+     "views": 170688,
+     "views_hr": 9040,
+     "tier": "viral",
+     "x_baseline": 0.9,
+     "breakout": null,
+     "growth": "silver",
+     "eng_top": 44,
+     "age_days": 0.8,
+     "duration_s": 39,
+     "caption": "stop wasting money on pimple patches! Stitch with mishel.archive #skincare",
+     "url": "https://www.youtube.com/shorts/X5DAUauyYMM",
+     "is_abby": false
+    },
+    {
+     "author": "dermatologysurgeon",
+     "platform": "TT",
+     "views": 138700,
+     "views_hr": 7190,
+     "tier": "viral",
+     "x_baseline": 3.2,
+     "breakout": "5%",
+     "growth": null,
+     "eng_top": null,
+     "age_days": 0.9,
+     "duration_s": 39,
+     "caption": "works for bug bites and blisters too #pimplepatch #skincarehacks #fyp stitch with @⋆. 𐙚˚࿔ michelle 𝜗𝜚˚⋆",
+     "url": "https://www.tiktok.com/@dermatologysurgeon/video/7678753979873905950",
+     "is_abby": false
+    }
+   ],
+   "her_coverage": {
+    "status": "yellow",
+    "summary": "She endorses petroleum-based occlusives (Aquaphor/Vaseline) for barrier repair and knows the hydrocolloid + salicylic pimple-patch story - solid corpus footing, but no recent clip riding this specific hack wave.",
+    "links": [
+     {
+      "label": "her occlusive / skin-barrier video - 18K",
+      "url": "https://www.tiktok.com/@drabby6/video/7331169369046912302"
+     },
+     {
+      "label": "her superficial-acne guide - 75K",
+      "url": "https://www.tiktok.com/@drabby6/video/7319600355598257454"
+     }
+    ]
+   },
+   "corpus_position": "A petroleum-based or mineral-oil-based occlusive like Aquaphor or Vaseline is a simple way to repair the skin barrier; a hydrocolloid pimple patch with salicylic acid helps a fresh pimple clear faster.",
+   "winning_length": "39-77s demo",
+   "angles": [
+    {
+     "angle": "Aquaphor hacks: which ones a derm actually endorses",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
+    },
+    {
+     "angle": "Pimple patches - what they DO fix and what they don't",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
+    },
+    {
+     "angle": "Slugging done right: barrier win vs breakout risk",
+     "grounded": "yes",
+     "source": "corpus",
+     "verify": false
+    }
+   ],
+   "stitch_refs": [
+    1
+   ]
+  }
+ ],
+ "more_topics": [
+  {
+   "topic": "Skincare product-ratings format",
+   "receipt": "702K - 159x - 3% - @drdavidkim",
+   "url": "https://www.tiktok.com/@drdavidkim/video/7674023280398847263",
+   "heat": 2,
+   "platform": "TT",
+   "note": "Huge 3% breakout on a 'rate these products' format - steal the format even if the picks differ; her corpus has the product takes."
+  },
+  {
+   "topic": "Sun-damage: prevention vs 'reversal'",
+   "receipt": "361K - 30x - silver - @jilliangottlieb",
+   "url": "https://www.tiktok.com/@jilliangottlieb/video/7675035773711781151",
+   "heat": 1,
+   "platform": "TT",
+   "note": "'You won't need to reverse damage if you don't get any' - squarely her sunscreen lane, follower-magnet profile."
+  },
+  {
+   "topic": "Copper peptides",
+   "receipt": "97K - @draleksandrabrown",
+   "url": "https://www.instagram.com/p/DcbeckxR8pA/",
+   "heat": 1,
+   "platform": "IG",
+   "note": "'Not all copper-peptide serums are equal' - trending ingredient; her corpus is thin here, would need her take."
+  },
+  {
+   "topic": "Melasma management",
+   "receipt": "59K - @draleksandrabrown",
+   "url": "https://www.instagram.com/p/DcgNpFCRIS1/",
+   "heat": 1,
+   "platform": "IG",
+   "note": "'Melasma is a marathon' - evergreen, but her melasma corpus is thin; needs her own framing before drafting."
+  },
+  {
+   "topic": "Dermatographism ('write on your skin')",
+   "receipt": "40K - <1d - @denverskindoc",
+   "url": "https://www.instagram.com/p/Dcj6zZOBlDV/",
+   "heat": 1,
+   "platform": "IG",
+   "note": "Curiosity/novelty hook (skin-writing hives) - high scroll-stop, easy explainer."
+  }
+ ],
+ "her_wins": [
+  {
+   "summary": "(IG/TT) Glass-skin routine - her exfoliation + retinoid clip is a genuine hit: 979K on Instagram (superviral, 3% breakout) and 276K on TikTok, where it's a SILVER follower magnet (top-15% engagement) - pulling FOLLOWERS, not just views.",
+   "url": "https://www.instagram.com/p/DchEHUCvRHK/",
+   "platform": "IG/TT",
+   "age_days": 1.7,
+   "growth": "silver",
+   "eng_top": 15,
+   "open_lane": "Glass-skin part 2 - the exact layering order (hydration first, retinoid on top) or a retinoid-night calendar. Keep the format that's converting; don't pivot off it."
+  }
+ ],
+ "stitch_shortlist": [
+  {
+   "author": "@dermatologysurgeon",
+   "platform": "IG",
+   "views": 671439,
+   "age_days": 0.8,
+   "comments": 71,
+   "url": "https://www.instagram.com/p/DcjQKawxpMU/",
+   "seed_topic": "pimplepatch",
+   "source": "in-group",
+   "verify": false,
+   "comment_heat": false,
+   "heat": 2,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right / surprising",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5,
+    "miss": "fellow derm amplifying a civilian hack - only works as a 'yes, and' add, not a takedown"
+   },
+   "pitch": {
+    "the_claim": "Pimple patches also work on bug bites and blisters - stick one on anything oozy.",
+    "why_it_stitches": "The mischel.archive hack is being restitched niche-wide; this cut hit 671K in under a day and is a silver follower magnet.",
+    "your_fit": "She already teaches hydrocolloid + salicylic patches for a fresh pimple - so 'yes, and here's exactly when a patch helps (oozing, open) vs when it does nothing (deep cyst, closed bump)'.",
+    "angles": [
+     "'yes, and' - agree it works on weepy spots, then draw the line",
+     "empathy-first: 'love a cheap hack - here's the one caveat'",
+     "what a hydrocolloid patch actually does (absorbs fluid, not magic)"
+    ],
+    "length": "original eats ~10s; 30-45s total winning"
+   }
+  },
+  {
+   "author": "@rubin_allergy",
+   "platform": "TT",
+   "views": 6129886,
+   "age_days": 6.4,
+   "comments": 7881,
+   "url": "https://www.tiktok.com/@rubin_allergy/video/7677033087288593678",
+   "seed_topic": "mystery rash",
+   "source": "feed",
+   "verify": false,
+   "comment_heat": true,
+   "heat": 3,
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "surprising",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5,
+    "miss": "allergy/immunology origin - the skin reaction is in-lane, but frame it as a skin-swelling take, not an allergy lecture"
+   },
+   "pitch": {
+    "the_claim": "'Skeeter syndrome' - some people get huge, hot, swollen reactions to mosquito bites.",
+    "why_it_stitches": "6.1M views and ~7.9K comments; derms (arffaderm) are already stitching the same collab - a massive, in-lane skin-reaction wave.",
+    "your_fit": "She covers bug bites and skin reactions - add the derm angle: why some skin over-reacts, when a bite needs a doctor, what actually calms it.",
+    "angles": [
+     "when a bite is 'just big' vs when to worry (spreading, fever)",
+     "what actually calms a giant bite (not what TikTok says)",
+     "Mohs-surgeon aside: reactions vs infections that mimic them"
+    ],
+    "length": "original ~15s; 45-70s total"
+   }
+  },
+  {
+   "author": "@8gf99g7t",
+   "platform": "TT",
+   "views": 1118955,
+   "age_days": 5.9,
+   "comments": 72,
+   "url": "https://www.tiktok.com/@8gf99g7t/video/7677221589473037581",
+   "seed_topic": "mystery rash",
+   "source": "feed",
+   "verify": false,
+   "comment_heat": false,
+   "heat": 2,
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "surprising / commonly mistaken",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5,
+    "miss": "faceless/spammy handle - verify the visual before stitching"
+   },
+   "pitch": {
+    "the_claim": "A circular rash on your skin is probably ringworm (tinea corporis).",
+    "why_it_stitches": "1.1M in-lane views on a classic 'what is this rash' hook - exactly the identification content her audience clicks.",
+    "your_fit": "She IDs common rashes; add the derm read - the raised, scaly, clearing-center ring, why it's NOT worms, and the OTC antifungal that clears it.",
+    "angles": [
+     "'it's a fungus, not a worm' - the name is a lie",
+     "the 3 features that say ringworm vs eczema",
+     "why steroid cream alone makes it worse (tinea incognito)"
+    ],
+    "length": "original ~20s; 45-60s total"
+   }
+  },
+  {
+   "author": "@sidandlisten",
+   "platform": "TT",
+   "views": 410447,
+   "age_days": 2.6,
+   "comments": 420,
+   "url": "https://www.tiktok.com/@sidandlisten/video/7678423791244004638",
+   "seed_topic": "hair growth tips",
+   "source": "feed",
+   "verify": false,
+   "comment_heat": false,
+   "heat": 1,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "wrong / half-right",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "'Super fast hair growth' with a DIY topical hack.",
+    "why_it_stitches": "410K in under 3 days with 420 comments - a rising hair-growth myth squarely in her hair-loss lane.",
+    "your_fit": "She teaches what actually regrows hair (minoxidil technique, treating the cause) and debunks biotin - switch-don't-quit: skip the hack, do the thing that works.",
+    "angles": [
+     "what actually grows hair vs what just wastes money",
+     "'you want me to put WHAT on your scalp?'",
+     "the minoxidil mistake most people make"
+    ],
+    "length": "original ~30s; 45-60s total"
+   }
+  },
+  {
+   "author": "@mattypowz.md",
+   "platform": "TT",
+   "views": 195504,
+   "age_days": 4.8,
+   "comments": 66,
+   "url": "https://www.tiktok.com/@mattypowz.md/video/7677628333810601236",
+   "seed_topic": "skin cancer",
+   "source": "feed",
+   "verify": false,
+   "comment_heat": false,
+   "heat": 1,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "surprising / subtle",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5,
+    "miss": "fellow derm being correct - 'yes, and' with her Mohs POV, not a correction"
+   },
+   "pitch": {
+    "the_claim": "'Is that a melanoma on my back?' - a subtle spot that's almost invisible to the naked eye.",
+    "why_it_stitches": "A fellow derm's melanoma-ID demo pulling ~200K - feeds the same skin-cancer-quiz wave the niche is riding.",
+    "your_fit": "As a Mohs surgeon she can add the 'here's what I look for' layer - the ugly-duckling sign, dermoscopy, when a flat spot still matters.",
+    "angles": [
+     "the melanoma that hides in plain sight",
+     "ugly-duckling sign: the one that doesn't match",
+     "Mohs-surgeon POV: what I biopsy and why"
+    ],
+    "length": "original ~9s; 30-45s total"
+   }
+  },
+  {
+   "author": "@_sharberry_",
+   "platform": "TT",
+   "views": 569774,
+   "age_days": 2.8,
+   "comments": 90,
+   "url": "https://www.tiktok.com/@_sharberry_/video/7678353480632831265",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "comment_heat": false,
+   "heat": 1,
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "Zinc is a 'little hack' for smoother-looking skin.",
+    "why_it_stitches": "570K and pacing ~203K/day - a rising ingredient-hack claim in her skincare lane.",
+    "your_fit": "She can separate zinc-the-supplement hype from what topical zinc (zinc oxide, sunscreen, acne roles) actually does - switch-don't-quit into the real routine.",
+    "angles": [
+     "topical zinc vs zinc pills - what actually helps skin",
+     "the one legit use for zinc most people skip (SPF)",
+     "'smoother skin' - here's the ingredient that really does it"
+    ],
+    "length": "original ~12s; 30-45s total"
+   }
+  }
+ ],
+ "more_stitches": [
+  {
+   "author": "@soy.menaa",
+   "platform": "TT",
+   "views": 4972755,
+   "age_days": 5.8,
+   "comments": 899,
+   "url": "https://www.tiktok.com/@soy.menaa/video/7677243841732168990",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "Emotional acne/skin-shaming story (Spanish) - big wave, but no debunkable derm claim to react to.",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "'I still remember the girl who mocked me for my skin' - a viral skin-insecurity story.",
+    "why_it_stitches": "Nearly 5M views on skin-confidence emotion; only worth it as an empathy-first duet, not a myth-bust.",
+    "your_fit": "Her patient-first tone fits - 'your acne isn't your fault, here's help' - but there's no claim to correct.",
+    "angles": [
+     "empathy-first: acne is medical, not a character flaw",
+     "offer the real treatment ladder, gently"
+    ],
+    "length": "short - 20-40s"
+   }
+  },
+  {
+   "author": "@alba__garciis",
+   "platform": "TT",
+   "views": 2441234,
+   "age_days": 5.6,
+   "comments": 281,
+   "url": "https://www.tiktok.com/@alba__garciis/video/7677315576083057942",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "viral": true,
+   "unidentified": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "Aesthetic bodycare/skincare montage, no reactable derm claim in the caption - watch in-app first.",
+   "rubric": null,
+   "pitch": null
+  },
+  {
+   "author": "@eiitakylie",
+   "platform": "TT",
+   "views": 1145039,
+   "age_days": 5.7,
+   "comments": 290,
+   "url": "https://www.tiktok.com/@eiitakylie/video/7677290757685808405",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "Kylie Jenner skincare-routine repost - borderline lane (celebrity beauty); pick a single product claim before reacting.",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "A celebrity (Kylie Jenner) skincare routine reposted from her YouTube.",
+    "why_it_stitches": "1.1M in-lane beauty views, but it's an aggregator repost - the reactable claim depends on which product step you pick.",
+    "your_fit": "Only stitch if a specific step is myth-worthy; watch first to choose the target.",
+    "angles": [
+     "react to ONE step, not the whole routine"
+    ],
+    "length": "depends on the step chosen"
+   }
+  },
+  {
+   "author": "@dr.javeria.jia",
+   "platform": "TT",
+   "views": 434228,
+   "age_days": 1.7,
+   "comments": 766,
+   "url": "https://www.tiktok.com/@dr.javeria.jia/video/7678750703766048020",
+   "seed_topic": "dermatologist",
+   "source": "feed",
+   "verify": false,
+   "viral": true,
+   "unidentified": true,
+   "heat": 1,
+   "comment_heat": true,
+   "claim": "content unidentifiable from feed (caption is hashtags only, ~255K/day in-lane) - watch in-app first",
+   "rubric": null,
+   "pitch": null
+  },
+  {
+   "author": "@dermatologysurgeon",
+   "platform": "IG",
+   "views": 2031231,
+   "age_days": 12.8,
+   "comments": 287,
+   "url": "https://www.instagram.com/p/DcEb4Mex5J0/",
+   "seed_topic": "skincare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "'Rating viral skincare trends' - a fellow derm's trend-rating supercut (2.0M, but 13d old and past peak).",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "A derm rates a batch of viral skincare trends and shows 'the correct way'.",
+    "why_it_stitches": "2.0M in-lane, but it's a tracked peer being correct - only a 'yes, and pick ONE trend I'd rate differently' angle works.",
+    "your_fit": "Her own trend-rating take on a single trend (e.g. slugging, moisture sandwich) rather than the whole reel.",
+    "angles": [
+     "'yes, and here's the one trend I'd rate lower'"
+    ],
+    "length": "pick one trend; 30-45s"
+   }
+  },
+  {
+   "author": "@dr.david.kim",
+   "platform": "IG",
+   "views": 1565574,
+   "age_days": 10.9,
+   "comments": 975,
+   "url": "https://www.instagram.com/p/DcJXMX8RYeZ/",
+   "seed_topic": "haircare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "'Why use one hair serum when you can use 3' - layering multiple hair serums (1.6M, 11d old).",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "Layer three different hair serums for better results.",
+    "why_it_stitches": "1.6M in-lane hair views; reactable, but a tracked peer and past peak - 'yes, and do you actually need 3?' angle.",
+    "your_fit": "Her minoxidil/hair-loss lane: what actually regrows hair vs serum stacking.",
+    "angles": [
+     "do you really need 3 serums, or 1 that works?"
+    ],
+    "length": "30-45s"
+   }
+  },
+  {
+   "author": "@dermatologysurgeon",
+   "platform": "IG",
+   "views": 1325837,
+   "age_days": 9.8,
+   "comments": 179,
+   "url": "https://www.instagram.com/p/DcMP4KXRiLj/",
+   "seed_topic": "skincare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "Vitamin C serum AM vs PM & how often (1.3M, 10d old) - fellow derm being correct.",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "When and how often to use vitamin C serum (AM vs PM).",
+    "why_it_stitches": "1.3M in-lane, but tracked peer + correct + past peak - low stitch value, 'yes, and' only.",
+    "your_fit": "Fits her routine-order corpus; better as her own standalone than a stitch.",
+    "angles": [
+     "her own AM/PM order explainer instead of a stitch"
+    ],
+    "length": "n/a - likely a standalone"
+   }
+  },
+  {
+   "author": "@dr.zionko",
+   "platform": "IG",
+   "views": 1013618,
+   "age_days": 8.9,
+   "comments": 52,
+   "url": "https://www.instagram.com/p/DcOZ0twBsVp/",
+   "seed_topic": "skincare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 2,
+   "comment_heat": false,
+   "claim": "'3 years ago I came out of my C-section...' - borderline lane; likely a personal reflection, only relevant if there's a real scar/postpartum-skin angle. Watch first.",
+   "rubric": null,
+   "pitch": null
+  },
+  {
+   "author": "@dermatologysurgeon",
+   "platform": "IG",
+   "views": 998331,
+   "age_days": 4.9,
+   "comments": 138,
+   "url": "https://www.instagram.com/p/DcY8WQMRD66/",
+   "seed_topic": "skincare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 1,
+   "comment_heat": false,
+   "claim": "'The correct way to use glycolic acid' (998K, ~204K/day) - fellow derm being correct.",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "The correct way to use glycolic acid for best results.",
+    "why_it_stitches": "Pace-qualified in-lane, but a tracked peer being correct - 'yes, and the mistake I still see' angle only.",
+    "your_fit": "Her exfoliation/actives-timing lane (see Theme 2).",
+    "angles": [
+     "'yes, and' the #1 glycolic mistake"
+    ],
+    "length": "30s"
+   }
+  },
+  {
+   "author": "@dermatologysurgeon",
+   "platform": "IG",
+   "views": 601087,
+   "age_days": 2.8,
+   "comments": 79,
+   "url": "https://www.instagram.com/p/DceW9vuwXmF/",
+   "seed_topic": "skincare",
+   "source": "in-group",
+   "verify": false,
+   "viral": true,
+   "heat": 1,
+   "comment_heat": false,
+   "claim": "'Dermatologist rates French Pharmacy skincare' (601K, ~215K/day) - reactable ratings format from a tracked peer.",
+   "rubric": null,
+   "pitch": {
+    "the_claim": "A derm rates French-pharmacy skincare picks.",
+    "why_it_stitches": "Fresh-ish (2.8d) and pace-qualified; the ratings format is stealable more than stitchable.",
+    "your_fit": "Steal the format - her own French-pharmacy or drugstore ratings.",
+    "angles": [
+     "her own budget/pharmacy ratings reel"
+    ],
+    "length": "format steal, 30-60s"
+   }
+  }
+ ],
+ "news": []
 }
