@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "date": "2026-09-19",
- "generated_at": "2026-09-19T06:30:58-04:00",
+ "date": "2026-09-20",
+ "generated_at": "2026-09-20T14:35:49-04:00",
  "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
- "signals_generated_at": "2026-09-19T10:22:04Z",
- "stitch_generated_at": "2026-09-19T10:22:12Z",
+ "signals_generated_at": "2026-09-20T18:26:16Z",
+ "stitch_generated_at": "2026-09-20T18:26:27Z",
  "source_extract": "2026-09-18T09:15:03Z",
- "meta_notes": "Source extract 2026-09-18 09:15Z (~25h old at build; the Sep 19 ~6:20 AM Dropbox/Make refresh had not landed — xlsx mtimes Sep 18 10:20Z) — one day fresher than yesterday's build, so ages/tiers/breakouts moved; both feeds rebuilt 10:22Z today. Stitch feed refreshed (40 candidates kept of 207 rows). Virality sweep: 3 in-lane candidates ≥1M or ≥200K/day (@abbeyyung 2.9M, @rhinophmadiary 272K/day → shortlist; @marleymalin 3.1M no-caption → unidentified stub in more_stitches); no drops; yesterday's @alixearle 3.9M is no longer in either feed (only the brand's 78K repost). Corpus checked with 12 queries (index ends ~Apr 12, 2026 — no hidradenitis/rhinophyma/glutathione/dark-knuckles transcripts). News scan ran (6 searches + 4 fetches): Neutrogena BEMT launch (PR Newswire dateline Sep 17 → 2d) and Ameluz sBCC approval (5d, major + still unsaturated in creator captions) kept; dropped: Allies of Skin SPF recall (story Aug 14/Sep 1), Journal Digest studies (Sep 8–9 journal dates, >7d), dersimelagon NDA (not consumer). Time budget: build started 6:21 AM, no cuts.",
+ "meta_notes": "Sunday build at 2:30 PM ET (task fired 18:25Z, well past the 6:50 cron — not published automatically). Source extract 2026-09-18 09:15Z, now ~2.4d old: neither the Sep 19 nor the Sep 20 ~6:20 AM Dropbox/Make refresh landed (xlsx mtimes still Sep 18 10:20Z), so trending-signals.json is byte-identical to yesterday's build (240 videos, 11 SV / 151 V; receipt ages/tiers/breakouts are extract-relative and unchanged). Stitch feed rebuilt 18:26Z (40 of 207 rows) with now-relative ages: @leeskincare7 (more_stitches) and @mualesandro (shortlist) aged past 7d and left the feed — both dropped, shortlist now 5; @rhinophmadiary slowed to 157K/day (heat 2→1, no longer pacing to 1M). Virality sweep: 2 in-lane candidates ≥1M or ≥200K/day (@abbeyyung 2.9M → shortlist; @marleymalin 3.1M no-caption → unidentified stub in more_stitches); no drops. Corpus re-checked with 12 queries (index unchanged; positions for all four themes re-confirmed verbatim; still no hidradenitis/rhinophyma/glutathione/dark-knuckle/face-icing transcripts). News scan ran (10 searches + 7 fetches): Neutrogena BEMT launch (DT dateline Sep 17 → 3d) and Ameluz sBCC approval (Sep 14 → 6d, major + unsaturated) kept; dropped: pediatric HS smoke-exposure study (Journal Digest Sep 16, journal date unverifiable, Medscape paywalled), Allergan skin-quality-in-weight-loss abstracts (sponsored, n=9), GLP-1 hair-loss study (Sep 3–11, >7d), Allies of Skin SPF recall (Aug 14), Cutaneous Oncology Workshop recap (event coverage, not a story). PR Newswire re-fetch blocked (unattended approval) — Neutrogena date taken from the DT visible dateline, matching yesterday's primary-source check. Time budget: no cuts.",
  "menu_lines": [
   "Is it skin cancer? — spot-the-diagnosis quiz cards, week 5 (SV · 68.5× — new card 424K in 2.6d) [watch](https://www.tiktok.com/@dr.derm.love/video/7685913327121255710)",
   "Dyshidrotic hand eczema — the nickel-diet trigger (YOURS — superviral IG, 3%, 568K in 3.6d) [watch](https://www.instagram.com/p/DdSP26oP5vs/)",
@@ -337,7 +337,7 @@
   {
    "name": "Hair loss: minoxidil consistency + 'is minoxidil for life?' — and the 2.9M civilian haircare-routine wave",
    "heat": 2,
-   "receipt": "4 breakouts · 3 creators · 0.8M signal views · 8s 'every day, 18+ months' card (21.5×, 5%) + TT twin (55.6×, ♥ silver) · @dermatologysurgeon 'is minoxidil for life?' 81K in 0.6d (6.4K/hr, early) · civilian peg: @abbeyyung routine 2.9M in 5.5d (stitch #1)",
+   "receipt": "4 breakouts · 3 creators · 0.8M signal views · 8s 'every day, 18+ months' card (21.5×, 5%) + TT twin (55.6×, ♥ silver) · @dermatologysurgeon 'is minoxidil for life?' 81K in 0.6d (6.4K/hr, early) · civilian peg: @abbeyyung routine 2.9M in 6.9d (stitch #1)",
    "videos": [
     {
      "author": "leenaderm",
@@ -581,9 +581,9 @@
   {
    "author": "abbeyyung",
    "platform": "TT",
-   "claim": "'My haircare routine gave thousands of you insane hair transformations' (2.9M, 5.5d)",
+   "claim": "'My haircare routine gave thousands of you insane hair transformations' (2.9M, 6.9d)",
    "views": 2927182,
-   "age_days": 5.5,
+   "age_days": 6.9,
    "comments": 1048,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@abbeyyung/video/7685135024299019550",
@@ -602,7 +602,7 @@
    },
    "pitch": {
     "the_claim": "A cosmetic haircare routine (conditioner-heavy, bond builders) turned into 'insane hair transformations' for followers — implying routine = hair growth.",
-    "why_it_stitches": "2.9M in 5.5d (532K/day), 1K comments, and a follow-up 'yes I use a LOT of conditioner' at 283K in 1.5d — the biggest hair wave in the window; half-right: routine changes shine, breakage and length retention, not follicle growth. Miss recorded: 5.5d, no longer rising. Lane call: cosmetic hair, not derm — doubt stated, but hair is her underexploited lane.",
+    "why_it_stitches": "2.9M in 6.9d (424K/day), 1K comments, and a follow-up 'yes I use a LOT of conditioner' at 283K in 2.9d — the biggest hair wave in the window; half-right: routine changes shine, breakage and length retention, not follicle growth. Miss recorded: 6.9d, no longer rising (a week old — stitch it as the peg for the minoxidil answer card, not as a fresh react). Lane call: cosmetic hair, not derm — doubt stated, but hair is her underexploited lane.",
     "your_fit": "Corpus yellow: hair-loss ratings (1.9M TT, Dec 2025 — 'minoxidil 10/10, biotin 0/10, hair serum 7/10'), telogen effluvium guides, 'you're applying minoxidil WRONG' (Mar 2026). No prior video on cosmetic routines vs growth — a NEW angle.",
     "angles": [
      "'yes, and': shine and length retention are real — growth is a follicle problem, and here's how to tell which one you have",
@@ -615,16 +615,16 @@
   {
    "author": "rhinophmadiary",
    "platform": "TT",
-   "claim": "Rhinophyma diary — 'raising awareness' of the bulbous-nose rosacea (517K, 1.9d)",
+   "claim": "Rhinophyma diary — 'raising awareness' of the bulbous-nose rosacea (517K, 3.3d)",
    "views": 517415,
-   "age_days": 1.9,
+   "age_days": 3.3,
    "comments": 263,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@rhinophmadiary/video/7686471107104214305",
    "seed_topic": "dermatologist",
    "source": "feed",
    "verify": false,
-   "heat": 2,
+   "heat": 1,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
@@ -636,7 +636,7 @@
    },
    "pitch": {
     "the_claim": "A patient documents living with rhinophyma — the thickened, bulbous nose — 'for awareness'; most viewers don't know it's a subtype of rosacea and that it's treatable.",
-    "why_it_stitches": "517K in 1.9d (272K/day — pacing to 1M), 263 comments; a patient, so this is empathy-first 'yes, and' only — never a correction. Surprising trigger: viewers assume alcohol; it's rosacea (phymatous), it's treatable, and it's not the patient's fault.",
+    "why_it_stitches": "517K in 3.3d (157K/day — slowed from the 272K/day pace of two days ago, no longer on a 1M track), 263 comments; a patient, so this is empathy-first 'yes, and' only — never a correction. Surprising trigger: viewers assume alcohol; it's rosacea (phymatous), it's treatable, and it's not the patient's fault.",
     "your_fit": "Corpus: rosacea is a doctor-AND-patient topic for her ('When it comes to rosacea, I'm both a doctor and a patient' — 65K TT, Apr 2023; 'I use azelaic acid every single day for my redness and rosacea'). No transcript mentions rhinophyma specifically — the phymatous-subtype facts need her take. Playbook: rosacea (demodex, PDL/IPL related).",
     "angles": [
      "empathy-first: 'this is rosacea, not drinking — and it's treatable' (45s)",
@@ -647,45 +647,11 @@
    }
   },
   {
-   "author": "mualesandro",
-   "platform": "TT",
-   "claim": "Only a Cetaphil bar on my face for 2 weeks — 'this is what happened' (710K, 5.7d)",
-   "views": 713473,
-   "age_days": 5.7,
-   "comments": 41,
-   "comment_heat": false,
-   "url": "https://www.tiktok.com/@mualesandro/video/7685068485524720910",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "rising": false,
-    "big_enough": true,
-    "punches_ok": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "Stopped all skincare for two weeks, washed with a Cetaphil cleansing bar only — and the skin 'got better'.",
-    "why_it_stitches": "710K in 5.7d, 41 comments (not a comment fight); half-right — a skincare holiday helps over-exfoliated, irritated skin, but a bar + nothing is not a plan for acne, pigment or sun. Miss recorded: 5.7d, no longer rising; brand-tagged (@Cetaphil) so keep the stitch about the strategy, not the bar.",
-    "your_fit": "Corpus green: 'Skincare made easy — best OTC options for common complaints' (Sep 2026), 'How to wash your face' guide (Nov 2023), teen skincare guide (18K YT); her position is minimal-but-complete: cleanser, moisturizer, sunscreen, one active.",
-    "angles": [
-     "'yes, and': the skin-fast works because you stopped over-doing it — here's the 3-product floor",
-     "'you want me to WHAT?': no sunscreen for 2 weeks is the part I can't sign off",
-     "switch-don't-quit: keep the bar, add back ONE thing at a time"
-    ],
-    "length": "original eats ~6s; 30–45s total"
-   }
-  },
-  {
    "author": "dr.supriya_md",
    "platform": "TT",
-   "claim": "Ice cubes on your face — a derm's icing routine (320K, 1.9d)",
+   "claim": "Ice cubes on your face — a derm's icing routine (319K, 3.3d)",
    "views": 319470,
-   "age_days": 1.9,
+   "age_days": 3.3,
    "comments": 31,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@dr.supriya_md/video/7686476903494044948",
@@ -704,7 +670,7 @@
    },
    "pitch": {
     "the_claim": "Rubbing ice cubes on the face (de-puffing, 'tightening', glow) — a derm endorsing the icing trend.",
-    "why_it_stitches": "320K in 1.9d (168K/day), 48s; a fellow derm, so 'yes, and' only: ice does calm transient puffiness and inflammation, but direct ice on skin risks cold injury and flares rosacea/flushing. Caption is hashtags only (#icecubes #face) — watch in-app to confirm the claim before drafting.",
+    "why_it_stitches": "320K in 3.3d (97K/day), 48s; a fellow derm, so 'yes, and' only: ice does calm transient puffiness and inflammation, but direct ice on skin risks cold injury and flares rosacea/flushing. Caption is hashtags only (#icecubes #face) — watch in-app to confirm the claim before drafting.",
     "your_fit": "Corpus: no transcript on face icing — needs her take. Related positions: rosacea flushing triggers, 'do you turn beet red after a hot workout?' (100K IG, Sep 2026), skin-barrier care.",
     "angles": [
      "'yes, and': ice de-puffs for an hour — here's what it can't do",
@@ -717,9 +683,9 @@
   {
    "author": "klaysensei",
    "platform": "TT",
-   "claim": "5% glutathione + vitamin C serum 'brightens dark areas' (800K, 4.9d)",
+   "claim": "5% glutathione + vitamin C serum 'brightens dark areas' (802K, 6.3d)",
    "views": 801811,
-   "age_days": 4.9,
+   "age_days": 6.3,
    "comments": 226,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@klaysensei/video/7685355273933884692",
@@ -738,7 +704,7 @@
    },
    "pitch": {
     "the_claim": "A 5% glutathione + 2% vitamin C + PHA + HA serum evens out dark areas — 'it smells weird but that's why I trust it'.",
-    "why_it_stitches": "800K in 4.9d (164K/day), 226 comments, hyperpigmentation seed; half-right — vitamin C, PHA and consistency help PIH, but topical glutathione has thin evidence and the 'smell = potency' logic is wrong. Miss recorded: 4.9d, no longer rising; product UGC (likely paid — treat as sponsored-adjacent, stitch the ingredient claim not the brand).",
+    "why_it_stitches": "800K in 6.3d (127K/day), 226 comments, hyperpigmentation seed; half-right — vitamin C, PHA and consistency help PIH, but topical glutathione has thin evidence and the 'smell = potency' logic is wrong. Miss recorded: 6.3d, no longer rising; product UGC (likely paid — treat as sponsored-adjacent, stitch the ingredient claim not the brand).",
     "your_fit": "Corpus: hyperpigmentation is green (vitamin C serum guide, hyperpigmentation + wrinkles serum video, dark-circles cause videos); no transcript on glutathione — that specific claim needs her take.",
     "angles": [
      "'yes, and': the vitamin C and PHA are doing the work — here's what actually fades dark areas",
@@ -751,9 +717,9 @@
   {
    "author": "amandaliving_",
    "platform": "TT",
-   "claim": "'That hyped hand cream gave me dark knuckles' — dark-knuckle remover (490K, 5.4d)",
+   "claim": "'That hyped hand cream gave me dark knuckles' — dark-knuckle remover (486K, 6.8d)",
    "views": 485773,
-   "age_days": 5.4,
+   "age_days": 6.8,
    "comments": 554,
    "comment_heat": true,
    "url": "https://www.tiktok.com/@amandaliving_/video/7685171036987346196",
@@ -772,7 +738,7 @@
    },
    "pitch": {
     "the_claim": "A TikTok-hyped hand cream caused dark knuckles; she's 'finally free' after a dark-knuckle remover.",
-    "why_it_stitches": "490K in 5.4d, 554 comments (comment-heavy for its size — people asking which cream); half-right/wrong: dark knuckles are usually friction, PIH, eczema or acanthosis nigricans — a cream rarely causes them unless it irritates, and 'removers' are often bleaching agents. Miss recorded: 5.4d, no longer rising.",
+    "why_it_stitches": "490K in 6.8d, 554 comments (comment-heavy for its size — people asking which cream); half-right/wrong: dark knuckles are usually friction, PIH, eczema or acanthosis nigricans — a cream rarely causes them unless it irritates, and 'removers' are often bleaching agents. Miss recorded: 6.8d, no longer rising — ages out of the feed tomorrow.",
     "your_fit": "Corpus: hyperpigmentation and dark-circle mechanisms are green ('dark circles can be caused by hyperpigmentation…'); no transcript on dark knuckles — the acanthosis/insulin link needs her take.",
     "angles": [
      "empathy-first: 'dark knuckles aren't dirt — the 4 real causes' (45s)",
@@ -789,7 +755,7 @@
    "platform": "TT",
    "claim": "content unidentifiable from feed (no caption) — watch in-app first",
    "views": 3118762,
-   "age_days": 3.7,
+   "age_days": 5.0,
    "comments": 2644,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@marleymalin/video/7685828464359787806",
@@ -805,9 +771,9 @@
   {
    "author": "abbeyyung",
    "platform": "TT",
-   "claim": "'Yes, I apply a LOT of conditioner — on purpose' (283K, 1.5d)",
+   "claim": "'Yes, I apply a LOT of conditioner — on purpose' (283K, 2.9d)",
    "views": 282533,
-   "age_days": 1.5,
+   "age_days": 2.9,
    "comments": 88,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@abbeyyung/video/7686627134319742238",
@@ -826,7 +792,7 @@
    },
    "pitch": {
     "the_claim": "Coating every strand with a lot of conditioner is the secret behind the transformations.",
-    "why_it_stitches": "283K in 1.5d (188K/day) — the follow-up to the 2.9M routine; pairs with shortlist #1 as a two-video stitch.",
+    "why_it_stitches": "283K in 2.9d (97K/day) — the follow-up to the 2.9M routine; pairs with shortlist #1 as a two-video stitch.",
     "your_fit": "Same fit as #1 — hair lane, no prior routine-vs-growth video.",
     "angles": [
      "'yes, and': conditioner protects the shaft — it can't grow a new one"
@@ -834,60 +800,27 @@
     "length": "original eats ~6s; 30s total"
    },
    "viral": false
-  },
-  {
-   "author": "leeskincare7",
-   "platform": "TT",
-   "claim": "'How Koreans look 20 at 40 — we take sun care like a military' (770K, 6.9d)",
-   "views": 765007,
-   "age_days": 6.9,
-   "comments": 331,
-   "comment_heat": false,
-   "url": "https://www.tiktok.com/@leeskincare7/video/7684635107214429448",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "rising": false,
-    "big_enough": true,
-    "punches_ok": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "Daily, layered sun care (tinted SPF, BB cream, reapplication) is why Koreans look 20 at 40.",
-    "why_it_stitches": "770K in 6.9d — aging out tomorrow; half-right: daily SPF is the single best anti-aging habit, but genetics, smoking and skin type do the rest.",
-    "your_fit": "Corpus green on sunscreen and photo-aging (anti-aging guide, actinic keratosis prevention).",
-    "angles": [
-     "'yes, and': the military sun-care habit is right — here's the 3-step US version"
-    ],
-    "length": "original eats ~8s; 30–45s total"
-   },
-   "viral": false
   }
  ],
  "news": [
   {
    "headline": "Neutrogena launches first US bemotrizinol sunscreens — SPF 60 & 70, $17",
-   "summary": "First mass-market US sunscreen with the newly permitted UV filter (Cloud Tech line) — your patients will ask whether it's worth switching; the trending feed hasn't caught it yet.",
+   "summary": "First mass-market US sunscreen with the newly permitted UV filter (Ultra Sheer SPF 70 + Clear Face SPF 60, Amazon first) — patients will ask whether it's worth switching; still no tracked creator has posted on it.",
    "her_angle": "'The first new US sunscreen filter in 25 years is on shelves — here's who should switch' (60s)",
-   "source": "PR Newswire (Kenvue/Neutrogena release)",
-   "url": "https://www.prnewswire.com/news-releases/neutrogena-launches-new-sunscreen-technology-with-cloud-tech-combining-next-generation-sun-protection-skincare-benefits-and-a-weightless-feel-302881295.html",
+   "source": "Dermatology Times (Kenvue/Neutrogena release, Sep 17)",
+   "url": "https://www.dermatologytimes.com/view/neutrogena-launches-new-sunscreens-with-newly-permitted-uv-filter-bemotrizinol",
    "published": "Sep 17, 2026",
-   "age_days": 2,
+   "age_days": 3,
    "verify": true
   },
   {
    "headline": "FDA approves Ameluz red-light PDT for superficial basal cell carcinoma",
-   "summary": "A non-surgical, FDA-approved option for superficial BCC — squarely a Mohs surgeon's lane, and no tracked creator has mentioned it yet.",
+   "summary": "First FDA-approved photodynamic therapy for any skin cancer (76% histologic clearance vs 19% placebo, n=187) — a Mohs surgeon's lane, and still absent from tracked-creator captions.",
    "her_angle": "'When can you treat a basal cell WITHOUT surgery?' — the sBCC explainer, 45–60s",
    "source": "Dermatology Times",
    "url": "https://www.dermatologytimes.com/view/fda-approves-ameluz-red-light-pdt-for-superficial-basal-cell-carcinoma",
    "published": "Sep 14, 2026",
-   "age_days": 5,
+   "age_days": 6,
    "verify": true
   }
  ]
