@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "date": "2026-09-22",
- "generated_at": "2026-09-22T06:25:38-04:00",
+ "date": "2026-09-23",
+ "generated_at": "2026-09-23T06:26:00-04:00",
  "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
- "signals_generated_at": "2026-09-22T10:21:48Z",
- "stitch_generated_at": "2026-09-22T10:21:56Z",
+ "signals_generated_at": "2026-09-23T10:22:28Z",
+ "stitch_generated_at": "2026-09-23T10:22:36Z",
  "source_extract": "2026-09-21T09:15:03Z",
- "meta_notes": "DATA: no new extract today — Competitor Analysis.xlsx / Stitch Candidates.xlsx last refreshed Sep 21 10:20Z; both feeds were rebuilt at 10:21Z from the same 2026-09-21 09:15Z extract (~25h old at build). trending-signals ages/views are EXTRACT-relative (add ~1.0d to every trending receipt, win and more_topic age); the stitch feed re-ages against the clock, so stitch ages/pace are current. Same 232-video signal set as yesterday (8 SV / 141 V); stitch feed 40 of 208 rows, 11 aged out (none in-lane >=1M). TIME: task fired 6:21 AM ET; because the signal set was identical to Sep 21's fully-grounded build, re-verification + fresh news scan finished at 6:25, ahead of the 6:30 cron (build_and_push.sh ran 6:31 yesterday) — no ladder cuts. If the dashboard still shows STALE after 6:35, run `bash build_and_push.sh`. Note yesterday's (Sep 21) briefing was also never published — build.log shows the 6:31 cron shipped Sep 20 as STALE and no manual push followed. VIRALITY SWEEP (today's stitch feed): 7 candidates >=1M or >=200K/day — @alixearle 6.2M, @millylivin 4.9M (1.03M/day), @1monicathomas 1.5M → shortlist; @marleymalin 4.2M (no caption) and @glowjournalmamata 714K in 1.4d (509K/day, no claim) → unidentified stubs; @dr.xavierbatalla 2.7M (Spanish) and @kikoiyubeauty 1.3M → more_stitches thin pitches. Fell below the guarantee overnight (kept on rubric): @rhinophmadiary 960K at 4.9d (196K/day) and @true.maxxx 438K at 2.6d (168K/day) stay in the shortlist; @charinecheungg 341K at 2.5d (137K/day) dropped from more_stitches (cap back to 4). Out-of-lane excluded: @neon.toktok roof shingles. No in-lane drops. NEWS: 7 searches + 4 fetches. Kept: Neutrogena bemotrizinol launch (DT visible dateline Sep 17 → 5d; still no tracked creator caption mentions it). Dropped: Ameluz sBCC PDT (Sep 14 → 8d, outside the window); Allies of Skin THE ONE SPF 50 recall (The Healthy Sep 1; recall initiated Aug 14); Veradermics oral-minoxidil phase 3 (Apr 27); Healio tween-skincare Q&A (Sep 8); DT Sep 21 items (North Immunology/Aethlon AD merger, Maui Derm recap) and Sep 15–18 items (EPP/XLP NDA, Gorlin gel, PsA, vitiligo JAK) — not her lanes. CeraVe/LRP benzene dismissal (Sep 15, 7d) stays folded into more_topics as a react peg — @danielsugaimd and @drspf are already on it. CORPUS: 11 queries re-run today (1,481 transcripts, index unchanged since Sep 1): milia 2 incidental hits → RED gap confirmed, no playbook entry; rhinophyma 0; azelaic/minoxidil/BCC-pimple/eyelash-demodex/heating-pad/home-microneedling/turmeric/glass-skin positions re-confirmed verbatim. Interpretation carried from the Sep 21 build (identical signal set), re-verified against today's feeds: every URL present. Time budget: no cuts.",
+ "meta_notes": "DATA: no new extract again — Competitor Analysis.xlsx / Stitch Candidates.xlsx re-synced Sep 23 10:20Z but still hold the 2026-09-21 09:15Z extract (~49h old at build; third consecutive build on the same 232-video signal set, 8 SV / 141 V). trending-signals ages/views are EXTRACT-relative: add ~2.0d to every trending receipt, win and more_topic age. The stitch feed re-ages against the clock, so stitch ages/pace are current: 39 of 208 rows kept, 24 aged out (>7d) — including three of yesterday's guaranteed waves (@alixearle 6.2M, @marleymalin 4.2M, @dr.xavierbatalla 2.7M), which are no longer candidates. Upstream Make.com/Apify scrape appears stalled since Sep 21 — worth checking. TIME: task fired 6:22 AM ET; feeds rebuilt 6:22, corpus re-checks + fresh news scan done by ~6:25, JSON written ~6:28 — no ladder cuts. build_and_push.sh's own header says the cron fires 6:30 (this file's 6:50 note is out of date): if the dashboard shows Sep 22 / STALE after 6:35, run `bash build_and_push.sh`. VIRALITY SWEEP (today's stitch feed): 4 candidates >=1M or >=200K/day — @millylivin 4.9M (851K/day) and @1monicathomas 1.5M (272K/day) → shortlist; @kikoiyubeauty 1.26M → more_stitches thin pitch; @glowjournalmamata 714K in 2.4d (297K/day, no claim) → unidentified stub. Below the guarantee, kept on rubric: @rhinophmadiary 960K at 5.9d (163K/day), @true.maxxx 438K at 3.6d (122K/day), @bojacksalt 275K at 4.0d; NEW on rubric: @thegoyboys5 'why is it burning' tretinoin 249K at 3.3d, 237 comments (replaces the aged-out Alix Earle launch as slot 6). @dr.supriya_md ice-cubes 729K at 5.9d (124K/day) not pitched — hashtag-only caption, no corpus position on facial icing. Out-of-lane excluded: none new. No in-lane drops. NEWS: 3 searches + 3 fetches. Kept: Neutrogena bemotrizinol launch (DT visible dateline Sep 17 → 6d; still zero tracked-creator captions mention it — last day inside the window). Dropped: DT Sep 22 items (barzolvolimab CSU phase 3, QRX003 peeling-skin fast track) and Sep 21 items (North Immunology/Aethlon AD merger, Maui Derm recap) — not her lanes; The Healthy sunscreen recall (Sep 1 article, Aug 14 recall); Yahoo/HuffPost 'preventive minoxidil' warning (visible dateline Jun 3, 2026); Skin Cancer Foundation September roundup (recap by definition). CORPUS: 14 queries run today (1,481 transcripts, index unchanged since Sep 1): milia RED gap re-confirmed; rhinophyma 0; ice cubes/facial icing 0 (no position); tretinoin-burning GREEN — 'retinol results without the burn' guide (YT, Sep 2025) + 'stopped because of irritation' card (23.8K TT, Aug 2025); azelaic/minoxidil/BCC-pimple/eyelash-demodex/heating-pad/home-microneedling/turmeric/glass-skin/dollar-tree positions re-confirmed verbatim. Theme/win interpretation carried from the Sep 21 build (identical extract), every URL re-verified present in today's feeds. Time budget: no cuts.",
  "menu_lines": [
   "Milia extraction — 'satisfying, but don't try this at home' (SV · 1% · 148× — 1.5M in 1.9d, early) [watch](https://www.tiktok.com/@denverskindoc/video/7687288120361995551)",
   "Azelaic acid — Alix Earle's 6.2M 'go calm' launch has derm-tok riffing (62× · V · 3% · ♥) [watch](https://www.tiktok.com/@leenaderm/video/7687033635588836638)",
@@ -96,7 +96,7 @@
   {
    "name": "Azelaic acid — Alix Earle's 6.2M 'go calm' launch has derm-tok riffing (+ YOUR 'I'll go first' community card at 270K TT)",
    "heat": 3,
-   "receipt": "civilian peg: @alixearle 10% azelaic serum launch 6.2M in 5.8d (stitch #1) + @realeactives 'ASK ALIX' 344K/108K · 4 derm breakouts: @leenaderm ☎️ skit 112K in 2.5d (62×, V, 3%, ♥ silver) · @arffaderm 'did we cause azelaic acid to disappear?' 9.8K in 0.7d (5%, early) · @teawithmd 'holy trinity' 316K (95×, 3%, ♥ gold) · YOURS: 'I'll go first' 270K TT in 2.5d at 4.5K/hr (10.9×, V) + 238K IG (V)",
+   "receipt": "civilian peg: @alixearle 10% azelaic serum launch 6.2M (aged out of the stitch feed at 7.8d — react window closing) + @realeactives 'ASK ALIX' 344K/108K · 4 derm breakouts: @leenaderm ☎️ skit 112K in 2.5d (62×, V, 3%, ♥ silver) · @arffaderm 'did we cause azelaic acid to disappear?' 9.8K in 0.7d (5%, early) · @teawithmd 'holy trinity' 316K (95×, 3%, ♥ gold) · YOURS: 'I'll go first' 270K TT in 2.5d at 4.5K/hr (10.9×, V) + 238K IG (V)",
    "videos": [
     {
      "author": "leenaderm",
@@ -203,9 +203,7 @@
      "verify": false
     }
    ],
-   "stitch_refs": [
-    0
-   ]
+   "stitch_refs": []
   },
   {
    "name": "Hair: 'is minoxidil for life?' is superviral on TT AND IG — and YOUR hair-loss ratings re-post is early-viral inside it",
@@ -561,45 +559,11 @@
  ],
  "stitch_shortlist": [
   {
-   "author": "alixearle",
-   "platform": "TT",
-   "claim": "Alix Earle's 10% azelaic 'go calm' serum launch — 'your skin doesn't have to be chaotic' (6.2M, 6.8d)",
-   "views": 6207772,
-   "age_days": 6.8,
-   "comments": 3695,
-   "comment_heat": false,
-   "url": "https://www.tiktok.com/@alixearle/video/7685792639584652574",
-   "seed_topic": "azelaic acid",
-   "source": "feed",
-   "verify": false,
-   "heat": 3,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "rising": false,
-    "big_enough": true,
-    "punches_ok": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "Alix Earle launches 'go calm' — a 10% azelaic acid 'anti-redness calming serum' as the last piece of her actives line: 'life is chaotic, your skin doesn't have to be.'",
-    "why_it_stitches": "6.21M in 6.8d (912K/day), 3.7K comments — the biggest in-lane wave in the window, plus two 'ASK ALIX' brand follow-ups (344K, 108K), a ♥ derm skit riffing on it (@leenaderm 3%, 62×) and @arffaderm's 'did we cause azelaic acid to disappear?' (5%, early). Half-right: 10% azelaic IS a real, evidence-backed active for redness, PIH and acne — but 'calming' undersells that it stings for weeks, and it's not for everyone. Miss recorded: 6.8d, past peak. Punches up (celebrity brand) — a 'yes, and' that makes her the derm who explains the ingredient the brand is selling.",
-    "your_fit": "Corpus GREEN: 'I also use azelaic acid every single day for my redness and rosacea' (beginners guide, 10.5K YT, Feb 2026); rosacea AM routine (181K TT); and her own 'I'll go first' card (270K TT, 2.5d) names azelaic — already in the conversation. Prior angle = how to use it; NEW angle = the launch itself: who should buy it, who shouldn't.",
-    "angles": [
-     "'yes, and': azelaic is one of the few celebrity-launch ingredients I'd actually prescribe — here's who it's for",
-     "switch-don't-quit: it stings for 2–4 weeks; buffer it, don't ditch it",
-     "'you want me to WHAT?': 10% OTC vs 15–20% prescription — what the number buys you"
-    ],
-    "length": "original eats ~8s; 45–60s total"
-   }
-  },
-  {
    "author": "millylivin",
    "platform": "TT",
-   "claim": "'$20 eyelash extensions in Vietnam — never had lashes like this' (4.9M, 4.8d)",
+   "claim": "'$20 eyelash extensions in Vietnam — never had lashes like this' (4.9M, 5.8d)",
    "views": 4938180,
-   "age_days": 4.8,
+   "age_days": 5.8,
    "comments": 1231,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@millylivin/video/7686517088676072722",
@@ -618,7 +582,7 @@
    },
    "pitch": {
     "the_claim": "'I got $20 eyelash extensions in Vietnam and I've never had lashes like this before' — a bargain lash-extension haul.",
-    "why_it_stitches": "4.94M in 4.8d (1.03M/day — still the fastest in-lane wave), the #1 stitch candidate by score. Lane call stated: it's a beauty haul, not a skin claim — but lash extensions are exactly what her 478K demodex card (4.7d) is about, and 'cheap extensions abroad' adds glue allergy (cyanoacrylate contact dermatitis) and lash-line hygiene. Surprising trigger: the mites. Punches sideways (civilian). Watch in-app to confirm the visuals before drafting.",
+    "why_it_stitches": "4.94M in 5.8d (851K/day — still the fastest in-lane wave), the #1 stitch candidate by score. Lane call stated: it's a beauty haul, not a skin claim — but lash extensions are exactly what her 478K demodex card (4.7d) is about, and 'cheap extensions abroad' adds glue allergy (cyanoacrylate contact dermatitis) and lash-line hygiene. Surprising trigger: the mites. Punches sideways (civilian). Watch in-app to confirm the visuals before drafting.",
     "your_fit": "Corpus GREEN and LIVE: 'Regular use of eyelash extensions is linked to overgrowth of common skin mites called demodex' (478K TT + 110K IG, 4.7d); eyelash-serum prostaglandin videos (137K, 156K TT); hair-cycle explainer covering lashes (25K TT). Prior angle = the fun-fact card; NEW angle = react to the haul with the lid-hygiene fix.",
     "angles": [
      "'yes, and': gorgeous — now here's what lives at the base of extensions after 3 weeks",
@@ -631,9 +595,9 @@
   {
    "author": "1monicathomas",
    "platform": "TT",
-   "claim": "Daily front-and-back heating pad 'now that I know better' — Gen X pain-relief plug (1.5M, 4.6d)",
+   "claim": "Daily front-and-back heating pad 'now that I know better' — Gen X pain-relief plug (1.5M, 5.6d)",
    "views": 1523097,
-   "age_days": 4.6,
+   "age_days": 5.6,
    "comments": 243,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@1monicathomas/video/7686608405582138638",
@@ -652,7 +616,7 @@
    },
    "pitch": {
     "the_claim": "'Now that I know better I do better' — a Gen X creator's front-and-back heating pad, worn daily (a product plug).",
-    "why_it_stitches": "1.52M in 4.6d (331K/day), surfaced by the 'heating pad' seed — the erythema ab igne lane: daily heating-pad use leaves the permanent net-like brown 'toasted skin' pattern, and long-term it carries a small skin-cancer risk. Dangerous trigger, big audience (Gen X, chronic pain), punches sideways (civilian). Watch in-app to confirm it's a wear-it-daily pitch.",
+    "why_it_stitches": "1.52M in 5.6d (272K/day), surfaced by the 'heating pad' seed — the erythema ab igne lane: daily heating-pad use leaves the permanent net-like brown 'toasted skin' pattern, and long-term it carries a small skin-cancer risk. Dangerous trigger, big audience (Gen X, chronic pain), punches sideways (civilian). Watch in-app to confirm it's a wear-it-daily pitch.",
     "your_fit": "Corpus GREEN: 'I do care if you're using a heating pad every single night' (26.5K TT, Jun 2025 — 'things I do and do not care about as a dermatologist'); 'We can look at your skin and tell if you like to use the heating pad or a hot water bottle' (19.9K TT, Jan 2024). Prior angle = one line in a list; NEW angle = the full 45s on what the pattern is and whether it fades.",
     "angles": [
      "empathy-first: 'I get it, the pain is real — here's what nightly heat does to skin' (45s)",
@@ -665,9 +629,9 @@
   {
    "author": "rhinophmadiary",
    "platform": "TT",
-   "claim": "Rhinophyma diary — 'raising awareness' of the bulbous-nose rosacea (960K, 4.9d)",
+   "claim": "Rhinophyma diary — 'raising awareness' of the bulbous-nose rosacea (960K, 5.9d)",
    "views": 959584,
-   "age_days": 4.9,
+   "age_days": 5.9,
    "comments": 372,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@rhinophmadiary/video/7686471107104214305",
@@ -686,7 +650,7 @@
    },
    "pitch": {
     "the_claim": "A patient documents living with rhinophyma — the thickened, bulbous nose — 'for awareness'; most viewers don't know it's a subtype of rosacea and that it's treatable.",
-    "why_it_stitches": "960K in 4.9d (196K/day — just under the guarantee pace now, kept on rubric), 370+ comments; miss recorded: 4.9d, no longer rising. A patient, so this is empathy-first 'yes, and' only — never a correction. Surprising trigger: viewers assume alcohol; it's phymatous rosacea, it's treatable, and it's not the patient's fault.",
+    "why_it_stitches": "960K in 5.9d (163K/day — under the guarantee pace, kept on rubric), 370+ comments; miss recorded: 5.9d, no longer rising. A patient, so this is empathy-first 'yes, and' only — never a correction. Surprising trigger: viewers assume alcohol; it's phymatous rosacea, it's treatable, and it's not the patient's fault.",
     "your_fit": "Corpus: rosacea is a doctor-AND-patient topic for her ('When it comes to rosacea, I'm both a doctor and a patient' — 65K TT, Apr 2023; 'I use azelaic acid every single day for my redness and rosacea'). No transcript mentions rhinophyma specifically — the phymatous-subtype facts need her take. Playbook: rosacea (demodex, PDL/IPL).",
     "angles": [
      "empathy-first: 'this is rosacea, not drinking — and it's treatable' (45s)",
@@ -699,9 +663,9 @@
   {
    "author": "true.maxxx",
    "platform": "TT",
-   "claim": "Looksmaxxing tretinoin explainer — 'speeds up skin-cell turnover' (438K, 2.6d)",
+   "claim": "Looksmaxxing tretinoin explainer — 'speeds up skin-cell turnover' (438K, 3.6d)",
    "views": 438185,
-   "age_days": 2.6,
+   "age_days": 3.6,
    "comments": 544,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@true.maxxx/video/7687340596867910944",
@@ -720,8 +684,8 @@
    },
    "pitch": {
     "the_claim": "A looksmaxxing account explains tretinoin: 'a topical retinoid derived from vitamin A that speeds up skin-cell turnover, prevents clogged pores, useful for acne and uneven texture.'",
-    "why_it_stitches": "438K in 2.6d (168K/day — below the 1M pace now), the tretinoin seed's freshest breakout, aimed at teens/young men sourcing tret without a prescriber (the account's other cuts: 129K, 87K, 62K 'links in Telegram'). Half-right: the textbook line is fine, but 'speeds up turnover' skips the purge, the pea-size rule, sunscreen and the no-derm sourcing problem. Miss recorded: sub-500K; no longer pacing to 1M.",
-    "your_fit": "Corpus GREEN: 'How to use tretinoin for beginners' (167K YT, Jun 2024 — barrier-rebuild nights, pea-size); 'retinol vs retinal' (2.3M TT, May 2024); her own 'I'll go first' card names tretinoin (2.5d). Prior angle = how to start; NEW angle = 'yes, and' the 16s explainer with the 3 things it left out.",
+    "why_it_stitches": "438K in 3.6d (122K/day — below the 1M pace), the tretinoin seed's freshest breakout, aimed at teens/young men sourcing tret without a prescriber (the account's other cuts: 129K, 87K, 62K 'links in Telegram'). Half-right: the textbook line is fine, but 'speeds up turnover' skips the purge, the pea-size rule, sunscreen and the no-derm sourcing problem. Miss recorded: sub-500K; no longer pacing to 1M.",
+    "your_fit": "Corpus GREEN: 'How to use tretinoin for beginners' (167K YT, Jun 2024 — barrier-rebuild nights, pea-size); 'retinol vs retinal' (2.3M TT, May 2024); her own 'I'll go first' card names tretinoin (~4.5d). Prior angle = how to start; NEW angle = 'yes, and' the 16s explainer with the 3 things it left out.",
     "angles": [
      "'yes, and': correct — now the 3 things every tret explainer skips (purge, pea, SPF)",
      "empathy-first: 'starting tret at 17 from a maxxing video? here's the safe version'",
@@ -733,9 +697,9 @@
   {
    "author": "bojacksalt",
    "platform": "TT",
-   "claim": "'DIY microneedling is the best thing you can do for scarring / PIE' (275K, 3.0d)",
+   "claim": "'DIY microneedling is the best thing you can do for scarring / PIE' (275K, 4.0d)",
    "views": 274517,
-   "age_days": 3.0,
+   "age_days": 4.0,
    "comments": 174,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@bojacksalt/video/7687198745582112032",
@@ -754,7 +718,7 @@
    },
    "pitch": {
     "the_claim": "'DIY microneedling is single-handedly the best thing you can do for your scarring / PIE' — a numbered at-home skin list leading with home needling for acne scars.",
-    "why_it_stitches": "275K in 3.0d (92K/day), surfaced by the 'dermatologist' seed; the claim is specific and half-dangerous — home needling at scar depths without sterile technique risks infection, PIH in darker skin and worsened PIE. Punches sideways (civilian). Miss recorded: sub-500K.",
+    "why_it_stitches": "275K in 4.0d (69K/day), surfaced by the 'dermatologist' seed; the claim is specific and half-dangerous — home needling at scar depths without sterile technique risks infection, PIH in darker skin and worsened PIE. Punches sideways (civilian). Miss recorded: sub-500K.",
     "your_fit": "Corpus GREEN: 'Dermatologist rates home microneedling devices' (207K TT, Jan 2026 — 'Penn electrical microneedling 8 out of 10'); 'I tested every popular at-home microneedling device' (15K YT, Mar 2026); 'how do you avoid hyperpigmentation with microneedling?' (25K YT, Oct 2024); 'my favorite at-home procedure that reverses aging is home microneedling'. She's PRO home microneedling — so this is a 'yes, and' with the depth/sterility rules, not a takedown.",
     "angles": [
      "'yes, and': I microneedle at home too — but 0.5 mm, weekly, and never on active acne",
@@ -763,66 +727,49 @@
     ],
     "length": "original eats ~6s; 30–45s total"
    }
-  }
- ],
- "more_stitches": [
-  {
-   "author": "marleymalin",
-   "platform": "TT",
-   "claim": "content unidentifiable from feed (no caption — 'Follow for more skincare tips') — watch in-app first (4.2M, 6.7d, 3.2K comments)",
-   "views": 4177402,
-   "age_days": 6.7,
-   "comments": 3230,
-   "comment_heat": false,
-   "url": "https://www.tiktok.com/@marleymalin/video/7685828464359787806",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 2,
-   "rubric": null,
-   "pitch": null,
-   "viral": true,
-   "unidentified": true
   },
   {
-   "author": "dr.xavierbatalla",
+   "author": "thegoyboys5",
    "platform": "TT",
-   "claim": "'The best face moisturizers aren't the most expensive' — Spanish-language derm picks (2.7M, 6.7d)",
-   "views": 2699109,
-   "age_days": 6.7,
-   "comments": 1236,
-   "comment_heat": false,
-   "url": "https://www.tiktok.com/@dr.xavierbatalla/video/7685809103561706774",
-   "seed_topic": "skincare",
+   "claim": "'Why is it burning?' — tretinoin starter films the sting (249K, 3.3d, 237 comments)",
+   "views": 249044,
+   "age_days": 3.3,
+   "comments": 237,
+   "comment_heat": true,
+   "url": "https://www.tiktok.com/@thegoyboys5/video/7687438360788438285",
+   "seed_topic": "tretinoin",
    "source": "feed",
    "verify": false,
-   "heat": 2,
+   "heat": 1,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
     "trigger": "half-right",
-    "rising": false,
-    "big_enough": true,
+    "rising": true,
+    "big_enough": false,
     "punches_ok": true,
     "score": 5
    },
    "pitch": {
-    "the_claim": "'The best facial moisturizers are not necessarily the most expensive' — a Spanish-language derm's drugstore-moisturizer picks.",
-    "why_it_stitches": "2.70M in 6.7d (402K/day) — guaranteed size, but Spanish-language (the feed's English filter missed it), so a stitch reaches a different audience; the claim mirrors her own budget position. Miss recorded: 6.7d, past peak. A fellow derm being right → 'yes, and' only.",
-    "your_fit": "Corpus: 'lots of things at the drugstore do as good a job as the expensive well-advertised products' (saving-money guide); '$180 serum?' (503K YT). Language mismatch stated — likely skip unless she wants the bilingual audience.",
+    "the_claim": "'Why is it burning?' — a tretinoin + benzoyl peroxide starter filming the sting, the implicit claim being that burning means it's working (or that you push through it).",
+    "why_it_stitches": "249K in 3.3d (75K/day), 237 comments (comment-heavy for its size — the replies are people trading 'is this normal?' stories), tretinoin seed's freshest civilian breakout; second tret-newbie wave in the feed alongside @rayo64906 'somebody said more is better' (159K, 3.0d). Half-right: mild sting/peel in weeks 1–4 is expected, but burning that persists means barrier damage, too much product, or the tret+BP combo — not efficacy. Punches sideways (civilian). Miss recorded: sub-500K.",
+    "your_fit": "Corpus GREEN: 'If you've tried to start retinol in the past but stopped because of dryness, irritation, peeling — this video is for you' (23.8K TT, Aug 2025 — apply over a hydrating serum, moisturizer sandwich); 'How to get retinol results without the burn' guide (YT, Sep 2025); 'How to use tretinoin for beginners' (167K YT, Jun 2024 — pea-size, barrier-rebuild nights). Prior angle = how to start gently; NEW angle = react to the sting on camera: what burning means and the 3 fixes.",
     "angles": [
-     "'yes, and': my three under-$20 moisturizers — the English version"
+     "empathy-first: 'burning is your barrier talking, not the tret working' — the 3 fixes, 45s",
+     "'you want me to WHAT?': tret AND benzoyl peroxide in week one — that's why it burns",
+     "switch-don't-quit: sandwich it, pea-size, every third night — don't stop"
     ],
-    "length": "original eats ~6s; 30s total"
-   },
-   "viral": true
-  },
+    "length": "original eats ~5s; 30–45s total"
+   }
+  }
+ ],
+ "more_stitches": [
   {
    "author": "kikoiyubeauty",
    "platform": "TT",
-   "claim": "Day-2 ginseng + turmeric DIY face mask series (1.3M, 4.6d)",
+   "claim": "Day-2 ginseng + turmeric DIY face mask series (1.3M, 5.6d)",
    "views": 1256900,
-   "age_days": 4.6,
+   "age_days": 5.6,
    "comments": 586,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@kikoiyubeauty/video/7686612224646876430",
@@ -841,7 +788,7 @@
    },
    "pitch": {
     "the_claim": "'Day 2 — ginseng and turmeric face mask' — a DIY-mask series stacked on Tatcha/CeraVe products.",
-    "why_it_stitches": "1.26M in 4.6d (273K/day) — guaranteed size; the turmeric-mask claim is half-right (anti-inflammatory in theory, stains and can irritate in practice) and the series format is the magnet profile. Miss recorded: routine content, thin claim; past peak.",
+    "why_it_stitches": "1.26M in 5.6d (224K/day) — guaranteed size; the turmeric-mask claim is half-right (anti-inflammatory in theory, stains and can irritate in practice) and the series format is the magnet profile. Miss recorded: routine content, thin claim; past peak.",
     "your_fit": "Corpus: 'Dermatologist reacts to viral flaxseed mask' (46K TT, Jan 2024) is her DIY-mask react template; no turmeric transcript — needs her take.",
     "angles": [
      "'you want me to WHAT?': turmeric on your face — the stain, the allergy, the one way it works",
@@ -854,9 +801,9 @@
   {
    "author": "glowjournalmamata",
    "platform": "TT",
-   "claim": "content unidentifiable from feed ('almost made a bad decision in the first 2 seconds — so we're doing skincare instead': GRWM, no claim stated; lane doubt) — watch in-app first (714K in 1.4d, 509K/day pace)",
+   "claim": "content unidentifiable from feed ('almost made a bad decision in the first 2 seconds — so we're doing skincare instead': GRWM, no claim stated; lane doubt) — watch in-app first (714K in 2.4d, 297K/day pace)",
    "views": 713709,
-   "age_days": 1.4,
+   "age_days": 2.4,
    "comments": 59,
    "comment_heat": false,
    "url": "https://www.tiktok.com/@glowjournalmamata/video/7687780681920941332",
@@ -873,12 +820,12 @@
  "news": [
   {
    "headline": "Neutrogena launches first US bemotrizinol sunscreens — SPF 60 & 70",
-   "summary": "First mass-market US sunscreen with the newly permitted UV filter (Ultra Sheer SPF 70 + Clear Face SPF 60) — patients will ask whether to switch; five days on, still no tracked creator has posted on it.",
+   "summary": "First mass-market US sunscreen with the newly permitted UV filter (Ultra Sheer SPF 70 + Clear Face SPF 60) — patients will ask whether to switch; six days on, still no tracked creator has posted on it — last day in the window.",
    "her_angle": "'The first new US sunscreen filter in 25 years is on shelves — here's who should switch' (60s)",
    "source": "Dermatology Times (Kenvue/Neutrogena release, Sep 17)",
    "url": "https://www.dermatologytimes.com/view/neutrogena-launches-new-sunscreens-with-newly-permitted-uv-filter-bemotrizinol",
    "published": "Sep 17, 2026",
-   "age_days": 5,
+   "age_days": 6,
    "verify": true
   }
  ]
