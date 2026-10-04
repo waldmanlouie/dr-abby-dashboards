@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "date": "2026-10-02",
- "generated_at": "2026-10-02T06:38:17-04:00",
+ "date": "2026-10-03",
+ "generated_at": "2026-10-03T06:36:27-04:00",
  "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
- "signals_generated_at": "2026-10-02T10:31:06Z",
- "stitch_generated_at": "2026-10-02T10:31:26Z",
+ "signals_generated_at": "2026-10-03T10:31:06Z",
+ "stitch_generated_at": "2026-10-03T10:31:26Z",
  "source_extract": "2026-10-02T09:15:03Z",
- "meta_notes": "DATA: fresh — built from the Oct 2 scrape (extract 2026-10-02T09:15Z). Today's 6:20 AM Excel refresh reached this run about three minutes late (Dropbox sync), so the builders were run twice; the second pass read the new files. Yesterday's briefing was built from the Sep 30 scrape, so every count here jumps two days (36 of the 40 stitch candidates are new). FEED GAPS: @ninaghoulina's two Dollar Tree cuts show 0 comments in the scrape (likely missing, not real), and one of her videos plus @kashdermatology's 40× breakout have no caption; feed captions are cut at 200 characters. In the stitch feed, one Italian-language video got past the English filter and the 'differin' seed returned an off-topic wildlife video (1.25M) — both left out as out-of-lane. CORPUS: the transcript index ends 2026-04-12 — her September posts are read from feed captions. Counts are videos whose transcript or caption contains the phrase (so they run higher than yesterday's transcript-only counts); 'azelaic' is mis-transcribed several ways and was counted across spellings. NEWS: 14 searches / 14 fetches (2 blocked). All three items carry a visible Oct 1, 2026 dateline — the EADV release ('Vienna, Austria, Thursday, 1 October 2026') plus HCPLive and Medical Economics for the GLP-1 study; PR Newswire 'PRINCETON, N.J., Oct. 1, 2026' for deuruxolitinib; HCPLive Oct 1 for the vitiligo data. One outlet's GLP-1 URL is filed under September (page blocked, date unverified), so that story may have broken the evening of Sep 30 — still inside 48h. Dropped: the three Sep 30 EADV items on yesterday's shelf (now 2d, outranked by Oct 1 items), Allies of Skin SPF recall (Aug 14 event), Intercon hand-soap recall (June 29 event), a 'Top 5 articles of the week: Sep 28–Oct 3' page that is from 2025, and the Dollar Tree FDA letter (2022; closed out May 18, 2026 — context for the stitch, not news). TIME: task started 6:21 AM ET; build_and_push.sh fires at 6:30 (briefing-build.md says 6:50), so the cron ran before this build finished and republished yesterday's briefing. No ladder cuts — built at full quality; publish by hand with `bash build_and_push.sh`.",
+ "meta_notes": "DATA: STALE — today's ~6:20 AM Excel/Dropbox refresh had not landed when this build finished (checked from 6:21 to 6:36 AM ET; Competitor Analysis.xlsx and Stitch Candidates.xlsx still carry the Oct 2 6:20 AM write), so both feeds were rebuilt from the Oct 2 09:15Z scrape — the same extract as yesterday's briefing, about 25 hours old at build. Third missed refresh in five days (Sep 29 and Oct 1 never landed either). Every view count, views/hr, tier, breakout and 'in N d' figure on signals videos and on your own wins is as of that scrape; nothing posted after ~5 AM Oct 2 is visible, so the themes, menu and wins are yesterday's waves re-read (receipts re-pulled from the feed, corpus quotes re-checked against the transcripts), not new breakouts. The stitch builder ages candidates against today's clock, so stitch ages are current while their views are a day old; in-group stitch ages were advanced the same way, and the virality guarantee was applied on the at-scrape pace, so everything that cleared yesterday still surfaces. STITCH CHANGES: 11 more rows aged out of the stitch feed's 7-day window overnight, including two of yesterday's More-stitches entries (@leeskincare7, @twizzysales); @rubin_allergy crossed the 4-day rising line (now 4/6) and moved from the shortlist to More stitches; @k_skincare_rx and @shereeneidriss lose the 'rising' point for the same reason; @ninaghoulina's Dollar Tree video goes from heat 3 to 2 (no longer under 2 days old), and her captionless second video (420K, 1,222 comments) is added as a watch-first stub. FEED GAPS: @ninaghoulina's two Dollar Tree cuts show 0 comments in the scrape (likely missing, not real); @kashdermatology's 40× breakout has no caption; feed captions are cut at 200 characters. In the stitch feed, one Italian-language video got past the English filter and the 'differin' seed returned an off-topic wildlife video (1.25M) — both left out as out-of-lane. CORPUS: the transcript index ends 2026-04-12 — her September posts are read from feed captions. Counts are videos whose transcript or caption contains the phrase ('azelaic' and 'hypochlorous' are mis-transcribed several ways and were counted across spellings). NEWS: 24 searches / 20 fetches (1 blocked). Icotyde is dated from Johnson & Johnson's own release ('Spring House, Pa. (October 2, 2026)', matching the PR Newswire dateline and Dermatology Times, Oct 2). The GLP-1 study is dated from HCPLive's visible Oct 1, 2026 date — 2 days old, kept for a second day because it is the highest-fit item and no tracked creator has touched it. Dropped: Pfizer's Litfulo vitiligo phase 3 data (presented Oct 2, but the result was first announced as topline on Jul 30), a compounded-glutathione injection recall (Oct 1 — the latest in a series running since July, and not a skin product), the deuruxolitinib and upadacitinib items from yesterday's shelf (now 2d, lower fit), denifanstat, the BCC injection and the K-beauty TikTok study (Sep 30, shelved earlier this week), the izokibep and zasocitinib readouts (low fit), and the Allies of Skin SPF recall (Aug 14 event). TIME: task started 6:21 AM ET; build_and_push.sh fires at 6:30 (briefing-build.md says 6:50), so the cron ran before this build finished and published yesterday's Oct 2 briefing, flagged stale. No ladder cuts — built at full quality; publish by hand with `bash build_and_push.sh`.",
  "menu_lines": [
   "Trader Joe's haircare, rated by a derm (17× · SV · 1% · ♥) [watch](https://www.tiktok.com/@dermatologysurgeon/video/7691349651886263582)",
   "Unclog pores & prevent blackheads (239× · 3% · ♥) [watch](https://www.tiktok.com/@dermdocmalik/video/7690210660902391053)",
@@ -18,7 +18,7 @@
   {
    "name": "Cheap-shelf ratings — Trader Joe's haircare breaks out (1% · ♥ gold) while Dollar Tree draws an FDA-letters backlash",
    "heat": 3,
-   "receipt": "20 viral-tier videos · 10 creators · 15.74M views · 45–50s aisle ratings winning — @dermatologysurgeon's Trader Joe's HAIRCARE stitch is the feed's top score: 777K TT in 1.9d (17× · SV · 1% · ♥ gold top 1%) + 2.07M IG · @dermguru's 'dirt cheap skincare that gets the job done' 1.09M IG in 2.0d (SV · 5% · ♥ gold) · the counter-wave: @ninaghoulina pointing at Dollar Tree's FDA warning letters, 1.9M TT + 724K IG in 1.4d (SV · 1% on IG) — first in today's stitch list",
+   "receipt": "Oct 2 scrape · 20 viral-tier videos · 10 creators · 15.74M views · 45–50s aisle ratings winning — @dermatologysurgeon's Trader Joe's HAIRCARE stitch is the feed's top score: 777K TT in 1.9d (17× · SV · 1% · ♥ gold top 1%) + 2.07M IG; the series opener, Trader Joe's skincare, is at 4.0M IG in 6.7d (SV) · @dermguru's 'dirt cheap skincare that gets the job done' 1.09M IG in 2.0d (SV · 5% · ♥ gold) · the counter-wave: @ninaghoulina pointing at Dollar Tree's FDA warning letters, 1.9M TT + 724K IG in 1.4d (SV · 1% on IG) — first in today's stitch list",
    "videos": [
     {
      "author": "dermatologysurgeon",
@@ -136,7 +136,7 @@
   {
    "name": "'Is it skin cancer?' quiz cards — week two, two 100×+ monsters still on the board",
    "heat": 3,
-   "receipt": "9 viral-tier cards · 2 tracked derms · 4.23M views · every one is 5s — @dr.derm.love 1.8M TT in 8.4d (288× · SV · 5%) and @dermdocmalik 671K in 8.7d (370× · 3%) are aging; the newer cards are smaller (224K in 3.7d, 36× · 139K in 2.4d, 22×) — the format still pays, the peak is behind it · civilian side: a 'Cancer or not cancer?' card from @sadovskaya_doctor (401K TT in 4.6d)",
+   "receipt": "Oct 2 scrape · 8 viral-tier cards · 2 tracked derms · 4.08M views · every one is 5s — @dr.derm.love 1.8M TT in 8.4d (288× · SV · 5%) and @dermdocmalik 671K in 8.7d (370× · 3%) are aging; the newer cards are smaller (224K in 3.7d, 36× · 139K in 2.4d, 22×) — the format still pays, the peak is behind it · civilian side: a 'Cancer or not cancer?' card from @sadovskaya_doctor (401K TT, 5.6d old today)",
    "videos": [
     {
      "author": "dr.derm.love",
@@ -213,7 +213,7 @@
    ],
    "her_coverage": {
     "status": "green",
-    "summary": "you posted 'that dermatologist was me — age spots that grow can be early melanoma' Sep 28 (51K IG) and the dermatoscope brown-spots card Sep 26 (96K IG); the BCC card (158K IG, Sep 25) and 'examples of melanoma' (180K IG, Sep 23) are viral-tier. Corpus: 25 videos naming basal cell carcinoma (123 on skin cancer), best 8.1M (Jan 2026) — none in the 5s guess-first quiz format",
+    "summary": "you posted 'that dermatologist was me — age spots that grow can be early melanoma' Sep 28 (51K IG) and the dermatoscope brown-spots card Sep 26 (96K IG); the BCC card (158K IG, Sep 25) and 'examples of melanoma' (180K IG, Sep 23) are viral-tier. Corpus: 23 videos naming basal cell carcinoma (123 on skin cancer), best 8.1M (Jan 2026) — none in the 5s guess-first quiz format",
     "links": [
      {
       "label": "her BCC 'non-healing pimple' video · 8.1M",
@@ -226,7 +226,7 @@
     ]
    },
    "corpus_position": "This little spot is not a pimple and it's not a mole either. This is a very subtle form of a skin cancer called basal cell carcinoma or BCC that is caused by sun exposure. … As dermatologists, we look for something called the ugly duckling sign.",
-   "winning_length": "5s cards (all 9 viral-tier cards are 5s) — one image, one question, one reveal",
+   "winning_length": "5s cards (all 8 viral-tier cards are 5s) — one image, one question, one reveal",
    "angles": [
     {
      "angle": "Run a 5s 'is it skin cancer?' card: BCC vs pimple",
@@ -250,9 +250,9 @@
    "stitch_refs": []
   },
   {
-   "name": "Tretinoin + azelaic acid — YOUR DOs & DON'Ts is viral-tier on day 2, and the wave has moved to dosing ('are you using too much?')",
+   "name": "Tretinoin + azelaic acid — YOUR DOs & DON'Ts went viral-tier inside two days, and the wave has moved to dosing ('are you using too much?')",
    "heat": 2,
-   "receipt": "your tretinoin DOs & DON'Ts: 74K IG in 1.6d (2.0K/hr) + 43K TT (1.2K/hr), early · network, week four: 25 viral-tier videos · 16 creators · 7.74M views · 56–82s explainers winning — @drdrayzday 'are you using too much tretinoin?' 529K IG in 2.0d (SV · 1%) · @drdavidkim azelaic + tretinoin 68K TT in 1.1d (15× · ♥ silver, early) · the argument of the week: @dermarkologist's 'azelaic acid has no anti-aging properties' — 237 comments on 68K TT · civilian side: 1.6M and 1.26M azelaic videos in today's stitch lists",
+   "receipt": "Oct 2 scrape · your tretinoin DOs & DON'Ts: 74K IG in 1.6d (2.0K/hr) + 43K TT (1.2K/hr), still early at the scrape · network, week four: 25 viral-tier videos · 16 creators · 7.74M views · 56–82s explainers winning — @drdrayzday 'are you using too much tretinoin?' 529K IG in 2.0d (SV · 1%) · @drdavidkim azelaic + tretinoin 68K TT in 1.1d (15× · ♥ silver, early) · the argument of the week: @dermarkologist's 'azelaic acid has no anti-aging properties' — 237 comments on 68K TT · civilian side: a 1.6M azelaic video in today's stitch list, on its last day inside the 7-day stitch window",
    "videos": [
     {
      "author": "abby.waldmanmd",
@@ -364,13 +364,13 @@
     }
    ],
    "stitch_refs": [
-    2
+    1
    ]
   },
   {
-   "name": "Unclog pores & prevent blackheads — @dermdocmalik's 239× breakout (3% · ♥ gold), day 5",
+   "name": "Unclog pores & prevent blackheads — @dermdocmalik's 239× breakout (3% · ♥ gold)",
    "heat": 3,
-   "receipt": "6 viral-tier videos · 5 creators · 1.72M views · 50s how-tos winning — @dermdocmalik 433K TT in 5.0d (239× · 3% · ♥ gold top 22%, 125 comments) + 249K IG (24×) · fresh: @drdrayzday 'hydrocortisone is not a secret treatment for blackheads' 60K IG in 1.0d · civilian side: an 'acne cheat sheet' that opens with 'Blackheads → Salicylic Acid' (960K) in today's stitch list",
+   "receipt": "Oct 2 scrape · 6 viral-tier videos · 5 creators · 1.72M views · 50s how-tos winning — @dermdocmalik 433K TT in 5.0d (239× · 3% · ♥ gold top 22%, 125 comments) + 249K IG (24×) · @drdrayzday 'hydrocortisone is not a secret treatment for blackheads' 60K IG in 1.0d · civilian side: an 'acne cheat sheet' that opens with 'Blackheads → Salicylic Acid' (960K) in today's stitch list",
    "videos": [
     {
      "author": "dermdocmalik",
@@ -464,7 +464,7 @@
     }
    ],
    "stitch_refs": [
-    3
+    2
    ]
   }
  ],
@@ -475,7 +475,7 @@
    "url": "https://www.tiktok.com/@draleksandrabrown/video/7691595263151983885",
    "heat": 1,
    "platform": "TT",
-   "note": "76s list, the freshest breakout in the feed; a sponsored razor ad (@drgeria, 121×) is riding the same topic — discounted. Your corpus: 'exfoliating regularly does result in fewer ingrown hairs' and 'women's razors are a scam' (98K, Dec 2025)",
+   "note": "76s list, the freshest breakout in the Oct 2 scrape; a sponsored razor ad (@drgeria, 121×) is riding the same topic — discounted. Your corpus: 'exfoliating regularly does result in fewer ingrown hairs' and 'women's razors are a scam' (98K, Dec 2025)",
    "growth": null,
    "eng_top": null
   },
@@ -485,7 +485,7 @@
    "url": "https://www.tiktok.com/@shereeneidriss/video/7690628470140947743",
    "heat": 2,
    "platform": "TT",
-   "note": "95s; third day on the briefing and still climbing — the stitch pitch is in More stitches. Your position: body odor 'is caused when bacteria grow in normal sweat', and glycolic acid for 'odor under the armpits' (492K, Nov 2023)",
+   "note": "95s; fourth day on the briefing — about 5 days old today and past the stitch rising window; the thin pitch stays in More stitches. Your position: body odor 'is caused when bacteria grow in normal sweat' (your caption, 123K, Nov 2024), and glycolic acid for 'odor under the armpits' (492K, Nov 2023)",
    "growth": null,
    "eng_top": null
   },
@@ -552,7 +552,7 @@
  ],
  "her_wins": [
   {
-   "summary": "(IG/TT) 'Dermatologist DOs and DON'Ts for tretinoin' — viral-tier on both inside two days: 74K IG in 1.6d at 2.0K/hr (58 comments) + 43K TT at 1.2K/hr (72 comments) — early, and right on the network's 'too much tretinoin' wave",
+   "summary": "(IG/TT) 'Dermatologist DOs and DON'Ts for tretinoin' — viral-tier on both inside two days: 74K IG in 1.6d at 2.0K/hr (58 comments) + 43K TT at 1.2K/hr (72 comments) — still early at the Oct 2 scrape, and right on the network's 'too much tretinoin' wave",
    "url": "https://www.instagram.com/p/Dd7bYBCPurs/",
    "open_lane": "part 2 in the same format: DOs & DON'Ts for azelaic acid — or the pea-sized-amount demo the network is arguing about (extend the series, don't pivot)",
    "platform": "IG",
@@ -568,9 +568,9 @@
    "ig_url": "https://www.instagram.com/p/Dd7bYBCPurs/"
   },
   {
-   "summary": "(IG) 'Minoxidil part 2 — twice a day for men, daily for women; microneedle at 0.5–0.75mm' — viral, 291K in 3.0d (3.0×, 78 comments) — up from 173K at the Sep 30 scrape",
+   "summary": "(IG) 'Minoxidil part 2 — twice a day for men, daily for women; microneedle at 0.5–0.75mm' — viral, 291K in 3.0d (3.0×, 78 comments)",
    "url": "https://www.instagram.com/p/Dd33CBgAdGB/",
-   "open_lane": "part 3, same numbered-card format: the hair loss minoxidil WON'T fix — today's news shelf has two pegs (GLP-1 users report more shedding; an alopecia areata pill held regrowth for two years)",
+   "open_lane": "part 3, same numbered-card format: the hair loss minoxidil WON'T fix — the news shelf has the peg (GLP-1 users report more shedding)",
    "platform": "IG",
    "age_days": 3.0,
    "views": 291034,
@@ -710,7 +710,7 @@
    "platform": "TT",
    "claim": "'These documents can be found on the FDA website' — Dollar Tree's warning letters",
    "views": 1900000,
-   "age_days": 1.4,
+   "age_days": 2.5,
    "comments": 0,
    "likes": 235300,
    "duration_s": 144,
@@ -719,8 +719,8 @@
    "source": "in-group",
    "verify": false,
    "sponsored": false,
-   "heat": 3,
-   "pace_per_day": 1357142,
+   "heat": 2,
+   "pace_per_day": 760000,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "tier": "superviral",
@@ -738,7 +738,7 @@
    },
    "pitch": {
     "the_claim": "A creator pointing viewers to FDA warning letters involving Dollar Tree (and Family Dollar, which it owned until 2025) — posted days after dermatologists' Dollar Tree skincare hauls went viral. The caption gives only the pointer; watch for exactly which letters and products she cites.",
-    "why_it_stitches": "1.9M TT in 1.4d (57.5K/hr, SV · 3% · ♥ gold) + 724K IG (SV · 1%) — the fastest claim video in the network, landing on top of @dermatologysurgeon's 1.15M 'rating Dollar Tree skincare' reel. Her longer, captionless TT from the same day has 1,222 comments on 420K; the feed shows no comment count for this cut. Rubric miss: the lane is borderline — the caption never says skincare — and you hold no position on it. Web context (verify): FDA's site lists warning letter #629509 to Dollar Tree Inc., issued Nov 8, 2022 and closed out May 18, 2026.",
+    "why_it_stitches": "1.9M TT at the Oct 2 scrape, when it was 1.4 days old (57.5K/hr, SV · 3% · ♥ gold) + 724K IG (SV · 1%) — the fastest claim video in the network, landing on top of @dermatologysurgeon's 1.15M 'rating Dollar Tree skincare' reel. No newer count (today's data refresh didn't arrive): it is about 2.5 days old now, still inside the rising window. Her longer, captionless TT from the same day has 1,222 comments on 420K (listed in More stitches as watch-first); the feed shows no comment count for this cut. Rubric miss: the lane is borderline — the caption never says skincare — and you hold no position on it. Web context (verify): FDA's site lists warning letter #629509 to Dollar Tree Inc., issued Nov 8, 2022, with a close-out letter dated May 18, 2026.",
     "your_fit": "No Dollar Tree or dollar-store video in the corpus (0 transcripts). The adjacent positions you do hold are on contamination: 'some spray sunscreens can be contaminated with benzene' (80K, Sep 2024) and the benzoyl-peroxide petition — 'the FDA has not responded' (21K, May 2024). What a warning letter means for a $1.25 moisturizer needs her take.",
     "angles": [
      "empathy-first: 'you bought it because a dermatologist rated it — here's what an FDA warning letter is, and isn't' (needs her take)",
@@ -747,54 +747,16 @@
     ],
     "length": "original eats ~8s of a 144s clip; 45–60s total"
    },
-   "stitch_theme": "cheap shelf"
-  },
-  {
-   "author": "@rubin_allergy",
-   "platform": "TT",
-   "claim": "'What is dyshidrotic eczema?' — an allergist explains the hand blisters",
-   "views": 1682241,
-   "age_days": 3.4,
-   "comments": 4923,
-   "likes": 99205,
-   "duration_s": 60,
-   "url": "https://www.tiktok.com/@rubin_allergy/video/7690754379590176013",
-   "seed_topic": "mystery rash",
-   "source": "feed",
-   "verify": false,
-   "sponsored": false,
-   "heat": 2,
-   "pace_per_day": 494776,
-   "pace_basis": "views at the Oct 2 scrape ÷ age today",
-   "comment_heat": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "none — he's right; a fellow physician, so 'yes, and' only",
-    "rising": true,
-    "big_enough": true,
-    "punches_ok": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "An allergist's 60-second explainer on dyshidrotic eczema — the small, itchy blisters on the hands and feet.",
-    "why_it_stitches": "1.68M in 3.4d (≈495K/day), 99K likes, 4,923 comments, 13.8K shares — the fastest medical explainer in the stitch feed and still inside the rising window. Rubric miss: nothing to correct — he's a fellow physician being right, so the only honest angle is 'yes, and'.",
-    "your_fit": "You've made this exact video: 'These little itchy bumps on the hands are not scabies. And it's not hand, foot and mouth disease either' (42K YT, Nov 2024 — https://www.youtube.com/watch?v=KtW9Ug5keFQ). Triggers on file: contact allergy to nickel and other metals, fragrance, soaps; chronic water exposure; sweating; stress. A repeat needs a new angle — his comment section is asking 'why me?', and your trigger list answers it.",
-    "angles": [
-     "'yes, and': the four triggers behind it — nickel, fragrance, wet work, sweat",
-     "'it's not scabies': how to tell dyshidrotic eczema from the look-alikes",
-     "the fix at home: urea cream, cotton gloves overnight, skin glue for the cracks — your 3 hand hacks"
-    ],
-    "length": "original eats ~8s of a 60s clip; 45–60s total"
-   },
-   "stitch_theme": "eczema"
+   "stitch_theme": "cheap shelf",
+   "ig_url": "https://www.instagram.com/p/Dd74-_FtYBy/",
+   "ig_views": 724459
   },
   {
    "author": "@ya.mirr",
    "platform": "TT",
    "claim": "Azelaic acid 'also helps with acne, inflammation, and dark spots'",
    "views": 1597932,
-   "age_days": 5.4,
+   "age_days": 6.4,
    "comments": 1885,
    "likes": 173062,
    "duration_s": 70,
@@ -804,7 +766,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 2,
-   "pace_per_day": 295913,
+   "pace_per_day": 249676,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -818,7 +780,7 @@
    },
    "pitch": {
     "the_claim": "A user crediting azelaic acid for her skin — 'it also helps with acne, inflammation, and dark spots' — and naming the 10% serum she started on.",
-    "why_it_stitches": "1.6M in 5.4d (≈296K/day), 173K likes, 1,885 comments, 11.6K shares — the biggest civilian video on the azelaic wave your own 'how to order azelaic acid' is riding. Rubric miss: past the 4-day rising window.",
+    "why_it_stitches": "1.6M in 6.4d (≈250K/day), 173K likes, 1,885 comments, 11.6K shares — the biggest civilian video on the azelaic wave your own 'how to order azelaic acid' is riding. Rubric miss: well past the 4-day rising window — it drops out of the 7-day stitch feed tomorrow, so today is the last useful day to stitch it.",
     "your_fit": "Deep corpus — 65 azelaic-acid videos. 'In 10 years, I have never skipped out on azelaic acid in my skincare routine' (1.5M, Apr 2025); 'the over-the-counter formulation of 10% … may take up to eight weeks to start seeing effect' (214K, Feb 2026 — https://www.tiktok.com/@drabby6/video/7607987643753762079). You've covered how to apply it; the new angle is her result — what 10% can do, and when to step up to the prescription 15%.",
     "angles": [
      "'yes, and': she's right — here's the eight-week timeline nobody posts",
@@ -834,7 +796,7 @@
    "platform": "TT",
    "claim": "'What should you use for your acne?' — an ingredient cheat sheet",
    "views": 959626,
-   "age_days": 3.4,
+   "age_days": 4.4,
    "comments": 276,
    "likes": 28533,
    "duration_s": 34,
@@ -844,21 +806,21 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 282242,
+   "pace_per_day": 218096,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
     "trigger": "half-right — one ingredient per acne type; confirm each pairing in-app",
-    "rising": true,
+    "rising": false,
     "big_enough": true,
     "punches_ok": true,
-    "score": 6
+    "score": 5
    },
    "pitch": {
     "the_claim": "An 'acne cheat sheet' matching each type of breakout to one ingredient. 'Blackheads → Salicylic Acid (BHA)' is the first row; the rest of the sheet is cut off in the feed caption.",
-    "why_it_stitches": "960K in 3.4d (≈282K/day — guaranteed pace), 29K likes, 2,818 shares: a save-and-share list, the same format as your 'how to treat common skin problems' card. Still inside the rising window.",
+    "why_it_stitches": "960K in 4.4d (≈218K/day — guaranteed pace), 29K likes, 2,818 shares: a save-and-share list, the same format as your 'how to treat common skin problems' card. Rubric miss: it crossed the 4-day rising line overnight, and its count is a day old.",
     "your_fit": "On file, near-verbatim: 'If you have comedonal acne, use salicylic acid and adapalene. If you have inflammatory acne, use benzoyl peroxide and adapalene' (26K YT, Feb 2026 — https://www.youtube.com/watch?v=RZ2BfoacPQw). Her sheet gives one ingredient per type; yours adds the retinoid to both rows.",
     "angles": [
      "'yes, and': the sheet is missing adapalene — add it to every row",
@@ -874,7 +836,7 @@
    "platform": "TT",
    "claim": "Ice your acne — 'do it until it melts or you drop it'",
    "views": 382774,
-   "age_days": 1.8,
+   "age_days": 2.8,
    "comments": 103,
    "likes": 9449,
    "duration_s": 14,
@@ -884,7 +846,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 212652,
+   "pace_per_day": 136705,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -898,7 +860,7 @@
    },
    "pitch": {
     "the_claim": "Face icing for acne: hold the ice on your skin 'until it melts or you drop it.'",
-    "why_it_stitches": "383K in 1.8d (≈213K/day — guaranteed pace), a 14s demo with 9.4K likes: a do-this-at-home instruction with a built-in dare. Rubric miss: no icing-for-acne position on file.",
+    "why_it_stitches": "383K at the Oct 2 scrape, when it was 1.8 days old (≈213K/day then — guaranteed pace); 2.8 days old today with no newer count. A 14s demo with 9.4K likes: a do-this-at-home instruction with a built-in dare. Rubric miss: no icing-for-acne position on file.",
     "your_fit": "Corpus is thin: ice shows up once, for under-eye puffiness — 'you can do it with a piece of ice, you can do it with an ice roller, you can do it with that cold spoon' (21K, Aug 2023). Whether icing helps a pimple, and how long is too long on bare skin, needs her take.",
     "angles": [
      "'you want me to WHAT?': ice until it melts — what cold does and doesn't do to a pimple (needs her take)",
@@ -913,7 +875,7 @@
    "platform": "TT",
    "claim": "A cortisone shot in a cystic pimple — 'how long till it's gone?'",
    "views": 231788,
-   "age_days": 0.5,
+   "age_days": 1.5,
    "comments": 34,
    "likes": 3010,
    "duration_s": 103,
@@ -923,7 +885,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 463576,
+   "pace_per_day": 154525,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -937,7 +899,7 @@
    },
    "pitch": {
     "the_claim": "A patient documenting a cortisone shot into a cystic pimple and asking viewers to guess how long until it's gone.",
-    "why_it_stitches": "232K in its first 12 hours (≈464K/day — guaranteed pace), 103s, tagged #dermatologist and #cortisolshots. Rubric miss: small in absolute views today — it's the youngest video on the list, so check its count again tonight.",
+    "why_it_stitches": "232K in its first 12 hours at the Oct 2 scrape (≈464K/day then — guaranteed pace); 1.5 days old today with no newer count. 103s, tagged #dermatologist and #cortisolshots — the youngest video on the list. Rubric miss: small in absolute views at the scrape, so check its count in-app before you stitch.",
     "your_fit": "You've answered this on camera: 'injecting an inflamed cyst or cystic acne with intralesional Kenalog, which is a steroid, is effective … Now is it safe? Debatable … you can actually get a divot. And that divot doesn't always show up right away' (36K TT, Jan 2024 — https://www.tiktok.com/@drabby6/video/7330398538154757418). A repeat needs a new angle: answer HER question — the timeline.",
     "angles": [
      "answer her question: how fast a cortisone shot flattens a cyst (needs her timeline)",
@@ -951,11 +913,51 @@
  ],
  "more_stitches": [
   {
+   "author": "@rubin_allergy",
+   "platform": "TT",
+   "claim": "'What is dyshidrotic eczema?' — an allergist explains the hand blisters",
+   "views": 1682241,
+   "age_days": 4.4,
+   "comments": 4923,
+   "likes": 99205,
+   "duration_s": 60,
+   "url": "https://www.tiktok.com/@rubin_allergy/video/7690754379590176013",
+   "seed_topic": "mystery rash",
+   "source": "feed",
+   "verify": false,
+   "sponsored": false,
+   "heat": 2,
+   "pace_per_day": 382327,
+   "pace_basis": "views at the Oct 2 scrape ÷ age today",
+   "comment_heat": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "none — he's right; a fellow physician, so 'yes, and' only",
+    "rising": false,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 4
+   },
+   "pitch": {
+    "the_claim": "An allergist's 60-second explainer on dyshidrotic eczema — the small, itchy blisters on the hands and feet.",
+    "why_it_stitches": "1.68M in 4.4d (≈382K/day), 99K likes, 4,923 comments, 13.8K shares — guaranteed size, and the biggest medical explainer in the stitch feed. On yesterday's shortlist; moved down because it crossed the 4-day rising line and there is nothing to correct — he's a fellow physician being right.",
+    "your_fit": "You've made this exact video: 'These little itchy bumps on the hands are not scabies. And it's not hand, foot and mouth disease either' (42K YT, Nov 2024 — https://www.youtube.com/watch?v=KtW9Ug5keFQ). Triggers on file: contact allergy to nickel and other metals, fragrance, soaps; chronic water exposure; sweating; stress.",
+    "angles": [
+     "'yes, and': the four triggers behind it — nickel, fragrance, wet work, sweat",
+     "'it's not scabies': how to tell dyshidrotic eczema from the look-alikes"
+    ],
+    "length": "original eats ~8s of a 60s clip; 45–60s total"
+   },
+   "stitch_theme": "eczema",
+   "viral": true
+  },
+  {
    "author": "@shereeneidriss",
    "platform": "TT",
    "claim": "'There's real science behind that \"old people smell\"' — a molecule that can start in your 40s",
    "views": 776100,
-   "age_days": 3.9,
+   "age_days": 5.0,
    "comments": 1164,
    "likes": 25100,
    "duration_s": 95,
@@ -965,7 +967,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 2,
-   "pace_per_day": 199000,
+   "pace_per_day": 155220,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": true,
    "tier": "viral",
@@ -976,15 +978,15 @@
     "specific_claim": true,
     "her_lane": true,
     "trigger": "surprising — a named molecule, and it starts in the 40s",
-    "rising": true,
+    "rising": false,
     "big_enough": true,
     "punches_ok": true,
-    "score": 6
+    "score": 5
    },
    "pitch": {
     "the_claim": "A fellow derm says researchers have identified a molecule behind 'old people smell' that can start showing up as early as our 40s.",
-    "why_it_stitches": "776K TT in 3.9d (36× · 3%, 1,164 comments) + 1.34M IG (SV · ♥ silver) — the IG cut is the guaranteed-size one. On yesterday's shortlist; moved down for fresher claims, and its rising window closes today. She's a fellow derm being right, so 'yes, and' only.",
-    "your_fit": "20 videos mention body odor; your position is 'body odor is caused when bacteria grow in normal sweat' (123K, Nov 2024) and glycolic acid for 'odor under the armpits' (492K, Nov 2023). Nothing on age-related odor itself.",
+    "why_it_stitches": "776K TT at the Oct 2 scrape (36× · 3%, 1,164 comments) + 1.34M IG (SV · ♥ silver) — the IG cut is the guaranteed-size one. Fourth day on the briefing; about 5.0 days old today, so the rising window has closed. She's a fellow derm being right, so 'yes, and' only.",
+    "your_fit": "20 videos mention body odor; your position is 'body odor is caused when bacteria grow in normal sweat' (your caption, 123K, Nov 2024) and glycolic acid for 'odor under the armpits' (492K, Nov 2023). Nothing on age-related odor itself.",
     "angles": [
      "'yes, and': the molecule is real — here's what actually lowers odor, from your own routine"
     ],
@@ -996,50 +998,11 @@
    "ig_views": 1342609
   },
   {
-   "author": "@leeskincare7",
-   "platform": "TT",
-   "claim": "'Retinoids + azelaic acid, with barrier care on other days'",
-   "views": 1255020,
-   "age_days": 7.0,
-   "comments": 150,
-   "likes": 104657,
-   "duration_s": 7,
-   "url": "https://www.tiktok.com/@leeskincare7/video/7689422883931671816",
-   "seed_topic": "azelaic acid",
-   "source": "feed",
-   "verify": false,
-   "sponsored": false,
-   "heat": 2,
-   "pace_per_day": 179288,
-   "pace_basis": "views at the Oct 2 scrape ÷ age today",
-   "comment_heat": false,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right — alternating nights is one way; you use both every day",
-    "rising": false,
-    "big_enough": true,
-    "punches_ok": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "A 7-second routine card: retinoid and azelaic acid on some nights, barrier care on the others.",
-    "why_it_stitches": "1.26M in 7.0d (≈179K/day), 105K likes — guaranteed size. Rubric miss: a week old, well past the rising window.",
-    "your_fit": "Your combo how-to (176K, Sep 2025): 'I use both a retinoid, tretinoin, as well as azelaic acid every single day' — azelaic 'right before your moisturizer and sunscreen' in the morning, the retinoid at night.",
-    "angles": [
-     "'yes, and': you don't have to alternate — azelaic in the morning, retinoid at night"
-    ],
-    "length": "original eats ~5s of a 7s clip; 30–45s total"
-   },
-   "stitch_theme": "tretinoin + azelaic",
-   "viral": true
-  },
-  {
    "author": "@theonlymimi__",
    "platform": "TT",
    "claim": "'A hydrating serum I can actually use generously' — a hyaluronic-acid serum for dry skin",
    "views": 979800,
-   "age_days": 2.8,
+   "age_days": 3.8,
    "comments": 111,
    "likes": 40821,
    "duration_s": 48,
@@ -1049,7 +1012,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 349928,
+   "pace_per_day": 257842,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -1063,7 +1026,7 @@
    },
    "pitch": {
     "the_claim": "A hyaluronic-acid serum you can apply 'generously' for dry skin — a brand-tagged post, closer to a product plug than a claim.",
-    "why_it_stitches": "980K in 2.8d (≈350K/day — guaranteed pace), 41K likes. On yesterday's shortlist; moved down because the caption carries no claim beyond 'generously' and the brand is tagged.",
+    "why_it_stitches": "980K in 3.8d (≈258K/day — guaranteed pace), 41K likes; count as of the Oct 2 scrape. Rubric miss: the caption carries no claim beyond 'generously', and the brand is tagged.",
     "your_fit": "On file (108K, Mar 2026, a La Roche-Posay partnership): 'for hyaluronic acid to work properly, you have to make sure your skin is damp … to actually lock in that hydration, you need to seal it in with a moisturizer.'",
     "angles": [
      "'yes, and': more serum isn't the trick — damp skin first, moisturizer on top"
@@ -1078,7 +1041,7 @@
    "platform": "TT",
    "claim": "'A lifehack you didn't know you needed' — hypochlorous acid spray",
    "views": 817055,
-   "age_days": 2.7,
+   "age_days": 3.7,
    "comments": 228,
    "likes": 106601,
    "duration_s": 8,
@@ -1088,7 +1051,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 302612,
+   "pace_per_day": 220825,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -1102,7 +1065,7 @@
    },
    "pitch": {
     "the_claim": "An 8-second 'lifehack' built around a hypochlorous acid spray — the caption doesn't say what the hack is.",
-    "why_it_stitches": "817K in 2.7d (≈303K/day — guaranteed pace), 107K likes, 4.2K shares. Rubric miss: no stated claim.",
+    "why_it_stitches": "817K in 3.7d (≈221K/day — guaranteed pace), 107K likes, 4.2K shares; count as of the Oct 2 scrape. Rubric miss: no stated claim.",
     "your_fit": "Your ingredient: 22 hypochlorous-acid videos, best 2.0M (Feb 2024). 'Hypochlorous acid is the same ingredient your immune cells make when they're trying to kill invading bacteria … spray this before and after you hit the gym' (139K, Nov 2024).",
     "angles": [
      "'yes, and': whatever the hack is — here's when the spray earns its place: gym, acne, rosacea"
@@ -1117,7 +1080,7 @@
    "platform": "TT",
    "claim": "A six-product routine list — serum, rice wash, 'face tan', cleansing balm",
    "views": 242014,
-   "age_days": 1.0,
+   "age_days": 2.0,
    "comments": 47,
    "likes": 22078,
    "duration_s": 11,
@@ -1127,7 +1090,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 1,
-   "pace_per_day": 242014,
+   "pace_per_day": 121007,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "rubric": {
@@ -1141,7 +1104,7 @@
    },
    "pitch": {
     "the_claim": "An 11-second routine clip whose caption is a tagged product list (a serum line, a rice wash, a face-tan product, a cleansing balm).",
-    "why_it_stitches": "242K in its first day (≈242K/day — surfaced on pace alone). Borderline lane call: brand tags inside lifestyle content, with nothing to correct.",
+    "why_it_stitches": "242K in its first day at the Oct 2 scrape (≈242K/day then — surfaced on that pace alone; ≈121K/day on today's age with no newer count). Borderline lane call: brand tags inside lifestyle content, with nothing to correct.",
     "your_fit": "Only the general position applies — 'wash your face twice a day with a gentle cleanser. Nothing complicated' (playbook). No take on these specific products.",
     "angles": [
      "'do you need all six?': which steps in a long routine do the work (needs her take)"
@@ -1156,7 +1119,7 @@
    "platform": "TT",
    "claim": "content unidentifiable from feed (no caption) — watch in-app first",
    "views": 2051309,
-   "age_days": 4.5,
+   "age_days": 5.5,
    "comments": 77,
    "likes": 25591,
    "duration_s": 14,
@@ -1166,7 +1129,7 @@
    "verify": false,
    "sponsored": false,
    "heat": 2,
-   "pace_per_day": 455846,
+   "pace_per_day": 372965,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
    "comment_heat": false,
    "viral": true,
@@ -1175,23 +1138,27 @@
    "pitch": null
   },
   {
-   "author": "@twizzysales",
+   "author": "@ninaghoulina",
    "platform": "TT",
-   "claim": "content unidentifiable from feed (the caption is only 'no more being insecureee', from a shop account) — watch in-app first",
-   "views": 1909298,
-   "age_days": 6.6,
-   "comments": 62,
-   "likes": 44763,
-   "duration_s": 10,
-   "url": "https://www.tiktok.com/@twizzysales/video/7689553494147075341",
-   "seed_topic": "dermatologist",
-   "source": "feed",
+   "claim": "content unidentifiable from feed (no caption; posted hours after her Dollar Tree video, 1,222 comments) — watch in-app first",
+   "views": 419800,
+   "age_days": 2.4,
+   "comments": 1222,
+   "likes": 36100,
+   "duration_s": 268,
+   "url": "https://www.tiktok.com/@ninaghoulina/video/7691559575186640159",
+   "seed_topic": "",
+   "source": "in-group",
    "verify": false,
    "sponsored": false,
-   "heat": 2,
-   "pace_per_day": 289287,
+   "heat": 1,
+   "pace_per_day": 174916,
    "pace_basis": "views at the Oct 2 scrape ÷ age today",
-   "comment_heat": false,
+   "comment_heat": true,
+   "tier": "superviral",
+   "breakout": null,
+   "growth": null,
+   "eng_top": null,
    "viral": true,
    "unidentified": true,
    "rubric": null,
@@ -1200,33 +1167,23 @@
  ],
  "news": [
   {
+   "headline": "Psoriasis pill leaves 60% of scalps completely clear at two years",
+   "summary": "Johnson & Johnson at the EADV Congress in Vienna (company release, Oct 2): in the ICONIC-TOTAL study of Icotyde (icotrokinra) — the once-daily pill the FDA approved in March for plaque psoriasis in adults and teens 12 and up — 60% of patients with scalp psoriasis had a completely clear scalp at week 112, 89% were clear of genital psoriasis and 63% of hand-and-foot psoriasis; clear or almost-clear skin overall rose from 57% at week 16 to 70%, with no new safety signals. Company-reported. It sits on your scalp lane — the at-home scalp psoriasis treatment (12.4M, Oct 2024) ends with 'if those home remedies or other treatments aren't working … there are other medications that can help scalp psoriasis.' No tracked creator's caption mentions it.",
+   "her_angle": "'Scalp psoriasis that keeps coming back? A dermatologist reads the two-year data on the once-daily pill'",
+   "source": "Johnson & Johnson (press release) — EADV Congress 2026",
+   "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-announces-new-icotyde-icotrokinra-data-in-difficult-to-treat-plaque-psoriasis-with-proven-durability-through-2-years-affirming-its-use-as-a-powerful-first-line-systemic-therapy",
+   "published": "Oct 2, 2026",
+   "age_days": 1,
+   "verify": true
+  },
+  {
    "headline": "GLP-1 users report 4× more nail detachment — and more hair loss",
-   "summary": "First controlled look, presented at the EADV Congress in Vienna: 575 GLP-1 users vs 1,329 never-users with type 2 diabetes or obesity (France, US, Brazil, Mexico). Nail detachment 39% vs 9%, nail discoloration 46% vs 17%; in the companion hair study, unusual hair loss 50% vs 34%, lost volume or density 42% vs 19%, and scalp redness about 3× as common. Cross-sectional and self-reported, and about half of users had nail problems before starting — an association, not proof. It lands on your two strongest lanes this week: the minoxidil cards and Tuesday's 'nail changes that are a red flag' card. No tracked creator's caption mentions it yet.",
+   "summary": "Second day on this shelf, and still no tracked creator on it. Presented at the EADV Congress in Vienna: 575 GLP-1 users vs 1,329 never-users with type 2 diabetes or obesity (France, US, Brazil, Mexico). Nail detachment 39% vs 9%, nail discoloration 46% vs 17%; unusual hair loss 50% vs 34%, lost volume or density 42% vs 19%, and scalp redness about 3× as common. Cross-sectional and self-reported, and about half of users had nail problems before starting — an association, not proof. It lands on your two strongest lanes this week: the minoxidil cards and Tuesday's 'nail changes that are a red flag' card.",
    "her_angle": "'On a GLP-1 and your nails are lifting or your hair is shedding? A dermatologist reads the new study'",
-   "source": "HCPLive (EADV Congress 2026) — EADV release datelined Vienna, Oct 1",
+   "source": "HCPLive (EADV Congress 2026)",
    "url": "https://www.hcplive.com/view/nail-detachment-4-times-more-common-with-glp-1-use",
    "published": "Oct 1, 2026",
-   "age_days": 1,
-   "verify": true
-  },
-  {
-   "headline": "Alopecia areata pill holds regrowth through two years",
-   "summary": "Sun Pharma at EADV (company release, Oct 1): in the open-label extension of deuruxolitinib (Leqselvi) for severe alopecia areata, of the patients who entered the extension as responders and still held that response at week 52, 96.8% held it at week 108, and there were no deaths, clots or major cardiac events at the FDA-approved 8 mg twice-daily dose. Company-reported and open-label — but it sits on your hair-loss series, a week after baricitinib was approved for teens (Sep 25).",
-   "her_angle": "'Minoxidil won't fix this kind of hair loss' — alopecia areata, the autoimmune one, and the pills that now treat it",
-   "source": "Sun Pharma (PR Newswire) — EADV Congress 2026",
-   "url": "https://www.prnewswire.com/news-releases/new-leqselvi-deuruxolitinib-two-year-data-in-severe-alopecia-areata-showed-sustained-efficacy-and-safety-at-eadv-congress-2026-302895311.html",
-   "published": "Oct 1, 2026",
-   "age_days": 1,
-   "verify": true
-  },
-  {
-   "headline": "Vitiligo pill plus light therapy: 59% reach face-repigmentation goal",
-   "summary": "EADV, reported Oct 1: in the two Viti-Up phase 3 trials of upadacitinib (Rinvoq) for non-segmental vitiligo — 614 patients aged 12 and up — the share reaching 75% facial repigmentation kept climbing to 55.1% and 47.4% by week 76. In an 84-patient substudy, adding twice-weekly narrowband UVB got 59.3% there vs 37.0% on the pill alone. Approved in the EU in July; FDA review is ongoing — a 'what's coming' item, not a prescription yet.",
-   "her_angle": "",
-   "source": "HCPLive (EADV Congress 2026)",
-   "url": "https://www.hcplive.com/view/nb-uvb-upadacitinib-higher-vitiligo-repigmentation-rates",
-   "published": "Oct 1, 2026",
-   "age_days": 1,
+   "age_days": 2,
    "verify": true
   }
  ]
