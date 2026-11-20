@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "date": "2026-11-19",
- "generated_at": "2026-11-19T06:25:40-05:00",
+ "date": "2026-11-20",
+ "generated_at": "2026-11-20T06:27:47-05:00",
  "generated_by": "briefing-build v3.0.0 (Dashboards/briefing-build.md)",
- "signals_generated_at": "2026-11-19T11:21:41Z",
- "stitch_generated_at": "2026-11-19T11:21:50Z",
+ "signals_generated_at": "2026-11-20T11:22:29Z",
+ "stitch_generated_at": "2026-11-20T11:22:38Z",
  "source_extract": "2026-11-18T10:15:29Z",
- "meta_notes": "DATA: NO FRESH EXTRACT TODAY — the ~6:20 Excel refresh had not landed by build time (Competitor Analysis.xlsx + Stitch Candidates.xlsx still stamped 11/18 11:20Z; re-checked 3× through ~6:25 AM ET). Builders re-ran cleanly on the 11/18 data (trending latest extract 2026-11-18T10:15:29Z, ~25h old, inside the 48h fallback window). All view counts, tiers, breakouts and theme ages are AS OF the 11/18 extract — nothing new to read in the trending feed, so themes, wins and menu are carried with refreshed copy. SWEEP: raw stitch rows posted ≤7.5d before build, deduped to each URL's latest extract → 119 rows ≥1M or ≥200K/day (33 aged out past 7.5d since yesterday; 1 newly qualifying — an age-floor artifact). Placement: all 6 shortlist items kept (ages now 3.8–6.4d — most past the 4-day rising window; rubric 'rising' rescored honestly), 59 in more_stitches (58 carried, 1 new; 6 watch-first stubs; soft cap extended per the guarantee), 54 excluded as out-of-lane / her own video (unchanged from yesterday's calls). CORPUS: 5 queries run today (biotin, collagen supplement, basal cell carcinoma, hair oil, under-eye hollow) — new grounding for the supplements menu line (your biotin 0/10 rating); other positions carried from 11/15–11/18 verified runs (index ends 2026-04-12, 1,481 videos). NEWS: 6 searches + 3 fetches; nothing new passed the ≤7d story test. Kept measles elimination loss (decision Nov 13 → 6d) and Curology Gen Z survey (Nov 12 → 7d, last day). Dropped: SCC-in-women BJD study (aged to 8d); The National 'Is TikTok to blame for your breakouts?' (Nov 18 feature, but built on a Sept 30 EADV study — stale story); Allies of Skin SPF recall (Aug 2026). TIME: task fired ~6:21 AM ET; full quality, no ladder cuts; finished before the 6:50 cron. If the 11/19 Excel refresh lands later, a manual re-run picks it up.",
+ "meta_notes": "DATA: TRENDING FEED STALE — Competitor Analysis.xlsx was re-saved 11/20 11:20Z but its latest Videos extract is still 2026-11-18T10:15:29Z (~49h at build — just past the 48h fallback window; second straight day with no new trending rows). Builders re-ran cleanly; themes, her_wins, more_topics and 4 of 5 menu lines are carried with numbers AS OF the 11/18 extract. The Stitch Candidates feed IS fresh (rows extracted 11/19 and 11/20) — today's new picks come from there. SWEEP: raw stitch rows posted ≤7.5d before build, deduped to each URL's latest extract → 131 rows ≥1M or ≥200K/day (36 aged/dropped out since yesterday; 48 newly qualifying). Shortlist: 2 NEW (@spicymoustache blackhead DIY mask 8.82M/2.8d, @hadley.huber spray-tan plea 1.02M/3.4d) + 4 kept (@lanayasiz, @imjuhm, @dearlynnie, @iamcardib — all past the 4-day rising window, scored honestly); @leeskincare7 demoted to more_stitches; @drsmritishrestha fell below the guarantee threshold and out of the sweep. 59 in more_stitches (37 carried, 22 new; 4 watch-first stubs; soft cap extended per the guarantee), 66 excluded as out-of-lane / her own video (24 new out-of-lane calls today, mostly #wedding/#bridesmaids seed noise). Durations in the 11/19–11/20 stitch rows look like milliseconds (e.g. 65667) — not used in copy. CORPUS: 6 queries today (blackheads, pore strips, spray tan, tanning, glycolic acid, esthetician — the last returned 0 hits, so @imjuhm 'failed by dermatologists' stays needs-her-take); other positions carried from 11/15–11/19 verified runs (index ends 2026-04-12, 1,481 videos). NEWS: 4 searches + 3 page checks. Added Mount Sinai melanoma proteomics (Nov 18 dateline + Mount Sinai release → 2d). Kept measles elimination loss (decision Nov 13 → 7d, last day). Dropped: Curology Gen Z survey (aged to 8d); Mirror/AOL 'skin cancer jab' (page shows only an 'Updated Nov 18' stamp; underlying trial-results date unverifiable); Dermatology Times TanPrevent piece (commentary hooked to a March 2026 FDA action). TIME: task fired ~6:21 AM ET; full quality, no ladder cuts; JSON written 6:27 AM ET — the build_and_push.sh cron runs at 6:30 (the build doc says 6:50).",
  "themes": [
   {
    "name": "Derm-life humor is still the feed's #1 follower magnet — 'sometimes it's just a lose-lose' (398.2× baseline, 2.81M in 8.5d, 3%, ♥ gold), 'I'm doing great' (190.7×, ♥ gold), plus ♥ gold 3% breakouts from @drmadalyn 'friends with different aesthetics' + @kashdermatology 'where are my people'",
@@ -314,10 +314,80 @@
  ],
  "stitch_shortlist": [
   {
+   "author": "@spicymoustache",
+   "platform": "TT",
+   "views": 8818527,
+   "age_days": 2.8,
+   "age_at_extract": 2.8,
+   "comments": 1118,
+   "url": "https://www.tiktok.com/@spicymoustache/video/7709171199607196950",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 3,
+   "claim": "'Blackheads skincare nightmare' — a #naturalskincare DIY face-mask blackhead removal (watch first: caption only)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "dangerous",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "A homemade 'natural' face mask is the way to pull out blackheads.",
+    "why_it_stitches": "8.82M in 2.8d (3156K/day at the 2026-11-20 extract), 1118 comments — the biggest in-lane wave on today's stitch feed and still accelerating (3.16M/day). A DIY/'natural' blackhead-mask demo is a classic trigger: peel-off and homemade masks irritate, strip, and mostly grab vellus hair and sebaceous filaments, not true comedones. Punches sideways — a civilian creator. Caption is hashtags only, so confirm the exact mask in-app before scripting. NEW today. Now 2.8d old — rising: yes.",
+    "your_fit": "Covered — your blackheads/pore-strip card: \"The best way to prevent them is using a salicylic acid cleanser, use a wash every day. But you can remove them like this as a pore strip, it pulls them out.\" (YT 372K, https://www.youtube.com/watch?v=MwZX2DGw9Xg · TT 178K, https://www.tiktok.com/@drabby6/video/7460288861298576671) + sebaceous filaments vs blackheads (TT 255K, https://www.tiktok.com/@drabby6/video/7409461139559501099). Repeat territory → NEW angle: react to the DIY mask itself, then the filaments-vs-blackheads distinction.",
+    "angles": [
+     "you want me to put WHAT on my nose? — the DIY-mask react",
+     "most of those 'blackheads' are sebaceous filaments — here's the difference",
+     "the boring fix that works: daily salicylic acid wash"
+    ],
+    "length": "original eats ~8–10s (the 'nightmare' reveal); 35–45s total — your blackhead cards run ~30s"
+   }
+  },
+  {
+   "author": "@hadley.huber",
+   "platform": "TT",
+   "views": 1023592,
+   "age_days": 3.4,
+   "age_at_extract": 3.4,
+   "comments": 230,
+   "url": "https://www.tiktok.com/@hadley.huber/video/7708954750246505759",
+   "seed_topic": "dermatologist",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "'Don't sit in the sun without SPF just for a tan — spray tans literally exist'",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "Skip the sun-tan — a spray tan gets you the color without the damage.",
+    "why_it_stitches": "1.02M in 3.4d (303K/day at the 2026-11-20 extract), 230 comments — a civilian making a mostly-RIGHT skin-cancer point to a 1M+ audience: perfect 'yes, and —' territory. The half-right gap: a spray (DHA) tan is cosmetic only — it gives essentially zero UV protection, so you still need sunscreen on top. Punches sideways/up — amplifying, not dunking. NEW today. Now 3.4d old — rising: yes.",
+    "your_fit": "Strongly covered — your 10.2M UV-index card: \"Using the UV index for peak tanning time is called intermittent tanning. But tanning means UVA damage.\" (https://www.tiktok.com/@drabby6/video/7517816391630703903); \"If you're wearing sunscreen and you're still tanning, this is why\" (TT 2.8M, https://www.tiktok.com/@drabby6/video/7492530557419539743); winter 'never get a base tan' — \"Use some fake tanning before you go on your vacation and sun protection\" (TT 1.3M, https://www.tiktok.com/@drabby6/video/7455079464796523807). NEW angle needed: the spray-tan-isn't-SPF twist.",
+    "angles": [
+     "yes — and your spray tan has zero SPF",
+     "a tan is your skin's DNA-damage alarm, not a glow",
+     "self-tanner + sunscreen: the derm-approved combo"
+    ],
+    "length": "original eats ~5–7s (her plea); 30–40s total — your 10.2M tanning card is ~35s"
+   }
+  },
+  {
    "author": "@lanayasiz",
    "platform": "TT",
    "views": 1566726,
-   "age_days": 4.5,
+   "age_days": 5.5,
    "age_at_extract": 1.5,
    "comments": 194,
    "url": "https://www.tiktok.com/@lanayasiz/video/7708176222458613014",
@@ -338,7 +408,7 @@
    },
    "pitch": {
     "the_claim": "Natural oils beat salon 'chemical' gloss treatments for shiny hair.",
-    "why_it_stitches": "1.57M in 4.5d (1060K/day at the 2026-11-16 extract), 194 comments — a hair-lane wave (your highest-ceiling area) with a natural-vs-chemical framing that's half-right: oils add surface shine, but a gloss isn't a damaging 'chemical' process. Pairs with the trending 3% breakout on overnight hair oiling (@aamnaadel). Punches sideways — a civilian. [Numbers from this video's latest stitch extract, 2026-11-16.] Now 4.5d old — rising: no.",
+    "why_it_stitches": "1.57M in 5.5d (1060K/day at the 2026-11-16 extract), 194 comments — a hair-lane wave (your highest-ceiling area) with a natural-vs-chemical framing that's half-right: oils add surface shine, but a gloss isn't a damaging 'chemical' process. Pairs with the trending 3% breakout on overnight hair oiling (@aamnaadel). Punches sideways — a civilian. [Numbers from this video's latest stitch extract, 2026-11-16.] Now 5.5d old — rising: no.",
     "your_fit": "No hair-oil or hair-gloss position in your corpus (searched 'hair oil' today: only hair-loss/minoxidil hits) — needs your take. Adjacent grounded: minoxidil guide (YT Mar 2026), stress hair-loss guide (YT 2024).",
     "angles": [
      "oils make hair shiny — they don't grow it (needs her take)",
@@ -351,10 +421,10 @@
   {
    "author": "@imjuhm",
    "platform": "TT",
-   "views": 841029,
-   "age_days": 4.6,
-   "age_at_extract": 2.6,
-   "comments": 676,
+   "views": 956608,
+   "age_days": 5.6,
+   "age_at_extract": 4.6,
+   "comments": 731,
    "url": "https://www.tiktok.com/@imjuhm/video/7708148478068739358",
    "seed_topic": "dermatologist",
    "source": "feed",
@@ -373,7 +443,7 @@
    },
    "pitch": {
     "the_claim": "Dermatologists failed me — an esthetician will fix my skin.",
-    "why_it_stitches": "841K in 4.6d (330K/day at the 2026-11-17 extract), 676 comments — on the shortlist since 11/15 (335K → 674K by the 11/16 extract); she's posted the follow-up 'the skincare routine my esthetician curated for me' (265K in 0.7d), so the story is live — you can react to the routine, not just the jab. Punches UP at derms from a frustrated patient — empathy, never defensiveness. [Numbers from this video's latest stitch extract, 2026-11-17.] Now 4.6d old — rising: no.",
+    "why_it_stitches": "957K in 5.6d (210K/day at the 2026-11-19 extract), 731 comments — on the shortlist since 11/15 (335K → 674K by the 11/16 extract); she's posted the follow-up 'the skincare routine my esthetician curated for me' (265K in 0.7d), so the story is live — you can react to the routine, not just the jab. Punches UP at derms from a frustrated patient — empathy, never defensiveness. [Numbers from this video's latest stitch extract, 2026-11-19.] Now 5.6d old — rising: no.",
     "your_fit": "No esthetician position in your corpus (searched 'esthetician': 0 hits) — needs your take. Grounded adjacent: your cystic-acne stitch 227K (TT 2025) — 'if you have a cystic lesion like this… this is where you want to see a dermatologist'.",
     "angles": [
      "empathy-first: 'I'm sorry you felt failed — here's what to ask'",
@@ -384,80 +454,10 @@
    }
   },
   {
-   "author": "@leeskincare7",
-   "platform": "TT",
-   "views": 353410,
-   "age_days": 3.8,
-   "age_at_extract": 0.8,
-   "comments": 89,
-   "url": "https://www.tiktok.com/@leeskincare7/video/7708427768173694226",
-   "seed_topic": "eye cream",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'Hollow undereyes — this is not dark circles, it's collagen and fat loss. Use PDRN with caffeine to plump' — Biodance eye-cream plug",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": true,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "Hollow under-eyes are collagen and fat loss — a PDRN + caffeine eye cream will plump them.",
-    "why_it_stitches": "353K in 3.8d (442K/day at the 2026-11-16 extract), 89 comments — with a diagnosis half-right (volume loss is real) and a fix that over-promises (no topical replaces lost fat). Same eye-cream wave as the Cardi B shortlist item + @rachael_kirkconnell 2.26M + @mar.hacks/@tatiencorea in more_stitches. Product plug — doubt stated. Miss recorded: <500K views. [Numbers from this video's latest stitch extract, 2026-11-16.] Now 3.8d old — rising: yes.",
-    "your_fit": "Corpus-grounded: your under-eye guide — fat pads 'kind of like putting the bubble wrap in a box when you send a glass bowl across the country' (YT 2023) and Part 2 (TT 2023): the thin eyelid skin thins further with age. New angle vs your 2023 guides: the topical-vs-filler line.",
-    "angles": [
-     "'yes, and —': volume loss is real; creams can't refill fat",
-     "the bubble-wrap fat pads: why hollows happen",
-     "what actually helps hollows (needs her take)"
-    ],
-    "length": "original eats ~5s; 30–45s total"
-   }
-  },
-  {
-   "author": "@drsmritishrestha",
-   "platform": "TT",
-   "views": 565257,
-   "age_days": 4.0,
-   "age_at_extract": 1.9,
-   "comments": 88,
-   "url": "https://www.tiktok.com/@drsmritishrestha/video/7708372270955236628",
-   "seed_topic": "skin cancer",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'3 treatments that may increase cancer chances for your skin/hair' — Nepal dermatology clinic clip",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "surprising",
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 4
-   },
-   "pitch": {
-    "the_claim": "Some common skin/hair treatments can raise your cancer risk.",
-    "why_it_stitches": "565K in 4.0d (290K/day at the 2026-11-17 extract), 88 comments — a skin-cancer-adjacent fear claim pacing ~378K/day; the three treatments aren't named in the caption — watch first. Fellow derm, likely correct → 'yes, and —' only, never a debunk. Miss recorded: <500K views. [Numbers from this video's latest stitch extract, 2026-11-17.] Now 4.0d old — rising: no.",
-    "your_fit": "Skin cancer is your Mohs lane — BCC ultimate guide (YT 2024, 493K). No position in the corpus on which treatments raise risk — needs your take once you've seen the three (tanning beds / UV phototherapy / immunosuppressants are the usual list — verify before saying it).",
-    "angles": [
-     "'yes, and —': the treatment risk your Mohs patients ask about",
-     "the #1 cancer-raising 'treatment' is a tanning bed (needs her take)",
-     "risk vs benefit: when the treatment is still worth it"
-    ],
-    "length": "original eats ~8–10s; 35–45s total"
-   }
-  },
-  {
    "author": "@dearlynnie",
    "platform": "TT",
    "views": 4551691,
-   "age_days": 6.4,
+   "age_days": 7.4,
    "age_at_extract": 5.3,
    "comments": 670,
    "url": "https://www.tiktok.com/@dearlynnie/video/7707482067965152543",
@@ -478,7 +478,7 @@
    },
    "pitch": {
     "the_claim": "Falling asleep on a heating pad is how it marks your skin — the real culprit is DAILY heat: the lacy brown net called toasted skin syndrome (erythema ab igne).",
-    "why_it_stitches": "4.55M in 6.4d (851K/day at the 2026-11-18 extract), 670 comments — a civilian warning with a visible skin result (watch to confirm the mark) and a half-right rule; winter heating-pad season. [Numbers from this video's latest stitch extract, 2026-11-18.] Now 6.4d old — rising: no.",
+    "why_it_stitches": "4.55M in 7.4d (851K/day at the 2026-11-18 extract), 670 comments — a civilian warning with a visible skin result (watch to confirm the mark) and a half-right rule; winter heating-pad season. [Numbers from this video's latest stitch extract, 2026-11-18.] Now 7.4d old — rising: no.",
     "your_fit": "Grounded: \"I do care if you're using a heating pad every single night\" (your 'things I do and don't care about' Part 2, TT 2025, https://www.tiktok.com/@drabby6/video/7511053936191606046) and \"We can look at your skin and tell if you like to use the heating pad or a hot water bottle\" (TT 2024, https://www.tiktok.com/@drabby6/video/7322494398204382510). No 'erythema ab igne' explainer in the corpus — new angle.",
     "angles": [
      "empathy-first: it's not a burn — it's toasted skin syndrome",
@@ -492,7 +492,7 @@
    "author": "@iamcardib",
    "platform": "TT",
    "views": 2945991,
-   "age_days": 5.7,
+   "age_days": 6.7,
    "age_at_extract": 2.7,
    "comments": 1448,
    "url": "https://www.tiktok.com/@iamcardib/video/7707718021527260430",
@@ -513,7 +513,7 @@
    },
    "pitch": {
     "the_claim": "A vibrating eye cream works better than every other eye cream — it 'hits different'.",
-    "why_it_stitches": "2.95M in 5.7d (1086K/day at the 2026-11-16 extract), 1448 comments — a celebrity product claim at 2.95M views, with a checkable mechanism (does vibration do anything?). Punches UP — a celebrity paid placement, not a civilian. Sponsored, so this is the 'what you're actually paying for' react, never a dunk on her. [Numbers from this video's latest stitch extract, 2026-11-16.] Now 5.7d old — rising: no.",
+    "why_it_stitches": "2.95M in 6.7d (1086K/day at the 2026-11-16 extract), 1448 comments — a celebrity product claim at 2.95M views, with a checkable mechanism (does vibration do anything?). Punches UP — a celebrity paid placement, not a civilian. Sponsored, so this is the 'what you're actually paying for' react, never a dunk on her. [Numbers from this video's latest stitch extract, 2026-11-16.] Now 6.7d old — rising: no.",
     "your_fit": "Corpus-grounded: your under-eye circles/puffiness guides (TT Part 1 + Part 2 2023, YT 2023) — \"there are many different causes of under-eye circles and under-eye puffiness\" · \"The thin skin of the eyelids becomes even thinner as we age, and so you get more prominent blood vessels\" · \"if you already have a skincare routine, those products are going to help under the eye, the same way they help elsewhere in the face.\" The vibration claim itself needs your take.",
     "angles": [
      "'you want me to WHAT?' — what vibration can and can't do",
@@ -528,61 +528,257 @@
   {
    "author": "@mimini494",
    "platform": "TT",
-   "views": 29621252,
-   "age_days": 4.0,
-   "age_at_extract": 3.0,
-   "comments": 30063,
+   "views": 34940798,
+   "age_days": 5.0,
+   "age_at_extract": 5.0,
+   "comments": 36516,
    "url": "https://www.tiktok.com/@mimini494/video/7708352326179753237",
    "seed_topic": "skincare",
    "source": "feed",
    "verify": false,
    "heat": 3,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · 29.62M in 4.0d, 30063 comments",
+   "claim": "content unidentifiable from feed (no caption) — watch in-app first · 34.94M in 5.0d, 36516 comments",
    "viral": true,
    "unidentified": true,
    "rubric": null,
    "pitch": null
   },
   {
-   "author": "@caras.hair.affair",
+   "author": "@kimberly.loaiza",
    "platform": "TT",
-   "views": 7389033,
-   "age_days": 7.1,
-   "age_at_extract": 2.1,
-   "comments": 3331,
-   "url": "https://www.tiktok.com/@caras.hair.affair/video/7707207523043921174",
-   "seed_topic": "hair",
+   "views": 7464969,
+   "age_days": 1.7,
+   "age_at_extract": 1.7,
+   "comments": 2822,
+   "url": "https://www.tiktok.com/@kimberly.loaiza/video/7709581060316597511",
+   "seed_topic": "skincare",
    "source": "feed",
    "verify": false,
    "heat": 3,
-   "claim": "'Should I go get married? 😂' — a woman with alopecia / female hair loss, #thinhair #womenhealth",
+   "claim": "Spanish: Medicube Capsule Creams Black Friday promo (sponsored)",
    "viral": true,
-   "comment_heat": true,
    "rubric": {
     "specific_claim": false,
     "her_lane": true,
-    "trigger": "surprising",
+    "trigger": null,
+    "rising": true,
     "big_enough": true,
+    "punches_ok": true,
+    "score": 4
+   },
+   "pitch": {
+    "the_claim": "These Medicube capsule creams are the Black Friday buy.",
+    "why_it_stitches": "7.46M in 1.7d (4419K/day at the 2026-11-20 extract), 2822 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Spanish-language; 7.46M at 1.7d. Now 1.7d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "derm Black Friday list: what's worth it vs hype"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@jimoon",
+   "platform": "TT",
+   "views": 5998256,
+   "age_days": 5.5,
+   "age_at_extract": 4.5,
+   "comments": 368,
+   "url": "https://www.tiktok.com/@jimoon/video/7707846793295367430",
+   "seed_topic": "retinol",
+   "source": "feed",
+   "verify": false,
+   "heat": 3,
+   "claim": "Spanish: 'stretch marks don't erase with magic recipes' — retinol/ingredients",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "big_enough": false,
     "punches_ok": true,
     "rising": false,
     "score": 4
    },
    "pitch": {
-    "the_claim": "Living with female hair loss — and laughing about it (the 'should I get married?' reveal).",
-    "why_it_stitches": "7.39M in 7.1d (3537K/day at the 2026-11-14 extract), 3331 comments — the biggest in-lane video in today's stitch feed and squarely in your highest-ceiling lane (scalp/hair). 3,331 comments = a community conversation, not a drive-by. Miss recorded: no explicit medical claim in the caption — the hook is a reveal/joke, so the stitch is empathy + education, not a debunk. Punches sideways — a civilian sharing her own hair loss; never mock. Watch first: alopecia type (patchy vs pattern) is unseen. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.1d old — rising: no.",
-    "your_fit": "Corpus-grounded on the education half: minoxidil guide (YT Mar 2026) — \"If you're using minoxidil for male or female pattern hair loss and you're just not seeing the results that you want, it's probably not because it doesn't work\"; your own telogen-effluvium story (YT 2024 + TT 2023, 'physical and psychological stress can cause a type of hair loss'). Needs your take on the tone of the reveal.",
+    "the_claim": "Stretch marks can be improved with retinol-type ingredients.",
+    "why_it_stitches": "6.00M in 5.5d (1343K/day at the 2026-11-19 extract), 368 comments — Spanish — language barrier stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.5d old — rising: no.",
+    "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "empathy-first: you're not alone — here's what's happening",
-     "which hair loss is this? patchy vs pattern vs shedding"
+     "stretch marks: what retinoids can and can't do"
     ],
-    "length": "original eats ~5–7s; 30–45s total (empathy beat + one fact)"
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@farahwen",
+   "platform": "TT",
+   "views": 5594340,
+   "age_days": 5.1,
+   "age_at_extract": 4.1,
+   "comments": 2156,
+   "url": "https://www.tiktok.com/@farahwen/video/7708321214766271762",
+   "seed_topic": "sunscreen",
+   "source": "feed",
+   "verify": false,
+   "heat": 3,
+   "claim": "'My realistic postpartum routine as a mom of 3' — retinal booster + tinted SPF (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": false,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5
+   },
+   "pitch": {
+    "the_claim": "A retinal booster belongs in a postpartum routine.",
+    "why_it_stitches": "5.59M in 5.1d (1375K/day at the 2026-11-19 extract), 2156 comments — Sponsored routine, but it carries a real safety question: retinoids while breastfeeding. Half-right trigger. Now 5.1d old — rising: no.",
+    "your_fit": "Adjacent: your retinoid-start guide; no postpartum/breastfeeding retinoid position in the corpus — needs your take.",
+    "angles": [
+     "retinoids postpartum — what's okay while breastfeeding? (needs her take)"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@jairsanchezzz",
+   "platform": "TT",
+   "views": 1686120,
+   "age_days": 1.5,
+   "age_at_extract": 1.5,
+   "comments": 1785,
+   "url": "https://www.tiktok.com/@jairsanchezzz/video/7709662931805326600",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 3,
+   "claim": "Spanish: pre-wedding skin prep with Kiehl's collagen (sponsored #publicidad)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 4
+   },
+   "pitch": {
+    "the_claim": "Prep your skin before a wedding with this cream.",
+    "why_it_stitches": "1.69M in 1.5d (1148K/day at the 2026-11-20 extract), 1785 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Spanish; wedding-seed crossover. Now 1.5d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "derm pre-wedding skin timeline (needs her take)"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@samaraispinkk",
+   "platform": "TT",
+   "views": 1039671,
+   "age_days": 0.8,
+   "age_at_extract": 0.8,
+   "comments": 151,
+   "url": "https://www.tiktok.com/@samaraispinkk/video/7709917545478016269",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 3,
+   "claim": "APRILSKIN retinal + volufiline for acne scars promo",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "A retinal cream can fix acne scars.",
+    "why_it_stitches": "1.04M in 0.8d (1328K/day at the 2026-11-20 extract), 151 comments — Borderline lane — sponsored skincare-brand promo with an acne-scar overclaim; surfaces only on size, doubt stated. 1.04M at 0.8d — fast. Now 0.8d old — rising: yes.",
+    "your_fit": "Adjacent: retinoids help texture; no in-corpus acne-scar treatment ladder — needs your take.",
+    "angles": [
+     "what actually fixes acne scars (not a cream)"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@np.miranda",
+   "platform": "TT",
+   "views": 4999062,
+   "age_days": 4.6,
+   "age_at_extract": 4.6,
+   "comments": 5385,
+   "url": "https://www.tiktok.com/@np.miranda/video/7708490763490938125",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "morning wellness routine ('full breakdown on my substack')",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "big_enough": true,
+    "punches_ok": true,
+    "rising": false,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "My morning wellness/skincare routine.",
+    "why_it_stitches": "5.00M in 4.6d (1080K/day at the 2026-11-20 extract), 5385 comments — Borderline lane — wellness routine, skincare portion unseen; doubt stated. 0.6d, pacing ~1.9M/day. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.6d old — rising: no.",
+    "your_fit": "Corpus: perfect skincare routine (TT 2023, 2.6M).",
+    "angles": [
+     "the 3-minute derm morning routine"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@glowwithobehi",
+   "platform": "TT",
+   "views": 4916448,
+   "age_days": 2.3,
+   "age_at_extract": 2.3,
+   "comments": 408,
+   "url": "https://www.tiktok.com/@glowwithobehi/video/7709348214373158176",
+   "seed_topic": "anti aging",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "Centellian24 PDRN firming eye cream — 'hooded eyelids, under-eye bags, crow's feet' (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "wrong",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "An eye cream can fix hooded eyelids and under-eye bags.",
+    "why_it_stitches": "4.92M in 2.3d (2119K/day at the 2026-11-20 extract), 408 comments — Borderline lane — sponsored skincare-brand promo with an overclaim (no cream lifts hooded lids); surfaces only on size, doubt stated. 4.92M at 2.3d. Now 2.3d old — rising: yes.",
+    "your_fit": "Adjacent: your under-eye hollow coverage (carried 11/18 @leeskincare7 pitch) — no hooded-lid position; needs your take.",
+    "angles": [
+     "what eye cream can't do: hooded lids and bags"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
   },
   {
    "author": "@li_tiara4",
    "platform": "TT",
    "views": 4349470,
-   "age_days": 6.2,
+   "age_days": 7.2,
    "age_at_extract": 4.2,
    "comments": 5686,
    "url": "https://www.tiktok.com/@li_tiara4/video/7707524473762761985",
@@ -603,7 +799,7 @@
    },
    "pitch": {
     "the_claim": "Brand promo — no stated skin claim.",
-    "why_it_stitches": "4.35M in 6.2d (1028K/day at the 2026-11-17 extract), 5686 comments — Borderline lane — skincare-brand promo inside lifestyle content; doubt stated. Indonesian, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.2d old — rising: no.",
+    "why_it_stitches": "4.35M in 7.2d (1028K/day at the 2026-11-17 extract), 5686 comments — Borderline lane — skincare-brand promo inside lifestyle content; doubt stated. Indonesian, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.2d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "skip unless the clip makes a claim"
@@ -614,10 +810,10 @@
   {
    "author": "@moncluscarol",
    "platform": "TT",
-   "views": 3866310,
-   "age_days": 4.6,
-   "age_at_extract": 3.6,
-   "comments": 1535,
+   "views": 4307191,
+   "age_days": 5.6,
+   "age_at_extract": 5.6,
+   "comments": 1633,
    "url": "https://www.tiktok.com/@moncluscarol/video/7708119314326441238",
    "seed_topic": "skincare",
    "source": "feed",
@@ -636,7 +832,7 @@
    },
    "pitch": {
     "the_claim": "This azelaic acid product clears acne.",
-    "why_it_stitches": "3.87M in 4.6d (1065K/day at the 2026-11-18 extract), 1535 comments — Spanish + paid Ad — discounted; 1.6d, rising. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.6d old — rising: no.",
+    "why_it_stitches": "4.31M in 5.6d (765K/day at the 2026-11-20 extract), 1633 comments — Spanish + paid Ad — discounted; 1.6d, rising. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.6d old — rising: no.",
     "your_fit": "Corpus: your rosacea tips (TT/IG, azelaic acid) — 135.8K this week.",
     "angles": [
      "azelaic acid: the underrated acne + redness fix",
@@ -646,10 +842,43 @@
    }
   },
   {
+   "author": "@chiaraecalisto",
+   "platform": "TT",
+   "views": 3331530,
+   "age_days": 2.9,
+   "age_at_extract": 2.9,
+   "comments": 856,
+   "url": "https://www.tiktok.com/@chiaraecalisto/video/7709130143498767648",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "'raw and honest skincare routine' pt. 1 (part 2 promised today)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 4
+   },
+   "pitch": {
+    "the_claim": "My honest everyday skincare routine.",
+    "why_it_stitches": "3.33M in 2.9d (1147K/day at the 2026-11-20 extract), 856 comments — Routine content with no stated claim — react-able as 'derm rates your routine' once you see the steps; part 2 lands today. Watch first. Now 2.9d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "derm rates a 'raw and honest' routine — keep/skip"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
    "author": "@hoperyk",
    "platform": "TT",
    "views": 2989170,
-   "age_days": 4.8,
+   "age_days": 5.8,
    "age_at_extract": 2.7,
    "comments": 1138,
    "url": "https://www.tiktok.com/@hoperyk/video/7708076709542677773",
@@ -657,7 +886,7 @@
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #differin search · 2.99M in 4.8d, 1138 comments",
+   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #differin search · 2.99M in 5.8d, 1138 comments",
    "viral": true,
    "unidentified": true,
    "rubric": null,
@@ -667,7 +896,7 @@
    "author": "@spencewuah",
    "platform": "TT",
    "views": 2749740,
-   "age_days": 5.4,
+   "age_days": 6.4,
    "age_at_extract": 3.4,
    "comments": 7494,
    "url": "https://www.tiktok.com/@spencewuah/video/7707820995733654815",
@@ -675,174 +904,257 @@
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #differin search ('why does it have tentacles?') · 2.75M in 5.4d, 7494 comments",
+   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #differin search ('why does it have tentacles?') · 2.75M in 6.4d, 7494 comments",
    "viral": true,
    "unidentified": true,
    "rubric": null,
    "pitch": null
   },
   {
-   "author": "@evee.herndz",
+   "author": "@amyflamy1",
    "platform": "TT",
-   "views": 1958296,
-   "age_days": 7.4,
-   "age_at_extract": 4.4,
-   "comments": 494,
-   "url": "https://www.tiktok.com/@evee.herndz/video/7707096037328014612",
-   "seed_topic": "hair growth tips",
+   "views": 2275825,
+   "age_days": 4.0,
+   "age_at_extract": 4.0,
+   "comments": 598,
+   "url": "https://www.tiktok.com/@amyflamy1/video/7708739557667114241",
+   "seed_topic": "anti aging",
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "Spanish: 'one of my secrets for long hair — it works'",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": true,
-    "punches_ok": true,
-    "rising": false,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "This product/secret grew my hair long.",
-    "why_it_stitches": "1.96M in 7.4d (446K/day at the 2026-11-16 extract), 494 comments — Spanish — language barrier stated; product unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.4d old — rising: no.",
-    "your_fit": "Corpus: minoxidil guide (YT Mar 2026).",
-    "angles": [
-     "'my secret for long hair' — what actually grows hair"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@gupta.zxy.vlogs",
-   "platform": "TT",
-   "views": 1721610,
-   "age_days": 7.2,
-   "age_at_extract": 4.2,
-   "comments": 586,
-   "url": "https://www.tiktok.com/@gupta.zxy.vlogs/video/7707170069100481810",
-   "seed_topic": "haircareroutine",
-   "source": "feed",
-   "verify": false,
-   "heat": 2,
-   "claim": "Nepali: 'hairfall problems 110% solved — consistency'",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": true,
-    "punches_ok": true,
-    "rising": false,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "My routine solved my hair fall.",
-    "why_it_stitches": "1.72M in 7.2d (411K/day at the 2026-11-16 extract), 586 comments — Nepali — language barrier stated; routine unseen. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.2d old — rising: no.",
-    "your_fit": "Corpus: telogen effluvium story (TT 2023) — 'physical and psychological stress can cause a type of hair loss'.",
-    "angles": [
-     "hair fall that 'stops' may just be shedding ending"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@koreaschoice.acne",
-   "platform": "TT",
-   "views": 1260809,
-   "age_days": 7.0,
-   "age_at_extract": 1.0,
-   "comments": 97,
-   "url": "https://www.tiktok.com/@koreaschoice.acne/video/7707254095043644703",
-   "seed_topic": "acne",
-   "source": "feed",
-   "verify": false,
-   "heat": 2,
-   "claim": "'I don't think it's a washing problem 😅🤦🏻‍♂️' — acne that won't clear despite washing",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": true,
-    "punches_ok": true,
-    "rising": false,
-    "score": 5
-   },
-   "pitch": {
-    "the_claim": "I wash my face constantly and still break out — it's not a washing problem.",
-    "why_it_stitches": "1.26M in 7.0d (1310K/day at the 2026-11-13 extract), 97 comments — 3.0d old, still rising, ≥1M. Half-right: true that acne isn't dirt — but washing still matters after puberty, and the real fix is treatment, not more scrubbing. Doubt stated: the handle reads like a K-beauty shop account (likely funnel). Punches sideways. [kept from yesterday's shortlist; views as of the 11/13 extract] [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.0d old — rising: no.",
-    "your_fit": "Corpus-grounded AND on your hottest lane: ♥ gold 'after puberty, washing your face every single night is key' (3.10M, TT); root-cause-of-acne guide (YT 2023); teen guide — 'up until your teenage years usually water was sufficient'. Natural 'yes, and —' sequel to your gold card.",
-    "angles": [
-     "'yes, and —': wash nightly, then treat — here's the order",
-     "over-washing makes acne worse: the squeaky-clean trap"
-    ],
-    "length": "original ~7s eats ~5s; 20–35s total (match your 5s wash-card format)"
-   }
-  },
-  {
-   "author": "@np.miranda",
-   "platform": "TT",
-   "views": 1192083,
-   "age_days": 3.6,
-   "age_at_extract": 0.6,
-   "comments": 965,
-   "url": "https://www.tiktok.com/@np.miranda/video/7708490763490938125",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 2,
-   "claim": "morning wellness routine ('full breakdown on my substack')",
+   "claim": "'Mom reveal' — Arencia NAD anti-aging promo (sponsored)",
    "viral": true,
    "rubric": {
     "specific_claim": false,
     "her_lane": true,
     "trigger": null,
+    "rising": false,
     "big_enough": true,
     "punches_ok": true,
-    "rising": true,
-    "score": 4
+    "score": 3
    },
    "pitch": {
-    "the_claim": "My morning wellness/skincare routine.",
-    "why_it_stitches": "1.19M in 3.6d (1900K/day at the 2026-11-16 extract), 965 comments — Borderline lane — wellness routine, skincare portion unseen; doubt stated. 0.6d, pacing ~1.9M/day. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.6d old — rising: yes.",
-    "your_fit": "Corpus: perfect skincare routine (TT 2023, 2.6M).",
+    "the_claim": "NAD skincare makes mom look younger.",
+    "why_it_stitches": "2.28M in 4.0d (575K/day at the 2026-11-20 extract), 598 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. 'NAD' is a fresh buzzword. Now 4.0d old — rising: no.",
+    "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "the 3-minute derm morning routine"
+     "NAD+ in skincare: real or buzzword? (needs her take)"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
   },
   {
-   "author": "@elliefarehamx",
+   "author": "@minhtrang3100",
    "platform": "TT",
-   "views": 1189862,
-   "age_days": 7.5,
-   "age_at_extract": 5.5,
-   "comments": 150,
-   "url": "https://www.tiktok.com/@elliefarehamx/video/7707071195857849622",
-   "seed_topic": "skincare",
+   "views": 2028783,
+   "age_days": 3.4,
+   "age_at_extract": 3.4,
+   "comments": 108,
+   "url": "https://www.tiktok.com/@minhtrang3100/video/7708898433096027410",
+   "seed_topic": "glycolicacid",
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "'Works like magic fr' — overnight face mask",
+   "claim": "Vietnamese: 'glycolic acid is amazing' — body/underarm glycolic",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 4
+   },
+   "pitch": {
+    "the_claim": "Glycolic acid works wonders.",
+    "why_it_stitches": "2.03M in 3.4d (597K/day at the 2026-11-20 extract), 108 comments — Non-English, minimal caption; in-lane ingredient wave (glycolic is all over today's feed). Now 3.4d old — rising: yes.",
+    "your_fit": "Covered — your glycolic Q&A card (TT 492K, https://www.tiktok.com/@drabby6/video/7296637914753109290): \"glycolic acid can make you more sensitive to the sun.\"",
+    "angles": [
+     "glycolic acid on the body: strawberry legs, underarms, sun"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@doranguyen68",
+   "platform": "TT",
+   "views": 1918662,
+   "age_days": 5.9,
+   "age_at_extract": 5.9,
+   "comments": 44,
+   "url": "https://www.tiktok.com/@doranguyen68/video/7708034375866273045",
+   "seed_topic": "glycolicacid",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "Knock Bodycare glycolic 7% + niacinamide duo 'works on strawberry legs and dark spots' (sponsored)",
    "viral": true,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
     "trigger": "half-right",
-    "big_enough": false,
-    "punches_ok": true,
     "rising": false,
-    "score": 4
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 5
    },
    "pitch": {
-    "the_claim": "This overnight mask works like magic.",
-    "why_it_stitches": "1.19M in 7.5d (218K/day at the 2026-11-17 extract), 150 comments — Half-right hype; product unseen. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.5d old — rising: no.",
-    "your_fit": "No corpus position pulled for this claim — needs your take.",
+    "the_claim": "A glycolic + niacinamide body duo clears strawberry legs.",
+    "why_it_stitches": "1.92M in 5.9d (327K/day at the 2026-11-20 extract), 44 comments — Sponsored; half-right — exfoliants help KP-type bumps, but shaving-related strawberry legs need a hair-removal change. Now 5.9d old — rising: no.",
+    "your_fit": "Covered — your strawberry-legs card (TT 458K): \"you can switch from shaving hair removal altogether by using laser\"; glycolic Q&A (TT 492K).",
     "angles": [
-     "overnight masks: what 'magic' really means"
+     "strawberry legs: exfoliant vs razor vs laser"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@narmans.official",
+   "platform": "TT",
+   "views": 1832591,
+   "age_days": 7.2,
+   "age_at_extract": 6.1,
+   "comments": 283,
+   "url": "https://www.tiktok.com/@narmans.official/video/7707557546608856340",
+   "seed_topic": "sunscreen",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "Indonesian: Facetology purple sunscreen 'glowing all day' promo",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": false,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "This sunscreen gives an all-day glow.",
+    "why_it_stitches": "1.83M in 7.2d (298K/day at the 2026-11-19 extract), 283 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Indonesian. Now 7.2d old — rising: no.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "skip unless it makes an SPF claim"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@purifiedkitty",
+   "platform": "TT",
+   "views": 1727653,
+   "age_days": 6.8,
+   "age_at_extract": 5.8,
+   "comments": 64,
+   "url": "https://www.tiktok.com/@purifiedkitty/video/7707697778037755166",
+   "seed_topic": "glycolicacid",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "AHA body lotion + vitamin C/niacinamide/glycolic body wash promo (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": false,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "This body-care duo smooths rough texture.",
+    "why_it_stitches": "1.73M in 6.8d (299K/day at the 2026-11-19 extract), 64 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Now 6.8d old — rising: no.",
+    "your_fit": "Adjacent: your glycolic Q&A (TT 492K).",
+    "angles": [
+     "skip — or a 'wash-off actives barely work' line (needs her take)"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@totefernandezm",
+   "platform": "TT",
+   "views": 1570851,
+   "age_days": 2.7,
+   "age_at_extract": 1.7,
+   "comments": 407,
+   "url": "https://www.tiktok.com/@totefernandezm/video/7709193337428921632",
+   "seed_topic": "retinol",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "Spanish: Purito retinol + retinal + NAD+ serum (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": true,
+    "score": 6
+   },
+   "pitch": {
+    "the_claim": "A retinol + retinal + NAD serum is the new must-have.",
+    "why_it_stitches": "1.57M in 2.7d (904K/day at the 2026-11-19 extract), 407 comments — Borderline lane — sponsored skincare-brand promo with a stacked-retinoid formula worth a sanity check; surfaces only on size, doubt stated. Spanish. Now 2.7d old — rising: yes.",
+    "your_fit": "Adjacent grounded: your retinal vs retinol card (carried) — layering retinoids raises irritation.",
+    "angles": [
+     "retinol + retinal in one bottle — double the irritation?"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@jamesgwumd",
+   "platform": "TT",
+   "views": 1482065,
+   "age_days": 3.7,
+   "age_at_extract": 3.7,
+   "comments": 846,
+   "url": "https://www.tiktok.com/@jamesgwumd/video/7708835507928583437",
+   "seed_topic": "melanoma",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #skincancer search, no caption · 1.48M in 3.7d, 846 comments",
+   "viral": true,
+   "unidentified": true,
+   "rubric": null,
+   "pitch": null
+  },
+  {
+   "author": "@klaysensei",
+   "platform": "TT",
+   "views": 1216265,
+   "age_days": 3.1,
+   "age_at_extract": 3.1,
+   "comments": 49,
+   "url": "https://www.tiktok.com/@klaysensei/video/7709059799874358580",
+   "seed_topic": "glycolicacid",
+   "source": "feed",
+   "verify": false,
+   "heat": 2,
+   "claim": "COXIR glycolic acid sleeping mask for 'bumpy texture' (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": true,
+    "punches_ok": false,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "A glycolic sleeping mask fixes bumpy texture overnight.",
+    "why_it_stitches": "1.22M in 3.1d (393K/day at the 2026-11-20 extract), 49 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Now 3.1d old — rising: yes.",
+    "your_fit": "Adjacent: your glycolic Q&A (TT 492K).",
+    "angles": [
+     "skip"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -851,7 +1163,7 @@
    "author": "@inahtakeda",
    "platform": "TT",
    "views": 1183836,
-   "age_days": 6.2,
+   "age_days": 7.2,
    "age_at_extract": 1.2,
    "comments": 375,
    "url": "https://www.tiktok.com/@inahtakeda/video/7707530689331088647",
@@ -872,7 +1184,7 @@
    },
    "pitch": {
     "the_claim": "This sunscreen is the best seller for a reason.",
-    "why_it_stitches": "1.18M in 6.2d (971K/day at the 2026-11-14 extract), 375 comments — Brand plug, no claim. Language barrier: Tagalog — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.2d old — rising: no.",
+    "why_it_stitches": "1.18M in 7.2d (971K/day at the 2026-11-14 extract), 375 comments — Brand plug, no claim. Language barrier: Tagalog — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.2d old — rising: no.",
     "your_fit": "No corpus position pulled for this claim — needs your take.",
     "angles": [
      "skip — promo"
@@ -884,7 +1196,7 @@
    "author": "@its_harixss",
    "platform": "TT",
    "views": 1149997,
-   "age_days": 6.1,
+   "age_days": 7.1,
    "age_at_extract": 3.1,
    "comments": 134,
    "url": "https://www.tiktok.com/@its_harixss/video/7707580719425441055",
@@ -905,7 +1217,7 @@
    },
    "pitch": {
     "the_claim": "You can grow your hair at home with this.",
-    "why_it_stitches": "1.15M in 6.1d (373K/day at the 2026-11-16 extract), 134 comments — Hashtag-light claim; method unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.1d old — rising: no.",
+    "why_it_stitches": "1.15M in 7.1d (373K/day at the 2026-11-16 extract), 134 comments — Hashtag-light claim; method unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.1d old — rising: no.",
     "your_fit": "Corpus: minoxidil guide (YT Mar 2026).",
     "angles": [
      "at-home hair growth: what has evidence"
@@ -914,68 +1226,166 @@
    }
   },
   {
-   "author": "@qidhp",
+   "author": "@sveta.glows",
    "platform": "TT",
-   "views": 1113774,
-   "age_days": 7.1,
-   "age_at_extract": 1.1,
-   "comments": 85,
-   "url": "https://www.tiktok.com/@qidhp/video/7707198084450651422",
-   "seed_topic": "acne",
+   "views": 1060221,
+   "age_days": 7.0,
+   "age_at_extract": 6.0,
+   "comments": 377,
+   "url": "https://www.tiktok.com/@sveta.glows/video/7707624987846413586",
+   "seed_topic": "retinol",
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "'Post 76 cystic acne' — an #accutanejourney diary",
+   "claim": "Russian: mom & dad 'blue retinol' serum experiment (marketplace promo)",
    "viral": true,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
-    "trigger": "surprising",
+    "trigger": "half-right",
+    "rising": false,
     "big_enough": true,
     "punches_ok": true,
-    "rising": false,
     "score": 5
    },
    "pitch": {
-    "the_claim": "Day after day of cystic acne on the Accutane journey — this is post 76.",
-    "why_it_stitches": "1.11M in 7.1d (1001K/day at the 2026-11-13 extract), 85 comments — 2.1d old, rising, ≥1M (a near-duplicate post-76 upload has 441K). A long-running diary series (follows-profile format) with an audience invested in the outcome; surprising if cysts persist this deep into isotretinoin. Content unseen beyond the caption — watch first; never diagnose from a clip. Punches sideways. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.1d old — rising: no.",
-    "your_fit": "Corpus-grounded on cysts: 'injecting an inflamed cyst or cystic acne with an intralesional Kenalog… is effective… intralesional steroids are really to be used only when absolutely needed' (TT 2024); cystic-acne stitch 227K (TT 2025). No isotretinoin-flare position pulled today — needs your take on the Accutane side.",
+    "the_claim": "A 'blue retinol' serum erases wrinkles in an at-home experiment.",
+    "why_it_stitches": "1.06M in 7.0d (178K/day at the 2026-11-19 extract), 377 comments — Borderline lane — sponsored skincare-brand promo with a before/after experiment claim; surfaces only on size, doubt stated. Russian. Now 7.0d old — rising: no.",
+    "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "empathy-first: the cystic acne diary, through a derm's eyes",
-     "cyst shots: fast relief, and the divot risk"
+     "'blue retinol' — what is it actually? (needs her take)"
     ],
-    "length": "original ~6s eats ~5s; 35–50s total"
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
   },
   {
-   "author": "@nbcnews",
+   "author": "@ugc_anouki",
    "platform": "TT",
-   "views": 759659,
-   "age_days": 1.8,
-   "age_at_extract": 0.8,
-   "comments": 2141,
-   "url": "https://www.tiktok.com/@nbcnews/video/7709174404608986382",
-   "seed_topic": "shingles",
+   "views": 518709,
+   "age_days": 1.6,
+   "age_at_extract": 1.6,
+   "comments": 65,
+   "url": "https://www.tiktok.com/@ugc_anouki/video/7709607514379210005",
+   "seed_topic": "anti aging",
    "source": "feed",
    "verify": false,
    "heat": 2,
-   "claim": "NBC News: US loses measles elimination status after 26 years",
+   "claim": "Centellian24 PDRN eye cream 'for every wrinkle zone' UGC promo",
    "viral": true,
    "rubric": {
-    "specific_claim": true,
-    "her_lane": false,
-    "trigger": "surprising",
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": false,
+    "punches_ok": true,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "One eye cream for forehead, smile and neck lines.",
+    "why_it_stitches": "519K in 1.6d (320K/day at the 2026-11-20 extract), 65 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Pace-qualified; same brand push as @glowwithobehi. Now 1.6d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "skip — fold into the eye-cream overclaim react"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@apollocxlb",
+   "platform": "TT",
+   "views": 945441,
+   "age_days": 4.6,
+   "age_at_extract": 3.6,
+   "comments": 78,
+   "url": "https://www.tiktok.com/@apollocxlb/video/7708515031595371806",
+   "seed_topic": "sunscreen",
+   "source": "feed",
+   "verify": false,
+   "heat": 1,
+   "claim": "TOCOBO Bio Watery sunscreen 'a good sunscreen is FUNDAMENTAL' (sponsored)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": false,
+    "big_enough": false,
+    "punches_ok": true,
+    "score": 2
+   },
+   "pitch": {
+    "the_claim": "Daily sunscreen is fundamental.",
+    "why_it_stitches": "945K in 4.6d (265K/day at the 2026-11-19 extract), 78 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Correct message; pace-qualified (265K/day). Now 4.6d old — rising: no.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "skip — correct and sponsored"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@aylennpark",
+   "platform": "TT",
+   "views": 890696,
+   "age_days": 4.3,
+   "age_at_extract": 4.3,
+   "comments": 398,
+   "url": "https://www.tiktok.com/@aylennpark/video/7708607349648411935",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 1,
+   "claim": "'realistic morning wellness and skincare routine' (reply)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "big_enough": false,
+    "punches_ok": true,
+    "rising": false,
+    "score": 2
+   },
+   "pitch": {
+    "the_claim": "My realistic morning skincare routine.",
+    "why_it_stitches": "891K in 4.3d (206K/day at the 2026-11-20 extract), 398 comments — 0.3d — pace inflated by the age floor; routine clip. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.3d old — rising: no.",
+    "your_fit": "Corpus: perfect skincare routine (TT 2023).",
+    "angles": [
+     "the realistic derm morning routine"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@manelparletrop",
+   "platform": "TT",
+   "views": 824370,
+   "age_days": 3.9,
+   "age_at_extract": 3.9,
+   "comments": 901,
+   "url": "https://www.tiktok.com/@manelparletrop/video/7708753379106901280",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 1,
+   "claim": "Full K-beauty routine (Arencia products)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
     "big_enough": false,
     "punches_ok": true,
     "rising": true,
-    "score": 4
+    "score": 3
    },
    "pitch": {
-    "the_claim": "The US has lost measles elimination status for the first time in 26 years.",
-    "why_it_stitches": "760K in 1.8d (964K/day at the 2026-11-18 extract), 2141 comments — Borderline lane — public-health news; the derm hook is the rash (what measles looks like on skin). News outlet, not a claim to correct. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 1.8d old — rising: yes.",
+    "the_claim": "My full skincare routine.",
+    "why_it_stitches": "824K in 3.9d (210K/day at the 2026-11-20 extract), 901 comments — Product-list routine, likely gifted — discounted; no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.9d old — rising: yes.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "what the measles rash actually looks like (needs her take)"
+     "how many steps do you actually need? (needs her take)"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -984,7 +1394,7 @@
    "author": "@amandaa_solis",
    "platform": "TT",
    "views": 814628,
-   "age_days": 4.4,
+   "age_days": 5.4,
    "age_at_extract": 0.4,
    "comments": 475,
    "url": "https://www.tiktok.com/@amandaa_solis/video/7708197308193656078",
@@ -1005,7 +1415,7 @@
    },
    "pitch": {
     "the_claim": "These are the products worth your money.",
-    "why_it_stitches": "815K in 4.4d (1932K/day at the 2026-11-15 extract), 475 comments — Fastest-pacing in-lane haul (0.4d); brand-tagged — likely sponsored. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.4d old — rising: no.",
+    "why_it_stitches": "815K in 5.4d (1932K/day at the 2026-11-15 extract), 475 comments — Fastest-pacing in-lane haul (0.4d); brand-tagged — likely sponsored. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.4d old — rising: no.",
     "your_fit": "Corpus: budget anti-aging routine (YT Feb 2026).",
     "angles": [
      "the only 3 products worth your money",
@@ -1015,68 +1425,67 @@
    }
   },
   {
-   "author": "@aylennpark",
+   "author": "@nbcnews",
    "platform": "TT",
-   "views": 766243,
-   "age_days": 3.3,
-   "age_at_extract": 2.3,
-   "comments": 317,
-   "url": "https://www.tiktok.com/@aylennpark/video/7708607349648411935",
-   "seed_topic": "skincare",
+   "views": 759659,
+   "age_days": 2.8,
+   "age_at_extract": 0.8,
+   "comments": 2141,
+   "url": "https://www.tiktok.com/@nbcnews/video/7709174404608986382",
+   "seed_topic": "shingles",
    "source": "feed",
    "verify": false,
    "heat": 1,
-   "claim": "'realistic morning wellness and skincare routine' (reply)",
+   "claim": "NBC News: US loses measles elimination status after 26 years",
    "viral": true,
    "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
+    "specific_claim": true,
+    "her_lane": false,
+    "trigger": "surprising",
     "big_enough": false,
     "punches_ok": true,
     "rising": true,
-    "score": 3
+    "score": 4
    },
    "pitch": {
-    "the_claim": "My realistic morning skincare routine.",
-    "why_it_stitches": "766K in 3.3d (331K/day at the 2026-11-18 extract), 317 comments — 0.3d — pace inflated by the age floor; routine clip. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.3d old — rising: yes.",
-    "your_fit": "Corpus: perfect skincare routine (TT 2023).",
+    "the_claim": "The US has lost measles elimination status for the first time in 26 years.",
+    "why_it_stitches": "760K in 2.8d (964K/day at the 2026-11-18 extract), 2141 comments — Borderline lane — public-health news; the derm hook is the rash (what measles looks like on skin). News outlet, not a claim to correct. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 2.8d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "the realistic derm morning routine"
+     "what the measles rash actually looks like (needs her take)"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
   },
   {
-   "author": "@mar.hacks",
+   "author": "@ugcqueentamilah",
    "platform": "TT",
-   "views": 698218,
-   "age_days": 6.7,
-   "age_at_extract": 2.7,
-   "comments": 207,
-   "url": "https://www.tiktok.com/@mar.hacks/video/7707349297322331422",
-   "seed_topic": "medicube",
+   "views": 686868,
+   "age_days": 2.2,
+   "age_at_extract": 2.2,
+   "comments": 70,
+   "url": "https://www.tiktok.com/@ugcqueentamilah/video/7709407388901641473",
+   "seed_topic": "anti aging",
    "source": "feed",
    "verify": false,
    "heat": 1,
-   "claim": "'been seeing volufiline everywhere' — Centellian volume serum trial",
+   "claim": "Abib PDRN retinal eye patch + 'volume fill-it' cream UGC promo",
    "viral": true,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
-    "trigger": "surprising",
-    "big_enough": true,
+    "trigger": "wrong",
+    "rising": true,
+    "big_enough": false,
     "punches_ok": true,
-    "rising": false,
     "score": 5
    },
    "pitch": {
-    "the_claim": "Volufiline adds volume to your face/lips.",
-    "why_it_stitches": "698K in 6.7d (258K/day at the 2026-11-15 extract), 207 comments — Ingredient-trend trial; brand-tagged. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.7d old — rising: no.",
+    "the_claim": "A cream can fill structural volume loss.",
+    "why_it_stitches": "687K in 2.2d (318K/day at the 2026-11-20 extract), 70 comments — Borderline lane — sponsored skincare-brand promo with a 'volume fill' overclaim; surfaces only on size, doubt stated. Pace-qualified. Now 2.2d old — rising: yes.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "volufiline: what the evidence actually shows (needs her take)",
-     "topical 'filler' vs real filler"
+     "creams don't replace lost volume — what does"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -1085,7 +1494,7 @@
    "author": "@mauriceknowsskin",
    "platform": "TT",
    "views": 669942,
-   "age_days": 6.2,
+   "age_days": 7.2,
    "age_at_extract": 3.2,
    "comments": 619,
    "url": "https://www.tiktok.com/@mauriceknowsskin/video/7707530134676311310",
@@ -1106,7 +1515,7 @@
    },
    "pitch": {
     "the_claim": "This balm fixes crepey under-eyes.",
-    "why_it_stitches": "670K in 6.2d (208K/day at the 2026-11-16 extract), 619 comments — Sponsored (Ad) — discounted. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.2d old — rising: no.",
+    "why_it_stitches": "670K in 7.2d (208K/day at the 2026-11-16 extract), 619 comments — Sponsored (Ad) — discounted. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.2d old — rising: no.",
     "your_fit": "Corpus: under-eye bags part 2 (TT 2023).",
     "angles": [
      "crepey under-eyes: what a balm can't fix",
@@ -1119,7 +1528,7 @@
    "author": "@belicia.arnold",
    "platform": "TT",
    "views": 651328,
-   "age_days": 5.1,
+   "age_days": 6.1,
    "age_at_extract": 2.1,
    "comments": 183,
    "url": "https://www.tiktok.com/@belicia.arnold/video/7707956175962180870",
@@ -1140,7 +1549,7 @@
    },
    "pitch": {
     "the_claim": "These mom-tested tips will make you glow up.",
-    "why_it_stitches": "651K in 5.1d (315K/day at the 2026-11-16 extract), 183 comments — Tip-list format; tips unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.1d old — rising: no.",
+    "why_it_stitches": "651K in 6.1d (315K/day at the 2026-11-16 extract), 183 comments — Tip-list format; tips unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.1d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "rating mom's beauty tips as a derm (needs her take)"
@@ -1152,7 +1561,7 @@
    "author": "@lauriiebeauty",
    "platform": "TT",
    "views": 649499,
-   "age_days": 4.1,
+   "age_days": 5.1,
    "age_at_extract": 1.1,
    "comments": 551,
    "url": "https://www.tiktok.com/@lauriiebeauty/video/7708321288837696801",
@@ -1173,7 +1582,7 @@
    },
    "pitch": {
     "the_claim": "My hair routine with peptides.",
-    "why_it_stitches": "649K in 4.1d (597K/day at the 2026-11-16 extract), 551 comments — French — language barrier stated; brand-tagged. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.1d old — rising: no.",
+    "why_it_stitches": "649K in 5.1d (597K/day at the 2026-11-16 extract), 551 comments — French — language barrier stated; brand-tagged. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.1d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "peptide hair serums: hype check (needs her take)"
@@ -1182,94 +1591,10 @@
    }
   },
   {
-   "author": "@tatiencorea",
-   "platform": "TT",
-   "views": 614134,
-   "age_days": 6.6,
-   "age_at_extract": 0.6,
-   "comments": 192,
-   "url": "https://www.tiktok.com/@tatiencorea/video/7707406558715596050",
-   "seed_topic": "kbeauty",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'Did you know your neck needs its own skincare routine?' (publicidad)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 3
-   },
-   "pitch": {
-    "the_claim": "Your neck needs its own skincare routine.",
-    "why_it_stitches": "614K in 6.6d (1112K/day at the 2026-11-13 extract), 192 comments — Ad-disclosed; half-true premise. Language barrier: Spanish — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.6d old — rising: no.",
-    "your_fit": "No corpus position pulled for this claim — needs your take.",
-    "angles": [
-     "neck aging: just extend your face routine down"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@jamesgwumd",
-   "platform": "TT",
-   "views": 609182,
-   "age_days": 2.7,
-   "age_at_extract": 1.7,
-   "comments": 543,
-   "url": "https://www.tiktok.com/@jamesgwumd/video/7708835507928583437",
-   "seed_topic": "skin cancer",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #skincancer search, no caption · 609K in 2.7d, 543 comments",
-   "viral": true,
-   "unidentified": true,
-   "rubric": null,
-   "pitch": null
-  },
-  {
-   "author": "@szkllarczyk",
-   "platform": "TT",
-   "views": 557975,
-   "age_days": 7.0,
-   "age_at_extract": 0.9,
-   "comments": 188,
-   "url": "https://www.tiktok.com/@szkllarczyk/video/7707259620166733088",
-   "seed_topic": "spf",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Long-form 'products I use' routine (Polish)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 2
-   },
-   "pitch": {
-    "the_claim": "Here are all the products I use.",
-    "why_it_stitches": "558K in 7.0d (588K/day at the 2026-11-13 extract), 188 comments — Routine list, no claim. Language barrier: Polish — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.0d old — rising: no.",
-    "your_fit": "No corpus position pulled for this claim — needs your take.",
-    "angles": [
-     "skip — low stitch value"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
    "author": "@skinwithreva",
    "platform": "TT",
    "views": 553948,
-   "age_days": 6.2,
+   "age_days": 7.2,
    "age_at_extract": 1.1,
    "comments": 86,
    "url": "https://www.tiktok.com/@skinwithreva/video/7707557388429167894",
@@ -1290,7 +1615,7 @@
    },
    "pitch": {
     "the_claim": "This sunscreen doubles as skincare.",
-    "why_it_stitches": "554K in 6.2d (483K/day at the 2026-11-14 extract), 86 comments — Product plug. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.2d old — rising: no.",
+    "why_it_stitches": "554K in 7.2d (483K/day at the 2026-11-14 extract), 86 comments — Product plug. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.2d old — rising: no.",
     "your_fit": "Corpus: perfect skincare routine (TT 2023).",
     "angles": [
      "the sunscreen you'll actually wear is the best one",
@@ -1300,28 +1625,10 @@
    }
   },
   {
-   "author": "@mrleeo9",
-   "platform": "TT",
-   "views": 544670,
-   "age_days": 6.7,
-   "age_at_extract": 0.7,
-   "comments": 66,
-   "url": "https://www.tiktok.com/@mrleeo9/video/7707355103916756246",
-   "seed_topic": "acne",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · acne-seeded, no caption · 545K in 6.7d, 66 comments",
-   "viral": true,
-   "unidentified": true,
-   "rubric": null,
-   "pitch": null
-  },
-  {
    "author": "@kikoiyubeauty",
    "platform": "TT",
    "views": 543406,
-   "age_days": 6.4,
+   "age_days": 7.4,
    "age_at_extract": 2.4,
    "comments": 1235,
    "url": "https://www.tiktok.com/@kikoiyubeauty/video/7707448341839269134",
@@ -1342,7 +1649,7 @@
    },
    "pitch": {
     "the_claim": "(no claim — ASMR routine)",
-    "why_it_stitches": "543K in 6.4d (223K/day at the 2026-11-15 extract), 1235 comments — ASMR routine, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.4d old — rising: no.",
+    "why_it_stitches": "543K in 7.4d (223K/day at the 2026-11-15 extract), 1235 comments — ASMR routine, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.4d old — rising: no.",
     "your_fit": "No corpus position pulled for this claim — needs your take.",
     "angles": [
      "skip — low stitch value"
@@ -1354,7 +1661,7 @@
    "author": "@chenoabrookins",
    "platform": "TT",
    "views": 528651,
-   "age_days": 5.7,
+   "age_days": 6.7,
    "age_at_extract": 0.7,
    "comments": 176,
    "url": "https://www.tiktok.com/@chenoabrookins/video/7707728284209007903",
@@ -1375,7 +1682,7 @@
    },
    "pitch": {
     "the_claim": "My quick morning skincare routine.",
-    "why_it_stitches": "529K in 5.7d (775K/day at the 2026-11-14 extract), 176 comments — Routine clip; no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.7d old — rising: no.",
+    "why_it_stitches": "529K in 6.7d (775K/day at the 2026-11-14 extract), 176 comments — Routine clip; no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.7d old — rising: no.",
     "your_fit": "Corpus: perfect skincare routine (TT 2023).",
     "angles": [
      "the 3-minute derm morning routine",
@@ -1385,34 +1692,67 @@
    }
   },
   {
-   "author": "@longlivegod.18",
+   "author": "@natalie_oneillll",
    "platform": "TT",
-   "views": 489188,
-   "age_days": 6.9,
-   "age_at_extract": 0.9,
-   "comments": 18,
-   "url": "https://www.tiktok.com/@longlivegod.18/video/7707273390402456846",
-   "seed_topic": "acne",
-   "source": "feed",
+   "views": 490959,
+   "age_days": 0.8,
+   "age_at_extract": 0.8,
+   "comments": 572,
+   "url": "https://www.tiktok.com/@natalie_oneillll/video/7709906969963810070",
+   "seed_topic": "skincare",
+   "source": "in-group",
    "verify": false,
    "heat": 1,
-   "claim": "'Noticing a pink spot after removing my patch' (#PimplePatch)",
+   "claim": "'The method': azelaic acid + a retinoid, barrier serum, double cleanse (acne routine)",
    "viral": true,
    "rubric": {
     "specific_claim": true,
     "her_lane": true,
-    "trigger": "surprising",
+    "trigger": "half-right",
+    "rising": true,
     "big_enough": false,
     "punches_ok": true,
-    "rising": false,
-    "score": 4
+    "score": 5
    },
    "pitch": {
-    "the_claim": "Why is there a pink spot after I take my patch off?",
-    "why_it_stitches": "489K in 6.9d (537K/day at the 2026-11-13 extract), 18 comments — Part of the patch wave (theme 4); fresh, under 1M. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.9d old — rising: no.",
-    "your_fit": "Corpus-grounded: pimple-patch explainer 1.5M (TT 2023).",
+    "the_claim": "Azelaic acid + a retinoid + double cleansing is the acne method.",
+    "why_it_stitches": "491K in 0.8d (605K/day at the 2026-11-20 extract), 572 comments — Tracked creator (in-group), fresh at 0.8d; mostly sound but the double-cleanse step is debatable for acne-prone skin. Now 0.8d old — rising: yes.",
+    "your_fit": "Covered — your azelaic acid guide (TT 170K) and retinoid card ('a pea size amount every 3 nights at first').",
     "angles": [
-     "the pink mark after a pimple: what it is, how it fades"
+     "'yes, and —': azelaic + retinoid, minus the extra steps"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
+   "author": "@melvinahusyanti96",
+   "platform": "TT",
+   "views": 432949,
+   "age_days": 0.2,
+   "age_at_extract": 0.2,
+   "comments": 597,
+   "url": "https://www.tiktok.com/@melvinahusyanti96/video/7710151087646379272",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 1,
+   "claim": "Indonesian: Daviena brand founder milestone post",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": false,
+    "trigger": null,
+    "rising": true,
+    "big_enough": false,
+    "punches_ok": true,
+    "score": 2
+   },
+   "pitch": {
+    "the_claim": "Brand milestone — no skin claim.",
+    "why_it_stitches": "433K in 0.2d (1443K/day at the 2026-11-20 extract), 597 comments — Borderline lane — skincare-brand founder post, no claim; qualifies only on an age-floor pace artifact (0.2d). Doubt stated. Now 0.2d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "skip"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -1421,7 +1761,7 @@
    "author": "@barbaraaestheticc",
    "platform": "TT",
    "views": 422954,
-   "age_days": 1.7,
+   "age_days": 2.7,
    "age_at_extract": 0.7,
    "comments": 82,
    "url": "https://www.tiktok.com/@barbaraaestheticc/video/7709201939451432214",
@@ -1442,7 +1782,7 @@
    },
    "pitch": {
     "the_claim": "That white bump may be a milium, not a pimple — don't pick it at home.",
-    "why_it_stitches": "423K in 1.7d (593K/day at the 2026-11-18 extract), 82 comments — Esthetician, correct → 'yes, and —'. Spanish. Fresh (<1d). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 1.7d old — rising: yes.",
+    "why_it_stitches": "423K in 2.7d (593K/day at the 2026-11-18 extract), 82 comments — Esthetician, correct → 'yes, and —'. Spanish. Fresh (<1d). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 2.7d old — rising: yes.",
     "your_fit": "Milia only mentioned in passing (microneedling review) — needs your take.",
     "angles": [
      "'yes, and —': why milia won't pop like a pimple (needs her take)"
@@ -1451,10 +1791,43 @@
    }
   },
   {
+   "author": "@averyywoods",
+   "platform": "TT",
+   "views": 421983,
+   "age_days": 1.8,
+   "age_at_extract": 1.8,
+   "comments": 383,
+   "url": "https://www.tiktok.com/@averyywoods/video/7709552510649896206",
+   "seed_topic": "skincare",
+   "source": "feed",
+   "verify": false,
+   "heat": 1,
+   "claim": "'My tried n true' skincare routine (no caption detail)",
+   "viral": true,
+   "rubric": {
+    "specific_claim": false,
+    "her_lane": true,
+    "trigger": null,
+    "rising": true,
+    "big_enough": false,
+    "punches_ok": true,
+    "score": 3
+   },
+   "pitch": {
+    "the_claim": "My tried-and-true products.",
+    "why_it_stitches": "422K in 1.8d (239K/day at the 2026-11-20 extract), 383 comments — Routine content, no stated claim; pace-qualified (239K/day). Watch first. Now 1.8d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "derm rates a 'tried and true' shelf"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
+  },
+  {
    "author": "@mama.con.calma",
    "platform": "TT",
    "views": 388772,
-   "age_days": 5.6,
+   "age_days": 6.6,
    "age_at_extract": 1.6,
    "comments": 189,
    "url": "https://www.tiktok.com/@mama.con.calma/video/7707776438245690642",
@@ -1475,7 +1848,7 @@
    },
    "pitch": {
     "the_claim": "You can eat your skincare (carrots, diet).",
-    "why_it_stitches": "389K in 5.6d (250K/day at the 2026-11-15 extract), 189 comments — Spanish — language barrier stated; 'eat your skincare' trend. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.6d old — rising: no.",
+    "why_it_stitches": "389K in 6.6d (250K/day at the 2026-11-15 extract), 189 comments — Spanish — language barrier stated; 'eat your skincare' trend. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.6d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "can food change your skin? (needs her take)"
@@ -1484,51 +1857,18 @@
    }
   },
   {
-   "author": "@rennamua",
+   "author": "@leeskincare7",
    "platform": "TT",
-   "views": 385505,
-   "age_days": 6.7,
-   "age_at_extract": 0.7,
-   "comments": 163,
-   "url": "https://www.tiktok.com/@rennamua/video/7707343054771981588",
-   "seed_topic": "glassskin",
+   "views": 353410,
+   "age_days": 4.8,
+   "age_at_extract": 0.8,
+   "comments": 89,
+   "url": "https://www.tiktok.com/@leeskincare7/video/7708427768173694226",
+   "seed_topic": "eye cream",
    "source": "feed",
    "verify": false,
    "heat": 1,
-   "claim": "Glowy makeup look with numbuzin No.9 serum plug (Arabic)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": false,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 1
-   },
-   "pitch": {
-    "the_claim": "(no claim — makeup look with a serum plug)",
-    "why_it_stitches": "386K in 6.7d (533K/day at the 2026-11-13 extract), 163 comments — Borderline lane: makeup with a skincare plug — surfaced with the doubt stated. Language barrier: Arabic — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.7d old — rising: no.",
-    "your_fit": "No corpus position pulled for this claim — needs your take.",
-    "angles": [
-     "skip — makeup"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@sibylhickscgwvmm",
-   "platform": "TT",
-   "views": 363825,
-   "age_days": 6.9,
-   "age_at_extract": 0.9,
-   "comments": 52,
-   "url": "https://www.tiktok.com/@sibylhickscgwvmm/video/7707271551669832974",
-   "seed_topic": "acne",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'These bumps after using CeraVe moisturizer are so frustrating'",
+   "claim": "'Hollow undereyes — this is not dark circles, it's collagen and fat loss. Use PDRN with caffeine to plump' — Biodance eye-cream plug",
    "viral": true,
    "rubric": {
     "specific_claim": true,
@@ -1540,20 +1880,21 @@
     "score": 4
    },
    "pitch": {
-    "the_claim": "My moisturizer is giving me bumps.",
-    "why_it_stitches": "364K in 6.9d (397K/day at the 2026-11-13 extract), 52 comments — Brand-blame claim, fresh (1.9d), under 1M; pace qualifies. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.9d old — rising: no.",
-    "your_fit": "Corpus-grounded: your comedonal-acne card this week — 'These little bumps are typically comedonal acne. First line is an AHA/BHA' (43K in 0.6d).",
+    "the_claim": "Hollow under-eyes are collagen and fat loss — a PDRN + caffeine eye cream will plump them.",
+    "why_it_stitches": "353K in 4.8d (442K/day at the 2026-11-16 extract), 89 comments — with a diagnosis half-right (volume loss is real) and a fix that over-promises (no topical replaces lost fat). Same eye-cream wave as the Cardi B shortlist item + @rachael_kirkconnell 2.26M + @mar.hacks/@tatiencorea in more_stitches. Product plug — doubt stated. Miss recorded: <500K views. [Numbers from this video's latest stitch extract, 2026-11-16.] [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.8d old — rising: no.",
+    "your_fit": "Corpus-grounded: your under-eye guide — fat pads 'kind of like putting the bubble wrap in a box when you send a glass bowl across the country' (YT 2023) and Part 2 (TT 2023): the thin eyelid skin thins further with age. New angle vs your 2023 guides: the topical-vs-filler line.",
     "angles": [
-     "is your moisturizer causing these bumps?"
+     "'yes, and —': volume loss is real; creams can't refill fat",
+     "the bubble-wrap fat pads: why hollows happen"
     ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+    "length": "original eats ~5s; 30–45s total"
    }
   },
   {
    "author": "@dr.derm.love",
    "platform": "TT",
    "views": 347506,
-   "age_days": 4.5,
+   "age_days": 5.5,
    "age_at_extract": 1.5,
    "comments": 2,
    "url": "https://www.tiktok.com/@dr.derm.love/video/7708171310442007838",
@@ -1574,7 +1915,7 @@
    },
    "pitch": {
     "the_claim": "Can you tell which spot is skin cancer?",
-    "why_it_stitches": "348K in 4.5d (233K/day at the 2026-11-16 extract), 2 comments — Tracked derm being correct — punch rule: 'yes, and —' only. Also THEME 2 receipt. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.5d old — rising: no.",
+    "why_it_stitches": "348K in 5.5d (233K/day at the 2026-11-16 extract), 2 comments — Tracked derm being correct — punch rule: 'yes, and —' only. Also THEME 2 receipt. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.5d old — rising: no.",
     "your_fit": "Corpus: BCC ultimate guide (YT 2024).",
     "angles": [
      "'yes, and —': what a Mohs surgeon sees next",
@@ -1584,77 +1925,10 @@
    }
   },
   {
-   "author": "@user3267203451971",
-   "platform": "TT",
-   "views": 337570,
-   "age_days": 7.0,
-   "age_at_extract": 1.0,
-   "comments": 71,
-   "url": "https://www.tiktok.com/@user3267203451971/video/7707230656912166175",
-   "seed_topic": "acne",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Extractions + pimple-patch reveal",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 2
-   },
-   "pitch": {
-    "the_claim": "(no claim — patch-reveal satisfying clip)",
-    "why_it_stitches": "338K in 7.0d (329K/day at the 2026-11-13 extract), 71 comments — Satisfying-format reach, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.0d old — rising: no.",
-    "your_fit": "Part of the patch wave (theme 4).",
-    "angles": [
-     "skip — fold into the patch-wave stitch"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@michelleywichelleyy",
-   "platform": "TT",
-   "views": 322604,
-   "age_days": 6.6,
-   "age_at_extract": 1.5,
-   "comments": 42,
-   "url": "https://www.tiktok.com/@michelleywichelleyy/video/7707408743683689759",
-   "seed_topic": "hyperpigmentation",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'still only using RETINAL under your eyes?' (Beauty of Joseon — shop link)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 4
-   },
-   "pitch": {
-    "the_claim": "You should be layering more than retinal under your eyes.",
-    "why_it_stitches": "323K in 6.6d (209K/day at the 2026-11-14 extract), 42 comments — Affiliate plug. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.6d old — rising: no.",
-    "your_fit": "Corpus: retinal ≠ retinol (TT Mar 2026).",
-    "angles": [
-     "under-eye retinoid: less is more",
-     "dark circles aren't all the same"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
    "author": "@mar.hacks",
    "platform": "TT",
    "views": 306287,
-   "age_days": 3.7,
+   "age_days": 4.7,
    "age_at_extract": 0.7,
    "comments": 211,
    "url": "https://www.tiktok.com/@mar.hacks/video/7708465388299816206",
@@ -1670,12 +1944,12 @@
     "trigger": "half-right",
     "big_enough": false,
     "punches_ok": true,
-    "rising": true,
-    "score": 5
+    "rising": false,
+    "score": 4
    },
    "pitch": {
     "the_claim": "This PDRN eye cream fixes under-eyes.",
-    "why_it_stitches": "306K in 3.7d (439K/day at the 2026-11-16 extract), 211 comments — Brand-tagged; same creator as an item already in more_stitches; part of today's eye-cream wave. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.7d old — rising: yes.",
+    "why_it_stitches": "306K in 4.7d (439K/day at the 2026-11-16 extract), 211 comments — Brand-tagged; same creator as an item already in more_stitches; part of today's eye-cream wave. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.7d old — rising: no.",
     "your_fit": "Corpus: under-eye circles/puffiness guides (TT Part 1 + 2, YT 2023).",
     "angles": [
      "PDRN eye cream: what it can't fix"
@@ -1687,7 +1961,7 @@
    "author": "@millaaaslund",
    "platform": "TT",
    "views": 300514,
-   "age_days": 3.9,
+   "age_days": 4.9,
    "age_at_extract": 0.9,
    "comments": 57,
    "url": "https://www.tiktok.com/@millaaaslund/video/7708379041308462358",
@@ -1703,12 +1977,12 @@
     "trigger": null,
     "big_enough": false,
     "punches_ok": true,
-    "rising": true,
-    "score": 3
+    "rising": false,
+    "score": 2
    },
    "pitch": {
     "the_claim": "My hair-care routine.",
-    "why_it_stitches": "301K in 3.9d (323K/day at the 2026-11-16 extract), 57 comments — Routine clip; brand-tagged. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.9d old — rising: yes.",
+    "why_it_stitches": "301K in 4.9d (323K/day at the 2026-11-16 extract), 57 comments — Routine clip; brand-tagged. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.9d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "bond-builders explained (needs her take)"
@@ -1717,43 +1991,10 @@
    }
   },
   {
-   "author": "@manelparletrop",
-   "platform": "TT",
-   "views": 283934,
-   "age_days": 2.9,
-   "age_at_extract": 0.9,
-   "comments": 287,
-   "url": "https://www.tiktok.com/@manelparletrop/video/7708753379106901280",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Full K-beauty routine (Arencia products)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": true,
-    "score": 3
-   },
-   "pitch": {
-    "the_claim": "My full skincare routine.",
-    "why_it_stitches": "284K in 2.9d (309K/day at the 2026-11-17 extract), 287 comments — Product-list routine, likely gifted — discounted; no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 2.9d old — rising: yes.",
-    "your_fit": "No position in your corpus — needs your take.",
-    "angles": [
-     "how many steps do you actually need? (needs her take)"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
    "author": "@tatiencorea",
    "platform": "TT",
    "views": 265737,
-   "age_days": 3.9,
+   "age_days": 4.9,
    "age_at_extract": 0.9,
    "comments": 114,
    "url": "https://www.tiktok.com/@tatiencorea/video/7708381051395050760",
@@ -1769,12 +2010,12 @@
     "trigger": "half-right",
     "big_enough": false,
     "punches_ok": true,
-    "rising": true,
-    "score": 5
+    "rising": false,
+    "score": 4
    },
    "pitch": {
     "the_claim": "An eye cream can make sunken dark circles look better.",
-    "why_it_stitches": "266K in 3.9d (287K/day at the 2026-11-16 extract), 114 comments — Spanish — language barrier stated; same creator as an item already in more_stitches. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.9d old — rising: yes.",
+    "why_it_stitches": "266K in 4.9d (287K/day at the 2026-11-16 extract), 114 comments — Spanish — language barrier stated; same creator as an item already in more_stitches. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.9d old — rising: no.",
     "your_fit": "Corpus: under-eye circles/puffiness guides (TT Part 1 + 2, YT 2023).",
     "angles": [
      "sunken vs pigmented circles: different fixes"
@@ -1786,7 +2027,7 @@
    "author": "@imjuhm",
    "platform": "TT",
    "views": 265213,
-   "age_days": 3.7,
+   "age_days": 4.7,
    "age_at_extract": 0.7,
    "comments": 545,
    "url": "https://www.tiktok.com/@imjuhm/video/7708452658713021727",
@@ -1802,12 +2043,12 @@
     "trigger": "half-right",
     "big_enough": false,
     "punches_ok": true,
-    "rising": true,
-    "score": 5
+    "rising": false,
+    "score": 4
    },
    "pitch": {
     "the_claim": "Here's the routine my esthetician built for hyperpigmentation, acne and a damaged barrier.",
-    "why_it_stitches": "265K in 3.7d (363K/day at the 2026-11-16 extract), 545 comments — Follow-up to shortlist item #3 — react to both together. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.7d old — rising: yes.",
+    "why_it_stitches": "265K in 4.7d (363K/day at the 2026-11-16 extract), 545 comments — Follow-up to shortlist item #3 — react to both together. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.7d old — rising: no.",
     "your_fit": "Corpus: cystic-acne stitch 227K (TT 2025) — when to see a dermatologist.",
     "angles": [
      "rating an esthetician's routine (needs her take)",
@@ -1820,7 +2061,7 @@
    "author": "@christianosuya_",
    "platform": "TT",
    "views": 258091,
-   "age_days": 5.7,
+   "age_days": 6.7,
    "age_at_extract": 0.7,
    "comments": 95,
    "url": "https://www.tiktok.com/@christianosuya_/video/7707728339515100449",
@@ -1841,7 +2082,7 @@
    },
    "pitch": {
     "the_claim": "This in-clinic treatment removes hyperpigmentation.",
-    "why_it_stitches": "258K in 5.7d (377K/day at the 2026-11-14 extract), 95 comments — Procedure demo; treatment unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.7d old — rising: no.",
+    "why_it_stitches": "258K in 6.7d (377K/day at the 2026-11-14 extract), 95 comments — Procedure demo; treatment unseen — watch first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.7d old — rising: no.",
     "your_fit": "Corpus: acne-scar/hyperpigmentation guide (YT 2023).",
     "angles": [
      "would a derm try this? (needs her take)",
@@ -1851,28 +2092,43 @@
    }
   },
   {
-   "author": "@dr.supriya_md",
+   "author": "@mar.hacks",
    "platform": "TT",
-   "views": 245238,
-   "age_days": 2.0,
-   "age_at_extract": 1.0,
-   "comments": 62,
-   "url": "https://www.tiktok.com/@dr.supriya_md/video/7709106094139886856",
-   "seed_topic": "dermatologist",
+   "views": 233275,
+   "age_days": 1.8,
+   "age_at_extract": 0.8,
+   "comments": 161,
+   "url": "https://www.tiktok.com/@mar.hacks/video/7709556742992039199",
+   "seed_topic": "sunscreen",
    "source": "feed",
    "verify": false,
    "heat": 1,
-   "claim": "content unidentifiable from feed (no caption) — watch in-app first · #fineline #dermatologist hashtags only · 245K in 2.0d, 62 comments",
+   "claim": "'Blaming my foundation when my sunscreen was the problem' — TOCOBO promo (#AD)",
    "viral": true,
-   "unidentified": true,
-   "rubric": null,
-   "pitch": null
+   "rubric": {
+    "specific_claim": true,
+    "her_lane": true,
+    "trigger": "half-right",
+    "rising": true,
+    "big_enough": false,
+    "punches_ok": true,
+    "score": 5
+   },
+   "pitch": {
+    "the_claim": "Your sunscreen, not your foundation, is why makeup pills.",
+    "why_it_stitches": "233K in 1.8d (307K/day at the 2026-11-19 extract), 161 comments — Borderline lane — sponsored skincare-brand promo with a pilling claim; surfaces only on size, doubt stated. Pace-qualified. Now 1.8d old — rising: yes.",
+    "your_fit": "No position in your corpus — needs your take.",
+    "angles": [
+     "why sunscreen pills under makeup — and the fix"
+    ],
+    "length": "thin pitch — original eats ~5–10s; 30–45s total"
+   }
   },
   {
    "author": "@drippy_rubab",
    "platform": "TT",
    "views": 207241,
-   "age_days": 1.2,
+   "age_days": 2.2,
    "age_at_extract": 0.2,
    "comments": 207,
    "url": "https://www.tiktok.com/@drippy_rubab/video/7709408125828304136",
@@ -1893,7 +2149,7 @@
    },
    "pitch": {
     "the_claim": "A DIY glow mask used daily for 7 days.",
-    "why_it_stitches": "207K in 1.2d (1036K/day at the 2026-11-18 extract), 207 comments — Urdu; DIY mask challenge. Pace is an age-floor artifact (207K at 0.2d). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 1.2d old — rising: yes.",
+    "why_it_stitches": "207K in 2.2d (691K/day at the 2026-11-18 extract), 207 comments — Urdu; DIY mask challenge. Pace is an age-floor artifact (207K at 0.2d). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 2.2d old — rising: yes.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "DIY masks: what's safe on your face? (needs her take)"
@@ -1905,7 +2161,7 @@
    "author": "@new.biggie",
    "platform": "TT",
    "views": 193890,
-   "age_days": 3.7,
+   "age_days": 4.7,
    "age_at_extract": 0.7,
    "comments": 160,
    "url": "https://www.tiktok.com/@new.biggie/video/7708466697165933838",
@@ -1921,12 +2177,12 @@
     "trigger": null,
     "big_enough": false,
     "punches_ok": true,
-    "rising": true,
-    "score": 3
+    "rising": false,
+    "score": 2
    },
    "pitch": {
     "the_claim": "My hair-transformation story.",
-    "why_it_stitches": "194K in 3.7d (279K/day at the 2026-11-16 extract), 160 comments — Borderline lane — styling story; doubt stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.7d old — rising: yes.",
+    "why_it_stitches": "194K in 4.7d (279K/day at the 2026-11-16 extract), 160 comments — Borderline lane — styling story; doubt stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.7d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "traction alopecia: braids done safely (needs her take)"
@@ -1935,110 +2191,10 @@
    }
   },
   {
-   "author": "@kimcassironway",
-   "platform": "TT",
-   "views": 193225,
-   "age_days": 6.8,
-   "age_at_extract": 0.8,
-   "comments": 155,
-   "url": "https://www.tiktok.com/@kimcassironway/video/7707330829776686350",
-   "seed_topic": "acne",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'Part 26 — K-skincare for pores & acne (closed comedones)'",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 3
-   },
-   "pitch": {
-    "the_claim": "K-skincare can fix pores and closed comedones.",
-    "why_it_stitches": "193K in 6.8d (256K/day at the 2026-11-13 extract), 155 comments — Series; content unseen. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.8d old — rising: no.",
-    "your_fit": "Corpus-grounded: your comedonal-acne card (43K in 0.6d).",
-    "angles": [
-     "closed comedones: the first-line fix"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@chanchal__ugc",
-   "platform": "TT",
-   "views": 188548,
-   "age_days": 6.9,
-   "age_at_extract": 0.9,
-   "comments": 37,
-   "url": "https://www.tiktok.com/@chanchal__ugc/video/7707284194136788247",
-   "seed_topic": "spf",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'Now I know why BTS is obsessed with' mixsoon bean sun serum (UGC)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 2
-   },
-   "pitch": {
-    "the_claim": "This sun serum is what BTS uses.",
-    "why_it_stitches": "189K in 6.9d (213K/day at the 2026-11-13 extract), 37 comments — UGC promo, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.9d old — rising: no.",
-    "your_fit": "No corpus position pulled for this claim — needs your take.",
-    "angles": [
-     "skip — promo"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@beautystreet0",
-   "platform": "TT",
-   "views": 180296,
-   "age_days": 5.8,
-   "age_at_extract": 0.8,
-   "comments": 168,
-   "url": "https://www.tiktok.com/@beautystreet0/video/7707700254686137632",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "'anti aging so good she makes some of her own skincare' (#vitamine)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "half-right",
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 4
-   },
-   "pitch": {
-    "the_claim": "She makes her own anti-aging skincare.",
-    "why_it_stitches": "180K in 5.8d (238K/day at the 2026-11-14 extract), 168 comments — Same creator as the '3-step at 70' wave (guaranteed earlier). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.8d old — rising: no.",
-    "your_fit": "Corpus: anti-aging guide (YT 2024).",
-    "angles": [
-     "DIY anti-aging: what works vs wishful",
-     "the 3 anti-aging steps with evidence"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
    "author": "@natalie_oneillll",
    "platform": "TT",
    "views": 178683,
-   "age_days": 4.7,
+   "age_days": 5.7,
    "age_at_extract": 0.7,
    "comments": 104,
    "url": "https://www.tiktok.com/@natalie_oneillll/video/7708086603234823446",
@@ -2059,7 +2215,7 @@
    },
    "pitch": {
     "the_claim": "Simple products make the biggest difference.",
-    "why_it_stitches": "179K in 4.7d (249K/day at the 2026-11-15 extract), 104 comments — Tracked creator (often sponsored). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.7d old — rising: no.",
+    "why_it_stitches": "179K in 5.7d (249K/day at the 2026-11-15 extract), 104 comments — Tracked creator (often sponsored). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.7d old — rising: no.",
     "your_fit": "Corpus: perfect skincare routine (TT 2023).",
     "angles": [
      "the simplest routine that works",
@@ -2072,7 +2228,7 @@
    "author": "@trellthetrainer",
    "platform": "TT",
    "views": 168696,
-   "age_days": 4.6,
+   "age_days": 5.6,
    "age_at_extract": 0.6,
    "comments": 195,
    "url": "https://www.tiktok.com/@trellthetrainer/video/7708122634596257054",
@@ -2093,7 +2249,7 @@
    },
    "pitch": {
     "the_claim": "Do your own at-home facial 1–2 times a month.",
-    "why_it_stitches": "169K in 4.6d (272K/day at the 2026-11-15 extract), 195 comments — Specific frequency claim, 0.6d — fresh. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.6d old — rising: no.",
+    "why_it_stitches": "169K in 5.6d (272K/day at the 2026-11-15 extract), 195 comments — Specific frequency claim, 0.6d — fresh. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.6d old — rising: no.",
     "your_fit": "Corpus: exfoliation line — 'Oily skin? Consider exfoliating 1–2 times a week. Sensitive skin? You can probably skip the exfoliant.'",
     "angles": [
      "the at-home facial steps that are actually safe",
@@ -2103,34 +2259,34 @@
    }
   },
   {
-   "author": "@jimoon",
+   "author": "@rawhankhaled",
    "platform": "TT",
-   "views": 157832,
-   "age_days": 4.5,
-   "age_at_extract": 0.5,
-   "comments": 86,
-   "url": "https://www.tiktok.com/@jimoon/video/7707846793295367430",
-   "seed_topic": "retinol",
+   "views": 157190,
+   "age_days": 0.6,
+   "age_at_extract": 0.6,
+   "comments": 46,
+   "url": "https://www.tiktok.com/@rawhankhaled/video/7709972404650495252",
+   "seed_topic": "skincare",
    "source": "feed",
    "verify": false,
    "heat": 1,
-   "claim": "Spanish: 'stretch marks don't erase with magic recipes' — retinol/ingredients",
+   "claim": "Pre-wedding skincare routine — Medicube PDRN/Zero Pore (sponsored)",
    "viral": true,
    "rubric": {
-    "specific_claim": true,
+    "specific_claim": false,
     "her_lane": true,
-    "trigger": "half-right",
+    "trigger": null,
+    "rising": true,
     "big_enough": false,
     "punches_ok": true,
-    "rising": false,
-    "score": 4
+    "score": 3
    },
    "pitch": {
-    "the_claim": "Stretch marks can be improved with retinol-type ingredients.",
-    "why_it_stitches": "158K in 4.5d (340K/day at the 2026-11-15 extract), 86 comments — Spanish — language barrier stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.5d old — rising: no.",
+    "the_claim": "A pre-wedding K-beauty routine.",
+    "why_it_stitches": "157K in 0.6d (248K/day at the 2026-11-20 extract), 46 comments — Borderline lane — sponsored skincare-brand promo with no testable claim; surfaces only on size, doubt stated. Pace-qualified; wedding-seed crossover. Now 0.6d old — rising: yes.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
-     "stretch marks: what retinoids can and can't do"
+     "skip"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -2139,7 +2295,7 @@
    "author": "@drpedroateixeira",
    "platform": "TT",
    "views": 125653,
-   "age_days": 2.6,
+   "age_days": 3.6,
    "age_at_extract": 0.6,
    "comments": 52,
    "url": "https://www.tiktok.com/@drpedroateixeira/video/7708876426098855186",
@@ -2160,7 +2316,7 @@
    },
    "pitch": {
     "the_claim": "A dark streak on the nail can be melanoma, not just trauma.",
-    "why_it_stitches": "126K in 2.6d (214K/day at the 2026-11-17 extract), 52 comments — Fellow doctor, correct → 'yes, and —' only. Portuguese. Small (126K). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 2.6d old — rising: yes.",
+    "why_it_stitches": "126K in 3.6d (214K/day at the 2026-11-17 extract), 52 comments — Fellow doctor, correct → 'yes, and —' only. Portuguese. Small (126K). [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 3.6d old — rising: yes.",
     "your_fit": "Nail melanoma: no dedicated corpus card — needs your take.",
     "angles": [
      "'yes, and —': the 3 nail-streak red flags (needs her take)"
@@ -2172,7 +2328,7 @@
    "author": "@syaaaaawall",
    "platform": "TT",
    "views": 120524,
-   "age_days": 6.2,
+   "age_days": 7.3,
    "age_at_extract": 0.2,
    "comments": 183,
    "url": "https://www.tiktok.com/@syaaaaawall/video/7707522367894850823",
@@ -2193,7 +2349,7 @@
    },
    "pitch": {
     "the_claim": "This light SPF 40 is my favorite.",
-    "why_it_stitches": "121K in 6.2d (499K/day at the 2026-11-13 extract), 183 comments — Sunscreen plug. Language barrier: Indonesian — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.2d old — rising: no.",
+    "why_it_stitches": "121K in 7.3d (402K/day at the 2026-11-13 extract), 183 comments — Sunscreen plug. Language barrier: Indonesian — watch with captions first. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.3d old — rising: no.",
     "your_fit": "No corpus position pulled for this claim — needs your take.",
     "angles": [
      "skip — promo"
@@ -2205,7 +2361,7 @@
    "author": "@nini.goroziia",
    "platform": "TT",
    "views": 119023,
-   "age_days": 6.1,
+   "age_days": 7.1,
    "age_at_extract": 0.1,
    "comments": 28,
    "url": "https://www.tiktok.com/@nini.goroziia/video/7707565691947207943",
@@ -2226,7 +2382,7 @@
    },
    "pitch": {
     "the_claim": "This tinted mineral SPF is effortless.",
-    "why_it_stitches": "119K in 6.1d (595K/day at the 2026-11-13 extract, age-floor pace), 28 comments — Product review, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 6.1d old — rising: no.",
+    "why_it_stitches": "119K in 7.1d (397K/day at the 2026-11-13 extract, age-floor pace), 28 comments — Product review, no claim. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 7.1d old — rising: no.",
     "your_fit": "No corpus position pulled for this claim — needs your take.",
     "angles": [
      "tinted mineral SPF: why tint matters"
@@ -2238,7 +2394,7 @@
    "author": "@vanillacupcake025",
    "platform": "TT",
    "views": 114385,
-   "age_days": 4.5,
+   "age_days": 5.5,
    "age_at_extract": 0.5,
    "comments": 66,
    "url": "https://www.tiktok.com/@vanillacupcake025/video/7708170393038703885",
@@ -2259,142 +2415,10 @@
    },
    "pitch": {
     "the_claim": "My body-care routine.",
-    "why_it_stitches": "114K in 4.5d (231K/day at the 2026-11-15 extract), 66 comments — Borderline lane: aesthetic body-care, no claim — doubt stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.5d old — rising: no.",
+    "why_it_stitches": "114K in 5.5d (231K/day at the 2026-11-15 extract), 66 comments — Borderline lane: aesthetic body-care, no claim — doubt stated. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.5d old — rising: no.",
     "your_fit": "No position in your corpus — needs your take.",
     "angles": [
      "body skin: the 2 steps that matter (needs her take)"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@slf.dipawww",
-   "platform": "TT",
-   "views": 59860,
-   "age_days": 5.2,
-   "age_at_extract": 0.2,
-   "comments": 28,
-   "url": "https://www.tiktok.com/@slf.dipawww/video/7707919177985576210",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Indonesian: Gloglowing skincare brand-owner giveaway clip",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 2
-   },
-   "pitch": {
-    "the_claim": "Brand-owner giveaway (tumbler + pajamas) — no skin claim.",
-    "why_it_stitches": "60K in 5.2d (299K/day at the 2026-11-14 extract, age-floor pace), 28 comments — Borderline lane — skincare-brand promo with no claim; doubt stated. Indonesian. Pace is an age-floor artifact (60K views at 0.2d) — small. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.2d old — rising: no.",
-    "your_fit": "No position in your corpus — needs your take.",
-    "angles": [
-     "skip unless the brand makes a claim"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@ugc.with.mira",
-   "platform": "TT",
-   "views": 53082,
-   "age_days": 4.1,
-   "age_at_extract": 0.1,
-   "comments": 12,
-   "url": "https://www.tiktok.com/@ugc.with.mira/video/7708307366441258273",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "UGC ad — FULLY milky toner 'now available at Sephora'",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 2
-   },
-   "pitch": {
-    "the_claim": "This milky toner gives hydrated skin.",
-    "why_it_stitches": "53K in 4.1d (265K/day at the 2026-11-15 extract, age-floor pace), 12 comments — Paid UGC — discounted; no real claim. Pace is an age-floor artifact (53K views at 0.1d) — small. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 4.1d old — rising: no.",
-    "your_fit": "No position in your corpus — needs your take.",
-    "angles": [
-     "do you even need a toner? (needs her take)"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@drtanzeelakhanofficial",
-   "platform": "TT",
-   "views": 52271,
-   "age_days": 5.2,
-   "age_at_extract": 0.1,
-   "comments": 160,
-   "url": "https://www.tiktok.com/@drtanzeelakhanofficial/video/7707928679237586197",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Urdu: 'be careful with formula creams' (#melasma)",
-   "viral": true,
-   "rubric": {
-    "specific_claim": true,
-    "her_lane": true,
-    "trigger": "dangerous",
-    "big_enough": false,
-    "punches_ok": true,
-    "rising": false,
-    "score": 4
-   },
-   "pitch": {
-    "the_claim": "Mixed 'formula' whitening creams for melasma are dangerous — be careful.",
-    "why_it_stitches": "52K in 5.2d (261K/day at the 2026-11-14 extract, age-floor pace), 160 comments — Urdu — language barrier stated; fellow doctor, likely correct → 'yes, and —' only. Pace is an age-floor artifact (52K views at 0.1d) — small. [carried from yesterday's briefing; numbers refreshed — ages/rising in the text above may be stale] Now 5.2d old — rising: no.",
-    "your_fit": "Steroid-laced lightening creams: needs your take (no 'formula cream' position in the corpus).",
-    "angles": [
-     "'yes, and —': why steroid 'formula' creams worsen melasma (needs her take)"
-    ],
-    "length": "thin pitch — original eats ~5–10s; 30–45s total"
-   }
-  },
-  {
-   "author": "@damia.felicyta",
-   "platform": "TT",
-   "views": 41655,
-   "age_days": 3.1,
-   "age_at_extract": 0.1,
-   "comments": 68,
-   "url": "https://www.tiktok.com/@damia.felicyta/video/7708686460114799880",
-   "seed_topic": "skincare",
-   "source": "feed",
-   "verify": false,
-   "heat": 1,
-   "claim": "Indonesian: 'consistent results from the purple Glowbomb serum' promo clip",
-   "viral": true,
-   "rubric": {
-    "specific_claim": false,
-    "her_lane": true,
-    "trigger": null,
-    "rising": true,
-    "big_enough": false,
-    "punches_ok": true,
-    "score": 3
-   },
-   "pitch": {
-    "the_claim": "Consistent use of this serum gives visible glow results.",
-    "why_it_stitches": "42K in 3.1d (208K/day at the 2026-11-16 extract, age-floor pace), 68 comments — Borderline lane — skincare-brand promo, Indonesian, no testable claim. Qualifies only on an age-floor pace artifact (41.7K at 0.1d on the 11/16 extract); doubt stated. Now 3.1d old — rising: yes.",
-    "your_fit": "No position in your corpus — needs your take.",
-    "angles": [
-     "skip unless the clip makes a claim"
     ],
     "length": "thin pitch — original eats ~5–10s; 30–45s total"
    }
@@ -2495,9 +2519,19 @@
   "(IG) derm-life humor — 'sometimes it's just a lose-lose' clinic skit 2.81M in 8.5d + 'I'm doing great' 1.34M in 7.7d — both ♥ gold (398.2× · ♥) [watch](https://www.instagram.com/p/DfizR70uz8V/)",
   "(TT) turning 40 — 'taking my beauty rituals with me' 1.30M in 5.9d, 3% breakout, + Part 2 'my exact AM/PM routine' (44.7× · ♥) [watch](https://www.tiktok.com/@yurileeeee/video/7707325271833136398)",
   "(TT) 'do you take any of these?' — derm rates oral skin supplements (biotin, niacinamide, collagen) — you rated biotin 0/10, 117K in 3.0d (19.3× · ♥) [watch](https://www.tiktok.com/@drjennyliu/video/7708163484529200397)",
-  "(TT) 'is it skin cancer?' 5s dermoscopy quiz — BCC / lichen planus / BCC, 350K in 3.6d (51.9×) [watch](https://www.tiktok.com/@dr.derm.love/video/7708171310442007838)"
+  "(TT) 'blackheads skincare nightmare' — a DIY natural face-mask blackhead pull, 8.82M in 2.8d on the stitch feed — you've covered pore strips + filaments (3.16M/day) [watch](https://www.tiktok.com/@spicymoustache/video/7709171199607196950)"
  ],
  "news": [
+  {
+   "headline": "Tumor protein patterns may predict who responds to melanoma immunotherapy",
+   "summary": "Mount Sinai + NCI CPTAC studies (207 patients, 12 centers) found three pre-treatment protein signatures tied to progression-free survival on anti-PD-1 + anti-CTLA-4 — early, association-only.",
+   "her_angle": "",
+   "source": "News-Medical (Mount Sinai Health System release)",
+   "url": "https://www.news-medical.net/news/20261118/Scientists-discover-protein-patterns-that-predict-melanoma-treatment-response.aspx",
+   "published": "Nov 18, 2026",
+   "age_days": 2,
+   "verify": true
+  },
   {
    "headline": "US loses measles elimination status after 26 years",
    "summary": "PAHO-linked expert commission ruled the virus has circulated a full year — rash questions will spike; NBC's TikTok on it is pacing ~1M/day.",
@@ -2505,16 +2539,6 @@
    "source": "CP24 / CNN",
    "url": "https://www.cp24.com/news/world/2026/11/14/after-26-years-the-us-has-lost-its-measles-elimination-status/",
    "published": "Nov 14, 2026 (decision reported Fri Nov 13)",
-   "age_days": 6,
-   "verify": true
-  },
-  {
-   "headline": "Gen Z trusts dermatologists most — but half have never seen one",
-   "summary": "Curology survey (1,930 buyers aged 13–29): 43% trust derms most vs 9% social media, yet 62% get advice on social and 50% have never seen a derm — brand-run survey, discount accordingly",
-   "her_angle": "the 'dermatologists are useless' crowd is your audience — be the derm they haven't seen",
-   "source": "Curology press release (PR Newswire)",
-   "url": "https://prnewswire.com/news-releases/gen-z-ranks-dermatologists-the-most-trusted-for-skincare-advice-yet-half-have-never-seen-one-curology-survey-finds-302937039.html",
-   "published": "Nov 12, 2026",
    "age_days": 7,
    "verify": true
   }
